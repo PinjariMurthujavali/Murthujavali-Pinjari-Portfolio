@@ -10,6 +10,21 @@
 <meta name="keywords" content="Murthujavali, Murthu, Murthujavali Pinjari, Murthu Portfolio, Python Developer, ERPNext Developer, HRMS Developer, Frappe Developer, Hyderabad, Portfolio Website">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- ══════════════════════════════════════════════════════════════
+  GOOGLE ANALYTICS 4 — Free traffic tracking
+  HOW TO ACTIVATE (takes 3 minutes):
+  1. Go to https://analytics.google.com → Admin → Create Property
+  2. Add a "Web" data stream with this site's URL
+  3. Copy your Measurement ID (looks like G-XXXXXXXXXX)
+  4. Replace G-XXXXXXXXXX below (both lines) with your real ID
+═══════════════════════════════════════════════════════════════ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
   <link rel="canonical" href="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/">
 <style>
 :root {
@@ -427,6 +442,9 @@ section { padding: 100px 64px; position: relative; z-index: 2; }
   content: ''; position: absolute; inset: 0;
   background: radial-gradient(circle, rgba(196,164,104,.1), transparent 70%);
 }
+.proj-visual-inner img { width: 100%; height: 100%; object-fit: cover; opacity: 1; position: relative; z-index: 1; }
+.proj-visual-inner.has-img { opacity: 1; }
+.proj-visual-inner.has-img::before { z-index: 2; background: linear-gradient(180deg, transparent 50%, rgba(6,7,13,.75) 100%); }
 .pbadge {
   position: absolute; top: 14px; left: 14px;
   padding: 4px 10px; border-radius: 3px;
@@ -456,6 +474,9 @@ section { padding: 100px 64px; position: relative; z-index: 2; }
 .pl-demo:hover { background: var(--gold-dim); }
 .pl-gh { border: 1px solid var(--border); color: var(--text-muted); }
 .pl-gh:hover { border-color: rgba(255,255,255,.18); color: var(--text); }
+.pl-private { border: 1px dashed var(--border); color: var(--text-muted); cursor: default; }
+.pl-private:hover { border-color: var(--border); color: var(--text-muted); }
+.pl-private i { color: var(--gold); }
 
 /* ── CERTS ── */
 .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
@@ -709,6 +730,7 @@ footer {
       <p class="hero-desc r">Building <strong>enterprise-grade web applications</strong> at Brilliant Technologies. Expert in <strong>Python, Django, Frappe Framework, ERPNext</strong> and WordPress — leading teams, architecting scalable solutions, and shipping products that matter.</p>
       <div class="hero-actions r">
         <a href="https://wa.me/919100850087?text=Hi%20Murthu!%20I'd%20like%20to%20hire%20you." target="_blank" class="btn-gold"><i class="fab fa-whatsapp"></i> WhatsApp Me</a>
+        <a href="Murthujavali_Pinjari_Resume_2024.pdf" download class="btn-outline-w"><i class="fas fa-download"></i> Download Resume</a>
         <a href="#projects" class="btn-ghost"><i class="fas fa-layer-group"></i> View Work</a>
         <a href="#contact" class="btn-outline-w"><i class="fas fa-paper-plane"></i> Contact</a>
       </div>
@@ -752,6 +774,12 @@ footer {
             <a href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank" class="soc-btn primary"><i class="fab fa-linkedin"></i> LinkedIn</a>
             <a href="https://github.com/PinjariMurthujavali" target="_blank" class="soc-btn"><i class="fab fa-github"></i> GitHub</a>
             <a href="https://www.youtube.com/@Syntaxsolver-u5m" target="_blank" class="soc-btn youtube"><i class="fab fa-youtube"></i> YouTube</a>
+          </div>
+          <div class="r" style="margin-top:32px">
+            <div class="ib-label" style="margin-bottom:14px">GitHub Activity</div>
+            <a href="https://github.com/PinjariMurthujavali" target="_blank" style="display:block">
+              <img src="https://ghchart.rshah.org/c4a468/PinjariMurthujavali" alt="Murthu's GitHub contribution graph" style="width:100%;border-radius:var(--radius);border:1px solid var(--border)" loading="lazy">
+            </a>
           </div>
         </div>
       </div>
@@ -948,7 +976,7 @@ footer {
           <div class="proj-title">Hospital Management System — ERPNext & Frappe</div>
           <div class="proj-desc">Enterprise-grade Hospital Management System built on ERPNext using Frappe Framework. Features patient registration, appointment scheduling, billing, pharmacy management, lab reports, doctor schedules, inventory & real-time dashboards — deployed on Frappe Cloud for high availability.</div>
           <div class="proj-tech"><span class="p-tech">ERPNext</span><span class="p-tech">Frappe</span><span class="p-tech">Python</span><span class="p-tech">Frappe Cloud</span><span class="p-tech">JavaScript</span><span class="p-tech">MariaDB</span></div>
-          <div class="proj-links"><a href="#" class="pl pl-demo"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="#" class="pl pl-gh"><i class="fab fa-github"></i> GitHub</a></div>
+          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-lock"></i> Confidential Client Project</a></div>
         </div>
       </div>
       <div class="proj-card r" data-cat="erp">
@@ -957,7 +985,7 @@ footer {
           <div class="proj-title">Custom Frappe Application</div>
           <div class="proj-desc">Custom business workflow app built using Frappe Framework with custom DocTypes, server/client scripts, and REST APIs for seamless integration.</div>
           <div class="proj-tech"><span class="p-tech">Frappe</span><span class="p-tech">Python</span><span class="p-tech">Custom DocTypes</span><span class="p-tech">REST API</span></div>
-          <div class="proj-links"><a href="#" class="pl pl-demo"><i class="fas fa-external-link-alt"></i> Demo</a><a href="#" class="pl pl-gh"><i class="fab fa-github"></i> GitHub</a></div>
+          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-lock"></i> Confidential Client Project</a></div>
         </div>
       </div>
       <div class="proj-card r" data-cat="erp">
@@ -966,7 +994,7 @@ footer {
           <div class="proj-title">ERPNext Business Customization</div>
           <div class="proj-desc">Custom ERPNext modules for inventory, purchase workflows, custom reports with role-based permissions tailored to business needs.</div>
           <div class="proj-tech"><span class="p-tech">ERPNext</span><span class="p-tech">Frappe</span><span class="p-tech">Python</span><span class="p-tech">Jinja</span></div>
-          <div class="proj-links"><a href="#" class="pl pl-demo"><i class="fas fa-external-link-alt"></i> Demo</a><a href="#" class="pl pl-gh"><i class="fab fa-github"></i> GitHub</a></div>
+          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-lock"></i> Confidential Client Project</a></div>
         </div>
       </div>
       <div class="proj-card r" data-cat="web">
@@ -988,7 +1016,7 @@ footer {
         </div>
       </div>
       <div class="proj-card r" data-cat="web">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-cloud-sun"></i></div><span class="pbadge pb-web">Web</span></div>
+        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner has-img" style="height:150px"><img src="assets/img/weather-dashboard-Picsart-AiImageEnhancer.png" alt="Weather Dashboard screenshot" loading="lazy"></div><span class="pbadge pb-web">Web</span></div>
         <div class="proj-body">
           <div class="proj-title">Weather Dashboard</div>
           <div class="proj-desc">Dynamic weather dashboard with real-time forecasts, location-based updates, and beautiful data visualizations.</div>
@@ -997,7 +1025,7 @@ footer {
         </div>
       </div>
       <div class="proj-card r" data-cat="web">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-question-circle"></i></div><span class="pbadge pb-web">Game</span></div>
+        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner has-img" style="height:150px"><img src="assets/img/quizgame.jpg" alt="Interactive Quiz Game screenshot" loading="lazy"></div><span class="pbadge pb-web">Game</span></div>
         <div class="proj-body">
           <div class="proj-title">Interactive Quiz Game</div>
           <div class="proj-desc">Fun interactive quiz game with instant score calculation, timer, and multiple difficulty levels.</div>
@@ -1006,7 +1034,7 @@ footer {
         </div>
       </div>
       <div class="proj-card r" data-cat="web">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-microphone-alt"></i></div><span class="pbadge pb-ai">AI Web</span></div>
+        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner has-img" style="height:150px"><img src="assets/img/speech-reader.png" alt="Speech-to-Text Reader screenshot" loading="lazy"></div><span class="pbadge pb-ai">AI Web</span></div>
         <div class="proj-body">
           <div class="proj-title">Speech-to-Text Reader</div>
           <div class="proj-desc">Web app converting spoken words to text instantly using Web Speech API with multilingual support.</div>
@@ -1015,7 +1043,7 @@ footer {
         </div>
       </div>
       <div class="proj-card r" data-cat="web">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-qrcode"></i></div><span class="pbadge pb-web">Tool</span></div>
+        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner has-img" style="height:150px"><img src="assets/img/qrcode1..jpeg" alt="QR Code Generator screenshot" loading="lazy"></div><span class="pbadge pb-web">Tool</span></div>
         <div class="proj-body">
           <div class="proj-title">QR Code Generator</div>
           <div class="proj-desc">Instantly generate custom QR codes from any text or URL with download options and custom colors.</div>
@@ -1024,7 +1052,7 @@ footer {
         </div>
       </div>
       <div class="proj-card r" data-cat="web">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-sticky-note"></i></div><span class="pbadge pb-web">App</span></div>
+        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner has-img" style="height:150px"><img src="assets/img/Notes-application.png" alt="Notes Application screenshot" loading="lazy"></div><span class="pbadge pb-web">App</span></div>
         <div class="proj-body">
           <div class="proj-title">Notes Application</div>
           <div class="proj-desc">Responsive notes app with local storage persistence, search, and smooth UX for quick note-taking.</div>
@@ -1037,23 +1065,90 @@ footer {
 </section>
 <div class="divider"></div>
 
+<!-- ═══════ YOUTUBE ═══════ -->
+<section id="youtube">
+  <div class="sec-inner">
+    <p class="sec-eyebrow r">Content Creator</p>
+    <h2 class="sec-title r">My <em>YouTube Channel</em></h2>
+    <div class="r" style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:32px; display:flex; align-items:center; gap:24px; flex-wrap:wrap; justify-content:space-between">
+      <div style="display:flex; align-items:center; gap:20px; flex:1; min-width:260px">
+        <div style="width:64px; height:64px; border-radius:50%; background:rgba(239,68,68,.12); display:flex; align-items:center; justify-content:center; flex-shrink:0">
+          <i class="fab fa-youtube" style="font-size:1.8rem; color:#f87171"></i>
+        </div>
+        <div>
+          <div style="font-size:1.15rem; font-weight:600; color:var(--text)">Syntax Solver</div>
+          <p style="color:var(--text-sub); font-size:.92rem; margin-top:4px; max-width:480px">Coding tutorials and Frappe / ERPNext walkthroughs — making development concepts simple and practical for everyone.</p>
+        </div>
+      </div>
+      <a href="https://www.youtube.com/@Syntaxsolver-u5m" target="_blank" class="btn-gold" style="white-space:nowrap"><i class="fab fa-youtube"></i> Visit Channel</a>
+    </div>
+    <div class="r" style="margin-top:24px; border-radius:var(--radius); overflow:hidden; border:1px solid var(--border)">
+      <iframe style="width:100%; aspect-ratio:16/9; display:block; border:0" src="https://www.youtube.com/embed?listType=user_uploads&list=Syntaxsolver-u5m" title="Syntax Solver — Latest Videos" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
 <!-- ═══════ CERTIFICATIONS ═══════ -->
 <section id="certifications">
   <div class="sec-inner">
     <p class="sec-eyebrow r">Credentials</p>
     <h2 class="sec-title r">My <em>Certifications</em></h2>
     <div class="cert-grid">
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fas fa-cogs"></i></div><div class="cert-info"><h4>Frappe & ERPNext Developer</h4><p>Brilliant Technologies</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-code"></i></div><div class="cert-info"><h4>Software Developer Certification</h4><p>Institute of Software Excellence</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fab fa-wordpress"></i></div><div class="cert-info"><h4>WordPress Developer</h4><p>Vsplash Techlabs Pvt. Ltd.</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-shopping-cart"></i></div><div class="cert-info"><h4>WooCommerce Developer</h4><p>Vsplash Techlabs Pvt. Ltd.</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-tools"></i></div><div class="cert-info"><h4>Beaver Builder Certification</h4><p>Vsplash Techlabs Pvt. Ltd.</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fab fa-python"></i></div><div class="cert-info"><h4>Python Full Stack Developer</h4><p>Durga Software Solutions, Hyderabad</p></div></div><div class="cert-footer"><span class="cert-yr">2024</span><a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-gr"><i class="fas fa-globe"></i></div><div class="cert-info"><h4>Web Development Certification</h4><p>American Indian Foundation (S&P GLOBAL)</p></div></div><div class="cert-footer"><span class="cert-yr">2023</span><a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-briefcase"></i></div><div class="cert-info"><h4>TCS iON Career Edge</h4><p>Communication & Soft Skills</p></div></div><div class="cert-footer"><span class="cert-yr">2023</span><a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fas fa-database"></i></div><div class="cert-info"><h4>SQL Fundamentals</h4><p>HackerRank</p></div></div><div class="cert-footer"><span class="cert-yr">2022</span><a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fab fa-java"></i></div><div class="cert-info"><h4>Java Certification</h4><p>SoloLearn</p></div></div><div class="cert-footer"><span class="cert-yr">2022</span><a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-gr"><i class="fas fa-leaf"></i></div><div class="cert-info"><h4>Python Data Structures</h4><p>SoloLearn</p></div></div><div class="cert-footer"><span class="cert-yr">2021</span><a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fas fa-cogs"></i></div><div class="cert-info"><h4>Frappe & ERPNext Developer</h4><p>Brilliant Technologies</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-code"></i></div><div class="cert-info"><h4>Software Developer Certification</h4><p>Institute of Software Excellence</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fab fa-wordpress"></i></div><div class="cert-info"><h4>WordPress Developer</h4><p>Vsplash Techlabs Pvt. Ltd.</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-shopping-cart"></i></div><div class="cert-info"><h4>WooCommerce Developer</h4><p>Vsplash Techlabs Pvt. Ltd.</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-tools"></i></div><div class="cert-info"><h4>Beaver Builder Certification</h4><p>Vsplash Techlabs Pvt. Ltd.</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fab fa-python"></i></div><div class="cert-info"><h4>Python Full Stack Developer</h4><p>Durga Software Solutions, Hyderabad</p></div></div><div class="cert-footer"><span class="cert-yr">2024</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-gr"><i class="fas fa-globe"></i></div><div class="cert-info"><h4>Web Development Certification</h4><p>American Indian Foundation (S&P GLOBAL)</p></div></div><div class="cert-footer"><span class="cert-yr">2023</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-briefcase"></i></div><div class="cert-info"><h4>TCS iON Career Edge</h4><p>Communication & Soft Skills</p></div></div><div class="cert-footer"><span class="cert-yr">2023</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fas fa-database"></i></div><div class="cert-info"><h4>SQL Fundamentals</h4><p>HackerRank</p></div></div><div class="cert-footer"><span class="cert-yr">2022</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fab fa-java"></i></div><div class="cert-info"><h4>Java Certification</h4><p>SoloLearn</p></div></div><div class="cert-footer"><span class="cert-yr">2022</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-gr"><i class="fas fa-leaf"></i></div><div class="cert-info"><h4>Python Data Structures</h4><p>SoloLearn</p></div></div><div class="cert-footer"><span class="cert-yr">2021</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ═══════ TESTIMONIALS ═══════ -->
+<!-- TODO: Replace the 3 placeholder quotes below with real feedback from your
+     manager / colleagues / mentor. Keep each quote short (1-2 lines). -->
+<section id="testimonials">
+  <div class="sec-inner">
+    <p class="sec-eyebrow r">Social Proof</p>
+    <h2 class="sec-title r">What People <em>Say</em></h2>
+    <div class="cert-grid">
+      <div class="cert-card r">
+        <div class="cert-body" style="flex-direction:column; align-items:flex-start; gap:10px">
+          <i class="fas fa-quote-left" style="color:var(--gold); opacity:.5; font-size:1.2rem"></i>
+          <p style="color:var(--text-sub); font-size:.92rem; line-height:1.6">"Add a short quote here from your manager/lead about your work ethic, ownership, or a project you delivered well."</p>
+        </div>
+        <div class="cert-footer" style="border-top:1px solid var(--border); padding-top:12px">
+          <span style="color:var(--text); font-weight:500">Name — Role</span>
+          <span class="cert-yr">Brilliant Technologies</span>
+        </div>
+      </div>
+      <div class="cert-card r">
+        <div class="cert-body" style="flex-direction:column; align-items:flex-start; gap:10px">
+          <i class="fas fa-quote-left" style="color:var(--gold); opacity:.5; font-size:1.2rem"></i>
+          <p style="color:var(--text-sub); font-size:.92rem; line-height:1.6">"Add a short quote from a colleague/teammate about collaborating with you on a feature or fixing a tricky bug."</p>
+        </div>
+        <div class="cert-footer" style="border-top:1px solid var(--border); padding-top:12px">
+          <span style="color:var(--text); font-weight:500">Name — Role</span>
+          <span class="cert-yr">Brilliant Technologies</span>
+        </div>
+      </div>
+      <div class="cert-card r">
+        <div class="cert-body" style="flex-direction:column; align-items:flex-start; gap:10px">
+          <i class="fas fa-quote-left" style="color:var(--gold); opacity:.5; font-size:1.2rem"></i>
+          <p style="color:var(--text-sub); font-size:.92rem; line-height:1.6">"Add a short quote from a client/internship mentor about reliability, communication, or technical skill."</p>
+        </div>
+        <div class="cert-footer" style="border-top:1px solid var(--border); padding-top:12px">
+          <span style="color:var(--text); font-weight:500">Name — Role</span>
+          <span class="cert-yr">Company / Institute</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
