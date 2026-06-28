@@ -1666,7 +1666,7 @@ body {
   margin: 2rem 0;  
   padding-left: 20px;  
 }  
-.timeline::before {  
+.timeline::before {
   content: "";  
   position: absolute; 
   left: 50%;      
