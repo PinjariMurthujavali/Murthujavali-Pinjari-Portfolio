@@ -506,6 +506,61 @@ section { padding: 100px 64px; position: relative; z-index: 2; }
 .cert-link { font-size: .69rem; color: var(--text-muted); text-decoration: none; display: flex; align-items: center; gap: 4px; transition: color .2s; }
 .cert-link:hover { color: var(--gold); }
 
+/* ── REVIEW STARS ── */
+.rev-stars-row { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+.rev-stars { display: flex; gap: 3px; color: var(--gold); font-size: .82rem; }
+.rev-stars .fa-star { opacity: .35; }
+.rev-stars .fa-star:nth-child(-n+5) { opacity: 1; } /* default: all 5 filled, overridden by inline style if needed */
+.rev-badge-new {
+  font-size: .6rem; font-family: 'JetBrains Mono', monospace; letter-spacing: .06em;
+  color: var(--green); background: rgba(61,186,140,.1); border: 1px solid rgba(61,186,140,.25);
+  padding: 2px 8px; border-radius: 20px; text-transform: uppercase;
+}
+
+/* ── LIKE BUTTON ── */
+.rev-like-btn {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--gold-dim); border: 1px solid var(--border-glow);
+  color: var(--gold); font-size: .72rem; font-weight: 500;
+  padding: 6px 12px; border-radius: 20px; cursor: pointer;
+  transition: all .25s; font-family: 'Outfit', sans-serif;
+}
+.rev-like-btn:hover { background: var(--gold); color: #06070d; transform: translateY(-1px); }
+.rev-like-btn.liked { background: var(--gold); color: #06070d; }
+.rev-like-btn i { font-size: .72rem; }
+
+/* ── ADD REVIEW ── */
+.add-review-wrap { margin-top: 22px; }
+.add-review-toggle {
+  display: flex; align-items: center; gap: 10px; margin: 0 auto;
+  background: transparent; border: 1px dashed var(--border-glow);
+  color: var(--gold); font-size: .78rem; font-weight: 600;
+  letter-spacing: .04em; padding: 13px 26px; border-radius: var(--radius);
+  cursor: pointer; transition: all .3s; font-family: 'Outfit', sans-serif;
+}
+.add-review-toggle:hover { background: var(--gold-dim); border-style: solid; transform: translateY(-2px); }
+.add-review-card {
+  display: none; margin-top: 18px; background: var(--card);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 28px; max-width: 560px; margin-left: auto; margin-right: auto;
+}
+.add-review-card.show { display: block; animation: revealCard .35s ease; }
+@keyframes revealCard { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+.add-review-card h4 { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+.add-review-sub { font-size: .8rem; color: var(--text-muted); margin-bottom: 18px; line-height: 1.6; }
+.star-picker {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 8px; padding: 14px 16px;
+}
+.star-picker i {
+  font-size: 1.3rem; color: var(--text-muted); cursor: pointer;
+  transition: all .15s; opacity: .4;
+}
+.star-picker i.active { color: var(--gold); opacity: 1; transform: scale(1.08); }
+.star-picker i:hover { transform: scale(1.15); }
+.star-label { font-size: .72rem; color: var(--text-muted); margin-left: 8px; font-family: 'JetBrains Mono', monospace; }
+
 /* ── LOCATION ── */
 .loc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
 .map-frame { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
@@ -1123,38 +1178,77 @@ footer {
   <div class="sec-inner">
     <p class="sec-eyebrow r">Social Proof</p>
     <h2 class="sec-title r">What People <em>Say</em></h2>
-    <div class="cert-grid">
-      <div class="cert-card r">
+
+    <div class="cert-grid" id="reviews-grid">
+      <div class="cert-card r" data-seed="1">
         <div class="cert-body" style="flex-direction:column; align-items:flex-start; gap:10px">
+          <div class="rev-stars-row">
+            <div class="rev-stars" aria-label="5 out of 5 stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          </div>
           <i class="fas fa-quote-left" style="color:var(--gold); opacity:.5; font-size:1.2rem"></i>
           <p style="color:var(--text-sub); font-size:.92rem; line-height:1.6">"I had a chance to explore this portfolio, and I'm genuinely impressed. It's clean, well-structured, and reflects both creativity and professionalism. Every section is thoughtfully presented, making it easy to understand the skills and work behind it. Wishing you all the best—I'm sure this portfolio will leave a great impression on everyone who visits it. Keep growing and achieving bigger milestones!"</p>
         </div>
-        <div class="cert-footer" style="border-top:1px solid var(--border); padding-top:12px">
-          <span style="color:var(--text); font-weight:500">Mabasha — Senior software engineer</span>
-          <span class="cert-yr">LPL Financial GCC</span>
+        <div class="cert-footer" style="border-top:1px solid var(--border); padding-top:12px; flex-wrap:wrap; gap:8px">
+          <div>
+            <span style="color:var(--text); font-weight:500; display:block">Mabasha — Senior software engineer</span>
+            <span class="cert-yr">LPL Financial GCC</span>
+          </div>
+          <button class="rev-like-btn" data-seed-id="1" onclick="toggleLike(this)"><i class="fas fa-thumbs-up"></i> <span class="rev-like-count">0</span></button>
         </div>
       </div>
-      <div class="cert-card r">
+
+      <div class="cert-card r" data-seed="2">
         <div class="cert-body" style="flex-direction:column; align-items:flex-start; gap:10px">
+          <div class="rev-stars-row">
+            <div class="rev-stars" aria-label="5 out of 5 stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          </div>
           <i class="fas fa-quote-left" style="color:var(--gold); opacity:.5; font-size:1.2rem"></i>
           <p style="color:var(--text-sub); font-size:.92rem; line-height:1.6">"Your portfolio demonstrates a high level of professionalism and thoughtful design. The structure is intuitive, the content is clearly articulated, and your projects effectively showcase both technical competence and creative vision. The clarity with which you present your skills makes it easy for any viewer to grasp your strengths. Excellent work — this is a strong foundation for continued growth and success."</p>
         </div>
-        <div class="cert-footer" style="border-top:1px solid var(--border); padding-top:12px">
-          <span style="color:var(--text); font-weight:500">Bhanu — Junior Python Developer</span>
-          <span class="cert-yr">Brilliant Technologies</span>
+        <div class="cert-footer" style="border-top:1px solid var(--border); padding-top:12px; flex-wrap:wrap; gap:8px">
+          <div>
+            <span style="color:var(--text); font-weight:500; display:block">Bhanu — Junior Python Developer</span>
+            <span class="cert-yr">Brilliant Technologies</span>
+          </div>
+          <button class="rev-like-btn" data-seed-id="2" onclick="toggleLike(this)"><i class="fas fa-thumbs-up"></i> <span class="rev-like-count">0</span></button>
         </div>
       </div>
-    <!--  <div class="cert-card r">
-        <div class="cert-body" style="flex-direction:column; align-items:flex-start; gap:10px">
-          <i class="fas fa-quote-left" style="color:var(--gold); opacity:.5; font-size:1.2rem"></i>
-          <p style="color:var(--text-sub); font-size:.92rem; line-height:1.6">"Add a short quote from a client/internship mentor about reliability, communication, or technical skill."</p>
-        </div>
-        <div class="cert-footer" style="border-top:1px solid var(--border); padding-top:12px">
-          <span style="color:var(--text); font-weight:500">Name — Role</span>
-          <span class="cert-yr">Company / Institute</span> -->
+      <!-- dynamic, visitor-submitted reviews get injected here by JS -->
+    </div>
+
+    <!-- ── ADD REVIEW CARD ── -->
+    <div class="add-review-wrap r">
+      <button class="add-review-toggle" id="addReviewToggle" onclick="toggleReviewForm()">
+        <i class="fas fa-pen-nib"></i> Add Your Review
+      </button>
+
+      <div class="add-review-card" id="addReviewCard">
+        <h4><i class="fas fa-star" style="color:var(--gold)"></i> Share Your Experience</h4>
+        <p class="add-review-sub">Worked with Murthu or explored the portfolio? Leave a quick review — it shows up below instantly.</p>
+
+        <div class="form-wrap" style="gap:14px">
+          
+          <div class="form-row">
+            <input type="text" id="rev-name" class="f-input" placeholder="Your Name *">
+            <input type="text" id="rev-role" class="f-input" placeholder="Role / Company (optional)">
+          </div>
+
+          <textarea id="rev-msg" class="f-textarea" placeholder="Write your review... *" style="min-height:90px"></textarea>
+
+          <div style="display:flex; gap:12px; flex-wrap:wrap">
+            <button type="button" class="btn-gold" id="rev-submit-btn" style="border:none; flex:1; justify-content:center; min-width:160px" onclick="submitReview()">
+              <i class="fas fa-paper-plane"></i> Submit Testimonial
+            </button>
+            <button type="button" class="btn-ghost" style="border:none; flex:0 0 auto; cursor:pointer; background:transparent" onclick="toggleReviewForm()">
+              Cancel
+            </button>
+          </div>
+
+          <p id="review-status" style="font-size:.78rem; margin-top:2px; line-height:1.5;"></p>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 <div class="divider"></div>
@@ -1438,6 +1532,201 @@ function sendWhatsApp() {
   if (!name && !message) text = `👋 Hi Murthu! I saw your portfolio and want to connect.`;
 
   window.open(`https://wa.me/919100850087?text=${encodeURIComponent(text)}`, '_blank');
+}
+
+// ══════════════════════════════════════════════════════════════
+//  ⭐ REVIEWS / TESTIMONIALS SYSTEM
+//  - Visitor-submitted reviews save to localStorage (this browser)
+//    AND email Murthu via Web3Forms so he can verify/curate.
+//  - Like button counts persist per-browser in localStorage too.
+// ══════════════════════════════════════════════════════════════
+const REVIEWS_KEY = 'murthu_portfolio_reviews';
+const LIKES_KEY   = 'murthu_portfolio_review_likes';
+let selectedStars = 0;
+
+function toggleReviewForm() {
+  const card = document.getElementById('addReviewCard');
+  const toggle = document.getElementById('addReviewToggle');
+  const showing = card.classList.toggle('show');
+  toggle.innerHTML = showing
+    ? '<i class="fas fa-chevron-up"></i> Close Form'
+    : '<i class="fas fa-pen-nib"></i> Add Your Review';
+  if (showing) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// star picker interactivity
+document.addEventListener('DOMContentLoaded', () => {
+  const picker = document.getElementById('starPicker');
+  if (!picker) return;
+  const stars = picker.querySelectorAll('i[data-val]');
+  const label = document.getElementById('starLabel');
+  const labels = { 1: 'Poor', 2: 'Fair', 3: 'Good', 4: 'Very Good', 5: 'Excellent!' };
+
+  function paint(val) {
+    stars.forEach(s => s.classList.toggle('active', parseInt(s.dataset.val) <= val));
+  }
+  stars.forEach(s => {
+    s.addEventListener('mouseenter', () => paint(parseInt(s.dataset.val)));
+    s.addEventListener('mouseleave', () => paint(selectedStars));
+    s.addEventListener('click', () => {
+      selectedStars = parseInt(s.dataset.val);
+      paint(selectedStars);
+      label.textContent = labels[selectedStars] || 'Tap a star to rate';
+    });
+  });
+
+  renderSavedReviews();
+  applyLikeCounts();
+});
+
+function getSavedReviews() {
+  try { return JSON.parse(localStorage.getItem(REVIEWS_KEY)) || []; }
+  catch { return []; }
+}
+
+function renderSavedReviews() {
+  const grid = document.getElementById('reviews-grid');
+  const reviews = getSavedReviews();
+  reviews.forEach(rv => grid.appendChild(buildReviewCard(rv)));
+}
+
+function buildReviewCard(rv) {
+  const card = document.createElement('div');
+  card.className = 'cert-card r v'; // 'v' = already visible, skip the scroll-reveal wait
+  card.dataset.seed = rv.id;
+
+  const starsHTML = Array.from({ length: 5 }, (_, i) =>
+    `<i class="fas fa-star" style="opacity:${i < rv.stars ? 1 : .25}"></i>`
+  ).join('');
+
+  card.innerHTML = `
+    <div class="cert-body" style="flex-direction:column; align-items:flex-start; gap:10px">
+      <div class="rev-stars-row">
+        <div class="rev-stars" aria-label="${rv.stars} out of 5 stars">${starsHTML}</div>
+        <span class="rev-badge-new"><i class="fas fa-sparkles"></i> New</span>
+      </div>
+      <i class="fas fa-quote-left" style="color:var(--gold); opacity:.5; font-size:1.2rem"></i>
+      <p style="color:var(--text-sub); font-size:.92rem; line-height:1.6">"${escapeHTML(rv.message)}"</p>
+    </div>
+    <div class="cert-footer" style="border-top:1px solid var(--border); padding-top:12px; flex-wrap:wrap; gap:8px">
+      <div>
+        <span style="color:var(--text); font-weight:500; display:block">${escapeHTML(rv.name)}${rv.role ? ' — ' + escapeHTML(rv.role) : ''}</span>
+        <span class="cert-yr">${rv.date}</span>
+      </div>
+      <button class="rev-like-btn" data-seed-id="${rv.id}" onclick="toggleLike(this)"><i class="fas fa-thumbs-up"></i> <span class="rev-like-count">0</span></button>
+    </div>
+  `;
+  return card;
+}
+
+function escapeHTML(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+function setReviewStatus(msg, color) {
+  const s = document.getElementById('review-status');
+  if (s) { s.style.color = color; s.innerHTML = msg; }
+}
+
+async function submitReview() {
+  const name = document.getElementById('rev-name').value.trim();
+  const role = document.getElementById('rev-role').value.trim();
+  const msg  = document.getElementById('rev-msg').value.trim();
+  const btn  = document.getElementById('rev-submit-btn');
+
+  if (!name || !msg) {
+    setReviewStatus('⚠️ Please enter your name and a review message.', '#f87171');
+    return;
+  }
+  if (selectedStars === 0) {
+    setReviewStatus('⚠️ Please tap a star rating.', '#f87171');
+    return;
+  }
+
+  const review = {
+    id: 'rv_' + Date.now(),
+    name, role, message: msg, stars: selectedStars,
+    date: new Date().toLocaleDateString('en-IN', { month: 'short', year: 'numeric' })
+  };
+
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+
+  // Save locally so it shows up immediately
+  const reviews = getSavedReviews();
+  reviews.unshift(review);
+  localStorage.setItem(REVIEWS_KEY, JSON.stringify(reviews));
+
+  const grid = document.getElementById('reviews-grid');
+  const newCard = buildReviewCard(review);
+  grid.insertBefore(newCard, grid.firstChild.nextSibling); // after first card, near top
+
+  // Notify Murthu via email (same Web3Forms key as contact form) so he can verify
+  try {
+    await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: `⭐ New Portfolio Review from ${name}`,
+        from_name: name,
+        message: `New review submitted on portfolio:\n\nName: ${name}\nRole/Company: ${role || 'Not mentioned'}\nRating: ${selectedStars}/5\n\nReview:\n${msg}`
+      })
+    });
+  } catch (err) {
+    console.error('Review email notify failed:', err);
+  }
+
+  // Reset form
+  document.getElementById('rev-name').value = '';
+  document.getElementById('rev-role').value = '';
+  document.getElementById('rev-msg').value = '';
+  selectedStars = 0;
+  document.querySelectorAll('#starPicker i').forEach(s => s.classList.remove('active'));
+  document.getElementById('starLabel').textContent = 'Tap a star to rate';
+
+  setReviewStatus('✅ Thank you! Your review is now live below.', '#3dba8c');
+  btn.disabled = false;
+  btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Review';
+
+  setTimeout(() => { toggleReviewForm(); setReviewStatus('', ''); }, 1800);
+}
+
+// ── LIKE BUTTON ──
+function getLikes() {
+  try { return JSON.parse(localStorage.getItem(LIKES_KEY)) || {}; }
+  catch { return {}; }
+}
+
+function applyLikeCounts() {
+  const likes = getLikes();
+  document.querySelectorAll('.rev-like-btn').forEach(btn => {
+    const id = btn.dataset.seedId;
+    const entry = likes[id] || { count: 0, liked: false };
+    btn.querySelector('.rev-like-count').textContent = entry.count;
+    btn.classList.toggle('liked', entry.liked);
+  });
+}
+
+function toggleLike(btn) {
+  const id = btn.dataset.seedId;
+  const likes = getLikes();
+  const entry = likes[id] || { count: 0, liked: false };
+
+  if (entry.liked) {
+    entry.count = Math.max(0, entry.count - 1);
+    entry.liked = false;
+  } else {
+    entry.count += 1;
+    entry.liked = true;
+  }
+  likes[id] = entry;
+  localStorage.setItem(LIKES_KEY, JSON.stringify(likes));
+
+  btn.querySelector('.rev-like-count').textContent = entry.count;
+  btn.classList.toggle('liked', entry.liked);
 }
 </script>
 </body>
