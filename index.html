@@ -1682,14 +1682,39 @@ function sendWhatsApp() {
 }
 
 // ══════════════════════════════════════════════════════════════
-//  ⭐ REVIEWS / TESTIMONIALS SYSTEM
-//  - Visitor-submitted reviews save to localStorage (this browser)
-//    AND email Murthu via Web3Forms so he can verify/curate.
-//  - Like button counts persist per-browser in localStorage too.
+//  ⭐ REVIEWS / TESTIMONIALS SYSTEM  —  SHARED (visible to ALL visitors)
+//  Storage: jsonblob.com (free, no login needed, works like a tiny shared DB)
+//
+//  ⚠️ ONE-TIME SETUP (takes 1 minute, do this BEFORE going live):
+//    1. Open https://jsonblob.com in your browser
+//    2. In the editor box, type:  []
+//    3. Click "Save" (top right)
+//    4. Your browser URL bar will now show something like:
+//       https://jsonblob.com/a1b2c3d4-e5f6-7890-abcd-ef1234567890
+//    5. Copy ONLY that last part (after the last "/") and paste it
+//       below, replacing the empty quotes:
+//         const REVIEWS_BIN_ID = 'a1b2c3d4-e5f6-7890-abcd-ef1234567890';
+//    6. Save this file and re-upload. Done — now every visitor sees
+//       the SAME reviews, and new ones show up for everyone.
+//
+//  Until you do this, reviews just save to YOUR OWN browser only
+//  (old behavior) so the site never breaks.
+//
+//  🔒 ADMIN DELETE (hidden from visitors):
+//    Click the "What People Say" heading 5 times quickly → it asks
+//    for the password below → correct password unlocks a small
+//    delete (🗑) button on every review, for you only.
+//    CHANGE THIS PASSWORD before publishing:
 // ══════════════════════════════════════════════════════════════
-const REVIEWS_KEY = 'murthu_portfolio_reviews';
+const REVIEWS_BIN_ID  = '';                 // <-- paste your jsonblob.com ID here (step 5 above)
+const ADMIN_PASSWORD  = 'Murthu@2026';      // <-- change this to your own secret
+const JSONBLOB_BASE   = 'https://jsonblob.com/api/jsonBlob';
+
+const REVIEWS_KEY = 'murthu_portfolio_reviews';   // local fallback / backup copy
 const LIKES_KEY   = 'murthu_portfolio_review_likes';
 let selectedStars = 0;
+let isAdmin = sessionStorage.getItem('murthu_admin') === '1';
+let liveReviews = [];
 
 function toggleReviewForm() {
   const card = document.getElementById('addReviewCard');
@@ -1722,19 +1747,81 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  renderSavedReviews();
+  loadAndRenderReviews();
   applyLikeCounts();
+  setupAdminTrigger();
 });
 
-function getSavedReviews() {
+function getLocalReviews() {
   try { return JSON.parse(localStorage.getItem(REVIEWS_KEY)) || []; }
   catch { return []; }
 }
 
-function renderSavedReviews() {
+async function fetchSharedReviews() {
+  if (!REVIEWS_BIN_ID) return getLocalReviews(); // not set up yet — fall back
+  try {
+    const res = await fetch(`${JSONBLOB_BASE}/${REVIEWS_BIN_ID}`);
+    if (!res.ok) throw new Error('bad response');
+    return await res.json();
+  } catch (e) {
+    console.error('Could not load shared reviews, showing local copy instead:', e);
+    return getLocalReviews();
+  }
+}
+
+async function saveSharedReviews(reviews) {
+  localStorage.setItem(REVIEWS_KEY, JSON.stringify(reviews)); // always keep a backup
+  if (!REVIEWS_BIN_ID) return; // not set up yet
+  try {
+    await fetch(`${JSONBLOB_BASE}/${REVIEWS_BIN_ID}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(reviews)
+    });
+  } catch (e) {
+    console.error('Could not save to shared storage:', e);
+  }
+}
+
+async function loadAndRenderReviews() {
+  liveReviews = await fetchSharedReviews();
   const grid = document.getElementById('reviews-grid');
-  const reviews = getSavedReviews();
-  reviews.forEach(rv => grid.appendChild(buildReviewCard(rv)));
+  liveReviews.forEach(rv => grid.appendChild(buildReviewCard(rv)));
+  applyLikeCounts();
+}
+
+function setupAdminTrigger() {
+  const heading = document.querySelector('#testimonials .sec-title');
+  if (!heading) return;
+  heading.style.cursor = 'pointer';
+  heading.title = '';
+  let clicks = 0, timer;
+  heading.addEventListener('click', () => {
+    if (isAdmin) return; // already unlocked
+    clicks++;
+    clearTimeout(timer);
+    timer = setTimeout(() => { clicks = 0; }, 1500);
+    if (clicks >= 5) {
+      clicks = 0;
+      const pass = prompt('Admin password:');
+      if (pass === null) return;
+      if (pass === ADMIN_PASSWORD) {
+        sessionStorage.setItem('murthu_admin', '1');
+        alert('✅ Admin mode unlocked. Delete buttons are now visible to you only.');
+        location.reload();
+      } else {
+        alert('❌ Wrong password.');
+      }
+    }
+  });
+}
+
+async function deleteReview(id) {
+  if (!isAdmin) return;
+  if (!confirm('Delete this review permanently for everyone?')) return;
+  liveReviews = liveReviews.filter(r => r.id !== id);
+  await saveSharedReviews(liveReviews);
+  document.querySelector(`[data-seed="${id}"]`)?.remove();
 }
 
 function buildReviewCard(rv) {
@@ -1761,6 +1848,7 @@ function buildReviewCard(rv) {
         <span class="cert-yr">${rv.date}</span>
       </div>
       <button class="rev-like-btn" data-seed-id="${rv.id}" onclick="toggleLike(this)"><i class="fas fa-thumbs-up"></i> <span class="rev-like-count">0</span></button>
+      ${isAdmin ? `<button class="rev-del-btn" onclick="deleteReview('${rv.id}')" style="background:transparent;border:1px solid #f87171;color:#f87171;border-radius:6px;padding:6px 10px;cursor:pointer;font-size:.78rem;margin-left:6px"><i class="fas fa-trash"></i></button>` : ''}
     </div>
   `;
   return card;
@@ -1801,10 +1889,9 @@ async function submitReview() {
   btn.disabled = true;
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
 
-  // Save locally so it shows up immediately
-  const reviews = getSavedReviews();
-  reviews.unshift(review);
-  localStorage.setItem(REVIEWS_KEY, JSON.stringify(reviews));
+  // Save to shared storage so it shows up for ALL visitors
+  liveReviews.unshift(review);
+  await saveSharedReviews(liveReviews);
 
   const grid = document.getElementById('reviews-grid');
   const newCard = buildReviewCard(review);
