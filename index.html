@@ -1712,9 +1712,11 @@ const JSONBLOB_BASE   = 'https://jsonblob.com/api/jsonBlob';
 
 const REVIEWS_KEY = 'murthu_portfolio_reviews';   // local fallback / backup copy
 const LIKES_KEY   = 'murthu_portfolio_review_likes';
+const MY_REVIEWS_KEY = 'murthu_portfolio_my_review_ids'; // ids of reviews THIS browser submitted
 let selectedStars = 0;
 let isAdmin = sessionStorage.getItem('murthu_admin') === '1';
 let liveReviews = [];
+let editingReviewId = null;
 
 function toggleReviewForm() {
   const card = document.getElementById('addReviewCard');
@@ -1723,7 +1725,13 @@ function toggleReviewForm() {
   toggle.innerHTML = showing
     ? '<i class="fas fa-chevron-up"></i> Close Form'
     : '<i class="fas fa-pen-nib"></i> Add Your Review';
-  if (showing) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  if (showing) {
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } else if (!showing) {
+    // closing/cancelling — reset edit mode so next open starts fresh
+    editingReviewId = null;
+    document.getElementById('rev-submit-btn').innerHTML = '<i class="fas fa-paper-plane"></i> Submit Testimonial';
+  }
 }
 
 // star picker interactivity
@@ -1760,8 +1768,11 @@ function getLocalReviews() {
 async function fetchSharedReviews() {
   if (!REVIEWS_BIN_ID) return getLocalReviews(); // not set up yet — fall back
   try {
-    const res = await fetch(`${JSONBLOB_BASE}/${REVIEWS_BIN_ID}`);
-    if (!res.ok) throw new Error('bad response');
+    const res = await fetch(`${JSONBLOB_BASE}/${REVIEWS_BIN_ID}`, {
+      cache: 'no-store',
+      headers: { 'Cache-Control': 'no-cache' }
+    });
+    if (!res.ok) throw new Error('bad response: ' + res.status);
     return await res.json();
   } catch (e) {
     console.error('Could not load shared reviews, showing local copy instead:', e);
@@ -1773,13 +1784,29 @@ async function saveSharedReviews(reviews) {
   localStorage.setItem(REVIEWS_KEY, JSON.stringify(reviews)); // always keep a backup
   if (!REVIEWS_BIN_ID) return; // not set up yet
   try {
-    await fetch(`${JSONBLOB_BASE}/${REVIEWS_BIN_ID}`, {
+    const res = await fetch(`${JSONBLOB_BASE}/${REVIEWS_BIN_ID}`, {
       method: 'PUT',
+      cache: 'no-store',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(reviews)
     });
+    if (!res.ok) throw new Error('bad response: ' + res.status);
   } catch (e) {
     console.error('Could not save to shared storage:', e);
+    if (isAdmin) alert('⚠️ Could not sync to shared storage. Check your internet or any ad-blocker that might be blocking jsonblob.com.');
+  }
+}
+
+function getMyReviewIds() {
+  try { return JSON.parse(localStorage.getItem(MY_REVIEWS_KEY)) || []; }
+  catch { return []; }
+}
+
+function addMyReviewId(id) {
+  const ids = getMyReviewIds();
+  if (!ids.includes(id)) {
+    ids.push(id);
+    localStorage.setItem(MY_REVIEWS_KEY, JSON.stringify(ids));
   }
 }
 
@@ -1824,6 +1851,29 @@ async function deleteReview(id) {
   document.querySelector(`[data-seed="${id}"]`)?.remove();
 }
 
+function editReview(id) {
+  const rv = liveReviews.find(r => r.id === id);
+  if (!rv) { alert('Could not find this review to edit (try refreshing the page).'); return; }
+
+  editingReviewId = id;
+  document.getElementById('rev-name').value = rv.name;
+  document.getElementById('rev-role').value = rv.role || '';
+  document.getElementById('rev-msg').value = rv.message;
+  selectedStars = rv.stars;
+  document.querySelectorAll('#starPicker i').forEach(s => s.classList.toggle('active', parseInt(s.dataset.val) <= rv.stars));
+  document.getElementById('starLabel').textContent = ['', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent!'][rv.stars] || 'Tap a star to rate';
+
+  document.getElementById('rev-submit-btn').innerHTML = '<i class="fas fa-pen"></i> Update Testimonial';
+
+  const card = document.getElementById('addReviewCard');
+  const toggle = document.getElementById('addReviewToggle');
+  if (!card.classList.contains('show')) {
+    card.classList.add('show');
+    toggle.innerHTML = '<i class="fas fa-chevron-up"></i> Close Form';
+  }
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
 function buildReviewCard(rv) {
   const card = document.createElement('div');
   card.className = 'cert-card r v'; // 'v' = already visible, skip the scroll-reveal wait
@@ -1848,6 +1898,7 @@ function buildReviewCard(rv) {
         <span class="cert-yr">${rv.date}</span>
       </div>
       <button class="rev-like-btn" data-seed-id="${rv.id}" onclick="toggleLike(this)"><i class="fas fa-thumbs-up"></i> <span class="rev-like-count">0</span></button>
+      ${getMyReviewIds().includes(rv.id) && !isAdmin ? `<button class="rev-edit-btn" onclick="editReview('${rv.id}')" style="background:transparent;border:1px solid var(--gold);color:var(--gold);border-radius:6px;padding:6px 10px;cursor:pointer;font-size:.78rem;margin-left:6px"><i class="fas fa-pen"></i> Edit</button>` : ''}
       ${isAdmin ? `<button class="rev-del-btn" onclick="deleteReview('${rv.id}')" style="background:transparent;border:1px solid #f87171;color:#f87171;border-radius:6px;padding:6px 10px;cursor:pointer;font-size:.78rem;margin-left:6px"><i class="fas fa-trash"></i></button>` : ''}
     </div>
   `;
@@ -1880,24 +1931,39 @@ async function submitReview() {
     return;
   }
 
-  const review = {
-    id: 'rv_' + Date.now(),
-    name, role, message: msg, stars: selectedStars,
-    date: new Date().toLocaleDateString('en-IN', { month: 'short', year: 'numeric' })
-  };
+  const review = editingReviewId
+    ? (() => {
+        const existing = liveReviews.find(r => r.id === editingReviewId);
+        return Object.assign({}, existing, { name, role, message: msg, stars: selectedStars });
+      })()
+    : {
+        id: 'rv_' + Date.now(),
+        name, role, message: msg, stars: selectedStars,
+        date: new Date().toLocaleDateString('en-IN', { month: 'short', year: 'numeric' })
+      };
 
   btn.disabled = true;
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
 
-  // Save to shared storage so it shows up for ALL visitors
-  liveReviews.unshift(review);
-  await saveSharedReviews(liveReviews);
+  if (editingReviewId) {
+    // Update existing review in place
+    const idx = liveReviews.findIndex(r => r.id === editingReviewId);
+    if (idx !== -1) liveReviews[idx] = review;
+    await saveSharedReviews(liveReviews);
+    document.querySelector(`[data-seed="${review.id}"]`)?.replaceWith(buildReviewCard(review));
+  } else {
+    // Save to shared storage so it shows up for ALL visitors
+    liveReviews.unshift(review);
+    await saveSharedReviews(liveReviews);
+    addMyReviewId(review.id); // remember this is MY review so I see an Edit button later
 
-  const grid = document.getElementById('reviews-grid');
-  const newCard = buildReviewCard(review);
-  grid.insertBefore(newCard, grid.firstChild.nextSibling); // after first card, near top
+    const grid = document.getElementById('reviews-grid');
+    const newCard = buildReviewCard(review);
+    grid.insertBefore(newCard, grid.firstChild.nextSibling); // after first card, near top
+  }
 
   // Notify Murthu via email (same Web3Forms key as contact form) so he can verify
+  if (!editingReviewId) {
   try {
     await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
@@ -1912,6 +1978,10 @@ async function submitReview() {
   } catch (err) {
     console.error('Review email notify failed:', err);
   }
+  }
+
+  const wasEditing = !!editingReviewId;
+  editingReviewId = null;
 
   // Reset form
   document.getElementById('rev-name').value = '';
@@ -1921,7 +1991,7 @@ async function submitReview() {
   document.querySelectorAll('#starPicker i').forEach(s => s.classList.remove('active'));
   document.getElementById('starLabel').textContent = 'Tap a star to rate';
 
-  setReviewStatus('✅ Thank you! Your review is now live below.', '#3dba8c');
+  setReviewStatus(wasEditing ? '✅ Your review has been updated!' : '✅ Thank you! Your review is now live below.', '#3dba8c');
   btn.disabled = false;
   btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Review';
 
