@@ -511,6 +511,15 @@ section { padding: 100px 64px; position: relative; z-index: 2; }
 .rev-stars { display: flex; gap: 3px; color: var(--gold); font-size: .82rem; }
 .rev-stars .fa-star { opacity: .35; }
 .rev-stars .fa-star:nth-child(-n+5) { opacity: 1; } /* default: all 5 filled, overridden by inline style if needed */
+.star-picker-wrap { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.star-picker { display: flex; gap: 8px; }
+.star-picker i {
+  font-size: 1.6rem; color: var(--text-muted); opacity: .4; cursor: pointer;
+  transition: transform .18s ease, color .18s ease, opacity .18s ease;
+}
+.star-picker i:hover { transform: scale(1.15); }
+.star-picker i.active { color: var(--gold); opacity: 1; text-shadow: 0 0 14px rgba(196,164,104,.5); }
+.star-label { font-size: .82rem; color: var(--text-sub); }
 .rev-badge-new {
   font-size: .6rem; font-family: 'JetBrains Mono', monospace; letter-spacing: .06em;
   color: var(--green); background: rgba(61,186,140,.1); border: 1px solid rgba(61,186,140,.25);
@@ -682,15 +691,68 @@ footer {
   .proj-card.feat { grid-column: span 1; }
   footer { flex-direction: column; gap: 16px; text-align: center; }
 }
+/* ── MOBILE NAV TOGGLE ── */
+.nav-toggle { display: none; }
 @media(max-width:768px) {
   nav { padding: 0 20px; }
-  .nav-links { display: none; }
+  .nav-hire { display: none; }
+  .nav-toggle {
+    display: flex; flex-direction: column; justify-content: center; gap: 5px;
+    width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--card); cursor: pointer; padding: 0; z-index: 600;
+  }
+  .nav-toggle span { display: block; width: 18px; height: 2px; background: var(--gold); margin: 0 auto; transition: all .3s; }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-links {
+    position: fixed; top: 68px; left: 0; right: 0;
+    flex-direction: column; gap: 0;
+    background: rgba(6,7,13,.98); backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    max-height: 0; overflow: hidden; transition: max-height .35s ease;
+  }
+  .nav-links.open { max-height: 480px; }
+  .nav-links li { width: 100%; }
+  .nav-links a { display: block; padding: 16px 24px; border-bottom: 1px solid var(--border); }
+  .nav-links a::after { display: none; }
+  .nav-mobile-hire { display: block; margin: 16px 24px 20px; text-align: center; padding: 12px; border-radius: 8px; background: var(--gold); color: var(--bg); font-weight: 700; font-size: .82rem; text-decoration: none; }
   section { padding: 64px 20px; }
   .divider { margin: 0 20px; }
   #home { padding: 100px 20px 60px; }
   .skills-layout { grid-template-columns: 1fr; }
   footer { padding: 28px 20px; }
   .hero-metrics { gap: 20px; }
+  .hero-actions { flex-wrap: wrap; }
+}
+@media(min-width:769px) { .nav-mobile-hire { display: none; } }
+
+/* ── POLISH: scrollbar, focus, buttons, cards ── */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: linear-gradient(var(--gold-dim), var(--gold)); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--gold-light); outline-offset: 3px; border-radius: 4px;
+}
+.btn-gold, .btn-outline-w, .btn-ghost, .nav-hire {
+  position: relative; overflow: hidden;
+}
+.btn-gold::before, .nav-hire::before {
+  content: ''; position: absolute; top: 0; left: -120%; width: 60%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.35), transparent);
+  transform: skewX(-20deg); transition: left .6s ease;
+}
+.btn-gold:hover::before, .nav-hire:hover::before { left: 130%; }
+.proj-card, .cert-card, .ib { transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s, border-color .35s; }
+.proj-card:hover, .cert-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px -16px rgba(0,0,0,.55), 0 0 0 1px var(--border-glow);
+}
+.proj-img, .proj-card img { transition: transform .6s cubic-bezier(.22,1,.36,1); }
+.proj-card:hover .proj-img, .proj-card:hover img { transform: scale(1.07); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
 /* ── SUCCESS OVERLAY ── */
@@ -763,16 +825,19 @@ footer {
 <!-- NAV -->
 <nav id="navbar">
   <a href="#home" class="nav-brand">Murthu - Folio<span></span></a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="navLinks">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#certifications">Certs</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
+    <a href="https://wa.me/919100850087" target="_blank" class="nav-mobile-hire">Hire Me</a>
   </ul>
   <a href="https://wa.me/919100850087" target="_blank" class="nav-hire"><i class="fab fa-whatsapp"></i> Hire Me</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- ═══════ HERO ═══════ -->
@@ -1022,6 +1087,7 @@ footer {
       <button class="pf-btn active" onclick="filterProj('all',this)">All Projects</button>
       <button class="pf-btn" onclick="filterProj('erp',this)">ERPNext / Frappe</button>
       <button class="pf-btn" onclick="filterProj('python',this)">Python / Django</button>
+      <button class="pf-btn" onclick="filterProj('java',this)">Java Full Stack</button>
       <button class="pf-btn" onclick="filterProj('web',this)">Web Apps</button>
     </div>
     <div class="proj-grid" id="proj-grid">
@@ -1112,7 +1178,58 @@ footer {
           <div class="proj-title">Notes Application</div>
           <div class="proj-desc">Responsive notes app with local storage persistence, search, and smooth UX for quick note-taking.</div>
           <div class="proj-tech"><span class="p-tech">HTML</span><span class="p-tech">CSS</span><span class="p-tech">JavaScript</span><span class="p-tech">LocalStorage</span></div>
-          <div class="proj-links"><a href="https://pinjarimurthujavali.github.io/Project-3-Notes-Application/" target="_blank" class="pl pl-demo"><i class="fas fa-external-link-alt"></i> Live</a><a href="https://github.com/PinjariMurthujavali/Project-3-Notes-Application" target="_blank" class="pl pl-gh"><i class="fab fa-github"></i> GitHub</a></div>
+      <div class="proj-card r" data-cat="python">
+        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-user-graduate"></i></div><span class="pbadge pb-web">Python / Django</span></div>
+        <div class="proj-body">
+          <div class="proj-title">Student Management System</div>
+          <div class="proj-desc">Full-stack Django application to manage student records, attendance, marks and course enrollment with an admin dashboard, role-based login and search/filter reports.</div>
+          <div class="proj-tech"><span class="p-tech">Python</span><span class="p-tech">Django</span><span class="p-tech">SQLite</span><span class="p-tech">Bootstrap</span></div>
+          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-code-branch"></i> Academic Project</a></div>
+        </div>
+      </div>
+      <div class="proj-card r" data-cat="python">
+        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-book-reader"></i></div><span class="pbadge pb-web">Python / Django</span></div>
+        <div class="proj-body">
+          <div class="proj-title">Library Management System</div>
+          <div class="proj-desc">Django-based library system for book cataloguing, issue/return tracking, due-date reminders and member management with a clean staff dashboard.</div>
+          <div class="proj-tech"><span class="p-tech">Python</span><span class="p-tech">Django</span><span class="p-tech">MySQL</span><span class="p-tech">HTML/CSS</span></div>
+          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-code-branch"></i> Academic Project</a></div>
+        </div>
+      </div>
+      <div class="proj-card r" data-cat="python">
+        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-shopping-basket"></i></div><span class="pbadge pb-web">Python / Django</span></div>
+        <div class="proj-body">
+          <div class="proj-title">Online Shopping Cart System</div>
+          <div class="proj-desc">Basic e-commerce app built with Django — product catalog, cart, checkout flow and order history with simple authentication.</div>
+          <div class="proj-tech"><span class="p-tech">Python</span><span class="p-tech">Django</span><span class="p-tech">SQLite</span></div>
+          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-code-branch"></i> Academic Project</a></div>
+        </div>
+      </div>
+      <div class="proj-card r" data-cat="java">
+        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-id-badge"></i></div><span class="pbadge pb-web">Java Full Stack</span></div>
+        <div class="proj-body">
+          <div class="proj-title">Employee Management System</div>
+          <div class="proj-desc">Java full-stack application to manage employee records, departments, attendance and payroll, built with Spring Boot REST APIs and a JDBC/MySQL backend.</div>
+          <div class="proj-tech"><span class="p-tech">Java</span><span class="p-tech">Spring Boot</span><span class="p-tech">JDBC</span><span class="p-tech">MySQL</span><span class="p-tech">HTML/CSS</span></div>
+          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-code-branch"></i> Academic Project</a></div>
+        </div>
+      </div>
+      <div class="proj-card r" data-cat="java">
+        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-university"></i></div><span class="pbadge pb-web">Java Full Stack</span></div>
+        <div class="proj-body">
+          <div class="proj-title">Bank Management System</div>
+          <div class="proj-desc">Core banking simulation in Java — account creation, deposits/withdrawals, balance enquiry and transaction history with a JDBC-connected MySQL database.</div>
+          <div class="proj-tech"><span class="p-tech">Java</span><span class="p-tech">Servlets/JSP</span><span class="p-tech">JDBC</span><span class="p-tech">MySQL</span></div>
+          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-code-branch"></i> Academic Project</a></div>
+        </div>
+      </div>
+      <div class="proj-card r" data-cat="java">
+        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-hotel"></i></div><span class="pbadge pb-web">Java Full Stack</span></div>
+        <div class="proj-body">
+          <div class="proj-title">Hotel Reservation System</div>
+          <div class="proj-desc">Java web app for room booking, availability checks, billing and customer management, built with Spring MVC and a relational database.</div>
+          <div class="proj-tech"><span class="p-tech">Java</span><span class="p-tech">Spring MVC</span><span class="p-tech">MySQL</span><span class="p-tech">Bootstrap</span></div>
+          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-code-branch"></i> Academic Project</a></div>
         </div>
       </div>
     </div>
@@ -1231,6 +1348,13 @@ footer {
           <div class="form-row">
             <input type="text" id="rev-name" class="f-input" placeholder="Your Name *">
             <input type="text" id="rev-role" class="f-input" placeholder="Role / Company (optional)">
+          </div>
+
+          <div class="star-picker-wrap">
+            <div class="star-picker" id="starPicker">
+              <i class="fas fa-star" data-val="1"></i><i class="fas fa-star" data-val="2"></i><i class="fas fa-star" data-val="3"></i><i class="fas fa-star" data-val="4"></i><i class="fas fa-star" data-val="5"></i>
+            </div>
+            <span class="star-label" id="starLabel">Tap a star to rate</span>
           </div>
 
           <textarea id="rev-msg" class="f-textarea" placeholder="Write your review... *" style="min-height:90px"></textarea>
@@ -1395,8 +1519,29 @@ footer {
 const WEB3FORMS_KEY = "438c0f65-2c35-47a5-af69-c82f483de4f2";
 // ══════════════════════════════════════════════════════════════
 
-// ── CURSOR ──
+// ── MOBILE NAV TOGGLE ──
+const navToggle = document.getElementById('navToggle');
+const navLinksEl = document.getElementById('navLinks');
+if (navToggle && navLinksEl) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinksEl.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinksEl.classList.remove('open');
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
+}
+
+// ── CURSOR (disabled on touch devices) ──
 const cur = document.getElementById('cur'), ring = document.getElementById('cring');
+if (window.matchMedia('(hover: none), (pointer: coarse)').matches) {
+  document.body.style.cursor = 'auto';
+  if (cur) cur.style.display = 'none';
+  if (ring) ring.style.display = 'none';
+}
 let mx = 0, my = 0, rx = 0, ry = 0;
 document.addEventListener('mousemove', e => {
   mx = e.clientX; my = e.clientY;
