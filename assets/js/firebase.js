@@ -31,8 +31,8 @@ const firebaseConfig = {
   projectId: "portfolio-4cde5",
   storageBucket: "portfolio-4cde5.firebasestorage.app",
   messagingSenderId: "364217370442",
-  appId: "PASTE_MY_EXISTING_APP_ID",
-  measurementId: "PASTE_MY_EXISTING_MEASUREMENT_ID"
+  appId: "1:364217370442:web:bb7850714bf96e1f4163b3",
+  measurementId: "G-J2JYC707ET"
 };
 
 // Initialize Firebase only once
