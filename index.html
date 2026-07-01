@@ -1333,6 +1333,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         </div>
       </div>
       <!-- dynamic, visitor-submitted reviews get injected here by JS -->
+      <div id="dynamic-reviews-container"></div>
     </div>
 
     <!-- ── ADD REVIEW CARD ── -->
@@ -1509,6 +1510,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   </div>
 </footer>
 
+<!-- 🔥 Firebase v12 Modular SDK — initializes Firestore for the reviews system -->
+<script type="module" src="assets/js/firebase.js"></script>
+
 <script>
 // ══════════════════════════════════════════════════════════════
 //  WEB3FORMS SETUP — Free email service, no backend needed
@@ -1519,6 +1523,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 //  4. Paste it below replacing YOUR_WEB3FORMS_ACCESS_KEY
 // ══════════════════════════════════════════════════════════════
 const WEB3FORMS_KEY = "438c0f65-2c35-47a5-af69-c82f483de4f2";
+
+// ── Guard: avoid duplicate Firestore listeners if this script
+//    ever runs more than once (e.g. hot-reload during dev) ──
+let __reviewsUnsub = null;
 // ══════════════════════════════════════════════════════════════
 
 // ── MOBILE NAV TOGGLE ──
@@ -1682,35 +1690,23 @@ function sendWhatsApp() {
 }
 
 // ══════════════════════════════════════════════════════════════
-//  ⭐ REVIEWS / TESTIMONIALS SYSTEM  —  SHARED (visible to ALL visitors)
-//  Storage: jsonblob.com (free, no login needed, works like a tiny shared DB)
-//
-//  ⚠️ ONE-TIME SETUP (takes 1 minute, do this BEFORE going live):
-//    1. Open https://jsonblob.com in your browser
-//    2. In the editor box, type:  []
-//    3. Click "Save" (top right)
-//    4. Your browser URL bar will now show something like:
-//       https://jsonblob.com/a1b2c3d4-e5f6-7890-abcd-ef1234567890
-//    5. Copy ONLY that last part (after the last "/") and paste it
-//       below, replacing the empty quotes:
-//         const REVIEWS_BIN_ID = 'a1b2c3d4-e5f6-7890-abcd-ef1234567890';
-//    6. Save this file and re-upload. Done — now every visitor sees
-//       the SAME reviews, and new ones show up for everyone.
-//
-//  Until you do this, reviews just save to YOUR OWN browser only
-//  (old behavior) so the site never breaks.
+//  ⭐ REVIEWS / TESTIMONIALS SYSTEM  —  Firebase Cloud Firestore
+//  Project: portfolio-4cde5   |   Collection: reviews
+//  Real-time: uses onSnapshot(), so reviews load automatically,
+//  update instantly for every visitor, and if YOU delete a review
+//  directly from the Firebase Console, it disappears here too —
+//  no redeploy needed.
 //
 //  🔒 ADMIN DELETE (hidden from visitors):
 //    Click the "What People Say" heading 5 times quickly → it asks
 //    for the password below → correct password unlocks a small
-//    delete (🗑) button on every review, for you only.
+//    delete (🗑) button on every review, for you only. This is a
+//    client-side convenience gate — for real protection, lock down
+//    deletes in your Firestore Security Rules too.
 //    CHANGE THIS PASSWORD before publishing:
 // ══════════════════════════════════════════════════════════════
-const REVIEWS_BIN_ID  = '019f19d5-f689-7060-a12f-7da8b4917272';                 // <-- paste your jsonblob.com ID here (step 5 above)
 const ADMIN_PASSWORD  = 'Murthu@2026';      // <-- change this to your own secret
-const JSONBLOB_BASE   = 'https://jsonblob.com/api/jsonBlob';
 
-const REVIEWS_KEY = 'murthu_portfolio_reviews';   // local fallback / backup copy
 const LIKES_KEY   = 'murthu_portfolio_review_likes';
 const MY_REVIEWS_KEY = 'murthu_portfolio_my_review_ids'; // ids of reviews THIS browser submitted
 let selectedStars = 0;
@@ -1755,47 +1751,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  loadAndRenderReviews();
-  applyLikeCounts();
+  initReviewsListener();
   setupAdminTrigger();
 });
-
-function getLocalReviews() {
-  try { return JSON.parse(localStorage.getItem(REVIEWS_KEY)) || []; }
-  catch { return []; }
-}
-
-async function fetchSharedReviews() {
-  if (!REVIEWS_BIN_ID) return getLocalReviews(); // not set up yet — fall back
-  try {
-    const res = await fetch(`${JSONBLOB_BASE}/${REVIEWS_BIN_ID}`, {
-      cache: 'no-store',
-      headers: { 'Cache-Control': 'no-cache' }
-    });
-    if (!res.ok) throw new Error('bad response: ' + res.status);
-    return await res.json();
-  } catch (e) {
-    console.error('Could not load shared reviews, showing local copy instead:', e);
-    return getLocalReviews();
-  }
-}
-
-async function saveSharedReviews(reviews) {
-  localStorage.setItem(REVIEWS_KEY, JSON.stringify(reviews)); // always keep a backup
-  if (!REVIEWS_BIN_ID) return; // not set up yet
-  try {
-    const res = await fetch(`${JSONBLOB_BASE}/${REVIEWS_BIN_ID}`, {
-      method: 'PUT',
-      cache: 'no-store',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(reviews)
-    });
-    if (!res.ok) throw new Error('bad response: ' + res.status);
-  } catch (e) {
-    console.error('Could not save to shared storage:', e);
-    if (isAdmin) alert('⚠️ Could not sync to shared storage. Check your internet or any ad-blocker that might be blocking jsonblob.com.');
-  }
-}
 
 function getMyReviewIds() {
   try { return JSON.parse(localStorage.getItem(MY_REVIEWS_KEY)) || []; }
@@ -1810,11 +1768,37 @@ function addMyReviewId(id) {
   }
 }
 
-async function loadAndRenderReviews() {
-  liveReviews = await fetchSharedReviews();
-  const grid = document.getElementById('reviews-grid');
-  liveReviews.forEach(rv => grid.appendChild(buildReviewCard(rv)));
+// ── Firestore: real-time listener (one listener only, ever) ──
+function initReviewsListener() {
+  if (__reviewsUnsub) return; // already listening — never attach twice
+  if (!window.__fb) { setTimeout(initReviewsListener, 100); return; } // firebase.js still loading
+
+  const { db, collection, query, orderBy, onSnapshot } = window.__fb;
+  const reviewsQuery = query(collection(db, 'reviews'), orderBy('createdAt', 'desc'));
+
+  __reviewsUnsub = onSnapshot(reviewsQuery, (snapshot) => {
+    liveReviews = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+    renderReviews();
+  }, (error) => {
+    console.error('Reviews listener error:', error);
+    setReviewStatus('⚠️ Could not load reviews right now. Please refresh the page.', '#f87171');
+  });
+}
+
+// Re-draws only the dynamic (Firestore) cards; the two static
+// seed testimonials at the top of the grid are left untouched.
+function renderReviews() {
+  const container = document.getElementById('dynamic-reviews-container');
+  if (!container) return;
+  container.innerHTML = '';
+  liveReviews.forEach(rv => container.appendChild(buildReviewCard(rv)));
   applyLikeCounts();
+}
+
+function formatReviewDate(createdAt) {
+  if (!createdAt) return 'Just now'; // serverTimestamp() is briefly null right after submit
+  const d = typeof createdAt.toDate === 'function' ? createdAt.toDate() : new Date(createdAt);
+  return d.toLocaleDateString('en-IN', { month: 'short', day: 'numeric', year: 'numeric' });
 }
 
 function setupAdminTrigger() {
@@ -1846,9 +1830,15 @@ function setupAdminTrigger() {
 async function deleteReview(id) {
   if (!isAdmin) return;
   if (!confirm('Delete this review permanently for everyone?')) return;
-  liveReviews = liveReviews.filter(r => r.id !== id);
-  await saveSharedReviews(liveReviews);
-  document.querySelector(`[data-seed="${id}"]`)?.remove();
+  try {
+    const { db, doc, deleteDoc } = window.__fb;
+    await deleteDoc(doc(db, 'reviews', id));
+    // No manual DOM removal needed — the onSnapshot listener will
+    // re-render automatically the moment Firestore confirms the delete.
+  } catch (err) {
+    console.error('Failed to delete review:', err);
+    alert('❌ Could not delete this review. Please check your connection and try again.');
+  }
 }
 
 function editReview(id) {
@@ -1858,10 +1848,10 @@ function editReview(id) {
   editingReviewId = id;
   document.getElementById('rev-name').value = rv.name;
   document.getElementById('rev-role').value = rv.role || '';
-  document.getElementById('rev-msg').value = rv.message;
-  selectedStars = rv.stars;
-  document.querySelectorAll('#starPicker i').forEach(s => s.classList.toggle('active', parseInt(s.dataset.val) <= rv.stars));
-  document.getElementById('starLabel').textContent = ['', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent!'][rv.stars] || 'Tap a star to rate';
+  document.getElementById('rev-msg').value = rv.review;
+  selectedStars = rv.rating;
+  document.querySelectorAll('#starPicker i').forEach(s => s.classList.toggle('active', parseInt(s.dataset.val) <= rv.rating));
+  document.getElementById('starLabel').textContent = ['', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent!'][rv.rating] || 'Tap a star to rate';
 
   document.getElementById('rev-submit-btn').innerHTML = '<i class="fas fa-pen"></i> Update Testimonial';
 
@@ -1880,22 +1870,22 @@ function buildReviewCard(rv) {
   card.dataset.seed = rv.id;
 
   const starsHTML = Array.from({ length: 5 }, (_, i) =>
-    `<i class="fas fa-star" style="opacity:${i < rv.stars ? 1 : .25}"></i>`
+    `<i class="fas fa-star" style="opacity:${i < rv.rating ? 1 : .25}"></i>`
   ).join('');
 
   card.innerHTML = `
     <div class="cert-body" style="flex-direction:column; align-items:flex-start; gap:10px">
       <div class="rev-stars-row">
-        <div class="rev-stars" aria-label="${rv.stars} out of 5 stars">${starsHTML}</div>
+        <div class="rev-stars" aria-label="${rv.rating} out of 5 stars">${starsHTML}</div>
         <span class="rev-badge-new"><i class="fas fa-sparkles"></i> New</span>
       </div>
       <i class="fas fa-quote-left" style="color:var(--gold); opacity:.5; font-size:1.2rem"></i>
-      <p style="color:var(--text-sub); font-size:.92rem; line-height:1.6">"${escapeHTML(rv.message)}"</p>
+      <p style="color:var(--text-sub); font-size:.92rem; line-height:1.6">"${escapeHTML(rv.review)}"</p>
     </div>
     <div class="cert-footer" style="border-top:1px solid var(--border); padding-top:12px; flex-wrap:wrap; gap:8px">
       <div>
         <span style="color:var(--text); font-weight:500; display:block">${escapeHTML(rv.name)}${rv.role ? ' — ' + escapeHTML(rv.role) : ''}</span>
-        <span class="cert-yr">${rv.date}</span>
+        <span class="cert-yr">${formatReviewDate(rv.createdAt)}</span>
       </div>
       <button class="rev-like-btn" data-seed-id="${rv.id}" onclick="toggleLike(this)"><i class="fas fa-thumbs-up"></i> <span class="rev-like-count">0</span></button>
       ${getMyReviewIds().includes(rv.id) && !isAdmin ? `<button class="rev-edit-btn" onclick="editReview('${rv.id}')" style="background:transparent;border:1px solid var(--gold);color:var(--gold);border-radius:6px;padding:6px 10px;cursor:pointer;font-size:.78rem;margin-left:6px"><i class="fas fa-pen"></i> Edit</button>` : ''}
@@ -1922,80 +1912,87 @@ async function submitReview() {
   const msg  = document.getElementById('rev-msg').value.trim();
   const btn  = document.getElementById('rev-submit-btn');
 
-  if (!name || !msg) {
-    setReviewStatus('⚠️ Please enter your name and a review message.', '#f87171');
+  // ── Validation: Name required, Rating required, Review required ──
+  if (!name) {
+    setReviewStatus('⚠️ Please enter your name.', '#f87171');
     return;
   }
   if (selectedStars === 0) {
     setReviewStatus('⚠️ Please tap a star rating.', '#f87171');
     return;
   }
+  if (!msg) {
+    setReviewStatus('⚠️ Please write a review.', '#f87171');
+    return;
+  }
+  if (!window.__fb) {
+    setReviewStatus('⚠️ Still connecting to the database — please try again in a moment.', '#f87171');
+    return;
+  }
 
-  const review = editingReviewId
-    ? (() => {
-        const existing = liveReviews.find(r => r.id === editingReviewId);
-        return Object.assign({}, existing, { name, role, message: msg, stars: selectedStars });
-      })()
-    : {
-        id: 'rv_' + Date.now(),
-        name, role, message: msg, stars: selectedStars,
-        date: new Date().toLocaleDateString('en-IN', { month: 'short', year: 'numeric' })
-      };
+  const { db, collection, addDoc, doc, updateDoc, serverTimestamp } = window.__fb;
+  const wasEditing = !!editingReviewId;
 
   btn.disabled = true;
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
 
-  if (editingReviewId) {
-    // Update existing review in place
-    const idx = liveReviews.findIndex(r => r.id === editingReviewId);
-    if (idx !== -1) liveReviews[idx] = review;
-    await saveSharedReviews(liveReviews);
-    document.querySelector(`[data-seed="${review.id}"]`)?.replaceWith(buildReviewCard(review));
-  } else {
-    // Save to shared storage so it shows up for ALL visitors
-    liveReviews.unshift(review);
-    await saveSharedReviews(liveReviews);
-    addMyReviewId(review.id); // remember this is MY review so I see an Edit button later
-
-    const grid = document.getElementById('reviews-grid');
-    const newCard = buildReviewCard(review);
-    grid.insertBefore(newCard, grid.firstChild.nextSibling); // after first card, near top
-  }
-
-  // Notify Murthu via email (same Web3Forms key as contact form) so he can verify
-  if (!editingReviewId) {
   try {
-    await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        access_key: WEB3FORMS_KEY,
-        subject: `⭐ New Portfolio Review from ${name}`,
-        from_name: name,
-        message: `New review submitted on portfolio:\n\nName: ${name}\nRole/Company: ${role || 'Not mentioned'}\nRating: ${selectedStars}/5\n\nReview:\n${msg}`
-      })
-    });
+    if (editingReviewId) {
+      // Update existing review in place
+      await updateDoc(doc(db, 'reviews', editingReviewId), {
+        name, role, review: msg, rating: selectedStars
+      });
+    } else {
+      // Save into Firestore so it shows up for ALL visitors, permanently
+      const docRef = await addDoc(collection(db, 'reviews'), {
+        name,
+        role,
+        review: msg,
+        rating: selectedStars,
+        createdAt: serverTimestamp()
+      });
+      addMyReviewId(docRef.id); // remember this is MY review so I see an Edit button later
+
+      // Notify Murthu via email (same Web3Forms key as contact form) so he can verify
+      try {
+        await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            access_key: WEB3FORMS_KEY,
+            subject: `⭐ New Portfolio Review from ${name}`,
+            from_name: name,
+            message: `New review submitted on portfolio:\n\nName: ${name}\nRole/Company: ${role || 'Not mentioned'}\nRating: ${selectedStars}/5\n\nReview:\n${msg}`
+          })
+        });
+      } catch (err) {
+        console.error('Review email notify failed:', err);
+      }
+    }
+
+    editingReviewId = null;
+
+    // Reset form
+    document.getElementById('rev-name').value = '';
+    document.getElementById('rev-role').value = '';
+    document.getElementById('rev-msg').value = '';
+    selectedStars = 0;
+    document.querySelectorAll('#starPicker i').forEach(s => s.classList.remove('active'));
+    document.getElementById('starLabel').textContent = 'Tap a star to rate';
+
+    setReviewStatus(wasEditing ? '✅ Your review has been updated!' : '✅ Thank you! Your review is now live below.', '#3dba8c');
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Review';
+
+    setTimeout(() => { toggleReviewForm(); setReviewStatus('', ''); }, 1800);
+    // Note: the review card itself appears automatically via the
+    // onSnapshot listener — no manual DOM insertion needed here.
   } catch (err) {
-    console.error('Review email notify failed:', err);
+    console.error('Failed to save review:', err);
+    setReviewStatus('❌ Could not save your review. Please check your connection and try again.', '#f87171');
+    btn.disabled = false;
+    btn.innerHTML = wasEditing ? '<i class="fas fa-pen"></i> Update Testimonial' : '<i class="fas fa-paper-plane"></i> Submit Testimonial';
   }
-  }
-
-  const wasEditing = !!editingReviewId;
-  editingReviewId = null;
-
-  // Reset form
-  document.getElementById('rev-name').value = '';
-  document.getElementById('rev-role').value = '';
-  document.getElementById('rev-msg').value = '';
-  selectedStars = 0;
-  document.querySelectorAll('#starPicker i').forEach(s => s.classList.remove('active'));
-  document.getElementById('starLabel').textContent = 'Tap a star to rate';
-
-  setReviewStatus(wasEditing ? '✅ Your review has been updated!' : '✅ Thank you! Your review is now live below.', '#3dba8c');
-  btn.disabled = false;
-  btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Review';
-
-  setTimeout(() => { toggleReviewForm(); setReviewStatus('', ''); }, 1800);
 }
 
 // ── LIKE BUTTON ──
