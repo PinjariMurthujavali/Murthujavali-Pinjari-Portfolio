@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO -->
-    <title>Murthujavali Pinjari | Murthu | Full Stack Python Developer | AI & GenAI Engineer | Portfolio</title>
-    <meta name="description" content="Official portfolio of Murthujavali Pinjari (Murthu), Full Stack Python Developer, AI & GenAI Engineer, and ERPNext HRMS specialist. Explore projects in Django, Frappe, ERPNext, WordPress, AI, automation, and scalable web applications.">
-    <meta name="keywords" content="Murthujavali, Murthu, Murthujavali Pinjari, Murthu Portfolio, Full Stack Python Developer, AI Engineer, GenAI Engineer, Django Developer, ERPNext Developer, HRMS Developer, Frappe Developer, WordPress Developer, Hyderabad, Portfolio Website">
+    <title>Murthujavali Pinjari | Senior Python &amp; Frappe/ERPNext Developer · Team Lead</title>
+    <meta name="description" content="Portfolio of Murthujavali Pinjari (Murthu) — Senior Python & Frappe/ERPNext Developer and Team Lead at Brilliant Technologies. Enterprise ERP systems, CRM platforms, integrations and team delivery on Frappe Cloud.">
+    <meta name="keywords" content="Murthujavali, Murthu, Murthujavali Pinjari, Murthu Portfolio, Senior Python Developer, Frappe Developer, ERPNext Developer, Team Lead, HRMS Developer, CRM Developer, Hyderabad, Portfolio Website">
     <meta name="author" content="Murthujavali Pinjari">
     <meta name="robots" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/">
@@ -21,16 +24,16 @@
 
     <!-- Open Graph (Facebook, LinkedIn) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Murthujavali Pinjari | Full Stack Python Developer | AI & GenAI Engineer">
-    <meta property="og:description" content="Explore the official portfolio of Murthujavali Pinjari showcasing Python, Django, Frappe, ERPNext, AI, GenAI, and Full Stack projects.">
+    <meta property="og:title" content="Murthujavali Pinjari | Senior Python & Frappe/ERPNext Developer · Team Lead">
+    <meta property="og:description" content="Enterprise ERP systems, CRM platforms and integrations built on Python, Frappe and ERPNext — led and delivered by Murthujavali Pinjari at Brilliant Technologies.">
     <meta property="og:url" content="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/">
-    <meta property="og:image" content="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/assets/profile.jpg">
+    <meta property="og:image" content="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/assets/img/profile.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Murthujavali Pinjari | Full Stack Python Developer">
-    <meta name="twitter:description" content="Official portfolio of Murthujavali Pinjari - Python, AI & GenAI Engineer.">
-    <meta name="twitter:image" content="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/assets/profile.jpg">
+    <meta name="twitter:title" content="Murthujavali Pinjari | Senior Python & Frappe/ERPNext Developer">
+    <meta name="twitter:description" content="Senior Python & Frappe/ERPNext Developer and Team Lead — enterprise ERP systems, CRM platforms and integrations.">
+    <meta name="twitter:image" content="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/assets/img/profile.png">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -71,7 +74,10 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--bg);
+  background:
+    radial-gradient(ellipse 1200px 700px at 15% -10%, rgba(201,168,106,0.06), transparent 60%),
+    radial-gradient(ellipse 1000px 800px at 100% 20%, rgba(47,90,158,0.08), transparent 55%),
+    linear-gradient(180deg, #0a0e1a 0%, var(--bg) 35%, #05070d 100%);
   color: var(--text);
   font-family: 'Outfit', sans-serif;
   overflow-x: hidden;
@@ -355,9 +361,9 @@ section { padding: 100px 64px; position: relative; z-index: 2; }
 .sk-list { display: flex; flex-direction: column; gap: 14px; }
 .sk { display: flex; flex-direction: column; gap: 6px; }
 .sk-row { display: flex; justify-content: space-between; align-items: center; }
-.sk-name { font-size: .8rem; font-weight: 400; color: var(--text-sub); display: flex; align-items: center; gap: 7px; }
-.sk-name i { color: var(--gold); font-size: .78rem; width: 14px; text-align: center; opacity: .8; }
-.sk-pct { font-family: 'JetBrains Mono', monospace; font-size: .64rem; color: var(--gold); }
+.sk-name { font-size: .8rem; font-weight: 400; color: var(--text-sub); display: flex; align-items: center; gap: 7px; flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sk-name i { color: var(--gold); font-size: .78rem; width: 14px; text-align: center; opacity: .8; flex-shrink: 0; }
+.sk-pct { font-family: 'JetBrains Mono', monospace; font-size: .6rem; color: var(--gold); flex-shrink: 0; margin-left: 8px; white-space: nowrap; }
 .sk-bar { height: 2px; background: rgba(255,255,255,.06); border-radius: 2px; overflow: hidden; }
 .sk-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); width: 0; border-radius: 2px; transition: width 1.4s cubic-bezier(.4,0,.2,1); }
 
@@ -867,10 +873,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 <section id="home">
   <div class="hero-layout">
     <div>
-      <div class="hero-avail r"><span class="avail-dot"></span>Available — Senior Full Stack Developer</div>
+      <div class="hero-avail r"><span class="avail-dot"></span>Available — Senior Python &amp; Frappe/ERPNext Developer</div>
       <h1 class="hero-name r">I am MURTHU<br><span class="line2"></span></h1>
-      <div class="hero-title-tag r">Senior Developer &nbsp;·&nbsp; Team Lead &nbsp;·&nbsp; Frappe / ERPNext Specialist</div>
-      <p class="hero-desc r">Building <strong>enterprise-grade web applications</strong> at Brilliant Technologies. Specialized in <strong>Python, Django, Frappe Framework, ERPNext</strong> and WordPress — leading teams, architecting scalable solutions, and shipping products that matter.</p>
+      <div class="hero-title-tag r">Senior Python &amp; Frappe/ERPNext Developer &nbsp;·&nbsp; Team Lead</div>
+      <p class="hero-desc r">Building and delivering <strong>enterprise ERP applications</strong> at Brilliant Technologies. I design custom Frappe/ERPNext systems, integrations and dashboards, deploy on Frappe Cloud, and lead a team through code review and delivery — with Django and WordPress alongside for full-stack needs.</p>
       <div class="hero-actions r">
         <a href="https://wa.me/919100850087?text=Hi%20Murthu!%20I'd%20like%20to%20hire%20you." target="_blank" class="btn-gold"><i class="fab fa-whatsapp"></i> WhatsApp Me</a>
         <a href="Murthujavali_Pinjari_Resume.pdf" download class="btn-outline-w"><i class="fas fa-download"></i> Download Resume</a>
@@ -907,9 +913,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
       <div>
         <h2 class="sec-title r" style="margin-bottom:28px">Who is <em>Murthu?</em></h2>
         <div class="about-body">
-          <p class="r">I'm a <strong>Senior Full Stack Developer and Team Leader</strong> at Brilliant Technologies, with a passion for building robust enterprise web applications that solve real business problems.</p>
-          <p class="r">With a B.Tech in Electronics & Communication Engineering, I specialize in <strong>Python, Django, Frappe Framework, ERPNext, and WordPress</strong>. I lead a development team architecting scalable solutions including <strong>Hospital Management Systems</strong> deployed on Frappe Cloud.</p>
-          <p class="r">I'm also the creator of <strong>'Syntax Solver'</strong> on YouTube — making coding education accessible to everyone.</p>
+          <p class="r">I'm a <strong>Senior Python &amp; Frappe/ERPNext Developer and Team Lead</strong> at Brilliant Technologies. My focus is narrow and deep: designing and shipping enterprise ERP systems on the Frappe stack, rather than being spread across every framework.</p>
+          <p class="r">Day to day, that means custom DocTypes, server &amp; client scripts, REST integrations and dashboards for our internal <strong>BCRM CRM system</strong> and <strong>HR attendance automation</strong> (including a biometric device integration), plus a <strong>Hospital Management System</strong> deployed on Frappe Cloud and ERPNext customizations for manufacturing and payments. I review code, deploy releases, and mentor the developers working alongside me.</p>
+          <p class="r">Outside Frappe, I bring Django and WordPress experience for full-stack needs, and run <strong>'Syntax Solver'</strong> on YouTube, teaching coding fundamentals.</p>
           <div class="about-tags r">
             <span class="atag">⭐ Team Leader</span><span class="atag">⚙️ Frappe / ERPNext</span><span class="atag">☁️ Frappe Cloud</span><span class="atag">🐍 Python Developer</span><span class="atag">🌐 Full Stack</span><span class="atag">📦 WordPress</span><span class="atag">🏥 Hospital ERP</span><span class="atag">🤖 CRM &amp; Automation</span><span class="atag">🎬 YouTube Creator</span><span class="atag">🏆 SIH 2023 Winner</span>
           </div>
@@ -927,7 +933,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         </div>
       </div>
       <div class="about-right">
-        <div class="info-block r"><div class="ib-label">Current Role</div><div class="ib-value">Senior Full Stack Developer & Team Leader<br><span style="color:var(--gold)">Brilliant Technologies, Hyderabad</span></div></div>
+        <div class="info-block r"><div class="ib-label">Current Role</div><div class="ib-value">Senior Python &amp; Frappe/ERPNext Developer &middot; Team Lead<br><span style="color:var(--gold)">Brilliant Technologies, Hyderabad</span></div></div>
         <div class="info-block r"><div class="ib-label">Education</div><div class="ib-value">B.Tech — Electronics & Communication Engineering<br>Santhiram Engineering College · CGPA 8.0</div></div>
         <div class="info-block r"><div class="ib-label">Hometown</div><div class="ib-value">Nandyal District, Andhra Pradesh, India 🇮🇳</div></div>
         <div class="info-block r"><div class="ib-label">Open to</div><div class="ib-value">On-site · Remote · Hybrid<br>India & International Roles</div></div>
@@ -947,67 +953,67 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
       <div class="skill-panel r">
         <div class="sp-head"><span class="sp-icon">⚙️</span> Frappe & ERPNext</div>
         <div class="sk-list">
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-cogs"></i>Frappe Framework</div><span class="sk-pct">Advanced</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-building"></i>ERPNext</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-cloud"></i>Frappe Cloud</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-puzzle-piece"></i>Custom DocTypes</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-plug"></i>Frappe REST API</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-hospital"></i>Hospital Management ERP</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-cogs"></i>Frappe Framework</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-building"></i>ERPNext</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-cloud"></i>Frappe Cloud</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-puzzle-piece"></i>Custom DocTypes</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-plug"></i>Frappe REST API</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-hospital"></i>Hospital Management ERP</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
         </div>
       </div>
       <div class="skill-panel r">
         <div class="sp-head"><span class="sp-icon">🐍</span> Python & Backend</div>
         <div class="sk-list">
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-python"></i>Python</div><span class="sk-pct">Advanced</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-layer-group"></i>Django</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-server"></i>REST APIs</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-database"></i>SQL / MySQL</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-code"></i>Java</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-python"></i>Python</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-layer-group"></i>Django</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-server"></i>REST APIs</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-database"></i>SQL / MySQL</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-code"></i>Java</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
           <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-docker"></i>Docker</div><span class="sk-pct">Working Knowledge</span></div><div class="sk-bar"><div class="sk-fill" data-w=".55"></div></div></div>
         </div>
       </div>
       <div class="skill-panel r">
         <div class="sp-head"><span class="sp-icon">🌐</span> Frontend</div>
         <div class="sk-list">
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-html5"></i>HTML5</div><span class="sk-pct">Advanced</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-css3-alt"></i>CSS3</div><span class="sk-pct">Advanced</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-js-square"></i>JavaScript</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-react"></i>React</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-bootstrap"></i>Bootstrap</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-html5"></i>HTML5</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-css3-alt"></i>CSS3</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-js-square"></i>JavaScript</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-react"></i>React</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-bootstrap"></i>Bootstrap</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
           <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-node-js"></i>Node.js</div><span class="sk-pct">Working Knowledge</span></div><div class="sk-bar"><div class="sk-fill" data-w=".55"></div></div></div>
         </div>
       </div>
       <div class="skill-panel r">
         <div class="sp-head"><span class="sp-icon">📦</span> WordPress & CMS</div>
         <div class="sk-list">
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-wordpress"></i>WordPress</div><span class="sk-pct">Advanced</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-shopping-cart"></i>WooCommerce</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-tools"></i>Beaver Builder</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-search"></i>SEO Optimization</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-plug"></i>Plugin Development</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-paint-brush"></i>Theme Customization</div><span class="sk-pct">Advanced</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-wordpress"></i>WordPress</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-shopping-cart"></i>WooCommerce</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-tools"></i>Beaver Builder</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-search"></i>SEO Optimization</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-plug"></i>Plugin Development</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-paint-brush"></i>Theme Customization</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
         </div>
       </div>
       <div class="skill-panel r">
         <div class="sp-head"><span class="sp-icon">🛠️</span> DevOps & Tools</div>
         <div class="sk-list">
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-git-alt"></i>Git & GitHub</div><span class="sk-pct">Advanced</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-linux"></i>Linux / CLI</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-cloud-upload-alt"></i>Deployment & Hosting</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-git-alt"></i>Git & GitHub</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-linux"></i>Linux / CLI</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-cloud-upload-alt"></i>Deployment & Hosting</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
           <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-vial"></i>Unit / Integration Testing</div><span class="sk-pct">Working Knowledge</span></div><div class="sk-bar"><div class="sk-fill" data-w=".55"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-users-cog"></i>Team Leadership</div><span class="sk-pct">Advanced</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-project-diagram"></i>Agile / Scrum</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-users-cog"></i>Team Leadership</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-project-diagram"></i>Agile / Scrum</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
         </div>
       </div>
       <div class="skill-panel r">
         <div class="sp-head"><span class="sp-icon">🧠</span> Core CS</div>
         <div class="sk-list">
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-brain"></i>DSA</div><span class="sk-pct">Advanced</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-sitemap"></i>System Design</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-database"></i>Database Design</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-code-branch"></i>OOP Concepts</div><span class="sk-pct">Advanced</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-brain"></i>DSA</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-sitemap"></i>System Design</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-database"></i>Database Design</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-code-branch"></i>OOP Concepts</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
           <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-robot"></i>AI Integration</div><span class="sk-pct">Working Knowledge</span></div><div class="sk-bar"><div class="sk-fill" data-w=".55"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-lock"></i>API Security</div><span class="sk-pct">Proficient</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-lock"></i>API Security</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
         </div>
       </div>
     </div>
@@ -1025,10 +1031,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         <div class="tl-dot curr"></div>
         <div class="tl-meta"><span class="tl-date">2025 — Present</span><span class="curr-pill">● CURRENT</span></div>
         <div class="tl-card curr-card">
-          <div class="tl-role curr-role">Senior Python Full Stack Developer & Team Leader</div>
+          <div class="tl-role curr-role">Senior Python &amp; Frappe/ERPNext Developer &middot; Team Lead</div>
           <div class="tl-org">Brilliant Technologies, Hyderabad</div>
           <div class="tl-desc">Leading development on Brilliant Technologies' internal Frappe/ERPNext platform — including the BCRM CRM system (leads through renewals &amp; AMC support), HR attendance automation with biometric device integration, and a Hospital Management System deployed on Frappe Cloud. Architecting custom DocTypes, server &amp; client scripts, REST integrations, and dashboards, while conducting code reviews and mentoring junior developers.</div>
           <div class="tl-tags"><span class="tl-tag g">Team Leader</span><span class="tl-tag g">Python</span><span class="tl-tag g">Frappe</span><span class="tl-tag g">ERPNext</span><span class="tl-tag g">Django</span><span class="tl-tag g">Frappe Cloud</span><span class="tl-tag g">Hospital ERP</span><span class="tl-tag g">CRM</span></div>
+          <div class="tl-tags" style="margin-top:8px"><span class="tl-tag" style="border-color:var(--border-glow);color:var(--gold)">✓ Attendance rules engine: 7 rule types automated</span><span class="tl-tag" style="border-color:var(--border-glow);color:var(--gold)">✓ Biometric sync: 75 employees, 39,000+ logs</span><span class="tl-tag" style="border-color:var(--border-glow);color:var(--gold)">✓ Scheduler runs every 5 min</span></div>
         </div>
       </div>
       <div class="tl-item r">
@@ -1119,6 +1126,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         <div class="proj-body">
           <div class="proj-title">Hospital Management System — ERPNext & Frappe</div>
           <div class="proj-desc">Enterprise-grade Hospital Management System built on ERPNext using Frappe Framework. Features patient registration, appointment scheduling, billing, pharmacy management, lab reports, doctor schedules, inventory & real-time dashboards — deployed on Frappe Cloud for high availability.</div>
+          <div style="font-size:.78rem;color:var(--text-sub);margin-top:2px"><strong style="color:var(--gold)">Role:</strong> Development team member on the ERP build &nbsp;·&nbsp; <strong style="color:var(--gold)">Result:</strong> Live in production on Frappe Cloud</div>
           <div class="proj-tech"><span class="p-tech">ERPNext</span><span class="p-tech">Frappe</span><span class="p-tech">Python</span><span class="p-tech">Frappe Cloud</span><span class="p-tech">JavaScript</span><span class="p-tech">MariaDB</span></div>
           <div class="proj-links"><a class="pl pl-private"><i class="fas fa-lock"></i> Confidential Client Project</a></div>
         </div>
@@ -1128,6 +1136,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         <div class="proj-body">
           <div class="proj-title">BCRM — CRM &amp; Field Operations Platform</div>
           <div class="proj-desc">Internal CRM system for Brilliant Technologies built on Frappe, covering the full Lead → Opportunity → Customer → AMC/renewal lifecycle. Includes a live employee status dashboard (GPS check-in/out with reverse geocoding and road-distance calculation), Customer 360 dashboards (quotations, service contracts, invoices), a smart activity timeline replacing the native Frappe timeline across seven+ doctypes, and a "Nearby Clients" locator using GPS haversine matching with pincode/city fallback.</div>
+          <div style="font-size:.78rem;color:var(--text-sub);margin-top:2px"><strong style="color:var(--gold)">Role:</strong> Sole designer &amp; builder &nbsp;·&nbsp; <strong style="color:var(--gold)">Result:</strong> Now the team's single system of record from lead to renewal</div>
           <div class="proj-tech"><span class="p-tech">Frappe</span><span class="p-tech">Python</span><span class="p-tech">Server Scripts</span><span class="p-tech">Client Scripts</span><span class="p-tech">REST API</span><span class="p-tech">MariaDB</span></div>
           <div class="proj-links"><a class="pl pl-private"><i class="fas fa-lock"></i> Internal Platform — Brilliant Technologies</a></div>
         </div>
@@ -1137,6 +1146,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         <div class="proj-body">
           <div class="proj-title">HR Attendance Automation &amp; Biometric Integration</div>
           <div class="proj-desc">End-to-end HR attendance system on Frappe: an automated remarks engine (grace period, late entry, early exit, missing punch, weekly off, holiday and sandwich-rule logic) driven by scheduled scripts, a bulk-optimized scheduler running every 5 minutes, and a Python middleware syncing a ZKTeco biometric device to Frappe Cloud over REST with SQLite-based deduplication. Also drives payroll deduction/bonus calculations on the Salary Slip.</div>
+          <div style="font-size:.78rem;color:var(--text-sub);margin-top:2px"><strong style="color:var(--gold)">Role:</strong> Sole designer &amp; builder &nbsp;·&nbsp; <strong style="color:var(--gold)">Result:</strong> Automated attendance &amp; payroll rules company-wide</div>
           <div class="proj-tech"><span class="p-tech">Frappe</span><span class="p-tech">Python</span><span class="p-tech">REST API</span><span class="p-tech">SQLite</span><span class="p-tech">Scheduled Jobs</span></div>
           <div class="proj-links"><a class="pl pl-private"><i class="fas fa-lock"></i> Internal Platform — Brilliant Technologies</a></div>
         </div>
@@ -1245,7 +1255,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         <div class="proj-body">
           <div class="proj-title">Notes Application</div>
           <div class="proj-desc">Responsive notes app with local storage persistence, search, and smooth UX for quick note-taking.</div>
-          <div class="proj-tech"><span class="p-tech">HTML</span><span class="p-tech">CSS</span><span class="p-tech">JavaScript</span><span class="p-tech">LocalStorage</span></div>
+          <div class="proj-tech"><span class="p-tech">HTML</span><span class="p-tech">CSS</span><span class="p-tech">JavaScript</span><span class="p-tech">localStorage</span></div>
         </div>
       </div>
       <div class="proj-card r" data-cat="python">
@@ -1568,7 +1578,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 <footer>
   <div class="f-brand">Murthujavali Pinjari</div>
-  <p class="f-copy">© 2026 · Senior Full Stack Developer & Team Leader</p>
+  <p class="f-copy">© 2026 · Senior Python &amp; Frappe/ERPNext Developer · Team Lead</p>
   <div class="f-socials">
     <a href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank" class="f-soc"><i class="fab fa-linkedin"></i></a>
     <a href="https://github.com/PinjariMurthujavali" target="_blank" class="f-soc"><i class="fab fa-github"></i></a>
