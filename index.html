@@ -1247,7 +1247,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
           <div class="proj-title">QR Code Generator</div>
           <div class="proj-desc">Instantly generate custom QR codes from any text or URL with download options and custom colors.</div>
           <div class="proj-tech"><span class="p-tech">HTML</span><span class="p-tech">CSS</span><span class="p-tech">JavaScript</span></div>
-          <div class="proj-links"><a href="https://github.com/PinjariMurthujavali/PROJECT-2-QR-CODE-GENERATOR/deployments" target="_blank" class="pl pl-demo"><i class="fas fa-external-link-alt"></i> Live</a><a href="https://github.com/PinjariMurthujavali/PROJECT-2-QR-CODE-GENERATOR" target="_blank" class="pl pl-gh"><i class="fab fa-github"></i> GitHub</a></div>
+          <div class="proj-links"><a href="https://github.com/PinjariMurthujavali/PROJECT-2-QR-CODE-GENERATOR" target="_blank" class="pl pl-gh"><i class="fab fa-github"></i> GitHub</a></div>
         </div>
       </div>
       <div class="proj-card r" data-cat="web">
@@ -1390,7 +1390,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
             <span style="color:var(--text); font-weight:500; display:block">Mabasha — Senior software engineer</span>
             <span class="cert-yr">LPL Financial GCC</span>
           </div>
-          <button class="rev-like-btn" data-seed-id="1" onclick="toggleLike(this)"><i class="fas fa-thumbs-up"></i> Helpful <span class="rev-like-count">0</span></button>
+          <button class="rev-like-btn" data-seed-id="1" onclick="toggleLike(this)"><i class="fas fa-thumbs-up"></i> Helpful<span class="rev-like-count"></span></button>
         </div>
       </div>
 
@@ -1407,7 +1407,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
             <span style="color:var(--text); font-weight:500; display:block">Bhanu — Junior Python Developer</span>
             <span class="cert-yr">Brilliant Technologies</span>
           </div>
-          <button class="rev-like-btn" data-seed-id="2" onclick="toggleLike(this)"><i class="fas fa-thumbs-up"></i> Helpful <span class="rev-like-count">0</span></button>
+          <button class="rev-like-btn" data-seed-id="2" onclick="toggleLike(this)"><i class="fas fa-thumbs-up"></i> Helpful<span class="rev-like-count"></span></button>
         </div>
       </div>
       <!-- dynamic, visitor-submitted reviews get injected here by JS -->
@@ -1964,7 +1964,7 @@ function buildReviewCard(rv) {
         <span style="color:var(--text); font-weight:500; display:block">${escapeHTML(rv.name)}${rv.role ? ' — ' + escapeHTML(rv.role) : ''}</span>
         <span class="cert-yr">${formatReviewDate(rv.createdAt)}</span>
       </div>
-      <button class="rev-like-btn" data-seed-id="${rv.id}" onclick="toggleLike(this)"><i class="fas fa-thumbs-up"></i> Helpful <span class="rev-like-count">0</span></button>
+      <button class="rev-like-btn" data-seed-id="${rv.id}" onclick="toggleLike(this)"><i class="fas fa-thumbs-up"></i> Helpful<span class="rev-like-count"></span></button>
       ${getMyReviewIds().includes(rv.id) && !isAdmin ? `<button class="rev-edit-btn" onclick="editReview('${rv.id}')" style="background:transparent;border:1px solid var(--gold);color:var(--gold);border-radius:6px;padding:6px 10px;cursor:pointer;font-size:.78rem;margin-left:6px"><i class="fas fa-pen"></i> Edit</button>` : ''}
       ${isAdmin ? `<button class="rev-del-btn" onclick="deleteReview('${rv.id}')" style="background:transparent;border:1px solid #f87171;color:#f87171;border-radius:6px;padding:6px 10px;cursor:pointer;font-size:.78rem;margin-left:6px"><i class="fas fa-trash"></i></button>` : ''}
     </div>
@@ -2083,7 +2083,7 @@ function applyLikeCounts() {
   document.querySelectorAll('.rev-like-btn').forEach(btn => {
     const id = btn.dataset.seedId;
     const entry = likes[id] || { count: 0, liked: false };
-    btn.querySelector('.rev-like-count').textContent = entry.count;
+    btn.querySelector('.rev-like-count').textContent = entry.count > 0 ? ' · ' + entry.count : '';
     btn.classList.toggle('liked', entry.liked);
   });
 }
@@ -2103,7 +2103,7 @@ function toggleLike(btn) {
   likes[id] = entry;
   localStorage.setItem(LIKES_KEY, JSON.stringify(likes));
 
-  btn.querySelector('.rev-like-count').textContent = entry.count;
+  btn.querySelector('.rev-like-count').textContent = entry.count > 0 ? ' · ' + entry.count : '';
   btn.classList.toggle('liked', entry.liked);
 }
 </script>
