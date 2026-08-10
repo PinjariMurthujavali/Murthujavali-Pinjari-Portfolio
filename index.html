@@ -35,6 +35,16 @@
     <meta name="twitter:description" content="Senior Python & Frappe/ERPNext Developer and Team Lead — enterprise ERP systems, CRM platforms and integrations.">
     <meta name="twitter:image" content="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/assets/img/profile.png">
 
+    <!-- Theme (applied before paint to avoid flash) -->
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('murthu-theme');
+          if (t) document.documentElement.setAttribute('data-theme', t);
+        } catch(e) {}
+      })();
+    </script>
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
@@ -75,6 +85,26 @@
   --text-sub: #94a3b8;
   --green: #34d399;
   --radius: 10px;
+  --amb1: #38bdf8;
+  --amb2: #2563eb;
+  --amb3: #34d399;
+}
+/* ── THEME PRESETS (accent swap only — background/typography untouched) ── */
+html[data-theme="emerald"] {
+  --accent: #34d399; --accent-light: #6ee7b7; --accent-dim: rgba(52,211,153,0.12);
+  --border-glow: rgba(52,211,153,0.35); --amb1: #34d399; --amb2: #10b981; --amb3: #38bdf8;
+}
+html[data-theme="violet"] {
+  --accent: #a78bfa; --accent-light: #c4b5fd; --accent-dim: rgba(167,139,250,0.12);
+  --border-glow: rgba(167,139,250,0.35); --amb1: #a78bfa; --amb2: #7c3aed; --amb3: #38bdf8;
+}
+html[data-theme="amber"] {
+  --accent: #fbbf24; --accent-light: #fcd34d; --accent-dim: rgba(251,191,36,0.12);
+  --border-glow: rgba(251,191,36,0.35); --amb1: #fbbf24; --amb2: #f59e0b; --amb3: #fb7185;
+}
+html[data-theme="rose"] {
+  --accent: #fb7185; --accent-light: #fda4af; --accent-dim: rgba(251,113,133,0.12);
+  --border-glow: rgba(251,113,133,0.35); --amb1: #fb7185; --amb2: #e11d48; --amb3: #a78bfa;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -91,12 +121,69 @@ body {
 /* ── AMBIENT ── */
 .ambient { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
 .amb-blob { position: absolute; border-radius: 50%; filter: blur(130px); opacity: .10; }
-.ab1 { width: 700px; height: 700px; background: radial-gradient(circle, #38bdf8, transparent 70%); top: -200px; right: -200px; animation: drift1 22s ease-in-out infinite; }
-.ab2 { width: 520px; height: 520px; background: radial-gradient(circle, #2563eb, transparent 70%); bottom: 10%; left: -160px; animation: drift2 18s ease-in-out infinite; }
-.ab3 { width: 420px; height: 420px; background: radial-gradient(circle, #34d399, transparent 70%); top: 42%; left: 46%; opacity: .05; animation: drift3 26s ease-in-out infinite; }
+.ab1 { width: 700px; height: 700px; background: radial-gradient(circle, var(--amb1), transparent 70%); top: -200px; right: -200px; animation: drift1 22s ease-in-out infinite; transition: background 1.2s ease; }
+.ab2 { width: 520px; height: 520px; background: radial-gradient(circle, var(--amb2), transparent 70%); bottom: 10%; left: -160px; animation: drift2 18s ease-in-out infinite; transition: background 1.2s ease; }
+.ab3 { width: 420px; height: 420px; background: radial-gradient(circle, var(--amb3), transparent 70%); top: 42%; left: 46%; opacity: .05; animation: drift3 26s ease-in-out infinite; transition: background 1.2s ease; }
 @keyframes drift1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-40px,30px)} }
 @keyframes drift2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,-40px)} }
 @keyframes drift3 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-20px,20px)} }
+
+/* ── FLOATING TECH ICONS (ambient, behind content) ── */
+.float-icons { position: absolute; inset: 0; overflow: hidden; }
+.fi {
+  position: absolute; color: var(--accent); opacity: .16;
+  filter: blur(.2px);
+  animation: fi-float var(--fi-dur,18s) ease-in-out infinite;
+  animation-delay: var(--fi-delay,0s);
+  transition: color 1.2s ease;
+}
+@keyframes fi-float {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-34px) rotate(8deg); }
+}
+@media(max-width:768px){ .fi { opacity: .10; } .fi.fi-hide-mobile { display:none; } }
+
+/* ── THEME SWITCHER ── */
+.theme-switcher { position: fixed; left: 28px; bottom: 28px; z-index: 1000; }
+.theme-fab {
+  width: 54px; height: 54px; border-radius: 50%;
+  background: var(--card); border: 1px solid var(--border);
+  color: var(--accent-light); font-size: 1.2rem;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; box-shadow: 0 8px 28px rgba(0,0,0,.4);
+  transition: transform .3s ease, border-color .3s ease, background .3s ease;
+}
+.theme-fab:hover { transform: rotate(28deg) scale(1.06); border-color: var(--border-glow); }
+.theme-fab i { transition: color .3s ease; }
+.theme-panel {
+  position: absolute; bottom: 66px; left: 0;
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+  padding: 14px; display: flex; flex-direction: column; gap: 10px;
+  box-shadow: 0 20px 48px rgba(0,0,0,.5);
+  opacity: 0; transform: translateY(10px) scale(.96); pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  width: 176px;
+}
+.theme-switcher.open .theme-panel { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.theme-panel-label { font-family: 'Plus Jakarta Sans', sans-serif; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); padding: 0 2px 2px; }
+.theme-swatches { display: flex; flex-wrap: wrap; gap: 8px; }
+.theme-swatch {
+  width: 28px; height: 28px; border-radius: 50%; cursor: pointer;
+  border: 2px solid transparent; position: relative;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.theme-swatch:hover { transform: scale(1.12); }
+.theme-swatch.active { border-color: var(--text); }
+.theme-swatch.active::after { content:'✓'; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:.68rem; color:#06070d; font-weight:700; }
+.ts-sapphire { background: linear-gradient(135deg,#38bdf8,#2563eb); }
+.ts-emerald { background: linear-gradient(135deg,#34d399,#10b981); }
+.ts-violet { background: linear-gradient(135deg,#a78bfa,#7c3aed); }
+.ts-amber { background: linear-gradient(135deg,#fbbf24,#f59e0b); }
+.ts-rose { background: linear-gradient(135deg,#fb7185,#e11d48); }
+@media(max-width:768px){
+  .theme-switcher { left: 16px; bottom: 16px; }
+  .theme-fab { width: 48px; height: 48px; font-size: 1.05rem; }
+}
 
 /* ── subtle background grid + grain (kept faint by design) ── */
 body::before {
@@ -866,6 +953,35 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   <div class="amb-blob ab1"></div>
   <div class="amb-blob ab2"></div>
   <div class="amb-blob ab3"></div>
+  <div class="float-icons" aria-hidden="true">
+    <i class="fi fab fa-python" style="left:6%; top:14%; font-size:2.4rem; --fi-dur:19s; --fi-delay:0s;"></i>
+    <i class="fi fas fa-database" style="left:88%; top:10%; font-size:1.9rem; --fi-dur:23s; --fi-delay:1.2s;"></i>
+    <i class="fi fab fa-git-alt fi-hide-mobile" style="left:14%; top:62%; font-size:2rem; --fi-dur:21s; --fi-delay:2.4s;"></i>
+    <i class="fi fas fa-server" style="left:92%; top:58%; font-size:2.1rem; --fi-dur:17s; --fi-delay:.6s;"></i>
+    <i class="fi fab fa-js fi-hide-mobile" style="left:22%; top:86%; font-size:1.8rem; --fi-dur:24s; --fi-delay:3s;"></i>
+    <i class="fi fas fa-cloud" style="left:78%; top:82%; font-size:2.3rem; --fi-dur:20s; --fi-delay:1.8s;"></i>
+    <i class="fi fab fa-html5 fi-hide-mobile" style="left:48%; top:6%; font-size:1.7rem; --fi-dur:22s; --fi-delay:.9s;"></i>
+    <i class="fi fas fa-code-branch fi-hide-mobile" style="left:36%; top:46%; font-size:1.6rem; --fi-dur:18s; --fi-delay:2.1s;"></i>
+    <i class="fi fab fa-wordpress fi-hide-mobile" style="left:62%; top:30%; font-size:1.6rem; --fi-dur:25s; --fi-delay:1.5s;"></i>
+    <i class="fi fas fa-terminal fi-hide-mobile" style="left:8%; top:38%; font-size:1.7rem; --fi-dur:16s; --fi-delay:.3s;"></i>
+  </div>
+</div>
+
+<!-- THEME SWITCHER -->
+<div class="theme-switcher" id="themeSwitcher">
+  <button class="theme-fab" id="themeFab" aria-label="Change theme color" aria-expanded="false">
+    <i class="fas fa-palette"></i>
+  </button>
+  <div class="theme-panel" id="themePanel">
+    <div class="theme-panel-label">Theme</div>
+    <div class="theme-swatches">
+      <button class="theme-swatch ts-sapphire active" data-theme="sapphire" aria-label="Sapphire theme" title="Sapphire"></button>
+      <button class="theme-swatch ts-emerald" data-theme="emerald" aria-label="Emerald theme" title="Emerald"></button>
+      <button class="theme-swatch ts-violet" data-theme="violet" aria-label="Violet theme" title="Violet"></button>
+      <button class="theme-swatch ts-amber" data-theme="amber" aria-label="Amber theme" title="Amber"></button>
+      <button class="theme-swatch ts-rose" data-theme="rose" aria-label="Rose theme" title="Rose"></button>
+    </div>
+  </div>
 </div>
 
 <!-- SUCCESS OVERLAY -->
@@ -2130,6 +2246,51 @@ function toggleLike(btn) {
   btn.querySelector('.rev-like-count').textContent = entry.count > 0 ? ' · ' + entry.count : '';
   btn.classList.toggle('liked', entry.liked);
 }
+
+// ── THEME SWITCHER ──
+(function(){
+  var THEME_KEY = 'murthu-theme';
+  var switcher = document.getElementById('themeSwitcher');
+  var fab = document.getElementById('themeFab');
+  var panel = document.getElementById('themePanel');
+  if (!switcher || !fab || !panel) return;
+
+  function setActiveSwatch(theme){
+    document.querySelectorAll('.theme-swatch').forEach(function(sw){
+      sw.classList.toggle('active', sw.dataset.theme === theme);
+    });
+  }
+
+  var current = 'sapphire';
+  try { current = localStorage.getItem(THEME_KEY) || 'sapphire'; } catch(e){}
+  setActiveSwatch(current);
+
+  fab.addEventListener('click', function(e){
+    e.stopPropagation();
+    var isOpen = switcher.classList.toggle('open');
+    fab.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  document.addEventListener('click', function(e){
+    if (!switcher.contains(e.target)) {
+      switcher.classList.remove('open');
+      fab.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.querySelectorAll('.theme-swatch').forEach(function(sw){
+    sw.addEventListener('click', function(){
+      var theme = sw.dataset.theme;
+      if (theme === 'sapphire') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+      try { localStorage.setItem(THEME_KEY, theme); } catch(e){}
+      setActiveSwatch(theme);
+    });
+  });
+})();
 </script>
 </body>
 </html>
