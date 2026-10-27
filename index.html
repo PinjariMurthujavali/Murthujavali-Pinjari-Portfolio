@@ -4,6 +4,10 @@
     <!-- Basic Meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1220">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
     <!-- SEO -->
     <title>Murthujavali Pinjari | Senior Python &amp; Frappe/ERPNext Developer · Team Lead</title>
@@ -20,7 +24,6 @@
 
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="AfAK3y3zXazuNcfP__qm8SesCT9amHMKV1pj7jLkKxU">
-    <meta name="google-site-verification" content="AfAK3y3zXazuNcfP__qm8SesCT9amHMKV1pj7jLkKxU" />
 
     <!-- Open Graph (Facebook, LinkedIn) -->
     <meta property="og:type" content="website">
@@ -28,12 +31,36 @@
     <meta property="og:description" content="Enterprise ERP systems, CRM platforms and integrations built on Python, Frappe and ERPNext — led and delivered by Murthujavali Pinjari at Brilliant Technologies.">
     <meta property="og:url" content="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/">
     <meta property="og:image" content="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/assets/img/profile.png">
+    <meta property="og:image:alt" content="Portrait of Murthujavali Pinjari, Senior Python & Frappe/ERPNext Developer">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Murthujavali Pinjari | Senior Python & Frappe/ERPNext Developer">
     <meta name="twitter:description" content="Senior Python & Frappe/ERPNext Developer and Team Lead — enterprise ERP systems, CRM platforms and integrations.">
     <meta name="twitter:image" content="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/assets/img/profile.png">
+    <meta name="twitter:image:alt" content="Portrait of Murthujavali Pinjari, Senior Python & Frappe/ERPNext Developer">
+
+    <!-- Structured data (helps Google show a rich result for your name) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Murthujavali Pinjari",
+      "alternateName": "Murthu",
+      "jobTitle": "Senior Python & Frappe/ERPNext Developer · Team Lead",
+      "worksFor": { "@type": "Organization", "name": "Brilliant Technologies" },
+      "url": "https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/",
+      "image": "https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/assets/img/profile.png",
+      "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressRegion": "Telangana", "addressCountry": "IN" },
+      "alumniOf": "Santhiram Engineering College",
+      "knowsAbout": ["Frappe Framework", "ERPNext", "Python", "Django", "Frappe Cloud", "REST API integration"],
+      "sameAs": [
+        "https://www.linkedin.com/in/murthujavali-pinjari18/",
+        "https://github.com/PinjariMurthujavali",
+        "https://www.youtube.com/@Syntaxsolver-u5m"
+      ]
+    }
+    </script>
 
     <!-- Theme (applied before paint to avoid flash) -->
     <script>
@@ -52,14 +79,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Google Analytics 4 -->
-    <!-- Replace G-XXXXXXXXXX with your real Measurement ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- GA4 Measurement ID (same one configured in assets/js/firebase.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J2JYC707ET"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', 'G-J2JYC707ET');
     </script>
 
     <style>
@@ -946,9 +973,64 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   border: none; cursor: pointer; transition: all .2s;
 }
 .success-close:hover { background: #4fd4a6; transform: translateY(-2px); }
+
+/* ═══════ UPDATE: accessibility + highlights + show-more ═══════ */
+.skip-link { position:absolute; left:-999px; top:8px; z-index:10000; background:var(--gold); color:#04101e; padding:10px 16px; border-radius:8px; font-weight:700; text-decoration:none; }
+.skip-link:focus { left:12px; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+.hero-highlights { margin-top:28px; padding:16px 18px; border:1px solid var(--border-glow); border-radius:var(--radius); background:var(--gold-dim); max-width:620px; }
+.hero-highlights .hh-label { font-size:.67rem; letter-spacing:.14em; text-transform:uppercase; color:var(--text-muted); margin-bottom:10px; }
+.hero-highlights ul { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:8px 18px; }
+.hero-highlights li { font-size:.82rem; color:var(--text-sub); line-height:1.4; }
+.hero-highlights li strong { color:var(--gold); font-weight:700; }
+@media (max-width:560px){ .hero-highlights ul { grid-template-columns:1fr; } }
+.proj-more { text-align:center; margin-top:28px; }
+.proj-more button { cursor:pointer; padding:12px 26px; border-radius:999px; border:1px solid var(--border-glow); background:var(--gold-dim); color:var(--gold); font:600 .9rem 'Inter',sans-serif; transition:transform .2s, background .2s; }
+.proj-more button:hover { transform:translateY(-2px); }
+
+/* ═══════ WOW PACK ═══════ */
+.grad-text{background:linear-gradient(90deg,var(--gold),#a78bfa,var(--gold));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gshift 6s linear infinite}
+@keyframes gshift{to{background-position:200% center}}
+.marquee{overflow:hidden;border-block:1px solid var(--border);background:var(--gold-dim);padding:14px 0;position:relative;z-index:2}
+.marquee-track{display:flex;gap:44px;width:max-content;animation:mq 32s linear infinite;font:600 .85rem 'JetBrains Mono',monospace;letter-spacing:.08em;color:var(--text-sub);text-transform:uppercase}
+.marquee-track span:before{content:"◆";color:var(--gold);margin-right:44px}
+@keyframes mq{to{transform:translateX(-50%)}}
+.sec-lead{max-width:720px;color:var(--text-sub);line-height:1.7;margin:-6px 0 34px}
+.deliver-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-bottom:60px}
+.dcard{padding:26px;border:1px solid var(--border);border-radius:var(--radius);background:linear-gradient(160deg,var(--gold-dim),transparent);transition:transform .25s,border-color .25s}
+.dcard:hover{transform:translateY(-6px);border-color:var(--border-glow)}
+.dcard i{font-size:1.6rem;color:var(--gold);margin-bottom:14px}
+.dcard h3{font-size:1.05rem;margin:0 0 8px;color:#fff}.dcard p{margin:0;font-size:.88rem;line-height:1.65;color:var(--text-sub)}
+.case{display:grid;grid-template-columns:1.05fr 1fr;gap:34px;align-items:center;padding:30px;margin-bottom:28px;border:1px solid var(--border-glow);border-radius:calc(var(--radius)*1.4);background:rgba(255,255,255,.02);backdrop-filter:blur(8px)}
+.case.flip .case-vis{order:-1}
+.case-tag{font:600 .68rem 'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--gold);text-transform:uppercase}
+.case h3{font-size:1.5rem;margin:8px 0 14px;color:#fff}
+.case dl{margin:0}.case dt{font-weight:700;color:var(--gold);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin-top:12px}
+.case dd{margin:4px 0 0;color:var(--text-sub);font-size:.9rem;line-height:1.65}
+.case-stats{display:flex;gap:22px;flex-wrap:wrap;margin-top:18px}
+.case-stats b{display:block;font-size:1.6rem;color:var(--gold)}.case-stats small{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)}
+.mock{border:1px solid var(--border-glow);border-radius:14px;background:#070d1a;padding:14px;box-shadow:0 20px 60px -20px var(--gold-dim)}
+.mock-bar{display:flex;gap:6px;margin-bottom:12px}.mock-bar i{width:9px;height:9px;border-radius:50%;background:#334155}
+.mock-cap{margin-top:10px;font-size:.66rem;color:var(--text-muted);text-align:center}
+.pipe{display:flex;gap:6px;margin-bottom:12px}.pipe div{flex:1;padding:9px 4px;text-align:center;font-size:.68rem;border-radius:8px;background:var(--gold-dim);color:var(--gold);border:1px solid var(--border-glow)}
+.rows div{display:flex;justify-content:space-between;align-items:center;padding:9px 11px;margin-bottom:6px;border-radius:8px;background:rgba(255,255,255,.04);font-size:.76rem;color:var(--text-sub)}
+.rows em{font-style:normal;color:#34d399;font-weight:700;font-size:.7rem}
+.bars{display:flex;align-items:flex-end;gap:7px;height:70px;margin-top:10px}.bars span{flex:1;border-radius:5px 5px 0 0;background:linear-gradient(var(--gold),transparent)}
+.hire-band{margin:70px auto;max-width:1100px;padding:46px 34px;text-align:center;border-radius:26px;border:1px solid var(--border-glow);background:radial-gradient(circle at 50% 0,var(--gold-dim),transparent 70%),rgba(255,255,255,.02)}
+.hire-band h2{font-size:clamp(1.7rem,4vw,2.6rem);margin:0 0 12px;color:#fff}.hire-band p{color:var(--text-sub);max-width:640px;margin:0 auto 26px;line-height:1.7}
+.hire-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hire-actions a{padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;font-size:.92rem;border:1px solid var(--border-glow);color:var(--gold)}
+.hire-actions a.primary{background:var(--gold);color:#04101e;border-color:var(--gold)}
+.mobile-bar{display:none}
+@media(max-width:820px){.case{grid-template-columns:1fr;padding:20px}.case.flip .case-vis{order:0}
+.mobile-bar{display:flex;gap:8px;position:fixed;left:10px;right:10px;bottom:10px;z-index:900;padding:8px;border-radius:999px;background:rgba(7,13,26,.92);backdrop-filter:blur(12px);border:1px solid var(--border-glow)}
+.mobile-bar a{flex:1;text-align:center;padding:12px;border-radius:999px;font-weight:700;font-size:.85rem;text-decoration:none;color:var(--gold)}
+.mobile-bar a:first-child{background:var(--gold);color:#04101e}.wa-float{display:none}body{padding-bottom:74px}}
+@media(prefers-reduced-motion:reduce){.marquee-track,.grad-text{animation:none}}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#about">Skip to content</a>
 <div class="ambient">
   <div class="amb-blob ab1"></div>
   <div class="amb-blob ab2"></div>
@@ -995,7 +1077,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 </div>
 
 <!-- WA FLOAT -->
-<a href="https://wa.me/919100850087?text=Hi%20Murthu!%20I%20saw%20your%20portfolio%20and%20want%20to%20connect." class="wa-float" target="_blank" aria-label="WhatsApp">
+<a href="https://wa.me/919100850087?text=Hi%20Murthu!%20I%20saw%20your%20portfolio%20and%20want%20to%20connect." class="wa-float" target="_blank" aria-label="WhatsApp" rel="noopener noreferrer">
   <i class="fab fa-whatsapp"></i>
   <span class="wa-tooltip">Message Murthu</span>
 </a>
@@ -1008,13 +1090,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#case-studies">Case Studies</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#certifications">Certs</a></li>
     <li><a href="#testimonials">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
-    <a href="https://wa.me/919100850087" target="_blank" class="nav-mobile-hire">Hire Me</a>
+    <a href="https://wa.me/919100850087" target="_blank" class="nav-mobile-hire" rel="noopener noreferrer">Hire Me</a>
   </ul>
-  <a href="https://wa.me/919100850087" target="_blank" class="nav-hire"><i class="fab fa-whatsapp"></i> Hire Me</a>
+  <a href="https://wa.me/919100850087" target="_blank" class="nav-hire" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Hire Me</a>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
@@ -1024,14 +1107,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     <div>
       <div class="hero-badge r">Frappe &middot; ERPNext &middot; Python</div>
       <div class="hero-avail r"><span class="avail-dot"></span>Available — Senior Python &amp; Frappe/ERPNext Developer</div>
-      <h1 class="hero-name r">I am MURTHU<br><span class="line2"></span></h1>
+      <h1 class="hero-name r">I am <span class="grad-text">MURTHU</span><br><span class="line2"></span></h1>
       <div class="hero-title-tag r">Senior Python &amp; Frappe/ERPNext Developer &nbsp;·&nbsp; Team Lead</div>
       <p class="hero-desc r">Building and delivering <strong>enterprise ERP applications</strong> at Brilliant Technologies. I design custom Frappe/ERPNext systems, integrations and dashboards, deploy on Frappe Cloud, and lead a team through code review and delivery — with Django and WordPress alongside for full-stack needs.</p>
       <div class="hero-actions r">
-        <a href="https://wa.me/919100850087?text=Hi%20Murthu!%20I'd%20like%20to%20hire%20you." target="_blank" class="btn-gold"><i class="fab fa-whatsapp"></i> WhatsApp Me</a>
+        <a href="https://wa.me/919100850087?text=Hi%20Murthu!%20I'd%20like%20to%20hire%20you." target="_blank" class="btn-gold" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp Me</a>
         <a href="Murthujavali_Pinjari_ERPNext_Frappe.pdf" download class="btn-outline-w"><i class="fas fa-download"></i> Download Resume</a>
         <a href="#projects" class="btn-ghost"><i class="fas fa-layer-group"></i> View Work</a>
-        <a href="#contact" class="btn-outline-w"><i class="fas fa-paper-plane"></i> Contact</a>
       </div>
       <div class="hero-metrics r">
         <div class="metric"><div class="metric-num">21+</div><div class="metric-label">Projects Built</div></div>
@@ -1039,11 +1121,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         <div class="metric"><div class="metric-num">11+</div><div class="metric-label">Certifications</div></div>
         <div class="metric"><div class="metric-num">2nd</div><div class="metric-label">SIH 2023 Prize</div></div>
       </div>
+      <div class="hero-highlights r">
+        <div class="hh-label">Impact at a glance</div>
+        <ul>
+          <li><strong>7 rule types</strong> of HR attendance logic automated</li>
+          <li><strong>39,000+ biometric logs</strong> synced for 75 employees</li>
+          <li><strong>Lead → Renewal</strong> in one CRM (BCRM), built solo</li>
+          <li><strong>Razorpay + Tally</strong> integrations into ERPNext</li>
+        </ul>
+      </div>
     </div>
     <div class="r">
       <div class="hero-photo-card">
         <div class="hero-photo-placeholder">
-          <img src="Murthu_Pro.png" alt="Murthujavali Pinjari" onerror="this.parentElement.innerHTML='<i class=\'fas fa-user\' style=\'font-size:6rem;color:#38bdf8;opacity:.15\'></i>'">
+          <img src="Murthu_Pro.webp" width="800" height="800" fetchpriority="high" decoding="async" alt="Portrait of Murthujavali Pinjari, Senior Python & Frappe/ERPNext Developer" onerror="this.parentElement.innerHTML='<i class=\'fas fa-user\' style=\'font-size:6rem;color:#38bdf8;opacity:.15\'></i>'">
         </div>
         <div class="photo-overlay-grad"></div>
         <div class="photo-chip">● Open to Opportunities</div>
@@ -1053,6 +1144,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     </div>
   </div>
 </section>
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Frappe</span><span>ERPNext</span><span>Python</span><span>Frappe Cloud</span><span>REST APIs</span><span>Custom DocTypes</span><span>Django</span><span>MariaDB</span><span>Razorpay</span><span>Tally</span><span>Biometric Sync</span><span>Team Leadership</span><span>Frappe</span><span>ERPNext</span><span>Python</span><span>Frappe Cloud</span><span>REST APIs</span><span>Custom DocTypes</span><span>Django</span><span>MariaDB</span><span>Razorpay</span><span>Tally</span><span>Biometric Sync</span><span>Team Leadership</span></div></div>
 <div class="divider"></div>
 
 <!-- ═══════ ABOUT ═══════ -->
@@ -1070,13 +1162,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
             <span class="atag">⭐ Team Leader</span><span class="atag">⚙️ Frappe / ERPNext</span><span class="atag">☁️ Frappe Cloud</span><span class="atag">🐍 Python Developer</span><span class="atag">🌐 Full Stack</span><span class="atag">📦 WordPress</span><span class="atag">🏥 Hospital ERP</span><span class="atag">🤖 CRM &amp; Automation</span><span class="atag">🎬 YouTube Creator</span><span class="atag">🏆 SIH 2023 Winner</span>
           </div>
           <div class="about-socials r" style="margin-top:28px">
-            <a href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank" class="soc-btn primary"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://github.com/PinjariMurthujavali" target="_blank" class="soc-btn"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://www.youtube.com/@Syntaxsolver-u5m" target="_blank" class="soc-btn youtube"><i class="fab fa-youtube"></i> YouTube</a>
+            <a href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank" class="soc-btn primary" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/PinjariMurthujavali" target="_blank" class="soc-btn" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.youtube.com/@Syntaxsolver-u5m" target="_blank" class="soc-btn youtube" rel="noopener noreferrer"><i class="fab fa-youtube"></i> YouTube</a>
           </div>
           <div class="r" style="margin-top:32px">
             <div class="ib-label" style="margin-bottom:14px">GitHub Activity</div>
-            <a href="https://github.com/PinjariMurthujavali" target="_blank" style="display:block">
+            <a href="https://github.com/PinjariMurthujavali" target="_blank" style="display:block" rel="noopener noreferrer">
               <img src="https://ghchart.rshah.org/38bdf8/PinjariMurthujavali" alt="Murthu's GitHub contribution graph" style="width:100%;border-radius:var(--radius);border:1px solid var(--border)" loading="lazy">
             </a>
           </div>
@@ -1258,6 +1350,56 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 <div class="divider"></div>
 
 <!-- ═══════ PROJECTS ═══════ -->
+<section id="case-studies">
+  <div class="sec-inner">
+    <p class="sec-eyebrow r">What I Deliver</p>
+    <h2 class="sec-title r">Why teams <em>hire me</em></h2>
+    <p class="sec-lead r">I don't just write scripts. I own ERP features end to end, from the business problem to production on Frappe Cloud, and I help the team ship with me.</p>
+    <div class="deliver-grid">
+      <div class="dcard r"><i class="fas fa-cubes"></i><h3>Custom ERP systems</h3><p>Custom DocTypes, server and client scripts, workflows and dashboards on Frappe and ERPNext, deployed on Frappe Cloud.</p></div>
+      <div class="dcard r"><i class="fas fa-plug"></i><h3>Integrations and automation</h3><p>Razorpay payments, ERPNext to Tally sync, ZKTeco biometric devices, GPS features and scheduled jobs.</p></div>
+      <div class="dcard r"><i class="fas fa-people-group"></i><h3>Lead and deliver</h3><p>Code reviews, release management and mentoring junior developers, so the whole team ships faster.</p></div>
+    </div>
+    <p class="sec-eyebrow r">Case Studies</p>
+    <h2 class="sec-title r">Problem → Build → <em>Result</em></h2>
+
+    <article class="case r">
+      <div>
+        <div class="case-tag">Case study 01 · Internal CRM</div>
+        <h3>BCRM: one system from lead to renewal</h3>
+        <dl>
+          <dt>Problem</dt><dd>Sales, field visits and renewals lived in separate places, so nobody had one view of a customer.</dd>
+          <dt>What I built</dt><dd>A Frappe CRM covering Lead → Opportunity → Customer → AMC/renewal, with GPS check-in/out, Customer 360 dashboards, a smart activity timeline across 7+ doctypes and a "Nearby Clients" locator.</dd>
+          <dt>Result</dt><dd>It is now the team's single system of record from lead to renewal. I designed and built it solo.</dd>
+        </dl>
+        <div class="case-stats"><div><b>7+</b><small>doctypes on one timeline</small></div><div><b>1</b><small>system of record</small></div></div>
+      </div>
+      <div class="case-vis"><div class="mock"><div class="mock-bar"><i></i><i></i><i></i></div>
+        <div class="pipe"><div>Lead</div><div>Opportunity</div><div>Customer</div><div>AMC</div></div>
+        <div class="rows"><div>Customer 360 · Quotations<em>LIVE</em></div><div>Nearby Clients · GPS match<em>LIVE</em></div><div>Employee check-in · Road distance<em>LIVE</em></div></div>
+        <div class="mock-cap">Illustrative UI, real client data is private</div></div></div>
+    </article>
+
+    <article class="case flip r">
+      <div>
+        <div class="case-tag">Case study 02 · HR automation</div>
+        <h3>Attendance and payroll rules, automated</h3>
+        <dl>
+          <dt>Problem</dt><dd>Attendance remarks and payroll deductions depended on manual checking of biometric punches.</dd>
+          <dt>What I built</dt><dd>A rules engine (grace period, late entry, early exit, missing punch, weekly off, holiday, sandwich rule) on a 5-minute scheduler, plus Python middleware syncing a ZKTeco device to Frappe Cloud with SQLite deduplication.</dd>
+          <dt>Result</dt><dd>Attendance and payroll rules run automatically company-wide, feeding Salary Slip deductions and bonuses.</dd>
+        </dl>
+        <div class="case-stats"><div><b>7</b><small>rule types</small></div><div><b>39,000+</b><small>logs synced</small></div><div><b>75</b><small>employees</small></div><div><b>5 min</b><small>scheduler</small></div></div>
+      </div>
+      <div class="case-vis"><div class="mock"><div class="mock-bar"><i></i><i></i><i></i></div>
+        <div class="rows"><div>Late entry · grace period<em>AUTO</em></div><div>Missing punch · flagged<em>AUTO</em></div><div>Sandwich rule · weekly off<em>AUTO</em></div></div>
+        <div class="bars"><span style="height:45%"></span><span style="height:70%"></span><span style="height:55%"></span><span style="height:90%"></span><span style="height:65%"></span><span style="height:80%"></span></div>
+        <div class="mock-cap">Illustrative UI, real client data is private</div></div></div>
+    </article>
+  </div>
+</section>
+<div class="divider"></div>
+
 <section id="projects">
   <div class="sec-inner">
     <p class="sec-eyebrow r">05 / What I've Built</p>
@@ -1352,7 +1494,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
           <div class="proj-title">Portfolio Website</div>
           <div class="proj-desc">Personal portfolio with animations, timeline experience, project showcases and contact form built with HTML, CSS & JS.</div>
           <div class="proj-tech"><span class="p-tech">HTML</span><span class="p-tech">CSS</span><span class="p-tech">JavaScript</span></div>
-          <div class="proj-links"><a href="https://pinjarimurthujavali.github.io/Portfolio_website/" target="_blank" class="pl pl-demo"><i class="fas fa-external-link-alt"></i> Live</a><a href="https://github.com/PinjariMurthujavali/Portfolio_website" target="_blank" class="pl pl-gh"><i class="fab fa-github"></i> GitHub</a></div>
+          <div class="proj-links"><a href="https://pinjarimurthujavali.github.io/Portfolio_website/" target="_blank" class="pl pl-demo" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live</a><a href="https://github.com/PinjariMurthujavali/Portfolio_website" target="_blank" class="pl pl-gh" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></div>
         </div>
       </div>
       <div class="proj-card r" data-cat="web">
@@ -1361,7 +1503,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
           <div class="proj-title">Tech Women Empowerment</div>
           <div class="proj-desc">A web platform empowering girls through interactive learning and technology-driven education with mentorship pathways.</div>
           <div class="proj-tech"><span class="p-tech">HTML</span><span class="p-tech">CSS</span><span class="p-tech">JavaScript</span></div>
-          <div class="proj-links"><a href="https://pinjarimurthujavali.github.io/Tech-For-Girl---Empower-Learn/" target="_blank" class="pl pl-demo"><i class="fas fa-external-link-alt"></i> Live</a><a href="https://github.com/PinjariMurthujavali/Tech-For-Girl---Empower-Learn" target="_blank" class="pl pl-gh"><i class="fab fa-github"></i> GitHub</a></div>
+          <div class="proj-links"><a href="https://pinjarimurthujavali.github.io/Tech-For-Girl---Empower-Learn/" target="_blank" class="pl pl-demo" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live</a><a href="https://github.com/PinjariMurthujavali/Tech-For-Girl---Empower-Learn" target="_blank" class="pl pl-gh" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></div>
         </div>
       </div>
       <div class="proj-card r" data-cat="web">
@@ -1370,7 +1512,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
           <div class="proj-title">Weather Dashboard</div>
           <div class="proj-desc">Dynamic weather dashboard with real-time forecasts, location-based updates, and beautiful data visualizations.</div>
           <div class="proj-tech"><span class="p-tech">HTML</span><span class="p-tech">CSS</span><span class="p-tech">JavaScript</span><span class="p-tech">Weather API</span></div>
-          <div class="proj-links"><a href="https://pinjarimurthujavali.github.io/Project-23---Weather-Dashboard/" target="_blank" class="pl pl-demo"><i class="fas fa-external-link-alt"></i> Live</a><a href="https://github.com/PinjariMurthujavali/Project-23---Weather-Dashboard/" target="_blank" class="pl pl-gh"><i class="fab fa-github"></i> GitHub</a></div>
+          <div class="proj-links"><a href="https://pinjarimurthujavali.github.io/Project-23---Weather-Dashboard/" target="_blank" class="pl pl-demo" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live</a><a href="https://github.com/PinjariMurthujavali/Project-23---Weather-Dashboard/" target="_blank" class="pl pl-gh" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></div>
         </div>
       </div>
       <div class="proj-card r" data-cat="web">
@@ -1379,7 +1521,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
           <div class="proj-title">Interactive Quiz Game</div>
           <div class="proj-desc">Fun interactive quiz game with instant score calculation, timer, and multiple difficulty levels.</div>
           <div class="proj-tech"><span class="p-tech">HTML</span><span class="p-tech">CSS</span><span class="p-tech">JavaScript</span></div>
-          <div class="proj-links"><a href="https://pinjarimurthujavali.github.io/Project-1---Quiz-Game/" target="_blank" class="pl pl-demo"><i class="fas fa-external-link-alt"></i> Live</a><a href="https://github.com/PinjariMurthujavali/Project-1---Quiz-Game" target="_blank" class="pl pl-gh"><i class="fab fa-github"></i> GitHub</a></div>
+          <div class="proj-links"><a href="https://pinjarimurthujavali.github.io/Project-1---Quiz-Game/" target="_blank" class="pl pl-demo" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live</a><a href="https://github.com/PinjariMurthujavali/Project-1---Quiz-Game" target="_blank" class="pl pl-gh" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></div>
         </div>
       </div>
       <div class="proj-card r" data-cat="web">
@@ -1388,7 +1530,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
           <div class="proj-title">Speech-to-Text Reader</div>
           <div class="proj-desc">Web app converting spoken words to text instantly using Web Speech API with multilingual support.</div>
           <div class="proj-tech"><span class="p-tech">HTML</span><span class="p-tech">CSS</span><span class="p-tech">JavaScript</span><span class="p-tech">Web Speech API</span></div>
-          <div class="proj-links"><a href="https://pinjarimurthujavali.github.io/Project-24-Speech-text-reader/" target="_blank" class="pl pl-demo"><i class="fas fa-external-link-alt"></i> Live</a><a href="https://github.com/PinjariMurthujavali/Project-24-Speech-text-reader" target="_blank" class="pl pl-gh"><i class="fab fa-github"></i> GitHub</a></div>
+          <div class="proj-links"><a href="https://pinjarimurthujavali.github.io/Project-24-Speech-text-reader/" target="_blank" class="pl pl-demo" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live</a><a href="https://github.com/PinjariMurthujavali/Project-24-Speech-text-reader" target="_blank" class="pl pl-gh" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></div>
         </div>
       </div>
       <div class="proj-card r" data-cat="web">
@@ -1397,7 +1539,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
           <div class="proj-title">QR Code Generator</div>
           <div class="proj-desc">Instantly generate custom QR codes from any text or URL with download options and custom colors.</div>
           <div class="proj-tech"><span class="p-tech">HTML</span><span class="p-tech">CSS</span><span class="p-tech">JavaScript</span></div>
-          <div class="proj-links"><a href="https://github.com/PinjariMurthujavali/PROJECT-2-QR-CODE-GENERATOR" target="_blank" class="pl pl-gh"><i class="fab fa-github"></i> GitHub</a></div>
+          <div class="proj-links"><a href="https://github.com/PinjariMurthujavali/PROJECT-2-QR-CODE-GENERATOR" target="_blank" class="pl pl-gh" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></div>
         </div>
       </div>
       <div class="proj-card r" data-cat="web">
@@ -1463,6 +1605,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         </div>
       </div>
     </div>
+    <div class="proj-more" id="projMoreWrap"><button id="projMore" type="button" aria-expanded="false" onclick="toggleMoreProjects()">Show more projects</button></div>
   </div>
 </section>
 <div class="divider"></div>
@@ -1482,7 +1625,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
           <p style="color:var(--text-sub); font-size:.92rem; margin-top:4px; max-width:480px">Coding tutorials and walkthroughs — making development concepts simple and practical for everyone.</p>
         </div>
       </div>
-      <a href="https://www.youtube.com/@Syntaxsolver-u5m" target="_blank" class="btn-gold" style="white-space:nowrap"><i class="fab fa-youtube"></i> Visit Channel</a>
+      <a href="https://www.youtube.com/@Syntaxsolver-u5m" target="_blank" class="btn-gold" style="white-space:nowrap" rel="noopener noreferrer"><i class="fab fa-youtube"></i> Visit Channel</a>
     </div>
     <div class="r yt-video-grid" style="margin-top:24px; display:grid; grid-template-columns:1fr 1fr; gap:16px">
       <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--border)">
@@ -1502,17 +1645,17 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     <p class="sec-eyebrow r">07 / Credentials</p>
     <h2 class="sec-title r">My <em>Certifications</em></h2>
     <div class="cert-grid">
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fas fa-cogs"></i></div><div class="cert-info"><h4>Frappe & ERPNext Developer</h4><p>Brilliant Technologies</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-code"></i></div><div class="cert-info"><h4>Software Developer Certification</h4><p>Institute of Software Excellence</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fab fa-wordpress"></i></div><div class="cert-info"><h4>WordPress Developer</h4><p>Vsplash Techlabs Pvt. Ltd.</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-shopping-cart"></i></div><div class="cert-info"><h4>WooCommerce Developer</h4><p>Vsplash Techlabs Pvt. Ltd.</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-tools"></i></div><div class="cert-info"><h4>Beaver Builder Certification</h4><p>Vsplash Techlabs Pvt. Ltd.</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fab fa-python"></i></div><div class="cert-info"><h4>Python Full Stack Developer</h4><p>Durga Software Solutions, Hyderabad</p></div></div><div class="cert-footer"><span class="cert-yr">2024</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-gr"><i class="fas fa-globe"></i></div><div class="cert-info"><h4>Web Development Certification</h4><p>American Indian Foundation (S&P GLOBAL)</p></div></div><div class="cert-footer"><span class="cert-yr">2023</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-briefcase"></i></div><div class="cert-info"><h4>TCS iON Career Edge</h4><p>Communication & Soft Skills</p></div></div><div class="cert-footer"><span class="cert-yr">2023</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fas fa-database"></i></div><div class="cert-info"><h4>SQL Fundamentals</h4><p>HackerRank</p></div></div><div class="cert-footer"><span class="cert-yr">2022</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fab fa-java"></i></div><div class="cert-info"><h4>Java Certification</h4><p>SoloLearn</p></div></div><div class="cert-footer"><span class="cert-yr">2022</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-gr"><i class="fas fa-leaf"></i></div><div class="cert-info"><h4>Python Data Structures</h4><p>SoloLearn</p></div></div><div class="cert-footer"><span class="cert-yr">2021</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fas fa-cogs"></i></div><div class="cert-info"><h4>Frappe & ERPNext Developer</h4><p>Brilliant Technologies</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-code"></i></div><div class="cert-info"><h4>Software Developer Certification</h4><p>Institute of Software Excellence</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fab fa-wordpress"></i></div><div class="cert-info"><h4>WordPress Developer</h4><p>Vsplash Techlabs Pvt. Ltd.</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-shopping-cart"></i></div><div class="cert-info"><h4>WooCommerce Developer</h4><p>Vsplash Techlabs Pvt. Ltd.</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-tools"></i></div><div class="cert-info"><h4>Beaver Builder Certification</h4><p>Vsplash Techlabs Pvt. Ltd.</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fab fa-python"></i></div><div class="cert-info"><h4>Python Full Stack Developer</h4><p>Durga Software Solutions, Hyderabad</p></div></div><div class="cert-footer"><span class="cert-yr">2024</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-gr"><i class="fas fa-globe"></i></div><div class="cert-info"><h4>Web Development Certification</h4><p>American Indian Foundation (S&P GLOBAL)</p></div></div><div class="cert-footer"><span class="cert-yr">2023</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-briefcase"></i></div><div class="cert-info"><h4>TCS iON Career Edge</h4><p>Communication & Soft Skills</p></div></div><div class="cert-footer"><span class="cert-yr">2023</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fas fa-database"></i></div><div class="cert-info"><h4>SQL Fundamentals</h4><p>HackerRank</p></div></div><div class="cert-footer"><span class="cert-yr">2022</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fab fa-java"></i></div><div class="cert-info"><h4>Java Certification</h4><p>SoloLearn</p></div></div><div class="cert-footer"><span class="cert-yr">2022</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
+      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-gr"><i class="fas fa-leaf"></i></div><div class="cert-info"><h4>Python Data Structures</h4><p>SoloLearn</p></div></div><div class="cert-footer"><span class="cert-yr">2021</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
     </div> 
   </div>
 </section>
@@ -1621,13 +1764,24 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         <div class="loc-c"><div class="loc-ic"><i class="fas fa-building"></i></div><div class="loc-text"><h4>Currently Working At</h4><p>Brilliant Technologies, Hyderabad, Telangana</p></div></div>
         <div class="loc-c"><div class="loc-ic"><i class="fas fa-home"></i></div><div class="loc-text"><h4>Hometown</h4><p>Nandyal District, Andhra Pradesh, India 🇮🇳</p></div></div>
         <div class="loc-c"><div class="loc-ic"><i class="fas fa-map-marker-alt"></i></div><div class="loc-text"><h4>Open to Work</h4><p>On-site · Remote · Hybrid<br>India & International Roles</p></div></div>
-        <div class="loc-c"><div class="loc-ic"><i class="fas fa-phone-alt"></i></div><div class="loc-text"><h4>Direct Contact</h4><a href="https://wa.me/919100850087" target="_blank">+91 9100850087 (WhatsApp)</a></div></div>
+        <div class="loc-c"><div class="loc-ic"><i class="fas fa-phone-alt"></i></div><div class="loc-text"><h4>Direct Contact</h4><a href="https://wa.me/919100850087" target="_blank" rel="noopener noreferrer">+91 9100850087 (WhatsApp)</a></div></div>
       </div>
     </div>
   </div>
 </section>
 <div class="divider"></div>
 <!-- ═══════ CONTACT ═══════ -->
+<div class="hire-band r">
+  <h2>Need an ERPNext / Frappe developer?</h2>
+  <p>I'm open to full-time roles, freelance projects and ERP implementations, on-site, remote or hybrid. Message me on WhatsApp for the fastest reply.</p>
+  <div class="hire-actions">
+    <a class="primary" href="https://wa.me/919100850087?text=Hi%20Murthu!%20I%27d%20like%20to%20hire%20you." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp Me</a>
+    <a href="mailto:luckymurthu@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+    <a href="Murthujavali_Pinjari_ERPNext_Frappe.pdf" download><i class="fas fa-download"></i> Resume</a>
+    <a href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+  </div>
+</div>
+
 <section id="contact">
   <div class="sec-inner">
     <p class="sec-eyebrow r">10 / Let's Build Together</p>
@@ -1647,7 +1801,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         </div>
 
         <div class="contact-methods">
-          <a href="https://wa.me/919100850087?text=Hi%20Murthu!%20I%20saw%20your%20portfolio%20and%20want%20to%20connect." target="_blank" class="cm wa">
+          <a href="https://wa.me/919100850087?text=Hi%20Murthu!%20I%20saw%20your%20portfolio%20and%20want%20to%20connect." target="_blank" class="cm wa" rel="noopener noreferrer">
             <div class="cm-ic ic-gr"><i class="fab fa-whatsapp"></i></div>
             <div class="cm-info">
               <strong>WhatsApp (Fastest)</strong>
@@ -1655,7 +1809,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
             </div>
           </a>
 
-          <a href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank" class="cm">
+          <a href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank" class="cm" rel="noopener noreferrer">
             <div class="cm-ic ic-bl"><i class="fab fa-linkedin"></i></div>
             <div class="cm-info">
               <strong>LinkedIn</strong>
@@ -1663,7 +1817,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
             </div>
           </a>
 
-          <a href="https://github.com/PinjariMurthujavali" target="_blank" class="cm">
+          <a href="https://github.com/PinjariMurthujavali" target="_blank" class="cm" rel="noopener noreferrer">
             <div class="cm-ic ic-pr"><i class="fab fa-github"></i></div>
             <div class="cm-info">
               <strong>GitHub</strong>
@@ -1671,7 +1825,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
             </div>
           </a>
 
-          <a href="https://www.youtube.com/@Syntaxsolver-u5m" target="_blank" class="cm">
+          <a href="https://www.youtube.com/@Syntaxsolver-u5m" target="_blank" class="cm" rel="noopener noreferrer">
             <div class="cm-ic ic-rd"><i class="fab fa-youtube"></i></div>
             <div class="cm-info">
               <strong>YouTube — Syntax Solver</strong>
@@ -1726,14 +1880,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   </div>
 </section>
 
+<div class="mobile-bar"><a href="https://wa.me/919100850087?text=Hi%20Murthu!%20I%27d%20like%20to%20hire%20you." target="_blank" rel="noopener noreferrer">WhatsApp</a><a href="Murthujavali_Pinjari_ERPNext_Frappe.pdf" download>Resume</a><a href="#contact">Contact</a></div>
 <footer>
   <div class="f-brand">Murthujavali Pinjari</div>
   <p class="f-copy">© 2026 · Senior Python &amp; Frappe/ERPNext Developer · Team Lead</p>
   <div class="f-socials">
-    <a href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank" class="f-soc"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/PinjariMurthujavali" target="_blank" class="f-soc"><i class="fab fa-github"></i></a>
-    <a href="https://www.youtube.com/@Syntaxsolver-u5m" target="_blank" class="f-soc"><i class="fab fa-youtube"></i></a>
-    <a href="https://wa.me/919100850087" target="_blank" class="f-soc" style="color:#25d366;border-color:rgba(37,211,102,.25)"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank" class="f-soc" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/PinjariMurthujavali" target="_blank" class="f-soc" aria-label="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+    <a href="https://www.youtube.com/@Syntaxsolver-u5m" target="_blank" class="f-soc" aria-label="YouTube" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+    <a href="https://wa.me/919100850087" target="_blank" class="f-soc" aria-label="WhatsApp" style="color:#25d366;border-color:rgba(37,211,102,.25)" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
   </div>
 </footer>
 
@@ -1799,16 +1954,48 @@ const skObs = new IntersectionObserver(entries => {
 document.querySelectorAll('.skill-panel').forEach(g => skObs.observe(g));
 
 // ── FILTER ──
+let currentProjFilter = 'all';
+let showAllProjects = false;
+function applyProjFilter() {
+  let hiddenExtras = 0;
+  document.querySelectorAll('.proj-card').forEach(c => {
+    const cats = (c.getAttribute('data-cat') || '').split(' ');
+    const matches = currentProjFilter === 'all' || cats.includes(currentProjFilter);
+    // "extra" = small web demos + academic projects. On "All" they start collapsed.
+    const isExtra = !cats.includes('erp') && !cats.includes('ai');
+    const collapsed = currentProjFilter === 'all' && isExtra && !showAllProjects;
+    if (matches && collapsed) hiddenExtras++;
+    c.style.display = (matches && !collapsed) ? 'flex' : 'none';
+    c.style.flexDirection = 'column';
+  });
+  const wrap = document.getElementById('projMoreWrap');
+  const btn  = document.getElementById('projMore');
+  if (!wrap || !btn) return;
+  if (currentProjFilter !== 'all') { wrap.style.display = 'none'; return; }
+  wrap.style.display = 'block';
+  btn.textContent = showAllProjects ? 'Show fewer projects' : 'Show ' + hiddenExtras + ' more projects (web demos & academic)';
+  btn.setAttribute('aria-expanded', showAllProjects ? 'true' : 'false');
+}
 function filterProj(cat, btn) {
   document.querySelectorAll('.pf-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('.proj-card').forEach(c => {
-    const cats = (c.getAttribute('data-cat') || '').split(' ');
-    const show = cat === 'all' || cats.includes(cat);
-    c.style.display = show ? 'flex' : 'none';
-    c.style.flexDirection = 'column';
-  });
+  currentProjFilter = cat;
+  applyProjFilter();
 }
+function toggleMoreProjects() {
+  showAllProjects = !showAllProjects;
+  applyProjFilter();
+}
+// count extras once so the button label is right on first paint
+(function(){
+  const extras = [...document.querySelectorAll('.proj-card')].filter(c => {
+    const cats = (c.getAttribute('data-cat') || '').split(' ');
+    return !cats.includes('erp') && !cats.includes('ai');
+  }).length;
+  const btn = document.getElementById('projMore');
+  if (btn) btn.textContent = 'Show ' + extras + ' more projects (web demos & academic)';
+  applyProjFilter();
+})();
 
 // ── NAV ACTIVE ──
 const secs = document.querySelectorAll('section[id]');
@@ -1922,7 +2109,15 @@ function sendWhatsApp() {
 //    deletes in your Firestore Security Rules too.
 //    CHANGE THIS PASSWORD before publishing:
 // ══════════════════════════════════════════════════════════════
-const ADMIN_PASSWORD  = 'Murthu@2026';      // <-- change this to your own secret
+// SHA-256 hash of the admin password (the plaintext is no longer stored in the repo).
+// To set a NEW password: open your browser console and run
+//   crypto.subtle.digest('SHA-256', new TextEncoder().encode('YOUR_NEW_PASSWORD')).then(b => console.log([...new Uint8Array(b)].map(x => x.toString(16).padStart(2,'0')).join('')))
+// then paste the printed hash below.
+const ADMIN_PASSWORD_HASH = 'edb72af94b74b663d6f9a1921aebb33ba23b4034ba369ebd379f2e9c3f8fb9ef';
+async function sha256Hex(t) {
+  const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(t));
+  return [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, '0')).join('');
+}
 
 const LIKES_KEY   = 'murthu_portfolio_review_likes';
 const MY_REVIEWS_KEY = 'murthu_portfolio_my_review_ids'; // ids of reviews THIS browser submitted
@@ -2024,7 +2219,7 @@ function setupAdminTrigger() {
   heading.style.cursor = 'pointer';
   heading.title = '';
   let clicks = 0, timer;
-  heading.addEventListener('click', () => {
+  heading.addEventListener('click', async () => {
     if (isAdmin) return; // already unlocked
     clicks++;
     clearTimeout(timer);
@@ -2033,7 +2228,7 @@ function setupAdminTrigger() {
       clicks = 0;
       const pass = prompt('Admin password:');
       if (pass === null) return;
-      if (pass === ADMIN_PASSWORD) {
+      if (await sha256Hex(pass) === ADMIN_PASSWORD_HASH) {
         sessionStorage.setItem('murthu_admin', '1');
         alert('✅ Admin mode unlocked. Delete buttons are now visible to you only.');
         location.reload();
