@@ -3,7 +3,7 @@
 
 <!-- Animated Typing Header -->
 <h1 align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&duration=2500&pause=800&color=0077B5&center=true&vCenter=true&width=700&lines=Hi+%F0%9F%91%8B+I'm+Murthu!;Senior+Full+Stack+Python+Developer;ERPNext+%2F+Frappe+Expert;Team+Lead+%40+Brilliant+Technologies;SIH+2023+National+Prize+Winner+%F0%9F%8F%86;YouTube+Creator+%40+Syntax+Solver+%F0%9F%8E%AC" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&duration=2500&pause=800&color=0077B5&center=true&vCenter=true&width=700&lines=Hi+%F0%9F%91%8B+I'm+Murthu!;Senior+Python+%26+Frappe%2FERPNext+Developer;Team+Lead+%40+Brilliant+Technologies;SIH+2023+National+Prize+Winner+%F0%9F%8F%86;YouTube+Creator+%40+Syntax+Solver+%F0%9F%8E%AC" alt="Typing SVG" />
 </h1>
 
 <!-- Social Badges -->
@@ -25,7 +25,7 @@
 
 <!-- Available Badge -->
 <p align="center">
-  <img src="https://img.shields.io/badge/🟢_OPEN_TO_WORK-Full_Stack_Python_|_ERPNext_|_Django-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/🟢_OPEN_TO_WORK-ERPNext_|_Frappe_|_Python-success?style=for-the-badge" />
 </p>
 
 ---
@@ -36,7 +36,7 @@
 ```python
 class Murthu:
     name       = "Pinjari Murthujavali (Murthu)"
-    role       = "Senior Full Stack Developer & Team Lead"
+    role       = "Senior Python & Frappe/ERPNext Developer & Team Lead"
     company    = "Brilliant Technologies, Hyderabad 🏢"
     education  = "B.Tech ECE — CGPA 8.0 | Santhiram Engineering College"
     location   = "Hyderabad, Telangana, India 🇮🇳"
@@ -55,7 +55,7 @@ class Murthu:
         "🏥 Built Hospital Management System on Frappe Cloud",
         "👥 Leading dev team @ Brilliant Technologies",
         "📺 YouTube Creator — @SyntaxSolver",
-        "24+ Projects Built | 11+ Certifications | 289+ GitHub Contributions",
+        "21+ Projects Built | 11+ Certifications | SIH 2023 National Prize",
     ]
 
     contact    = {
@@ -73,11 +73,9 @@ class Murthu:
 ## 🏆 Achievements at a Glance
 
 <p align="center">
-  <img src="https://img.shields.io/badge/24+-Projects_Built-0077B5?style=for-the-badge&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/21+-Projects_Built-0077B5?style=for-the-badge&logo=github&logoColor=white" />
   <img src="https://img.shields.io/badge/11+-Certifications-FF6C37?style=for-the-badge&logo=coursera&logoColor=white" />
   <img src="https://img.shields.io/badge/SIH_2023-2nd_Prize_🏆-gold?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/289+-GitHub_Contributions-2DA44E?style=for-the-badge&logo=github&logoColor=white" />
-  <img src="https://img.shields.io/badge/84+-Repositories-181717?style=for-the-badge&logo=github&logoColor=white" />
 </p>
 
 ---
@@ -155,10 +153,6 @@ class Murthu:
   <img src="https://github-readme-streak-stats.herokuapp.com?user=PinjariMurthujavali&theme=tokyonight&hide_border=true&date_format=M%20j%5B%2C%20Y%5D" width="70%" />
 </p>
 
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=PinjariMurthujavali&theme=tokyo-night&hide_border=true&area=true" width="100%" />
-</p>
-
 ---
 
 ## 🗂️ Featured Projects
@@ -166,11 +160,11 @@ class Murthu:
 | Project | Tech | Description |
 |---------|------|-------------|
 | 🏥 [Hospital Management System](https://github.com/PinjariMurthujavali) | ERPNext · Frappe · Frappe Cloud | Enterprise HMS — patient reg, billing, pharmacy, lab, doctor schedules |
-| 🏢 [HRMS Suite](https://github.com/PinjariMurthujavali/HRMS-Suite) | Frappe · Python | HR Management System on Frappe Framework |
-| 🔧 [BCRM Admin](https://github.com/PinjariMurthujavali/BCRM-ADMIN-FILES) | JS · HTML | CRM admin panel & configuration |
+| ⏱️ [HR Attendance Automation](https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/#case-studies) | Frappe · Python · REST API | 7 attendance rule types, ZKTeco biometric sync (39,000+ logs, 75 employees), 5-min scheduler |
+| 🤝 [BCRM — CRM & Field Ops](https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/#case-studies) | Frappe · Python · REST API | Lead → Opportunity → Customer → AMC/renewal, GPS check-in, Customer 360, solo build |
 | 👩‍💻 [Tech Women Empowerment](https://pinjarimurthujavali.github.io/Tech-For-Girl---Empower-Learn/) | HTML · CSS · JS | Platform empowering girls through tech education |
 | 🌦️ [Weather Dashboard](https://pinjarimurthujavali.github.io/Project-23---Weather-Dashboard/) | JS · Weather API | Real-time weather forecasts with data visualization |
-| 🎮 [Quiz Game](https://pinjarimurthujavali.github.io/Project-1---Quiz-Game/) | Python · JS | Interactive quiz game with timer & scoring |
+| 🎮 [Quiz Game](https://pinjarimurthujavali.github.io/Project-1---Quiz-Game/) | HTML · CSS · JS | Interactive quiz game with timer & scoring |
 | 🔊 [Speech to Text](https://pinjarimurthujavali.github.io/Project-24-Speech-text-reader/) | Web Speech API | Multilingual speech-to-text web app |
 | 📋 [Portfolio Website](https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/) | HTML · CSS · JS | Animated personal portfolio with project showcases |
 
