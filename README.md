@@ -1,237 +1,184 @@
-<!-- Header Wave Animation -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0077B5,100:00C9FF&height=120&section=header&animation=fadeIn" />
+<!-- ===================== HEADER ===================== -->
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0F2027,50:0077B5,100:00C9FF&height=200&section=header&text=Murthujavali%20Pinjari&fontSize=48&fontColor=ffffff&fontAlignY=38&desc=ERPNext%20%7C%20Frappe%20%7C%20Python%20Full-Stack%20%7C%20Team%20Lead&descSize=18&descAlignY=60&animation=fadeIn" />
 
-<!-- Animated Typing Header -->
-<h1 align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&duration=2500&pause=800&color=0077B5&center=true&vCenter=true&width=700&lines=Hi+%F0%9F%91%8B+I'm+Murthu!;Senior+Python+%26+Frappe%2FERPNext+Developer;Team+Lead+%40+Brilliant+Technologies;SIH+2023+National+Prize+Winner+%F0%9F%8F%86;YouTube+Creator+%40+Syntax+Solver+%F0%9F%8E%AC" alt="Typing SVG" />
-</h1>
-
-<!-- Social Badges -->
 <p align="center">
-  <a href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+  <a href="https://github.com/PinjariMurthujavali">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2800&pause=900&color=00C9FF&center=true&vCenter=true&width=820&height=50&lines=Hi+%F0%9F%91%8B+I'm+Murthu+%E2%80%94+I+turn+business+problems+into+working+ERPs;ERPNext+%2F+Frappe+Developer+%26+Technical+Team+Lead;Built+a+Hospital+Management+System+for+45%2B+clinic+staff;SIH+2023+%E2%80%94+2nd+Prize+National+Finalist+%F0%9F%8F%86;Python+%7C+Django+%7C+REST+APIs+%7C+Integrations;YouTube+Creator+%40+Syntax+Solver+%F0%9F%8E%AC" alt="Typing SVG" />
   </a>
-  <a href="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white" />
-  </a>
-  <a href="https://www.youtube.com/@Syntaxsolver-u5m" target="_blank">
-    <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
-  </a>
-  <a href="https://wa.me/919100850087" target="_blank">
-    <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-  </a>
-  <img src="https://komarev.com/ghpvc/?username=PinjariMurthujavali&style=for-the-badge&color=0077B5&label=PROFILE+VIEWS" />
 </p>
 
-<!-- Available Badge -->
 <p align="center">
-  <img src="https://img.shields.io/badge/🟢_OPEN_TO_WORK-ERPNext_|_Frappe_|_Python-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/🟢_OPEN_TO_WORK-ERPNext_%7C_Frappe_%7C_Python-00C853?style=for-the-badge&labelColor=0D1117" />
+</p>
+
+<p align="center">
+  <a href="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/"><img src="https://img.shields.io/badge/Portfolio-0077B5?style=for-the-badge&logo=google-chrome&logoColor=white" /></a>
+  <a href="https://www.linkedin.com/in/murthujavali-pinjari18/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+  <a href="https://wa.me/919100850087"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
+  <a href="mailto:luckymurthu@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+  <a href="https://www.youtube.com/@Syntaxsolver-u5m"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" /></a>
+  <img src="https://komarev.com/ghpvc/?username=PinjariMurthujavali&style=for-the-badge&color=00C9FF&label=PROFILE+VIEWS&labelColor=0D1117" />
 </p>
 
 ---
 
-<!-- About Me as Python Dict -->
 ## 🧑‍💻 About Me
 
 ```python
 class Murthu:
-    name       = "Pinjari Murthujavali (Murthu)"
-    role       = "Senior Python & Frappe/ERPNext Developer & Team Lead"
-    company    = "Brilliant Technologies, Hyderabad 🏢"
-    education  = "B.Tech ECE — CGPA 8.0 | Santhiram Engineering College"
-    location   = "Hyderabad, Telangana, India 🇮🇳"
-
-    stack      = {
-        "backend"   : ["Python", "Django", "Frappe", "ERPNext", "REST API"],
-        "frontend"  : ["HTML5", "CSS3", "JavaScript", "React", "Bootstrap"],
-        "database"  : ["MySQL", "PostgreSQL", "MongoDB", "MariaDB"],
-        "cms"       : ["WordPress", "WooCommerce", "Beaver Builder", "Elementor"],
-        "devops"    : ["Git", "GitHub", "Linux", "Frappe Cloud", "Docker"],
-        "ai"        : ["ChatGPT", "Prompt Engineering", "GenAI", "AI Integration"],
-    }
-
-    highlights = [
-        "🏆 SIH 2023 — 2nd Prize (National Level Hackathon)",
-        "🏥 Built Hospital Management System on Frappe Cloud",
-        "👥 Leading dev team @ Brilliant Technologies",
-        "📺 YouTube Creator — @SyntaxSolver",
-        "21+ Projects Built | 11+ Certifications | SIH 2023 National Prize",
-    ]
-
-    contact    = {
-        "whatsapp"  : "+91 9100850087",
-        "email"     : "luckymurthu@gmail.com",
-        "portfolio" : "https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/",
-    }
+    name      = "Murthujavali Pinjari"
+    role      = "ERPNext / Frappe Developer · Python Full-Stack · Technical Team Lead"
+    company   = "Brilliant Technologies, Hyderabad 🏢"
+    education = "B.Tech ECE · CGPA 8.0 · Santhiram Engineering College"
+    location  = "Hyderabad, India 🇮🇳"
+    team      = "Leading 4 engineers · mentoring 3 junior developers"
+    frappe    = ["v15", "v16", "Frappe Cloud", "Custom Apps", "Healthcare", "CRM", "HRMS"]
+    mission   = "Translate client needs into clean, production-ready Frappe solutions"
 
     def say_hi(self):
         print("Let's build something remarkable together! 🚀")
 ```
 
+<table align="center">
+  <tr>
+    <td align="center"><h2>🏥 45+</h2><sub>Clinic staff using my<br/>Hospital Management System</sub></td>
+    <td align="center"><h2>👥 4</h2><sub>Engineers led<br/>+ 3 mentored</sub></td>
+    <td align="center"><h2>🏆 SIH '23</h2><sub>2nd Prize<br/>National Level</sub></td>
+    <td align="center"><h2>🚀 21+</h2><sub>Projects<br/>Built</sub></td>
+    <td align="center"><h2>🎖️ 11+</h2><sub>Certifications<br/>Earned</sub></td>
+  </tr>
+</table>
+
 ---
 
-## 🏆 Achievements at a Glance
+## ⚙️ Frappe / ERPNext Expertise
 
 <p align="center">
-  <img src="https://img.shields.io/badge/21+-Projects_Built-0077B5?style=for-the-badge&logo=github&logoColor=white" />
-  <img src="https://img.shields.io/badge/11+-Certifications-FF6C37?style=for-the-badge&logo=coursera&logoColor=white" />
-  <img src="https://img.shields.io/badge/SIH_2023-2nd_Prize_🏆-gold?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Frappe_Framework-0089FF?style=for-the-badge&logoColor=white" />
+  <img src="https://img.shields.io/badge/ERPNext_v15_%2F_v16-5C8DF6?style=for-the-badge&logoColor=white" />
+  <img src="https://img.shields.io/badge/Frappe_Cloud-00C9FF?style=for-the-badge&logoColor=white" />
+  <img src="https://img.shields.io/badge/Frappe_Bench-0077B5?style=for-the-badge&logoColor=white" />
+  <img src="https://img.shields.io/badge/Frappe_Realtime-1E88E5?style=for-the-badge&logoColor=white" />
 </p>
 
----
-
-## 🛠️ Tech Stack
-
-### ⚙️ Frappe / ERPNext (Core Expertise)
-![Frappe](https://img.shields.io/badge/Frappe_Framework-0089FF?style=for-the-badge&logo=frappe&logoColor=white)
-![ERPNext](https://img.shields.io/badge/ERPNext-5C8DF6?style=for-the-badge&logoColor=white)
-![Frappe Cloud](https://img.shields.io/badge/Frappe_Cloud-00C9FF?style=for-the-badge&logoColor=white)
-![Custom DocTypes](https://img.shields.io/badge/Custom_DocTypes-0077B5?style=for-the-badge&logoColor=white)
-![Hospital ERP](https://img.shields.io/badge/Hospital_ERP-E91E63?style=for-the-badge&logo=heart&logoColor=white)
-
-### 🐍 Python & Backend
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
-![REST API](https://img.shields.io/badge/REST_API-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-
-### 🌐 Frontend
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-
-### 🗄️ Databases
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)
-
-### 📦 WordPress & CMS
-![WordPress](https://img.shields.io/badge/WordPress-21759B?style=for-the-badge&logo=wordpress&logoColor=white)
-![WooCommerce](https://img.shields.io/badge/WooCommerce-96588A?style=for-the-badge&logo=woocommerce&logoColor=white)
-![Beaver Builder](https://img.shields.io/badge/Beaver_Builder-FF9900?style=for-the-badge&logoColor=white)
-![Elementor](https://img.shields.io/badge/Elementor-92003B?style=for-the-badge&logo=elementor&logoColor=white)
-
-### 🛠️ DevOps & Tools
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-
-### 🤖 AI & Emerging Tech
-![ChatGPT](https://img.shields.io/badge/ChatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
-![GenAI](https://img.shields.io/badge/Generative_AI-FF6F00?style=for-the-badge&logo=google&logoColor=white)
-![Prompt Engineering](https://img.shields.io/badge/Prompt_Engineering-6C3483?style=for-the-badge&logoColor=white)
+| Area | What I Work With |
+|------|------------------|
+| 🧩 **Customization** | Custom Apps · DocTypes · Hooks · Client & Server Scripts · Workspaces · Workflows · Role & User Permissions · Jinja Print Formats |
+| 📦 **ERP Modules** | Healthcare · CRM · HRMS · Attendance · Shift · Leave · Payroll · Salary Slip · Lead → Opportunity → Quotation → Sales Order → Invoice → Payment · Projects · Tickets · Service Contracts |
+| 📊 **Reporting & Data** | Query Reports · SQL Reporting · Dashboards · Data Import & Mapping · Duplicate Detection · Reconciliation · Validation |
+| 🔌 **Integrations** | REST APIs · Webhooks · Tata Smartflo Telephony · WhatsApp/SMS · GPS & Geolocation · WebSockets · eSSL/ZKTeco Biometrics (pyzk) · Firebase Cloud Messaging |
+| 🧾 **Business Rules** | Item-wise GST · CGST/SGST vs IGST · Late-entry & Grace Rules · Sandwich Rule · Attendance-based Payroll |
 
 ---
 
-## 🚀 What I Build
-
-| Domain | What I Build |
-|--------|-------------|
-| 🏥 **Hospital ERP** | Full HMS on ERPNext — patient mgmt, billing, pharmacy, lab, Frappe Cloud deployed |
-| ⚙️ **ERPNext / Frappe** | Custom DocTypes, server scripts, REST APIs, business automation |
-| 🐍 **Django / Python** | Scalable web apps, REST APIs, backend systems |
-| 🌐 **WordPress** | WooCommerce stores, Beaver Builder & Elementor sites, Plugin dev |
-| 👥 **Team Lead** | Sprint planning, code reviews, architecture, delivery ownership |
-| 📺 **YouTube** | Python & ERPNext tutorials @ Syntax Solver |
-
----
-
-## 📊 GitHub Stats
+## 🛠️ Full Tech Stack
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=PinjariMurthujavali&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" height="170" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=PinjariMurthujavali&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" height="170" />
+  <img src="https://skillicons.dev/icons?i=python,django,js,html,css,bootstrap,react,nodejs,java,flutter,dart&theme=dark" /><br/><br/>
+  <img src="https://skillicons.dev/icons?i=mysql,mariadb,postgres,mongodb,firebase,docker,linux,git,github,aws,wordpress,postman,vscode&theme=dark" />
 </p>
 
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=PinjariMurthujavali&theme=tokyonight&hide_border=true&date_format=M%20j%5B%2C%20Y%5D" width="70%" />
-</p>
+<details>
+<summary><b>📋 Click for the complete skill breakdown</b></summary>
+<br/>
+
+| Category | Skills |
+|----------|--------|
+| 🐍 **Backend** | Python · Django · OOP · REST APIs · Java |
+| 🌐 **Frontend** | HTML5 · CSS3 · JavaScript · React · Bootstrap · Node.js |
+| 🗄️ **Databases** | MariaDB · MySQL · PostgreSQL · MongoDB · SQL |
+| 📦 **CMS** | WordPress · WooCommerce · Beaver Builder · Elementor · SEO & Performance Tuning |
+| ☁️ **DevOps** | Git · GitHub · Linux · Docker · Frappe Bench · Frappe Cloud · Basic AWS · Migrations · Production Debugging |
+| 📱 **Mobile** | Flutter / Dart (project exposure) · Firebase Cloud Messaging · Flutter ↔ Frappe API |
+| 🤖 **AI** | ChatGPT · Prompt Engineering · Generative AI · AI Integration |
+| 🤝 **Leadership** | Sprint Planning · Code Reviews · Release Sign-off · Architecture Decisions · Client Requirement Analysis · Mentoring |
+
+</details>
 
 ---
 
 ## 🗂️ Featured Projects
 
-| Project | Tech | Description |
-|---------|------|-------------|
-| 🏥 [Hospital Management System](https://github.com/PinjariMurthujavali) | ERPNext · Frappe · Frappe Cloud | Enterprise HMS — patient reg, billing, pharmacy, lab, doctor schedules |
-| ⏱️ [HR Attendance Automation](https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/#case-studies) | Frappe · Python · REST API | 7 attendance rule types, ZKTeco biometric sync (39,000+ logs, 75 employees), 5-min scheduler |
-| 🤝 [BCRM — CRM & Field Ops](https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/#case-studies) | Frappe · Python · REST API | Lead → Opportunity → Customer → AMC/renewal, GPS check-in, Customer 360, solo build |
-| 👩‍💻 [Tech Women Empowerment](https://pinjarimurthujavali.github.io/Tech-For-Girl---Empower-Learn/) | HTML · CSS · JS | Platform empowering girls through tech education |
-| 🌦️ [Weather Dashboard](https://pinjarimurthujavali.github.io/Project-23---Weather-Dashboard/) | JS · Weather API | Real-time weather forecasts with data visualization |
-| 🎮 [Quiz Game](https://pinjarimurthujavali.github.io/Project-1---Quiz-Game/) | HTML · CSS · JS | Interactive quiz game with timer & scoring |
+| Project | Tech | Highlights |
+|---------|------|-----------|
+| 🏥 **[Hospital Management System](https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/#case-studies)** | ERPNext · Frappe Cloud | Patient registration, appointments, billing, pharmacy, lab & nutrition workflows · Role-based access for reception, doctors, lab & pharmacy · **Production, 45+ users** |
+| 🤝 **[BCRM — Custom Frappe CRM](https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/#case-studies)** | Frappe · Python · REST API | Lead → Opportunity → Quotation → Order → Invoice → Payment · Service contracts, tickets, projects · Customer 360 · Cross-system data import & reconciliation |
+| 📞 **BT Smartflo — Telephony App** | Frappe · Webhooks · Realtime | Tata Smartflo click-to-call · Webhook call logging · Live call timer · Auto-refreshing activity timeline |
+| ⏱️ **[HR Attendance & Geo-Tracking](https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/#case-studies)** | Frappe · Python · pyzk | 7 attendance rule types · ZKTeco biometric sync (39,000+ logs, 75 employees) · GPS logs & office-radius validation · Duplicate-log prevention · Attendance-based payroll |
+| 📱 **Flutter Field Tracker** | Flutter · Firebase · Frappe API | Push notifications · GPS permissions · Flutter ↔ Frappe integration *(project work)* |
+| 👩‍💻 [Tech Women Empowerment](https://pinjarimurthujavali.github.io/Tech-For-Girl---Empower-Learn/) | HTML · CSS · JS | Tech-education platform for girls |
+| 🌦️ [Weather Dashboard](https://pinjarimurthujavali.github.io/Project-23---Weather-Dashboard/) | JS · Weather API | Real-time forecasts with data visualization |
+| 🎮 [Quiz Game](https://pinjarimurthujavali.github.io/Project-1---Quiz-Game/) | HTML · CSS · JS | Interactive quiz with timer & scoring |
 | 🔊 [Speech to Text](https://pinjarimurthujavali.github.io/Project-24-Speech-text-reader/) | Web Speech API | Multilingual speech-to-text web app |
-| 📋 [Portfolio Website](https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/) | HTML · CSS · JS | Animated personal portfolio with project showcases |
 
 ---
 
 ## 💼 Career Journey
 
 ```
-2022       →  Intern Student Coordinator @ Eduskills Academy (3 years)
-2023 🏆    →  SIH 2023 — 2nd Prize Winner (National Level!)
+2022       →  Intern Student Coordinator @ EduSkills Academy
+2023  🏆   →  Smart India Hackathon — 2nd Prize (National Level)
 2024       →  Python Full Stack Intern @ Durga Software Solutions
-2024       →  Web Full Stack Intern @ Eduskills Academy (Virtual)
-Feb 2025   →  WordPress Developer @ vSplash Techlabs (Remote)
-Sep 2025   →  WordPress Developer @ Brilliant Technologies
-Jan 2026   →  Full Stack Python Developer @ Brilliant Technologies
-Apr 2026   →  Senior Developer & Team Lead @ Brilliant Technologies 🚀
+Feb 2025   →  WordPress Integrator @ Vsplash Techlabs
+Sep 2025   →  Joined Brilliant Technologies · Frappe/ERPNext
+2026       →  Python Full Stack Developer · Technical Team Lead 🚀
 ```
+
+---
+
+## 📊 GitHub Analytics
+
+<p align="center">
+  <img height="170" src="https://github-readme-stats.vercel.app/api?username=PinjariMurthujavali&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&bg_color=0D1117&title_color=00C9FF&text_color=C9D1D9&icon_color=0077B5" />
+  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=PinjariMurthujavali&layout=compact&hide_border=true&langs_count=8&bg_color=0D1117&title_color=00C9FF&text_color=C9D1D9" />
+</p>
+
+<p align="center">
+  <img width="75%" src="https://streak-stats.demolab.com?user=PinjariMurthujavali&hide_border=true&background=0D1117&ring=00C9FF&fire=0077B5&currStreakLabel=00C9FF&sideLabels=C9D1D9&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=8B949E" />
+</p>
+
+<p align="center">
+  <img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=PinjariMurthujavali&bg_color=0D1117&color=00C9FF&line=0077B5&point=FFFFFF&area=true&area_color=0077B5&hide_border=true" />
+</p>
 
 ---
 
 ## 🏅 Certifications
 
-| Cert | Issuer | Year |
-|------|--------|------|
+| Certification | Issuer | Year |
+|---------------|--------|------|
 | 🎖️ Frappe & ERPNext Developer | Brilliant Technologies | 2025 |
 | 🎖️ Software Developer Certification | Institute of Software Excellence | 2025 |
-| 🎖️ WordPress Developer | Vsplash Techlabs | 2025 |
-| 🎖️ WooCommerce Developer | Vsplash Techlabs | 2025 |
-| 🎖️ Beaver Builder | Vsplash Techlabs | 2025 |
-| 🎖️ Python Full Stack | Durga Software Solutions | 2024 |
-| 🎖️ Web Development | American Indian Foundation (S&P Global) | 2023 |
+| 🎖️ WordPress · WooCommerce · Beaver Builder | Vsplash Techlabs | 2025 |
+| 🎖️ Python Full Stack Developer | Durga Software Solutions | 2024 |
+| 🎖️ Web Development | AIF / S&P Global | 2023 |
 | 🎖️ TCS iON Career Edge | Communication & Soft Skills | 2023 |
 | 🎖️ SQL Fundamentals | HackerRank | 2022 |
-| 🎖️ Java | SoloLearn | 2022 |
-| 🎖️ Python Data Structures | SoloLearn | 2021 |
+| 🎖️ Java · Python Data Structures | SoloLearn | 2021–22 |
 
 ---
 
-## 📺 Syntax Solver — YouTube Channel
+## 📺 Syntax Solver — YouTube
 
-> 🎯 Simplifying Python, Django, ERPNext & DSA for students and professionals.  
-> Making coding education accessible to everyone — free, clear, practical.
+> 🎯 Simplifying Python, Django, ERPNext & DSA for students and professionals. Free, clear, practical.
 
-[![Subscribe](https://img.shields.io/badge/▶_Subscribe-Syntax_Solver-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@Syntaxsolver-u5m)
+<p align="center">
+  <a href="https://www.youtube.com/@Syntaxsolver-u5m"><img src="https://img.shields.io/badge/▶_Subscribe-Syntax_Solver-FF0000?style=for-the-badge&logo=youtube&logoColor=white" /></a>
+</p>
 
 ---
 
-## 📫 Let's Connect & Hire Me!
+## 📫 Let's Work Together
 
 <p align="center">
-  <a href="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/">
-    <img src="https://img.shields.io/badge/🌐_View_Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white" />
-  </a>
-  <a href="https://wa.me/919100850087">
-    <img src="https://img.shields.io/badge/💬_WhatsApp_Me-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-  </a>
-  <a href="https://www.linkedin.com/in/murthujavali-pinjari18/">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  <a href="mailto:luckymurthu@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
+  <b>🟢 Open to: ERPNext / Frappe Software Engineer · Full-Stack Python · Django</b><br/>
+  <sub>On-site · Remote · Hybrid · India & International</sub>
 </p>
 
 <p align="center">
-  <b>🟢 Open to: Full Stack Python | ERPNext/Frappe | Django | On-site · Remote · Hybrid | India & International</b>
+  <a href="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/"><img src="https://img.shields.io/badge/🌐_View_Portfolio-0077B5?style=for-the-badge" /></a>
+  <a href="https://wa.me/919100850087"><img src="https://img.shields.io/badge/💬_WhatsApp_Me-25D366?style=for-the-badge" /></a>
+  <a href="mailto:luckymurthu@gmail.com"><img src="https://img.shields.io/badge/📧_Email_Me-EA4335?style=for-the-badge" /></a>
 </p>
 
-<!-- Footer Wave -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:00C9FF,100:0077B5&height=100&section=footer&animation=fadeIn" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:00C9FF,50:0077B5,100:0F2027&height=120&section=footer&animation=fadeIn" />
