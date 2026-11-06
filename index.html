@@ -1,2491 +1,589 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <!-- Basic Meta -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0b1220">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Murthujavali Pinjari (Murthu) | Senior Python &amp; Frappe/ERPNext Developer · Team Lead</title>
+  <meta name="description" content="Portfolio of Murthujavali Pinjari (Murthu), Senior Python & Frappe/ERPNext Developer and Team Lead at Brilliant Technologies, Hyderabad. Enterprise ERP, CRM platforms, HR automation and integrations on Frappe Cloud.">
+  <meta name="keywords" content="Murthujavali Pinjari, Murthu, Python Developer, Frappe Developer, ERPNext Developer, Team Lead, Hospital ERP, CRM, HR attendance automation, Hyderabad, Portfolio">
+  <meta name="author" content="Murthujavali Pinjari">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="google-site-verification" content="AfAK3y3zXazuNcfP__qm8SesCT9amHMKV1pj7jLkKxU">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0b0f1f" id="metaTheme">
+  <link rel="canonical" href="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/">
 
-    <!-- SEO -->
-    <title>Murthujavali Pinjari | Senior Python &amp; Frappe/ERPNext Developer · Team Lead</title>
-    <meta name="description" content="Portfolio of Murthujavali Pinjari (Murthu) — Senior Python & Frappe/ERPNext Developer and Team Lead at Brilliant Technologies. Enterprise ERP systems, CRM platforms, integrations and team delivery on Frappe Cloud.">
-    <meta name="keywords" content="Murthujavali, Murthu, Murthujavali Pinjari, Murthu Portfolio, Senior Python Developer, Frappe Developer, ERPNext Developer, Team Lead, HRMS Developer, CRM Developer, Hyderabad, Portfolio Website">
-    <meta name="author" content="Murthujavali Pinjari">
-    <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Murthu — Portfolio">
+  <meta property="og:title" content="Murthujavali Pinjari | Senior Python & Frappe/ERPNext Developer · Team Lead">
+  <meta property="og:description" content="Enterprise ERP, CRM platforms and integrations built on Python, Frappe and ERPNext. Led and delivered at Brilliant Technologies.">
+  <meta property="og:url" content="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/">
+  <meta property="og:image" content="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Murthujavali Pinjari, Senior Python & Frappe/ERPNext Developer">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Murthujavali Pinjari | Senior Python & Frappe/ERPNext Developer">
+  <meta name="twitter:description" content="Senior Python & Frappe/ERPNext Developer and Team Lead. Enterprise ERP, CRM platforms and integrations.">
+  <meta name="twitter:image" content="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/assets/img/og-image.jpg">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/">
-
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="AfAK3y3zXazuNcfP__qm8SesCT9amHMKV1pj7jLkKxU">
-
-    <!-- Open Graph (Facebook, LinkedIn) -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Murthujavali Pinjari | Senior Python & Frappe/ERPNext Developer · Team Lead">
-    <meta property="og:description" content="Enterprise ERP systems, CRM platforms and integrations built on Python, Frappe and ERPNext — led and delivered by Murthujavali Pinjari at Brilliant Technologies.">
-    <meta property="og:url" content="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/">
-    <meta property="og:image" content="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/assets/img/profile.png">
-    <meta property="og:image:alt" content="Portrait of Murthujavali Pinjari, Senior Python & Frappe/ERPNext Developer">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Murthujavali Pinjari | Senior Python & Frappe/ERPNext Developer">
-    <meta name="twitter:description" content="Senior Python & Frappe/ERPNext Developer and Team Lead — enterprise ERP systems, CRM platforms and integrations.">
-    <meta name="twitter:image" content="https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/assets/img/profile.png">
-    <meta name="twitter:image:alt" content="Portrait of Murthujavali Pinjari, Senior Python & Frappe/ERPNext Developer">
-
-    <!-- Structured data (helps Google show a rich result for your name) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Murthujavali Pinjari",
-      "alternateName": "Murthu",
-      "jobTitle": "Senior Python & Frappe/ERPNext Developer · Team Lead",
-      "worksFor": { "@type": "Organization", "name": "Brilliant Technologies" },
-      "url": "https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/",
-      "image": "https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/assets/img/profile.png",
-      "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressRegion": "Telangana", "addressCountry": "IN" },
-      "alumniOf": "Santhiram Engineering College",
-      "knowsAbout": ["Frappe Framework", "ERPNext", "Python", "Django", "Frappe Cloud", "REST API integration"],
-      "sameAs": [
-        "https://www.linkedin.com/in/murthujavali-pinjari18/",
-        "https://github.com/PinjariMurthujavali",
-        "https://www.youtube.com/@Syntaxsolver-u5m"
-      ]
-    }
-    </script>
-
-    <!-- Theme (applied before paint to avoid flash) -->
-    <script>
-      (function(){
-        try {
-          var t = localStorage.getItem('murthu-theme');
-          if (t) document.documentElement.setAttribute('data-theme', t);
-        } catch(e) {}
-      })();
-    </script>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Google Analytics 4 -->
-    <!-- GA4 Measurement ID (same one configured in assets/js/firebase.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J2JYC707ET"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-J2JYC707ET');
-    </script>
-
-    <style>
-       :root {
-  /* ── Premium midnight design tokens ── */
-  --bg: #070c17;
-  --surface: #0a111f;
-  --card: #0d1526;
-  --card-hover: #121e34;
-  --border: rgba(148,163,184,0.14);
-  --border-glow: rgba(56,189,248,0.35);
-  --accent: #38bdf8;
-  --accent-light: #7dd3fc;
-  --accent-dim: rgba(56,189,248,0.12);
-  /* legacy aliases kept so existing component styles below stay wired to the new accent */
-  --gold: var(--accent);
-  --gold-light: var(--accent-light);
-  --gold-dim: var(--accent-dim);
-  --silver: #94a3b8;
-  --silver-dim: rgba(148,163,184,0.08);
-  --text: #f8fafc;
-  --text-muted: #64748b;
-  --text-sub: #94a3b8;
-  --green: #34d399;
-  --radius: 10px;
-  --amb1: #38bdf8;
-  --amb2: #2563eb;
-  --amb3: #34d399;
-}
-/* ── THEME PRESETS (accent swap only — background/typography untouched) ── */
-html[data-theme="emerald"] {
-  --accent: #34d399; --accent-light: #6ee7b7; --accent-dim: rgba(52,211,153,0.12);
-  --border-glow: rgba(52,211,153,0.35); --amb1: #34d399; --amb2: #10b981; --amb3: #38bdf8;
-}
-html[data-theme="violet"] {
-  --accent: #a78bfa; --accent-light: #c4b5fd; --accent-dim: rgba(167,139,250,0.12);
-  --border-glow: rgba(167,139,250,0.35); --amb1: #a78bfa; --amb2: #7c3aed; --amb3: #38bdf8;
-}
-html[data-theme="amber"] {
-  --accent: #fbbf24; --accent-light: #fcd34d; --accent-dim: rgba(251,191,36,0.12);
-  --border-glow: rgba(251,191,36,0.35); --amb1: #fbbf24; --amb2: #f59e0b; --amb3: #fb7185;
-}
-html[data-theme="rose"] {
-  --accent: #fb7185; --accent-light: #fda4af; --accent-dim: rgba(251,113,133,0.12);
-  --border-glow: rgba(251,113,133,0.35); --amb1: #fb7185; --amb2: #e11d48; --amb3: #a78bfa;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  background:
-    radial-gradient(ellipse 1100px 650px at 12% -8%, rgba(56,189,248,0.07), transparent 60%),
-    radial-gradient(ellipse 900px 700px at 100% 15%, rgba(59,130,246,0.05), transparent 55%),
-    linear-gradient(180deg, #060a14 0%, var(--bg) 35%, #04070d 100%);
-  color: var(--text);
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
-}
-
-/* ── AMBIENT ── */
-.ambient { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
-.amb-blob { position: absolute; border-radius: 50%; filter: blur(130px); opacity: .10; }
-.ab1 { width: 700px; height: 700px; background: radial-gradient(circle, var(--amb1), transparent 70%); top: -200px; right: -200px; animation: drift1 22s ease-in-out infinite; transition: background 1.2s ease; }
-.ab2 { width: 520px; height: 520px; background: radial-gradient(circle, var(--amb2), transparent 70%); bottom: 10%; left: -160px; animation: drift2 18s ease-in-out infinite; transition: background 1.2s ease; }
-.ab3 { width: 420px; height: 420px; background: radial-gradient(circle, var(--amb3), transparent 70%); top: 42%; left: 46%; opacity: .05; animation: drift3 26s ease-in-out infinite; transition: background 1.2s ease; }
-@keyframes drift1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-40px,30px)} }
-@keyframes drift2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,-40px)} }
-@keyframes drift3 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-20px,20px)} }
-
-/* ── FLOATING TECH ICONS (ambient, behind content) ── */
-.float-icons { position: absolute; inset: 0; overflow: hidden; }
-.fi {
-  position: absolute; color: var(--accent); opacity: .16;
-  filter: blur(.2px);
-  animation: fi-float var(--fi-dur,18s) ease-in-out infinite;
-  animation-delay: var(--fi-delay,0s);
-  transition: color 1.2s ease;
-}
-@keyframes fi-float {
-  0%,100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-34px) rotate(8deg); }
-}
-@media(max-width:768px){ .fi { opacity: .10; } .fi.fi-hide-mobile { display:none; } }
-
-/* ── THEME SWITCHER ── */
-.theme-switcher { position: fixed; left: 28px; bottom: 28px; z-index: 1000; }
-.theme-fab {
-  width: 54px; height: 54px; border-radius: 50%;
-  background: var(--card); border: 1px solid var(--border);
-  color: var(--accent-light); font-size: 1.2rem;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; box-shadow: 0 8px 28px rgba(0,0,0,.4);
-  transition: transform .3s ease, border-color .3s ease, background .3s ease;
-}
-.theme-fab:hover { transform: rotate(28deg) scale(1.06); border-color: var(--border-glow); }
-.theme-fab i { transition: color .3s ease; }
-.theme-panel {
-  position: absolute; bottom: 66px; left: 0;
-  background: var(--card); border: 1px solid var(--border); border-radius: 16px;
-  padding: 14px; display: flex; flex-direction: column; gap: 10px;
-  box-shadow: 0 20px 48px rgba(0,0,0,.5);
-  opacity: 0; transform: translateY(10px) scale(.96); pointer-events: none;
-  transition: opacity .25s ease, transform .25s ease;
-  width: 176px;
-}
-.theme-switcher.open .theme-panel { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
-.theme-panel-label { font-family: 'Plus Jakarta Sans', sans-serif; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); padding: 0 2px 2px; }
-.theme-swatches { display: flex; flex-wrap: wrap; gap: 8px; }
-.theme-swatch {
-  width: 28px; height: 28px; border-radius: 50%; cursor: pointer;
-  border: 2px solid transparent; position: relative;
-  transition: transform .2s ease, border-color .2s ease;
-}
-.theme-swatch:hover { transform: scale(1.12); }
-.theme-swatch.active { border-color: var(--text); }
-.theme-swatch.active::after { content:'✓'; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:.68rem; color:#06070d; font-weight:700; }
-.ts-sapphire { background: linear-gradient(135deg,#38bdf8,#2563eb); }
-.ts-emerald { background: linear-gradient(135deg,#34d399,#10b981); }
-.ts-violet { background: linear-gradient(135deg,#a78bfa,#7c3aed); }
-.ts-amber { background: linear-gradient(135deg,#fbbf24,#f59e0b); }
-.ts-rose { background: linear-gradient(135deg,#fb7185,#e11d48); }
-@media(max-width:768px){
-  .theme-switcher { left: 16px; bottom: 16px; }
-  .theme-fab { width: 48px; height: 48px; font-size: 1.05rem; }
-}
-
-/* ── subtle background grid + grain (kept faint by design) ── */
-body::before {
-  content: '';
-  position: fixed; inset: 0; z-index: 0; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(148,163,184,0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148,163,184,0.035) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 0%, transparent 75%);
-}
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 1;
-  opacity: .5;
-}
-
-/* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-  padding: 0 64px;
-  height: 68px;
-  display: flex; align-items: center; justify-content: space-between;
-  background: transparent;
-  border-bottom: 1px solid transparent;
-  transition: background .35s ease, border-color .35s ease, backdrop-filter .35s ease;
-}
-nav.scrolled {
-  backdrop-filter: blur(24px) saturate(1.4);
-  background: rgba(7,12,23,.88);
-  border-bottom: 1px solid var(--border);
-}
-.nav-brand {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.45rem;
-  font-weight: 600;
-  letter-spacing: .08em;
-  color: var(--gold);
-  text-decoration: none;
-}
-.nav-brand span { color: var(--text-sub); font-weight: 300; }
-.nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a {
-  color: var(--text-muted);
-  text-decoration: none;
-  font-size: .72rem;
-  font-weight: 500;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  transition: color .3s;
-  position: relative;
-}
-.nav-links a::after {
-  content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px;
-  background: var(--gold); transform: scaleX(0); transition: transform .3s; transform-origin: left;
-}
-.nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
-.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
-.nav-hire {
-  display: flex; align-items: center; gap: 8px;
-  padding: 9px 22px; border-radius: 6px;
-  border: 1px solid var(--gold);
-  color: var(--gold); font-size: .73rem; font-weight: 600;
-  letter-spacing: .1em; text-transform: uppercase;
-  text-decoration: none; transition: all .3s;
-}
-.nav-hire:hover { background: var(--gold); color: #06070d; }
-
-/* ── SECTIONS ── */
-section { padding: 100px 64px; position: relative; z-index: 2; }
-.sec-inner { max-width: 1240px; margin: 0 auto; }
-.sec-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .68rem; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 14px;
-  display: flex; align-items: center; gap: 12px;
-}
-.sec-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
-.sec-title {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(2.8rem, 5vw, 5rem);
-  font-weight: 700; letter-spacing: -.01em; line-height: 1;
-  margin-bottom: 60px;
-}
-.sec-title em { font-style: normal; font-weight: 800; color: var(--gold); }
-.divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 0 64px; }
-
-/* REVEAL */
-.r { opacity: 0; transform: translateY(24px); transition: opacity .8s cubic-bezier(.25,.46,.45,.94), transform .8s cubic-bezier(.25,.46,.45,.94); }
-.r.v { opacity: 1; transform: translateY(0); }
-
-/* ── HERO ── */
-#home { min-height: 100vh; display: flex; align-items: center; padding: 120px 64px 80px; }
-.hero-layout { display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: center; max-width: 1240px; margin: 0 auto; width: 100%; }
-
-.hero-badge {
-  display: inline-flex; align-items: center;
-  border: 1px solid var(--border); border-radius: 20px;
-  padding: 6px 15px; margin-bottom: 16px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
-  color: var(--accent-light); background: var(--gold-dim);
-}
-.hero-avail {
-  display: inline-flex; align-items: center; gap: 9px;
-  border: 1px solid rgba(61,186,140,.3); border-radius: 4px;
-  padding: 7px 16px; margin-bottom: 32px;
-  font-size: .7rem; letter-spacing: .15em; text-transform: uppercase;
-  color: var(--green); background: rgba(61,186,140,.05);
-}
-.avail-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: blink 2s ease-in-out infinite; }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
-
-.hero-name {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(3.5rem, 7vw, 7rem);
-  font-weight: 700; line-height: .88;
-  letter-spacing: -.02em;
-  margin-bottom: 8px;
-}
-.hero-name .line2 { color: var(--gold); font-style: normal; }
-
-.hero-title-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .75rem; color: var(--text-muted);
-  letter-spacing: .15em; text-transform: uppercase;
-  margin-bottom: 28px;
-  display: flex; align-items: center; gap: 10px;
-}
-.hero-title-tag::before, .hero-title-tag::after {
-  content: ''; display: block; height: 1px; background: var(--border);
-}
-.hero-title-tag::before { width: 0; }
-.hero-title-tag::after { flex: 1; }
-
-.hero-desc { font-size: 1rem; color: var(--text-sub); line-height: 1.85; max-width: 520px; margin-bottom: 40px; font-weight: 300; }
-.hero-desc strong { color: var(--text); font-weight: 500; }
-
-.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 56px; }
-.btn-gold {
-  display: inline-flex; align-items: center; gap: 9px;
-  padding: 14px 30px; border-radius: 6px;
-  background: var(--gold); color: #06070d;
-  font-weight: 700; font-size: .82rem; letter-spacing: .08em;
-  text-decoration: none; transition: all .25s;
-}
-.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(196,164,104,.3); }
-.btn-ghost {
-  display: inline-flex; align-items: center; gap: 9px;
-  padding: 14px 30px; border-radius: 6px;
-  border: 1px solid var(--border-glow); color: var(--gold);
-  font-weight: 500; font-size: .82rem; letter-spacing: .05em;
-  text-decoration: none; background: transparent; transition: all .25s;
-}
-.btn-ghost:hover { border-color: var(--gold); background: var(--gold-dim); transform: translateY(-2px); }
-.btn-outline-w {
-  display: inline-flex; align-items: center; gap: 9px;
-  padding: 14px 30px; border-radius: 6px;
-  border: 1px solid var(--border); color: var(--text-muted);
-  font-weight: 400; font-size: .82rem;
-  text-decoration: none; background: transparent; transition: all .25s;
-}
-.btn-outline-w:hover { border-color: rgba(255,255,255,.2); color: var(--text); }
-
-.hero-metrics { display: flex; gap: 40px; flex-wrap: wrap; }
-.metric { border-left: 1px solid var(--border-glow); padding-left: 20px; }
-.metric-num {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 2.4rem; font-weight: 700;
-  color: var(--gold); line-height: 1;
-}
-.metric-label { font-size: .67rem; color: var(--text-muted); letter-spacing: .12em; text-transform: uppercase; margin-top: 5px; }
-
-/* HERO PHOTO CARD */
-.hero-photo-card {
-  position: relative;
-  background: radial-gradient(
-  ellipse 75% 70% at 50% 22%,
-  #3a5a7a 0%,
-  #1c3352 22%,
-  #101f38 42%,
-  #0c1728 65%,
-  #080f1d 100%
-);
-  border: 1px solid var(--border-glow);
-  border-radius: 20px;
-  overflow: hidden;
-  aspect-ratio: 3/4;
-  box-shadow: 0 0 90px rgba(56,189,248,.10), inset 0 0 40px rgba(56,189,248,.05);
-}
-.hero-photo-card::before {
-  content: '';
-  position: absolute; inset: 0; z-index: 0;
-  background-image: linear-gradient(rgba(148,163,184,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.06) 1px, transparent 1px);
-  background-size: 28px 28px;
-  mask-image: radial-gradient(ellipse 70% 55% at 50% 25%, #000 0%, transparent 75%);
-}
-.hero-photo-card img {
-  width: 100%; height: 100%; object-fit: cover; object-position: top center;
-  display: block; position: relative; z-index: 1;
-}
-.hero-photo-placeholder {
-  width: 100%; height: 100%;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 16px;
-  background: radial-gradient(ellipse 85% 65% at 50% 28%, #35547a 0%, #1e3654 25%, #142640 50%, #0c1728 75%, #080f1d 100%);
-  position: relative; z-index: 1;
-}
-.hero-photo-placeholder i { font-size: 6rem; color: var(--accent); opacity: .3; }
-.photo-overlay-grad {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 50%;
-  background: linear-gradient(to top, rgba(6,7,13,.95), transparent);
-}
-.photo-chip {
-  position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
-  white-space: nowrap; background: rgba(6,7,13,.85);
-  border: 1px solid var(--border-glow);
-  padding: 8px 18px; border-radius: 40px;
-  font-size: .69rem; color: var(--gold);
-  letter-spacing: .12em; text-transform: uppercase;
-  backdrop-filter: blur(12px);
-}
-.photo-corner { position: absolute; width: 28px; height: 28px; border-color: var(--gold); border-style: solid; opacity: .5; }
-.pc-tl { top: 12px; left: 12px; border-width: 1px 0 0 1px; }
-.pc-br { bottom: 12px; right: 12px; border-width: 0 1px 1px 0; }
-
-/* ── ABOUT ── */
-.about-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-.about-tagline {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-  font-weight: 600; line-height: 1.2;
-  color: var(--text); margin-bottom: 28px;
-}
-.about-tagline em { color: var(--gold); font-style: normal; font-weight: 700; }
-.about-body p { color: var(--text-sub); line-height: 1.9; font-size: .93rem; font-weight: 300; margin-bottom: 18px; }
-.about-body strong { color: var(--text); font-weight: 500; }
-.about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
-.atag {
-  padding: 6px 14px; border-radius: 4px;
-  border: 1px solid var(--border);
-  font-size: .71rem; color: var(--text-muted);
-  letter-spacing: .06em; background: rgba(255,255,255,.02);
-  transition: all .25s;
-}
-.atag:hover { border-color: var(--border-glow); color: var(--gold); }
-.about-right { display: flex; flex-direction: column; gap: 20px; }
-.info-block {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 24px;
-  transition: all .3s;
-}
-.info-block:hover { border-color: var(--border-glow); }
-.ib-label { font-family: 'JetBrains Mono', monospace; font-size: .62rem; color: var(--text-muted); letter-spacing: .15em; text-transform: uppercase; margin-bottom: 10px; }
-.ib-value { font-size: .88rem; font-weight: 500; color: var(--text); line-height: 1.5; }
-.ib-value a { color: var(--gold); text-decoration: none; }
-.ib-value a:hover { text-decoration: underline; }
-.about-socials { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 28px; }
-.soc-btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 10px 20px; border-radius: 6px;
-  border: 1px solid var(--border); color: var(--text-muted);
-  font-size: .76rem; font-weight: 400;
-  text-decoration: none; transition: all .25s;
-}
-.soc-btn:hover { border-color: var(--border-glow); color: var(--gold); }
-.soc-btn.primary { background: var(--gold); border-color: var(--gold); color: #06070d; font-weight: 600; }
-.soc-btn.primary:hover { background: var(--gold-light); border-color: var(--gold-light); color: #06070d; }
-.soc-btn.youtube:hover { border-color: rgba(239,68,68,.4); color: #f87171; }
-
-/* ── SKILLS ── */
-.skills-layout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.skill-panel {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 28px;
-  transition: all .35s;
-}
-.skill-panel:hover { border-color: var(--border-glow); transform: translateY(-4px); }
-.sp-head {
-  display: flex; align-items: center; gap: 10px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .65rem; letter-spacing: .15em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 22px;
-  padding-bottom: 14px; border-bottom: 1px solid var(--border);
-}
-.sp-icon { font-size: .9rem; }
-/* Clean technology chips — no percentage bars, no fake precision */
-.sk-list { display: flex; flex-direction: row; flex-wrap: wrap; gap: 9px; }
-.sk { display: block; }
-.sk-row { display: flex; align-items: center; }
-.sk-name {
-  font-size: .78rem; font-weight: 500; color: var(--text-sub);
-  display: flex; align-items: center; gap: 7px;
-  padding: 7px 13px; border-radius: 20px;
-  border: 1px solid var(--border); background: rgba(255,255,255,.02);
-  transition: all .25s; white-space: nowrap;
-}
-.sk:hover .sk-name { border-color: var(--border-glow); color: var(--text); background: var(--gold-dim); transform: translateY(-2px); }
-.sk-name i { color: var(--gold); font-size: .78rem; width: 14px; text-align: center; opacity: .85; flex-shrink: 0; }
-.sk-pct, .sk-bar, .sk-fill { display: none; }
-
-/* ── TIMELINE ── */
-.tl-wrap { position: relative; padding-left: 24px; }
-.tl-wrap::before {
-  content: ''; position: absolute; left: 0; top: 12px; bottom: 12px;
-  width: 1px; background: linear-gradient(to bottom, var(--gold), transparent);
-}
-.tl-item { position: relative; margin-bottom: 36px; }
-.tl-dot {
-  position: absolute; left: -30px; top: 12px;
-  width: 10px; height: 10px; border-radius: 50%;
-  background: var(--card); border: 1.5px solid var(--gold);
-  box-shadow: 0 0 8px rgba(196,164,104,.4);
-}
-.tl-dot.curr { background: var(--green); border-color: var(--green); box-shadow: 0 0 10px rgba(61,186,140,.5); }
-.tl-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 26px 28px;
-  transition: all .3s;
-}
-.tl-card:hover { border-color: var(--border-glow); transform: translateX(6px); }
-.tl-card.curr-card { border-color: rgba(61,186,140,.2); }
-.tl-card.curr-card:hover { border-color: rgba(61,186,140,.4); }
-.tl-card.award-card { border-color: rgba(196,164,104,.2); }
-.tl-card.award-card:hover { border-color: rgba(196,164,104,.5); }
-.tl-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
-.tl-date { font-family: 'JetBrains Mono', monospace; font-size: .65rem; color: var(--text-muted); letter-spacing: .1em; }
-.curr-pill {
-  background: var(--green); color: #06070d;
-  font-size: .58rem; font-weight: 700; padding: 2px 10px;
-  border-radius: 3px; letter-spacing: .1em; font-family: 'JetBrains Mono', monospace;
-}
-.award-pill {
-  background: var(--gold); color: #06070d;
-  font-size: .58rem; font-weight: 700; padding: 2px 10px;
-  border-radius: 3px; letter-spacing: .1em; font-family: 'JetBrains Mono', monospace;
-}
-.tl-role { font-size: 1rem; font-weight: 600; margin-bottom: 3px; }
-.tl-role.curr-role { color: var(--green); }
-.tl-role.award-role { color: var(--gold); }
-.tl-org { font-size: .79rem; color: var(--gold); margin-bottom: 12px; }
-.tl-desc { font-size: .81rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 14px; font-weight: 300; }
-.tl-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.tl-tag {
-  padding: 3px 10px; border-radius: 3px;
-  border: 1px solid var(--border);
-  font-size: .67rem; color: var(--text-muted);
-}
-.tl-tag.g { border-color: rgba(61,186,140,.25); color: var(--green); }
-.tl-tag.a { border-color: rgba(196,164,104,.25); color: var(--gold); }
-
-/* ── EDUCATION ── */
-.edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.edu-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 28px; position: relative;
-  overflow: hidden; transition: all .3s;
-}
-.edu-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0;
-  height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent);
-}
-.edu-card:hover { border-color: var(--border-glow); transform: translateY(-5px); }
-.edu-year {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 2.2rem; font-weight: 700; color: var(--gold);
-  line-height: 1; margin-bottom: 12px;
-}
-.edu-degree { font-size: .88rem; font-weight: 500; margin-bottom: 6px; }
-.edu-inst { font-size: .76rem; color: var(--text-muted); margin-bottom: 14px; }
-.edu-grade { font-family: 'JetBrains Mono', monospace; font-size: .69rem; color: var(--green); }
-
-/* ── PROJECTS ── */
-.proj-filter { display: flex; gap: 8px; margin-bottom: 36px; flex-wrap: wrap; }
-.pf-btn {
-  padding: 8px 20px; border-radius: 4px;
-  border: 1px solid var(--border);
-  background: transparent; color: var(--text-muted);
-  font-size: .71rem; font-family: 'Inter', sans-serif;
-  letter-spacing: .08em; transition: all .22s;
-}
-.pf-btn.active, .pf-btn:hover { border-color: var(--border-glow); color: var(--gold); background: var(--gold-dim); }
-.proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
-.proj-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--radius); overflow: hidden;
-  display: flex; flex-direction: column;
-  transition: all .35s;
-}
-.proj-card:hover { border-color: var(--border-glow); transform: translateY(-6px); box-shadow: 0 32px 64px rgba(0,0,0,.6); }
-.proj-card.feat { border-color: rgba(196,164,104,.18); grid-column: span 2; }
-.proj-card.feat:hover { border-color: rgba(196,164,104,.45); }
-.proj-visual {
-  position: relative; overflow: hidden;
-  background: linear-gradient(135deg, rgba(196,164,104,.08), rgba(20,22,40,.9));
-}
-.proj-visual-inner {
-  display: flex; align-items: center; justify-content: center;
-  font-size: 3.5rem; color: var(--gold); opacity: .25;
-  position: relative; padding: 0;
-}
-.proj-visual-inner::before {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(circle, rgba(196,164,104,.1), transparent 70%);
-}
-.proj-visual-inner img { width: 100%; height: 100%; object-fit: cover; opacity: 1; position: relative; z-index: 1; }
-.proj-visual-inner.has-img { opacity: 1; }
-.proj-visual-inner.has-img::before { z-index: 2; background: linear-gradient(180deg, transparent 50%, rgba(6,7,13,.75) 100%); }
-.pbadge {
-  position: absolute; top: 14px; left: 14px;
-  padding: 4px 10px; border-radius: 3px;
-  font-size: .62rem; font-weight: 700; letter-spacing: .08em;
-}
-.pb-feat { background: var(--gold); color: #06070d; position: absolute; top: 14px; right: 14px; }
-.pb-erp { background: rgba(7,12,23,.75); border: 1px solid rgba(248,113,113,.35); color: #fca5a5; backdrop-filter: blur(6px); }
-.pb-frappe { background: rgba(7,12,23,.75); border: 1px solid rgba(56,189,248,.35); color: var(--accent-light); backdrop-filter: blur(6px); }
-.pb-web { background: rgba(7,12,23,.75); border: 1px solid rgba(129,140,248,.35); color: #a5b4fc; backdrop-filter: blur(6px); }
-.pb-ai { background: rgba(7,12,23,.75); border: 1px solid rgba(52,211,153,.35); color: var(--green); backdrop-filter: blur(6px); }
-.proj-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
-.proj-title { font-size: .95rem; font-weight: 600; margin-bottom: 8px; }
-.proj-desc { font-size: .79rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 14px; flex: 1; font-weight: 300; }
-.proj-tech { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 16px; }
-.p-tech {
-  padding: 3px 9px; border-radius: 3px;
-  background: rgba(255,255,255,.03); border: 1px solid var(--border);
-  font-size: .66rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace;
-}
-.proj-links { display: flex; gap: 8px; }
-.pl {
-  display: inline-flex; align-items: center; gap: 5px;
-  padding: 6px 14px; border-radius: 4px;
-  font-size: .72rem; text-decoration: none; transition: all .2s;
-}
-.pl-demo { border: 1px solid var(--border-glow); color: var(--gold); }
-.pl-demo:hover { background: var(--gold-dim); }
-.pl-gh { border: 1px solid var(--border); color: var(--text-muted); }
-.pl-gh:hover { border-color: rgba(255,255,255,.18); color: var(--text); }
-.pl-private { border: 1px dashed var(--border); color: var(--text-muted); cursor: default; }
-.pl-private:hover { border-color: var(--border); color: var(--text-muted); }
-.pl-private i { color: var(--gold); }
-
-/* ── CERTS ── */
-.cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
-.cert-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--radius); overflow: hidden;
-  display: flex; flex-direction: column; transition: all .3s;
-}
-.cert-card:hover { border-color: var(--border-glow); transform: translateY(-4px); }
-.cert-body { padding: 20px; flex: 1; display: flex; gap: 14px; }
-.cert-icon {
-  width: 42px; height: 42px; border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.05rem; flex-shrink: 0;
-}
-.ci-g { background: var(--gold-dim); border: 1px solid var(--border-glow); color: var(--gold); }
-.ci-b { background: rgba(42,106,138,.12); border: 1px solid rgba(42,106,138,.25); color: #60afd0; }
-.ci-gr { background: rgba(61,186,140,.1); border: 1px solid rgba(61,186,140,.2); color: var(--green); }
-.cert-info h4 { font-size: .84rem; font-weight: 600; line-height: 1.3; margin-bottom: 4px; }
-.cert-info p { font-size: .72rem; color: var(--text-muted); }
-.cert-footer {
-  padding: 10px 20px 14px;
-  display: flex; justify-content: space-between; align-items: center;
-  border-top: 1px solid var(--border);
-}
-.cert-yr { font-family: 'JetBrains Mono', monospace; font-size: .65rem; color: var(--gold); }
-.cert-link { font-size: .69rem; color: var(--text-muted); text-decoration: none; display: flex; align-items: center; gap: 4px; transition: color .2s; }
-.cert-link:hover { color: var(--gold); }
-
-/* ── REVIEW STARS ── */
-.rev-stars-row { display: flex; align-items: center; justify-content: space-between; width: 100%; }
-.rev-stars { display: flex; gap: 3px; color: var(--gold); font-size: .82rem; }
-.rev-stars .fa-star { opacity: .35; }
-.rev-stars .fa-star:nth-child(-n+5) { opacity: 1; } /* default: all 5 filled, overridden by inline style if needed */
-.star-picker-wrap { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
-.star-picker { display: flex; gap: 8px; }
-.star-picker i {
-  font-size: 1.6rem; color: var(--text-muted); opacity: .4; cursor: pointer;
-  transition: transform .18s ease, color .18s ease, opacity .18s ease;
-}
-.star-picker i:hover { transform: scale(1.15); }
-.star-picker i.active { color: var(--gold); opacity: 1; text-shadow: 0 0 14px rgba(196,164,104,.5); }
-.star-label { font-size: .82rem; color: var(--text-sub); }
-.rev-badge-new {
-  font-size: .6rem; font-family: 'JetBrains Mono', monospace; letter-spacing: .06em;
-  color: var(--green); background: rgba(61,186,140,.1); border: 1px solid rgba(61,186,140,.25);
-  padding: 2px 8px; border-radius: 20px; text-transform: uppercase;
-}
-
-/* ── LIKE BUTTON ── */
-.rev-like-btn {
-  display: flex; align-items: center; gap: 6px;
-  background: var(--gold-dim); border: 1px solid var(--border-glow);
-  color: var(--gold); font-size: .72rem; font-weight: 500;
-  padding: 6px 12px; border-radius: 20px; cursor: pointer;
-  transition: all .25s; font-family: 'Inter', sans-serif;
-}
-.rev-like-btn:hover { background: var(--gold); color: #06070d; transform: translateY(-1px); }
-.rev-like-btn.liked { background: var(--gold); color: #06070d; }
-.rev-like-btn i { font-size: .72rem; }
-
-/* ── ADD REVIEW ── */
-.add-review-wrap { margin-top: 22px; }
-.add-review-toggle {
-  display: flex; align-items: center; gap: 10px; margin: 0 auto;
-  background: transparent; border: 1px dashed var(--border-glow);
-  color: var(--gold); font-size: .78rem; font-weight: 600;
-  letter-spacing: .04em; padding: 13px 26px; border-radius: var(--radius);
-  cursor: pointer; transition: all .3s; font-family: 'Inter', sans-serif;
-}
-.add-review-toggle:hover { background: var(--gold-dim); border-style: solid; transform: translateY(-2px); }
-.add-review-card {
-  display: none; margin-top: 18px; background: var(--card);
-  border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 28px; max-width: 560px; margin-left: auto; margin-right: auto;
-}
-.add-review-card.show { display: block; animation: revealCard .35s ease; }
-@keyframes revealCard { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
-.add-review-card h4 { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
-.add-review-sub { font-size: .8rem; color: var(--text-muted); margin-bottom: 18px; line-height: 1.6; }
-.star-picker {
-  display: flex; align-items: center; gap: 8px;
-  background: var(--bg); border: 1px solid var(--border);
-  border-radius: 8px; padding: 14px 16px;
-}
-.star-picker i {
-  font-size: 1.3rem; color: var(--text-muted); cursor: pointer;
-  transition: all .15s; opacity: .4;
-}
-.star-picker i.active { color: var(--gold); opacity: 1; transform: scale(1.08); }
-.star-picker i:hover { transform: scale(1.15); }
-.star-label { font-size: .72rem; color: var(--text-muted); margin-left: 8px; font-family: 'JetBrains Mono', monospace; }
-
-/* ── LOCATION ── */
-.loc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-.map-frame { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
-.map-frame iframe { width: 100%; height: 380px; display: block; border: none; filter: saturate(.65) brightness(.9) contrast(1.1); }
-.loc-cards { display: flex; flex-direction: column; gap: 14px; }
-.loc-c {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 18px 20px;
-  display: flex; gap: 14px; align-items: center; transition: all .3s;
-}
-.loc-c:hover { border-color: var(--border-glow); transform: translateX(5px); }
-.loc-ic {
-  width: 40px; height: 40px; border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--gold-dim); border: 1px solid var(--border-glow);
-  color: var(--gold); font-size: 1rem; flex-shrink: 0;
-}
-.loc-text h4 { font-size: .84rem; font-weight: 500; margin-bottom: 3px; }
-.loc-text p, .loc-text a { font-size: .77rem; color: var(--text-muted); text-decoration: none; line-height: 1.5; }
-.loc-text a:hover { color: var(--gold); }
-
-/* ── CONTACT ── */
-.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-.contact-intro h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.9rem; font-weight: 600; line-height: 1.2; margin-bottom: 14px; }
-.contact-intro h3 em { color: var(--gold); font-style: normal; }
-.contact-intro p { color: var(--text-muted); font-size: .88rem; line-height: 1.85; margin-bottom: 30px; font-weight: 300; }
-.contact-methods { display: flex; flex-direction: column; gap: 12px; }
-.cm {
-  display: flex; align-items: center; gap: 14px;
-  padding: 16px 18px; border-radius: var(--radius);
-  border: 1px solid var(--border); background: var(--card);
-  text-decoration: none; color: var(--text); transition: all .28s;
-}
-.cm:hover { transform: translateX(5px); border-color: var(--border-glow); }
-.cm.wa { border-color: rgba(37,211,102,.2); }
-.cm.wa:hover { border-color: rgba(37,211,102,.5); box-shadow: 0 0 24px rgba(37,211,102,.08); }
-.cm-ic {
-  width: 40px; height: 40px; border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1rem; flex-shrink: 0;
-}
-.ic-gr { background: rgba(37,211,102,.1); color: #25d366; border: 1px solid rgba(37,211,102,.2); }
-.ic-bl { background: rgba(10,102,194,.1); color: #60a5fa; border: 1px solid rgba(10,102,194,.2); }
-.ic-pr { background: var(--gold-dim); color: var(--gold); border: 1px solid var(--border-glow); }
-.ic-rd { background: rgba(239,68,68,.1); color: #f87171; border: 1px solid rgba(239,68,68,.18); }
-.cm-info strong { display: block; font-size: .8rem; margin-bottom: 2px; }
-.cm-info span { font-size: .74rem; color: var(--text-muted); }
-.form-wrap { display: flex; flex-direction: column; gap: 12px; }
-.f-input, .f-textarea {
-  width: 100%; padding: 13px 16px;
-  border-radius: 8px; background: var(--card);
-  border: 1px solid var(--border); color: var(--text);
-  font-family: 'Inter', sans-serif; font-size: .85rem;
-  outline: none; transition: all .3s;
-}
-.f-input:focus, .f-textarea:focus { border-color: var(--border-glow); box-shadow: 0 0 0 3px rgba(196,164,104,.07); }
-.f-input::placeholder, .f-textarea::placeholder { color: var(--text-muted); }
-.f-textarea { resize: vertical; min-height: 110px; }
-.form-row { display: flex; gap: 12px; }
-.form-row .f-input { flex: 1; }
-
-/* ── FOOTER ── */
-footer {
-  padding: 36px 64px;
-  border-top: 1px solid var(--border);
-  display: flex; justify-content: space-between; align-items: center;
-  position: relative; z-index: 2;
-}
-.f-brand {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.25rem; font-weight: 600;
-  color: var(--gold); letter-spacing: .05em;
-}
-.f-copy { font-size: .71rem; color: var(--text-muted); }
-.f-socials { display: flex; gap: 10px; }
-.f-soc {
-  width: 36px; height: 36px; border-radius: 6px;
-  border: 1px solid var(--border); background: var(--card);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--text-muted); text-decoration: none;
-  font-size: .85rem; transition: all .22s;
-}
-.f-soc:hover { border-color: var(--border-glow); color: var(--gold); transform: translateY(-2px); }
-
-/* ── WA FLOAT ── */
-.wa-float {
-  position: fixed; bottom: 28px; right: 28px; z-index: 1000;
-  width: 54px; height: 54px; border-radius: 50%;
-  background: #25d366; display: flex; align-items: center;
-  justify-content: center; font-size: 1.45rem; color: #fff;
-  text-decoration: none; box-shadow: 0 8px 32px rgba(37,211,102,.45);
-  animation: wa-pulse 2.8s ease-in-out infinite;
-}
-@keyframes wa-pulse {
-  0%,100%{box-shadow:0 8px 32px rgba(37,211,102,.45)}
-  50%{box-shadow:0 10px 48px rgba(37,211,102,.7)}
-}
-.wa-tooltip {
-  position: absolute; right: 64px;
-  background: var(--card); border: 1px solid rgba(37,211,102,.3);
-  padding: 8px 14px; border-radius: 6px;
-  font-size: .72rem; color: #25d366; white-space: nowrap;
-  font-family: 'Inter', sans-serif;
-  opacity: 0; pointer-events: none; transition: opacity .3s;
-}
-.wa-float:hover .wa-tooltip { opacity: 1; }
-
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: rgba(196,164,104,.25); border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(196,164,104,.5); }
-
-@media(max-width:1024px) {
-  .hero-layout { grid-template-columns: 1fr; }
-  .hero-photo-card { max-width: 380px; margin: 0 auto; }
-  .about-cols, .contact-layout, .loc-grid { grid-template-columns: 1fr; gap: 40px; }
-  .skills-layout { grid-template-columns: 1fr 1fr; }
-  .edu-grid { grid-template-columns: 1fr; }
-  .proj-card.feat { grid-column: span 1; }
-  footer { flex-direction: column; gap: 16px; text-align: center; }
-}
-/* ── MOBILE NAV TOGGLE ── */
-.nav-toggle { display: none; }
-@media(max-width:768px) {
-  nav { padding: 0 20px; }
-  .nav-hire { display: none; }
-  .nav-toggle {
-    display: flex; flex-direction: column; justify-content: center; gap: 5px;
-    width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 8px;
-    background: var(--card); cursor: pointer; padding: 0; z-index: 600;
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Murthujavali Pinjari",
+    "alternateName": "Murthu",
+    "jobTitle": "Senior Python & Frappe/ERPNext Developer · Team Lead",
+    "url": "https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/",
+    "image": "https://pinjarimurthujavali.github.io/Murthujavali-Pinjari-Portfolio/assets/img/murthu-800.jpg",
+    "worksFor": { "@type": "Organization", "name": "Brilliant Technologies" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressRegion": "Telangana", "addressCountry": "IN" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Santhiram Engineering College" },
+    "knowsAbout": ["Python", "Frappe Framework", "ERPNext", "Django", "REST APIs", "Frappe Cloud", "WordPress"],
+    "sameAs": [
+      "https://www.linkedin.com/in/murthujavali-pinjari18/",
+      "https://github.com/PinjariMurthujavali",
+      "https://www.youtube.com/@Syntaxsolver-u5m"
+    ]
   }
-  .nav-toggle span { display: block; width: 18px; height: 2px; background: var(--gold); margin: 0 auto; transition: all .3s; }
-  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .nav-toggle.open span:nth-child(2) { opacity: 0; }
-  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .nav-links {
-    position: fixed; top: 68px; left: 0; right: 0;
-    flex-direction: column; gap: 0;
-    background: rgba(6,7,13,.98); backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-    max-height: 0; overflow: hidden; transition: max-height .35s ease;
-  }
-  .nav-links.open { max-height: 480px; }
-  .nav-links li { width: 100%; }
-  .nav-links a { display: block; padding: 16px 24px; border-bottom: 1px solid var(--border); }
-  .nav-links a::after { display: none; }
-  .nav-mobile-hire { display: block; margin: 16px 24px 20px; text-align: center; padding: 12px; border-radius: 8px; background: var(--gold); color: var(--bg); font-weight: 700; font-size: .82rem; text-decoration: none; }
-  section { padding: 64px 20px; }
-  .divider { margin: 0 20px; }
-  #home { padding: 100px 20px 60px; }
-  .skills-layout { grid-template-columns: 1fr; }
-  footer { padding: 28px 20px; }
-  .hero-metrics { gap: 20px; }
-  .hero-actions { flex-wrap: wrap; }
-}
-@media(min-width:769px) { .nav-mobile-hire { display: none; } }
+  </script>
 
-/* ── POLISH: scrollbar, focus, buttons, cards ── */
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: linear-gradient(var(--gold-dim), var(--gold)); border-radius: 6px; }
-::-webkit-scrollbar-thumb:hover { background: var(--gold); }
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-  outline: 2px solid var(--gold-light); outline-offset: 3px; border-radius: 4px;
-}
-.btn-gold, .btn-outline-w, .btn-ghost, .nav-hire {
-  position: relative; overflow: hidden;
-}
-.btn-gold::before, .nav-hire::before {
-  content: ''; position: absolute; top: 0; left: -120%; width: 60%; height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,.35), transparent);
-  transform: skewX(-20deg); transition: left .6s ease;
-}
-.btn-gold:hover::before, .nav-hire:hover::before { left: 130%; }
-.proj-card, .cert-card, .ib { transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s, border-color .35s; }
-.proj-card:hover, .cert-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 24px 48px -16px rgba(0,0,0,.55), 0 0 0 1px var(--border-glow);
-}
-.proj-img, .proj-card img { transition: transform .6s cubic-bezier(.22,1,.36,1); }
-.proj-card:hover .proj-img, .proj-card:hover img { transform: scale(1.07); }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
-}
+  <!-- Apply theme before first paint (no flash). Falls back to the visitor's OS preference. -->
+  <script>
+    (function () {
+      var d = document.documentElement, t = null;
+      d.classList.add('js');
+      try { t = localStorage.getItem('murthu-theme-v2'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = (window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+      }
+      d.setAttribute('data-theme', t);
+      var m = document.getElementById('metaTheme');
+      if (m) m.setAttribute('content', t === 'light' ? '#faf8ff' : '#0b0f1f');
+    })();
+  </script>
 
-/* ── SUCCESS OVERLAY ── */
-.success-overlay {
-  display: none;
-  position: fixed; inset: 0; z-index: 9000;
-  background: rgba(6,7,13,.92);
-  backdrop-filter: blur(16px);
-  align-items: center; justify-content: center;
-}
-.success-overlay.show { display: flex; }
-.success-box {
-  background: var(--card);
-  border: 1px solid rgba(61,186,140,.4);
-  border-radius: 20px;
-  padding: 48px 56px;
-  text-align: center;
-  max-width: 440px;
-  animation: popIn .4s cubic-bezier(.34,1.56,.64,1);
-}
-@keyframes popIn { from{opacity:0;transform:scale(.85)} to{opacity:1;transform:scale(1)} }
-.success-icon {
-  width: 72px; height: 72px; border-radius: 50%;
-  background: rgba(61,186,140,.12);
-  border: 2px solid rgba(61,186,140,.4);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 2rem; color: var(--green);
-  margin: 0 auto 24px;
-}
-.success-box h3 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.8rem; font-weight: 700;
-  color: var(--green); margin-bottom: 10px;
-}
-.success-box p { font-size: .88rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 28px; }
-.success-close {
-  padding: 12px 32px; border-radius: 8px;
-  background: var(--green); color: #06070d;
-  font-weight: 700; font-size: .82rem;
-  border: none; cursor: pointer; transition: all .2s;
-}
-.success-close:hover { background: #4fd4a6; transform: translateY(-2px); }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="assets/css/style.css">
 
-/* ═══════ UPDATE: accessibility + highlights + show-more ═══════ */
-.skip-link { position:absolute; left:-999px; top:8px; z-index:10000; background:var(--gold); color:#04101e; padding:10px 16px; border-radius:8px; font-weight:700; text-decoration:none; }
-.skip-link:focus { left:12px; }
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
-.hero-highlights { margin-top:28px; padding:16px 18px; border:1px solid var(--border-glow); border-radius:var(--radius); background:var(--gold-dim); max-width:620px; }
-.hero-highlights .hh-label { font-size:.67rem; letter-spacing:.14em; text-transform:uppercase; color:var(--text-muted); margin-bottom:10px; }
-.hero-highlights ul { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:8px 18px; }
-.hero-highlights li { font-size:.82rem; color:var(--text-sub); line-height:1.4; }
-.hero-highlights li strong { color:var(--gold); font-weight:700; }
-@media (max-width:560px){ .hero-highlights ul { grid-template-columns:1fr; } }
-.proj-more { text-align:center; margin-top:28px; }
-.proj-more button { cursor:pointer; padding:12px 26px; border-radius:999px; border:1px solid var(--border-glow); background:var(--gold-dim); color:var(--gold); font:600 .9rem 'Inter',sans-serif; transition:transform .2s, background .2s; }
-.proj-more button:hover { transform:translateY(-2px); }
-
-/* ═══════ WOW PACK ═══════ */
-.grad-text{background:linear-gradient(90deg,var(--gold),#a78bfa,var(--gold));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gshift 6s linear infinite}
-@keyframes gshift{to{background-position:200% center}}
-.marquee{overflow:hidden;border-block:1px solid var(--border);background:var(--gold-dim);padding:14px 0;position:relative;z-index:2}
-.marquee-track{display:flex;gap:44px;width:max-content;animation:mq 32s linear infinite;font:600 .85rem 'JetBrains Mono',monospace;letter-spacing:.08em;color:var(--text-sub);text-transform:uppercase}
-.marquee-track span:before{content:"◆";color:var(--gold);margin-right:44px}
-@keyframes mq{to{transform:translateX(-50%)}}
-.sec-lead{max-width:720px;color:var(--text-sub);line-height:1.7;margin:-6px 0 34px}
-.deliver-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-bottom:60px}
-.dcard{padding:26px;border:1px solid var(--border);border-radius:var(--radius);background:linear-gradient(160deg,var(--gold-dim),transparent);transition:transform .25s,border-color .25s}
-.dcard:hover{transform:translateY(-6px);border-color:var(--border-glow)}
-.dcard i{font-size:1.6rem;color:var(--gold);margin-bottom:14px}
-.dcard h3{font-size:1.05rem;margin:0 0 8px;color:#fff}.dcard p{margin:0;font-size:.88rem;line-height:1.65;color:var(--text-sub)}
-.case{display:grid;grid-template-columns:1.05fr 1fr;gap:34px;align-items:center;padding:30px;margin-bottom:28px;border:1px solid var(--border-glow);border-radius:calc(var(--radius)*1.4);background:rgba(255,255,255,.02);backdrop-filter:blur(8px)}
-.case.flip .case-vis{order:-1}
-.case-tag{font:600 .68rem 'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--gold);text-transform:uppercase}
-.case h3{font-size:1.5rem;margin:8px 0 14px;color:#fff}
-.case dl{margin:0}.case dt{font-weight:700;color:var(--gold);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin-top:12px}
-.case dd{margin:4px 0 0;color:var(--text-sub);font-size:.9rem;line-height:1.65}
-.case-stats{display:flex;gap:22px;flex-wrap:wrap;margin-top:18px}
-.case-stats b{display:block;font-size:1.6rem;color:var(--gold)}.case-stats small{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)}
-.mock{border:1px solid var(--border-glow);border-radius:14px;background:#070d1a;padding:14px;box-shadow:0 20px 60px -20px var(--gold-dim)}
-.mock-bar{display:flex;gap:6px;margin-bottom:12px}.mock-bar i{width:9px;height:9px;border-radius:50%;background:#334155}
-.mock-cap{margin-top:10px;font-size:.66rem;color:var(--text-muted);text-align:center}
-.pipe{display:flex;gap:6px;margin-bottom:12px}.pipe div{flex:1;padding:9px 4px;text-align:center;font-size:.68rem;border-radius:8px;background:var(--gold-dim);color:var(--gold);border:1px solid var(--border-glow)}
-.rows div{display:flex;justify-content:space-between;align-items:center;padding:9px 11px;margin-bottom:6px;border-radius:8px;background:rgba(255,255,255,.04);font-size:.76rem;color:var(--text-sub)}
-.rows em{font-style:normal;color:#34d399;font-weight:700;font-size:.7rem}
-.bars{display:flex;align-items:flex-end;gap:7px;height:70px;margin-top:10px}.bars span{flex:1;border-radius:5px 5px 0 0;background:linear-gradient(var(--gold),transparent)}
-.hire-band{margin:70px auto;max-width:1100px;padding:46px 34px;text-align:center;border-radius:26px;border:1px solid var(--border-glow);background:radial-gradient(circle at 50% 0,var(--gold-dim),transparent 70%),rgba(255,255,255,.02)}
-.hire-band h2{font-size:clamp(1.7rem,4vw,2.6rem);margin:0 0 12px;color:#fff}.hire-band p{color:var(--text-sub);max-width:640px;margin:0 auto 26px;line-height:1.7}
-.hire-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.hire-actions a{padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;font-size:.92rem;border:1px solid var(--border-glow);color:var(--gold)}
-.hire-actions a.primary{background:var(--gold);color:#04101e;border-color:var(--gold)}
-.mobile-bar{display:none}
-@media(max-width:820px){.case{grid-template-columns:1fr;padding:20px}.case.flip .case-vis{order:0}
-.mobile-bar{display:flex;gap:8px;position:fixed;left:10px;right:10px;bottom:10px;z-index:900;padding:8px;border-radius:999px;background:rgba(7,13,26,.92);backdrop-filter:blur(12px);border:1px solid var(--border-glow)}
-.mobile-bar a{flex:1;text-align:center;padding:12px;border-radius:999px;font-weight:700;font-size:.85rem;text-decoration:none;color:var(--gold)}
-.mobile-bar a:first-child{background:var(--gold);color:#04101e}.wa-float{display:none}body{padding-bottom:74px}}
-@media(prefers-reduced-motion:reduce){.marquee-track,.grad-text{animation:none}}
-</style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J2JYC707ET"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-J2JYC707ET');</script>
 </head>
+
 <body>
-<a class="skip-link" href="#about">Skip to content</a>
-<div class="ambient">
-  <div class="amb-blob ab1"></div>
-  <div class="amb-blob ab2"></div>
-  <div class="amb-blob ab3"></div>
-  <div class="float-icons" aria-hidden="true">
-    <i class="fi fab fa-python" style="left:6%; top:14%; font-size:2.4rem; --fi-dur:19s; --fi-delay:0s;"></i>
-    <i class="fi fas fa-database" style="left:88%; top:10%; font-size:1.9rem; --fi-dur:23s; --fi-delay:1.2s;"></i>
-    <i class="fi fab fa-git-alt fi-hide-mobile" style="left:14%; top:62%; font-size:2rem; --fi-dur:21s; --fi-delay:2.4s;"></i>
-    <i class="fi fas fa-server" style="left:92%; top:58%; font-size:2.1rem; --fi-dur:17s; --fi-delay:.6s;"></i>
-    <i class="fi fab fa-js fi-hide-mobile" style="left:22%; top:86%; font-size:1.8rem; --fi-dur:24s; --fi-delay:3s;"></i>
-    <i class="fi fas fa-cloud" style="left:78%; top:82%; font-size:2.3rem; --fi-dur:20s; --fi-delay:1.8s;"></i>
-    <i class="fi fab fa-html5 fi-hide-mobile" style="left:48%; top:6%; font-size:1.7rem; --fi-dur:22s; --fi-delay:.9s;"></i>
-    <i class="fi fas fa-code-branch fi-hide-mobile" style="left:36%; top:46%; font-size:1.6rem; --fi-dur:18s; --fi-delay:2.1s;"></i>
-    <i class="fi fab fa-wordpress fi-hide-mobile" style="left:62%; top:30%; font-size:1.6rem; --fi-dur:25s; --fi-delay:1.5s;"></i>
-    <i class="fi fas fa-terminal fi-hide-mobile" style="left:8%; top:38%; font-size:1.7rem; --fi-dur:16s; --fi-delay:.3s;"></i>
-  </div>
-</div>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
-<!-- THEME SWITCHER -->
-<div class="theme-switcher" id="themeSwitcher">
-  <button class="theme-fab" id="themeFab" aria-label="Change theme color" aria-expanded="false">
-    <i class="fas fa-palette"></i>
-  </button>
-  <div class="theme-panel" id="themePanel">
-    <div class="theme-panel-label">Theme</div>
-    <div class="theme-swatches">
-      <button class="theme-swatch ts-sapphire active" data-theme="sapphire" aria-label="Sapphire theme" title="Sapphire"></button>
-      <button class="theme-swatch ts-emerald" data-theme="emerald" aria-label="Emerald theme" title="Emerald"></button>
-      <button class="theme-swatch ts-violet" data-theme="violet" aria-label="Violet theme" title="Violet"></button>
-      <button class="theme-swatch ts-amber" data-theme="amber" aria-label="Amber theme" title="Amber"></button>
-      <button class="theme-swatch ts-rose" data-theme="rose" aria-label="Rose theme" title="Rose"></button>
-    </div>
-  </div>
-</div>
+  <!-- ═════════ NAVIGATION ═════════ -->
+  <header class="nav" id="nav">
+    <div class="container nav__in">
+      <a class="brand" href="#home" aria-label="Murthu, back to top"><span class="brand__mark" aria-hidden="true">M</span><span>Murthu<b>.dev</b></span></a>
 
-<!-- SUCCESS OVERLAY -->
-<div class="success-overlay" id="successOverlay">
-  <div class="success-box">
-    <div class="success-icon"><i class="fas fa-check"></i></div>
-    <h3>Message Sent! ✅</h3>
-    <p>Your message has been delivered to <strong style="color:var(--gold)">luckymurthu@gmail.com</strong>.<br>Murthu will get back to you very soon!</p>
-    <button class="success-close" onclick="document.getElementById('successOverlay').classList.remove('show')">Close</button>
-  </div>
-</div>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#work">Case Studies</a>
+        <a href="#projects">Projects</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-<!-- WA FLOAT -->
-<a href="https://wa.me/919100850087?text=Hi%20Murthu!%20I%20saw%20your%20portfolio%20and%20want%20to%20connect." class="wa-float" target="_blank" aria-label="WhatsApp" rel="noopener noreferrer">
-  <i class="fab fa-whatsapp"></i>
-  <span class="wa-tooltip">Message Murthu</span>
-</a>
-
-<!-- NAV -->
-<nav id="navbar">
-  <a href="#home" class="nav-brand">Murthu - Folio<span></span></a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#case-studies">Case Studies</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#certifications">Certs</a></li>
-    <li><a href="#testimonials">Reviews</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <a href="https://wa.me/919100850087" target="_blank" class="nav-mobile-hire" rel="noopener noreferrer">Hire Me</a>
-  </ul>
-  <a href="https://wa.me/919100850087" target="_blank" class="nav-hire" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Hire Me</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
-</nav>
-
-<!-- ═══════ HERO ═══════ -->
-<section id="home">
-  <div class="hero-layout">
-    <div>
-      <div class="hero-badge r">Frappe &middot; ERPNext &middot; Python</div>
-      <div class="hero-avail r"><span class="avail-dot"></span>Available — Senior Python &amp; Frappe/ERPNext Developer</div>
-      <h1 class="hero-name r">I am <span class="grad-text">MURTHU</span><br><span class="line2"></span></h1>
-      <div class="hero-title-tag r">Senior Python &amp; Frappe/ERPNext Developer &nbsp;·&nbsp; Team Lead</div>
-      <p class="hero-desc r">Building and delivering <strong>enterprise ERP applications</strong> at Brilliant Technologies. I design custom Frappe/ERPNext systems, integrations and dashboards, deploy on Frappe Cloud, and lead a team through code review and delivery — with Django and WordPress alongside for full-stack needs.</p>
-      <div class="hero-actions r">
-        <a href="https://wa.me/919100850087?text=Hi%20Murthu!%20I'd%20like%20to%20hire%20you." target="_blank" class="btn-gold" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp Me</a>
-        <a href="Murthujavali_Pinjari_ERPNext_Frappe.pdf" download class="btn-outline-w"><i class="fas fa-download"></i> Download Resume</a>
-        <a href="#projects" class="btn-ghost"><i class="fas fa-layer-group"></i> View Work</a>
-      </div>
-      <div class="hero-metrics r">
-        <div class="metric"><div class="metric-num">21+</div><div class="metric-label">Projects Built</div></div>
-        <div class="metric"><div class="metric-num">5+</div><div class="metric-label">Roles & Internships</div></div>
-        <div class="metric"><div class="metric-num">11+</div><div class="metric-label">Certifications</div></div>
-        <div class="metric"><div class="metric-num">2nd</div><div class="metric-label">SIH 2023 Prize</div></div>
-      </div>
-      <div class="hero-highlights r">
-        <div class="hh-label">Impact at a glance</div>
-        <ul>
-          <li><strong>7 rule types</strong> of HR attendance logic automated</li>
-          <li><strong>39,000+ biometric logs</strong> synced for 75 employees</li>
-          <li><strong>Lead → Renewal</strong> in one CRM (BCRM), built solo</li>
-          <li><strong>Razorpay + Tally</strong> integrations into ERPNext</li>
-        </ul>
+      <div class="nav__actions">
+        <button class="icon-btn kbd-btn" id="openPalette" type="button" aria-label="Open quick jump menu" aria-haspopup="dialog">
+          <i class="fas fa-search" aria-hidden="true"></i><span>Quick jump</span><kbd>Ctrl K</kbd>
+        </button>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to light theme"><span aria-hidden="true" data-ico>☀</span></button>
+        <a class="btn btn--primary btn--sm nav__hire" href="https://wa.me/919100850087?text=Hi%20Murthu!%20I%20saw%20your%20portfolio%20and%20want%20to%20connect." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Hire me</a>
+        <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
       </div>
     </div>
-    <div class="r">
-      <div class="hero-photo-card">
-        <div class="hero-photo-placeholder">
-          <img src="Murthu_Pro.png" width="900" height="900" fetchpriority="high" decoding="async" alt="Portrait of Murthujavali Pinjari, Senior Python & Frappe/ERPNext Developer" onerror="this.parentElement.innerHTML='<i class=\'fas fa-user\' style=\'font-size:6rem;color:#38bdf8;opacity:.15\'></i>'">
+  </header>
+
+  <main id="main">
+
+    <!-- ═════════ HERO ═════════ -->
+    <section id="home" class="hero container" aria-label="Introduction">
+      <div class="bento bento--hero">
+
+        <article class="tile tile--intro spot">
+          <p class="chip chip--live"><span class="pulse" aria-hidden="true"></span>Open to roles · On-site · Remote · Hybrid</p>
+          <h1 class="hero__title">
+            <span class="sr-only">Murthujavali Pinjari, </span>
+            <span class="hello">Hi, I'm</span>
+            <span class="grad">Murthu</span>
+          </h1>
+          <p class="hero__role">Senior Python &amp; Frappe/ERPNext Developer · Team Lead</p>
+          <p class="hero__type" aria-hidden="true">&gt; I build ERP systems that <span class="type" id="typed">run hospitals</span><span class="caret"></span></p>
+          <p class="hero__lead">Building and delivering <strong>enterprise ERP applications</strong> at Brilliant Technologies. I design custom Frappe/ERPNext systems, integrations and dashboards, deploy on Frappe Cloud, and lead a team through code review and delivery, with Django and WordPress alongside for full-stack needs.</p>
+          <div class="cta">
+            <a class="btn btn--primary" href="https://wa.me/919100850087?text=Hi%20Murthu!%20I'd%20like%20to%20hire%20you." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp me</a>
+            <a class="btn btn--ghost" href="Murthujavali_Pinjari_ERPNext_Frappe.pdf" download><i class="fas fa-download" aria-hidden="true"></i> Resume</a>
+            <a class="btn btn--ghost" href="#projects"><i class="fas fa-layer-group" aria-hidden="true"></i> View work</a>
+          </div>
+        </article>
+
+        <figure class="tile tile--photo" style="margin:0">
+          <div class="photo">
+            <picture>
+              <source type="image/webp" srcset="assets/img/murthu-480.webp 480w, assets/img/murthu-800.webp 800w, assets/img/murthu-1100.webp 1100w" sizes="(min-width: 1024px) 480px, (min-width: 700px) 50vw, 92vw">
+              <img src="assets/img/murthu-800.jpg" width="800" height="800" fetchpriority="high" decoding="async" alt="Portrait of Murthujavali Pinjari, Senior Python and Frappe/ERPNext Developer">
+            </picture>
+            <span class="float float--c">🏥 Hospital ERP</span>
+            <span class="float float--b">⭐ Team Lead</span>
+            <span class="float float--a">🥈 SIH 2023 · 2nd Prize</span>
+          </div>
+        </figure>
+
+        <article class="tile tile--stats spot" aria-label="Highlights in numbers">
+          <div class="stats">
+            <div class="stat"><b data-count="21" data-suffix="+">21+</b><span>Projects built</span></div>
+            <div class="stat"><b data-count="5" data-suffix="+">5+</b><span>Roles &amp; internships</span></div>
+            <div class="stat"><b data-count="11" data-suffix="+">11+</b><span>Certifications</span></div>
+            <div class="stat"><b>2nd</b><span>Smart India Hackathon 2023</span></div>
+          </div>
+        </article>
+
+        <article class="tile tile--lucky spot" aria-label="Lucky the mascot">
+          <svg class="lucky" id="lucky" viewBox="0 0 160 170" role="button" tabindex="0" aria-label="Lucky, a friendly robot mascot. Activate to wave.">
+            <defs>
+              <linearGradient id="lgBody" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a99dff"/><stop offset="1" stop-color="#ff8fb0"/></linearGradient>
+              <radialGradient id="lgBulb"><stop offset="0" stop-color="#fff2b8"/><stop offset="1" stop-color="#ffb347"/></radialGradient>
+            </defs>
+            <ellipse class="lucky__shadow" cx="80" cy="160" rx="34" ry="6"/>
+            <g class="lucky__float">
+              <rect x="52" y="128" width="22" height="16" rx="8" fill="#ff8fb0"/>
+              <rect x="86" y="128" width="22" height="16" rx="8" fill="#ff8fb0"/>
+              <line class="lucky__ant" x1="80" y1="24" x2="80" y2="40" stroke-width="4" stroke-linecap="round"/>
+              <circle class="lucky__bulb" cx="80" cy="18" r="8" fill="url(#lgBulb)"/>
+              <rect x="28" y="36" width="104" height="98" rx="38" fill="url(#lgBody)"/>
+              <rect x="40" y="52" width="80" height="60" rx="26" fill="#14183a"/>
+              <g transform="translate(62 80)" class="lucky__eye"><ellipse rx="10" ry="12" fill="#fff"/><circle class="lucky__pupil" r="5.5" fill="#14183a"/><circle cx="-2" cy="-3" r="2" fill="#fff"/></g>
+              <g transform="translate(98 80)" class="lucky__eye"><ellipse rx="10" ry="12" fill="#fff"/><circle class="lucky__pupil" r="5.5" fill="#14183a"/><circle cx="-2" cy="-3" r="2" fill="#fff"/></g>
+              <circle cx="52" cy="98" r="5" fill="#ff8fb0" opacity=".6"/>
+              <circle cx="108" cy="98" r="5" fill="#ff8fb0" opacity=".6"/>
+              <path d="M70 99 q10 9 20 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="20" cy="104" r="10" fill="#ffc2d4"/>
+              <g class="lucky__arm"><line x1="128" y1="106" x2="140" y2="104" stroke="#ffc2d4" stroke-width="8" stroke-linecap="round"/><circle cx="142" cy="102" r="10" fill="#ffc2d4"/></g>
+            </g>
+          </svg>
+          <p class="bubble" id="luckyBubble" role="status" aria-live="polite">Namaste! 🙏 I'm Lucky, Murthu's sidekick.</p>
+        </article>
+
+        <article class="tile tile--impact spot">
+          <span class="tile__label">Impact at a glance</span>
+          <ul class="impact">
+            <li><span><strong>7 rule types</strong> of HR attendance logic automated</span></li>
+            <li><span><strong>39,000+ biometric logs</strong> synced for 75 employees</span></li>
+            <li><span><strong>Lead → Renewal</strong> in one CRM (BCRM), built solo</span></li>
+            <li><span><strong>Razorpay + Tally</strong> integrations into ERPNext</span></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" id="marquee"></div>
+    </div>
+
+    <!-- ═════════ ABOUT ═════════ -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section__head rv">
+          <p class="eyebrow">01 · About</p>
+          <h2 class="section__title">Narrow, deep, and <span class="grad">shipping</span></h2>
         </div>
-        <div class="photo-overlay-grad"></div>
-        <div class="photo-chip">● Open to Opportunities</div>
-        <div class="photo-corner pc-tl"></div>
-        <div class="photo-corner pc-br"></div>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Frappe</span><span>ERPNext</span><span>Python</span><span>Frappe Cloud</span><span>REST APIs</span><span>Custom DocTypes</span><span>Django</span><span>MariaDB</span><span>Razorpay</span><span>Tally</span><span>Biometric Sync</span><span>Team Leadership</span><span>Frappe</span><span>ERPNext</span><span>Python</span><span>Frappe Cloud</span><span>REST APIs</span><span>Custom DocTypes</span><span>Django</span><span>MariaDB</span><span>Razorpay</span><span>Tally</span><span>Biometric Sync</span><span>Team Leadership</span></div></div>
-<div class="divider"></div>
+        <div class="bento bento--about">
+          <article class="tile a-story spot rv">
+            <p>I'm a <strong>Senior Python &amp; Frappe/ERPNext Developer and Team Lead</strong> at Brilliant Technologies. My focus is narrow and deep: designing and shipping enterprise ERP systems on the Frappe stack, rather than being spread across every framework.</p>
+            <p>Day to day that means custom DocTypes, server &amp; client scripts, REST integrations and dashboards for our internal <strong>BCRM CRM</strong> and <strong>HR attendance automation</strong> (with a biometric device integration), plus a <strong>Hospital Management System</strong> on Frappe Cloud and ERPNext customizations for manufacturing and payments. I review code, deploy releases, and mentor the developers working alongside me.</p>
+            <p>Outside Frappe, I bring Django and WordPress experience for full-stack needs, and run <strong>“Syntax Solver”</strong> on YouTube, teaching coding fundamentals.</p>
+            <div class="tags">
+              <span class="tag">⭐ Team Leader</span><span class="tag">⚙️ Frappe / ERPNext</span><span class="tag">☁️ Frappe Cloud</span><span class="tag">🐍 Python</span><span class="tag">🌐 Full Stack</span><span class="tag">📦 WordPress</span><span class="tag">🏥 Hospital ERP</span><span class="tag">🤖 CRM &amp; Automation</span><span class="tag">🎬 YouTube Creator</span>
+            </div>
+          </article>
 
-<!-- ═══════ ABOUT ═══════ -->
-<section id="about">
-  <div class="sec-inner">
-    <p class="sec-eyebrow r">01 / About</p>
-    <div class="about-cols">
-      <div>
-        <h2 class="sec-title r" style="margin-bottom:28px">Who is <em>Murthu?</em></h2>
-        <div class="about-body">
-          <p class="r">I'm a <strong>Senior Python &amp; Frappe/ERPNext Developer and Team Lead</strong> at Brilliant Technologies. My focus is narrow and deep: designing and shipping enterprise ERP systems on the Frappe stack, rather than being spread across every framework.</p>
-          <p class="r">Day to day, that means custom DocTypes, server &amp; client scripts, REST integrations and dashboards for our internal <strong>BCRM CRM system</strong> and <strong>HR attendance automation</strong> (including a biometric device integration), plus a <strong>Hospital Management System</strong> deployed on Frappe Cloud and ERPNext customizations for manufacturing and payments. I review code, deploy releases, and mentor the developers working alongside me.</p>
-          <p class="r">Outside Frappe, I bring Django and WordPress experience for full-stack needs, and run <strong>'Syntax Solver'</strong> on YouTube, teaching coding fundamentals.</p>
-          <div class="about-tags r">
-            <span class="atag">⭐ Team Leader</span><span class="atag">⚙️ Frappe / ERPNext</span><span class="atag">☁️ Frappe Cloud</span><span class="atag">🐍 Python Developer</span><span class="atag">🌐 Full Stack</span><span class="atag">📦 WordPress</span><span class="atag">🏥 Hospital ERP</span><span class="atag">🤖 CRM &amp; Automation</span><span class="atag">🎬 YouTube Creator</span><span class="atag">🏆 SIH 2023 Winner</span>
-          </div>
-          <div class="about-socials r" style="margin-top:28px">
-            <a href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank" class="soc-btn primary" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://github.com/PinjariMurthujavali" target="_blank" class="soc-btn" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://www.youtube.com/@Syntaxsolver-u5m" target="_blank" class="soc-btn youtube" rel="noopener noreferrer"><i class="fab fa-youtube"></i> YouTube</a>
-          </div>
-          <div class="r" style="margin-top:32px">
-            <div class="ib-label" style="margin-bottom:14px">GitHub Activity</div>
-            <a href="https://github.com/PinjariMurthujavali" target="_blank" style="display:block" rel="noopener noreferrer">
-              <img src="https://ghchart.rshah.org/38bdf8/PinjariMurthujavali" alt="Murthu's GitHub contribution graph" style="width:100%;border-radius:var(--radius);border:1px solid var(--border)" loading="lazy">
+          <article class="tile a-now spot rv" style="--i:1;display:flex;flex-direction:column">
+            <span class="tile__label">Current role</span>
+            <p class="big">Senior Python &amp; Frappe/ERPNext Developer · Team Lead</p>
+            <p class="accent" style="margin:0 0 18px">Brilliant Technologies, Hyderabad</p>
+            <span class="tile__label">Right now</span>
+            <ul class="impact">
+              <li><span>Shipping <strong>BCRM</strong> improvements and releases on Frappe Cloud</span></li>
+              <li><span>Building an <strong>AI chatbot</strong> for ERPNext (in progress)</span></li>
+              <li><span>Reviewing code and <strong>mentoring</strong> junior developers</span></li>
+            </ul>
+            <div class="socials" style="margin-top:auto;padding-top:18px">
+              <a class="btn btn--primary btn--sm" href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+              <a class="btn btn--ghost btn--sm" href="https://github.com/PinjariMurthujavali" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+              <a class="btn btn--ghost btn--sm" href="https://www.youtube.com/@Syntaxsolver-u5m" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i> YouTube</a>
+            </div>
+          </article>
+
+          <article class="tile a-edu spot rv">
+            <span class="tile__label">Education</span>
+            <p class="big">B.Tech — Electronics &amp; Communication Engineering</p>
+            <p class="muted" style="margin:0 0 12px">Santhiram Engineering College · 2024 · CGPA 8.0 / 10</p>
+            <p class="muted" style="margin:0;font-size:.88rem">Intermediate (MPC), KNR Memorial Junior College · 2020 · 74%<br>SSC, Sri Raja Rajeswari High School · 2018 · 85%</p>
+          </article>
+
+          <article class="tile tile--award a-award spot rv" style="--i:1">
+            <span class="tile__label">Achievement</span>
+            <p class="big">🥈 Smart India Hackathon 2023</p>
+            <p class="muted" style="margin:0">2nd Prize at the national level, a Government of India initiative.</p>
+          </article>
+
+          <article class="tile a-open spot rv" style="--i:2">
+            <span class="tile__label">Open to</span>
+            <p class="big">On-site · Remote · Hybrid</p>
+            <p class="muted" style="margin:0">India &amp; international roles. Hometown: Nandyal District, Andhra Pradesh 🇮🇳</p>
+          </article>
+
+          <article class="tile a-gh rv">
+            <span class="tile__label">GitHub activity</span>
+            <a class="gh-chart" href="https://github.com/PinjariMurthujavali" target="_blank" rel="noopener noreferrer" aria-label="Open Murthu's GitHub profile">
+              <img src="https://ghchart.rshah.org/6d4aff/PinjariMurthujavali" alt="Murthu's GitHub contribution graph" loading="lazy" width="720" height="110" onerror="this.closest('.gh-chart').style.display='none'">
             </a>
-          </div>
+          </article>
         </div>
       </div>
-      <div class="about-right">
-        <div class="info-block r"><div class="ib-label">Current Role</div><div class="ib-value">Senior Python &amp; Frappe/ERPNext Developer &middot; Team Lead<br><span style="color:var(--gold)">Brilliant Technologies, Hyderabad</span></div></div>
-        <div class="info-block r"><div class="ib-label">Education</div><div class="ib-value">B.Tech — Electronics & Communication Engineering<br>Santhiram Engineering College · CGPA 8.0</div></div>
-        <div class="info-block r"><div class="ib-label">Hometown</div><div class="ib-value">Nandyal District, Andhra Pradesh, India 🇮🇳</div></div>
-        <div class="info-block r"><div class="ib-label">Open to</div><div class="ib-value">On-site · Remote · Hybrid<br>India & International Roles</div></div>
-        <div class="info-block r"><div class="ib-label">Achievement</div><div class="ib-value" style="color:var(--gold)">🥈 Smart India Hackathon 2023 — 2nd Prize (National Level)</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="divider"></div>
+    </section>
 
-<!-- ═══════ SKILLS ═══════ -->
-<section id="skills">
-  <div class="sec-inner">
-    <p class="sec-eyebrow r">02 / Technical Expertise</p>
-    <h2 class="sec-title r">My <em>Skills</em></h2>
-    <div class="skills-layout">
-      <div class="skill-panel r">
-        <div class="sp-head"><span class="sp-icon">⚙️</span> Frappe & ERPNext</div>
-        <div class="sk-list">
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-cogs"></i>Frappe Framework</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-building"></i>ERPNext</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-cloud"></i>Frappe Cloud</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-puzzle-piece"></i>Custom DocTypes</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-plug"></i>Frappe REST API</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-hospital"></i>Hospital Management ERP</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
+    <!-- ═════════ SKILLS ═════════ -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section__head rv">
+          <p class="eyebrow">02 · Technical expertise</p>
+          <h2 class="section__title">Skills, <span class="grad">honestly rated</span></h2>
+          <p class="section__lead">No fake percentage bars. Each skill is marked by how I actually use it.</p>
         </div>
-      </div>
-      <div class="skill-panel r">
-        <div class="sp-head"><span class="sp-icon">🐍</span> Python & Backend</div>
-        <div class="sk-list">
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-python"></i>Python</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-layer-group"></i>Django</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-server"></i>REST APIs</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-database"></i>SQL / MySQL</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-code"></i>Java</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-docker"></i>Docker</div><span class="sk-pct">Working Knowledge</span></div><div class="sk-bar"><div class="sk-fill" data-w=".55"></div></div></div>
+        <div class="legend rv" aria-label="Legend">
+          <span><span class="lvl" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span> Core expertise</span>
+          <span><span class="lvl" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span> Production experience</span>
+          <span><span class="lvl" aria-hidden="true"><i class="on"></i><i></i><i></i></span> Working knowledge</span>
         </div>
+        <div class="skills" id="skillsGrid"><noscript><p class="muted">Enable JavaScript to see the skills grid. Core: Python, Frappe Framework, HTML/CSS, WordPress, Git, Team Leadership.</p></noscript></div>
       </div>
-      <div class="skill-panel r">
-        <div class="sp-head"><span class="sp-icon">🌐</span> Frontend</div>
-        <div class="sk-list">
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-html5"></i>HTML5</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-css3-alt"></i>CSS3</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-js-square"></i>JavaScript</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-react"></i>React</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-bootstrap"></i>Bootstrap</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-node-js"></i>Node.js</div><span class="sk-pct">Working Knowledge</span></div><div class="sk-bar"><div class="sk-fill" data-w=".55"></div></div></div>
-        </div>
-      </div>
-      <div class="skill-panel r">
-        <div class="sp-head"><span class="sp-icon">📦</span> WordPress & CMS</div>
-        <div class="sk-list">
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-wordpress"></i>WordPress</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-shopping-cart"></i>WooCommerce</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-tools"></i>Beaver Builder</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-search"></i>SEO Optimization</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-plug"></i>Plugin Development</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-paint-brush"></i>Theme Customization</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
-        </div>
-      </div>
-      <div class="skill-panel r">
-        <div class="sp-head"><span class="sp-icon">🛠️</span> DevOps & Tools</div>
-        <div class="sk-list">
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-git-alt"></i>Git & GitHub</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fab fa-linux"></i>Linux / CLI</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-cloud-upload-alt"></i>Deployment & Hosting</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-vial"></i>Unit / Integration Testing</div><span class="sk-pct">Working Knowledge</span></div><div class="sk-bar"><div class="sk-fill" data-w=".55"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-users-cog"></i>Team Leadership</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-project-diagram"></i>Agile / Scrum</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-        </div>
-      </div>
-      <div class="skill-panel r">
-        <div class="sp-head"><span class="sp-icon">🧠</span> Core CS</div>
-        <div class="sk-list">
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-brain"></i>DSA</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-sitemap"></i>System Design</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-database"></i>Database Design</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-code-branch"></i>OOP Concepts</div><span class="sk-pct">Core Expertise</span></div><div class="sk-bar"><div class="sk-fill" data-w=".92"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-robot"></i>AI Integration</div><span class="sk-pct">Working Knowledge</span></div><div class="sk-bar"><div class="sk-fill" data-w=".55"></div></div></div>
-          <div class="sk"><div class="sk-row"><div class="sk-name"><i class="fas fa-lock"></i>API Security</div><span class="sk-pct">Production Experience</span></div><div class="sk-bar"><div class="sk-fill" data-w=".76"></div></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="divider"></div>
+    </section>
 
-<!-- ═══════ EXPERIENCE ═══════ -->
-<section id="experience">
-  <div class="sec-inner">
-    <p class="sec-eyebrow r">03 / Work History</p>
-    <h2 class="sec-title r">Experience <em>&amp; Achievements</em></h2>
-    <div class="tl-wrap">
-      <div class="tl-item r">
-        <div class="tl-dot curr"></div>
-        <div class="tl-meta"><span class="tl-date">2025 — Present</span><span class="curr-pill">● CURRENT</span></div>
-        <div class="tl-card curr-card">
-          <div class="tl-role curr-role">Senior Python &amp; Frappe/ERPNext Developer &middot; Team Lead</div>
-          <div class="tl-org">Brilliant Technologies, Hyderabad</div>
-          <div class="tl-desc">Leading development on Brilliant Technologies' internal Frappe/ERPNext platform — including the BCRM CRM system (leads through renewals &amp; AMC support), HR attendance automation with biometric device integration, and a Hospital Management System deployed on Frappe Cloud. Architecting custom DocTypes, server &amp; client scripts, REST integrations, and dashboards, while conducting code reviews and mentoring junior developers.</div>
-          <div class="tl-tags"><span class="tl-tag g">Team Leader</span><span class="tl-tag g">Python</span><span class="tl-tag g">Frappe</span><span class="tl-tag g">ERPNext</span><span class="tl-tag g">Django</span><span class="tl-tag g">Frappe Cloud</span><span class="tl-tag g">Hospital ERP</span><span class="tl-tag g">CRM</span></div>
-          <div class="tl-tags" style="margin-top:8px"><span class="tl-tag" style="border-color:var(--border-glow);color:var(--gold)">✓ Attendance rules engine: 7 rule types automated</span><span class="tl-tag" style="border-color:var(--border-glow);color:var(--gold)">✓ Biometric sync: 75 employees, 39,000+ logs</span><span class="tl-tag" style="border-color:var(--border-glow);color:var(--gold)">✓ Scheduler runs every 5 min</span></div>
+    <!-- ═════════ EXPERIENCE ═════════ -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section__head rv">
+          <p class="eyebrow">03 · Work history</p>
+          <h2 class="section__title">Experience <span class="grad">&amp; achievements</span></h2>
         </div>
-      </div>
-      <div class="tl-item r">
-        <div class="tl-dot"></div>
-        <div class="tl-meta"><span class="tl-date">Feb 2025 — May 2025</span></div>
-        <div class="tl-card">
-          <div class="tl-role">WordPress Integrator</div>
-          <div class="tl-org">Vsplash Techlabs Private Limited</div>
-          <div class="tl-desc">WordPress-based website integration and customization. Responsive designs, plugin integration, SEO and performance optimization.</div>
-          <div class="tl-tags"><span class="tl-tag">WordPress</span><span class="tl-tag">HTML</span><span class="tl-tag">CSS</span><span class="tl-tag">JavaScript</span><span class="tl-tag">SEO</span><span class="tl-tag">WooCommerce</span></div>
-        </div>
-      </div>
-      <div class="tl-item r">
-        <div class="tl-dot"></div>
-        <div class="tl-meta"><span class="tl-date">2024</span></div>
-        <div class="tl-card">
-          <div class="tl-role">Python Full Stack Intern</div>
-          <div class="tl-org">Durga Software Solutions</div>
-          <div class="tl-desc">Intensive training on Python Full Stack development. Hands-on experience with Django, backend and frontend development using modern web technologies.</div>
-          <div class="tl-tags"><span class="tl-tag">Python</span><span class="tl-tag">Django</span><span class="tl-tag">HTML</span><span class="tl-tag">CSS</span><span class="tl-tag">SQL</span></div>
-        </div>
-      </div>
-      <div class="tl-item r">
-        <div class="tl-dot"></div>
-        <div class="tl-meta"><span class="tl-date">2024</span></div>
-        <div class="tl-card">
-          <div class="tl-role">Full Stack Web Development Intern</div>
-          <div class="tl-org">Eduskills Academy (Virtual)</div>
-          <div class="tl-desc">Real-world web development projects using modern technologies and frameworks.</div>
-          <div class="tl-tags"><span class="tl-tag">HTML</span><span class="tl-tag">CSS</span><span class="tl-tag">JavaScript</span><span class="tl-tag">Django</span></div>
-        </div>
-      </div>
-      <div class="tl-item r">
-        <div class="tl-dot" style="border-color:var(--gold);box-shadow:0 0 10px rgba(196,164,104,.5)"></div>
-        <div class="tl-meta"><span class="tl-date">2023</span><span class="award-pill">🏆 AWARD</span></div>
-        <div class="tl-card award-card">
-          <div class="tl-role award-role">🥈 Smart India Hackathon 2023 — 2nd Prize</div>
-          <div class="tl-org" style="color:var(--gold-light)">Government of India Initiative</div>
-          <div class="tl-desc">Secured 2nd prize at the national-level Smart India Hackathon 2023 with an innovative software solution, competing at the national round of a Government of India initiative.</div>
-          <div class="tl-tags"><span class="tl-tag a">Python</span><span class="tl-tag a">JavaScript</span><span class="tl-tag a">SQL</span><span class="tl-tag a">Team Collaboration</span></div>
-        </div>
-      </div>
-      <div class="tl-item r">
-        <div class="tl-dot"></div>
-        <div class="tl-meta"><span class="tl-date">2022 — 2024</span></div>
-        <div class="tl-card">
-          <div class="tl-role">Intern Student Coordinator</div>
-          <div class="tl-org">Eduskills Academy</div>
-          <div class="tl-desc">Coordinator for 3 years — technical guidance, internship onboarding, leadership and communication skill development.</div>
-          <div class="tl-tags"><span class="tl-tag">Leadership</span><span class="tl-tag">Mentoring</span><span class="tl-tag">Communication</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="divider"></div>
+        <div class="timeline" id="timeline">
 
-<!-- ═══════ EDUCATION ═══════ -->
-<section id="education">
-  <div class="sec-inner">
-    <p class="sec-eyebrow r">04 / Academics</p>
-    <h2 class="sec-title r">My <em>Education</em></h2>
-    <div class="edu-grid">
-      <div class="edu-card r"><div class="edu-year">2024</div><div class="edu-degree">B.Tech — Electronics & Communication Engineering</div><div class="edu-inst">Santhiram Engineering College, Andhra Pradesh</div><div class="edu-grade">✦ CGPA: 8.0 / 10</div></div>
-      <div class="edu-card r"><div class="edu-year">2020</div><div class="edu-degree">Intermediate (MPC)</div><div class="edu-inst">KNR Memorial Junior College</div><div class="edu-grade">✦ Percentage: 74%</div></div>
-      <div class="edu-card r"><div class="edu-year">2018</div><div class="edu-degree">SSC (10th Grade)</div><div class="edu-inst">Sri Raja Rajeswari High School</div><div class="edu-grade">✦ Percentage: 85%</div></div>
-    </div>
-  </div>
-</section>
-<div class="divider"></div>
+          <article class="tl tl--current rv">
+            <div class="tl__meta"><span>2025 — Present</span><span class="pill pill--now">● CURRENT</span></div>
+            <div class="tile tile--current spot">
+              <h3 class="tl__role">Senior Python &amp; Frappe/ERPNext Developer · Team Lead</h3>
+              <p class="tl__org">Brilliant Technologies, Hyderabad</p>
+              <p>Leading development on Brilliant Technologies' internal Frappe/ERPNext platform, including the BCRM CRM system (leads through renewals &amp; AMC support), HR attendance automation with biometric device integration, and a Hospital Management System on Frappe Cloud. Architecting custom DocTypes, server &amp; client scripts, REST integrations and dashboards, while conducting code reviews and mentoring junior developers.</p>
+              <div class="tags"><span class="tag">Team Leader</span><span class="tag">Python</span><span class="tag">Frappe</span><span class="tag">ERPNext</span><span class="tag">Django</span><span class="tag">Frappe Cloud</span><span class="tag">Hospital ERP</span><span class="tag">CRM</span></div>
+              <div class="tags" style="margin-top:8px"><span class="tag hi">✓ Attendance rules engine: 7 rule types</span><span class="tag hi">✓ Biometric sync: 75 employees, 39,000+ logs</span><span class="tag hi">✓ Scheduler runs every 5 min</span></div>
+            </div>
+          </article>
 
-<!-- ═══════ PROJECTS ═══════ -->
-<section id="case-studies">
-  <div class="sec-inner">
-    <p class="sec-eyebrow r">What I Deliver</p>
-    <h2 class="sec-title r">Why teams <em>hire me</em></h2>
-    <p class="sec-lead r">I don't just write scripts. I own ERP features end to end, from the business problem to production on Frappe Cloud, and I help the team ship with me.</p>
-    <div class="deliver-grid">
-      <div class="dcard r"><i class="fas fa-cubes"></i><h3>Custom ERP systems</h3><p>Custom DocTypes, server and client scripts, workflows and dashboards on Frappe and ERPNext, deployed on Frappe Cloud.</p></div>
-      <div class="dcard r"><i class="fas fa-plug"></i><h3>Integrations and automation</h3><p>Razorpay payments, ERPNext to Tally sync, ZKTeco biometric devices, GPS features and scheduled jobs.</p></div>
-      <div class="dcard r"><i class="fas fa-people-group"></i><h3>Lead and deliver</h3><p>Code reviews, release management and mentoring junior developers, so the whole team ships faster.</p></div>
-    </div>
-    <p class="sec-eyebrow r">Case Studies</p>
-    <h2 class="sec-title r">Problem → Build → <em>Result</em></h2>
+          <article class="tl rv">
+            <div class="tl__meta"><span>Feb 2025 — May 2025</span></div>
+            <div class="tile spot">
+              <h3 class="tl__role">WordPress Integrator</h3>
+              <p class="tl__org">Vsplash Techlabs Private Limited</p>
+              <p>WordPress-based website integration and customization. Responsive designs, plugin integration, SEO and performance optimization.</p>
+              <div class="tags"><span class="tag">WordPress</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">SEO</span><span class="tag">WooCommerce</span></div>
+            </div>
+          </article>
 
-    <article class="case r">
-      <div>
-        <div class="case-tag">Case study 01 · Internal CRM</div>
-        <h3>BCRM: one system from lead to renewal</h3>
-        <dl>
-          <dt>Problem</dt><dd>Sales, field visits and renewals lived in separate places, so nobody had one view of a customer.</dd>
-          <dt>What I built</dt><dd>A Frappe CRM covering Lead → Opportunity → Customer → AMC/renewal, with GPS check-in/out, Customer 360 dashboards, a smart activity timeline across 7+ doctypes and a "Nearby Clients" locator.</dd>
-          <dt>Result</dt><dd>It is now the team's single system of record from lead to renewal. I designed and built it solo.</dd>
-        </dl>
-        <div class="case-stats"><div><b>7+</b><small>doctypes on one timeline</small></div><div><b>1</b><small>system of record</small></div></div>
-      </div>
-      <div class="case-vis"><div class="mock"><div class="mock-bar"><i></i><i></i><i></i></div>
-        <div class="pipe"><div>Lead</div><div>Opportunity</div><div>Customer</div><div>AMC</div></div>
-        <div class="rows"><div>Customer 360 · Quotations<em>LIVE</em></div><div>Nearby Clients · GPS match<em>LIVE</em></div><div>Employee check-in · Road distance<em>LIVE</em></div></div>
-        <div class="mock-cap">Illustrative UI, real client data is private</div></div></div>
-    </article>
+          <article class="tl rv">
+            <div class="tl__meta"><span>2024</span></div>
+            <div class="tile spot">
+              <h3 class="tl__role">Python Full Stack Intern</h3>
+              <p class="tl__org">Durga Software Solutions</p>
+              <p>Intensive training on Python Full Stack development. Hands-on experience with Django, backend and frontend development using modern web technologies.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">Django</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">SQL</span></div>
+            </div>
+          </article>
 
-    <article class="case flip r">
-      <div>
-        <div class="case-tag">Case study 02 · HR automation</div>
-        <h3>Attendance and payroll rules, automated</h3>
-        <dl>
-          <dt>Problem</dt><dd>Attendance remarks and payroll deductions depended on manual checking of biometric punches.</dd>
-          <dt>What I built</dt><dd>A rules engine (grace period, late entry, early exit, missing punch, weekly off, holiday, sandwich rule) on a 5-minute scheduler, plus Python middleware syncing a ZKTeco device to Frappe Cloud with SQLite deduplication.</dd>
-          <dt>Result</dt><dd>Attendance and payroll rules run automatically company-wide, feeding Salary Slip deductions and bonuses.</dd>
-        </dl>
-        <div class="case-stats"><div><b>7</b><small>rule types</small></div><div><b>39,000+</b><small>logs synced</small></div><div><b>75</b><small>employees</small></div><div><b>5 min</b><small>scheduler</small></div></div>
-      </div>
-      <div class="case-vis"><div class="mock"><div class="mock-bar"><i></i><i></i><i></i></div>
-        <div class="rows"><div>Late entry · grace period<em>AUTO</em></div><div>Missing punch · flagged<em>AUTO</em></div><div>Sandwich rule · weekly off<em>AUTO</em></div></div>
-        <div class="bars"><span style="height:45%"></span><span style="height:70%"></span><span style="height:55%"></span><span style="height:90%"></span><span style="height:65%"></span><span style="height:80%"></span></div>
-        <div class="mock-cap">Illustrative UI, real client data is private</div></div></div>
-    </article>
-  </div>
-</section>
-<div class="divider"></div>
+          <article class="tl rv">
+            <div class="tl__meta"><span>2024</span></div>
+            <div class="tile spot">
+              <h3 class="tl__role">Full Stack Web Development Intern</h3>
+              <p class="tl__org">Eduskills Academy (Virtual)</p>
+              <p>Real-world web development projects using modern technologies and frameworks.</p>
+              <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Django</span></div>
+            </div>
+          </article>
 
-<section id="projects">
-  <div class="sec-inner">
-    <p class="sec-eyebrow r">05 / What I've Built</p>
-    <h2 class="sec-title r">Featured <em>Projects</em></h2>
-    <div class="proj-filter r">
-      <button class="pf-btn active" onclick="filterProj('all',this)">All Projects</button>
-      <button class="pf-btn" onclick="filterProj('erp',this)">ERPNext / Frappe</button>
-      <button class="pf-btn" onclick="filterProj('ai',this)">AI / Chatbot</button>
-      <button class="pf-btn" onclick="filterProj('python',this)">Python / Django</button>
-      <button class="pf-btn" onclick="filterProj('java',this)">Java Full Stack</button>
-      <button class="pf-btn" onclick="filterProj('web',this)">Web Apps</button>
-    </div>
-    <div class="proj-grid" id="proj-grid">
-      <div class="proj-card feat r" data-cat="erp">
-        <div class="proj-visual" style="height:220px"><div class="proj-visual-inner" style="height:220px"><i class="fas fa-hospital-alt"></i></div><span class="pbadge pb-erp">🏥 ERPNext</span><span class="pbadge pb-feat">⭐ Featured</span></div>
-        <div class="proj-body">
-          <div class="proj-title">Hospital Management System — ERPNext & Frappe</div>
-          <div class="proj-desc">Enterprise-grade Hospital Management System built on ERPNext using Frappe Framework. Features patient registration, appointment scheduling, billing, pharmacy management, lab reports, doctor schedules, inventory & real-time dashboards — deployed on Frappe Cloud for high availability.</div>
-          <div style="font-size:.78rem;color:var(--text-sub);margin-top:2px"><strong style="color:var(--gold)">Role:</strong> Development team member on the ERP build &nbsp;·&nbsp; <strong style="color:var(--gold)">Result:</strong> Live in production on Frappe Cloud</div>
-          <div class="proj-tech"><span class="p-tech">ERPNext</span><span class="p-tech">Frappe</span><span class="p-tech">Python</span><span class="p-tech">Frappe Cloud</span><span class="p-tech">JavaScript</span><span class="p-tech">MariaDB</span></div>
-          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-lock"></i> Confidential Client Project</a></div>
-        </div>
-      </div>
-      <div class="proj-card feat r" data-cat="erp">
-        <div class="proj-visual" style="height:220px"><div class="proj-visual-inner" style="height:220px"><i class="fas fa-users-cog"></i></div><span class="pbadge pb-erp">⚙️ ERPNext / Frappe</span><span class="pbadge pb-feat">⭐ Featured</span></div>
-        <div class="proj-body">
-          <div class="proj-title">BCRM — CRM &amp; Field Operations Platform</div>
-          <div class="proj-desc">Internal CRM system for Brilliant Technologies built on Frappe, covering the full Lead → Opportunity → Customer → AMC/renewal lifecycle. Includes a live employee status dashboard (GPS check-in/out with reverse geocoding and road-distance calculation), Customer 360 dashboards (quotations, service contracts, invoices), a smart activity timeline replacing the native Frappe timeline across seven+ doctypes, and a "Nearby Clients" locator using GPS haversine matching with pincode/city fallback.</div>
-          <div style="font-size:.78rem;color:var(--text-sub);margin-top:2px"><strong style="color:var(--gold)">Role:</strong> Sole designer &amp; builder &nbsp;·&nbsp; <strong style="color:var(--gold)">Result:</strong> Now the team's single system of record from lead to renewal</div>
-          <div class="proj-tech"><span class="p-tech">Frappe</span><span class="p-tech">Python</span><span class="p-tech">Server Scripts</span><span class="p-tech">Client Scripts</span><span class="p-tech">REST API</span><span class="p-tech">MariaDB</span></div>
-          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-lock"></i> Internal Platform — Brilliant Technologies</a></div>
-        </div>
-      </div>
-      <div class="proj-card r" data-cat="erp">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-fingerprint"></i></div><span class="pbadge pb-frappe">⚙️ Frappe</span></div>
-        <div class="proj-body">
-          <div class="proj-title">HR Attendance Automation &amp; Biometric Integration</div>
-          <div class="proj-desc">End-to-end HR attendance system on Frappe: an automated remarks engine (grace period, late entry, early exit, missing punch, weekly off, holiday and sandwich-rule logic) driven by scheduled scripts, a bulk-optimized scheduler running every 5 minutes, and a Python middleware syncing a ZKTeco biometric device to Frappe Cloud over REST with SQLite-based deduplication. Also drives payroll deduction/bonus calculations on the Salary Slip.</div>
-          <div style="font-size:.78rem;color:var(--text-sub);margin-top:2px"><strong style="color:var(--gold)">Role:</strong> Sole designer &amp; builder &nbsp;·&nbsp; <strong style="color:var(--gold)">Result:</strong> Automated attendance &amp; payroll rules company-wide</div>
-          <div class="proj-tech"><span class="p-tech">Frappe</span><span class="p-tech">Python</span><span class="p-tech">REST API</span><span class="p-tech">SQLite</span><span class="p-tech">Scheduled Jobs</span></div>
-          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-lock"></i> Internal Platform — Brilliant Technologies</a></div>
-        </div>
-      </div>
-      <div class="proj-card r" data-cat="erp">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-industry"></i></div><span class="pbadge pb-erp">ERPNext</span></div>
-        <div class="proj-body">
-          <div class="proj-title">Manufacturing ERP Customization</div>
-          <div class="proj-desc">ERPNext Manufacturing module customization — BOM and Work Order workflows, production planning, stock/inventory tracking and shop-floor reporting, tailored with custom fields, role-based permissions and print formats for the client's production process.</div>
-          <div class="proj-tech"><span class="p-tech">ERPNext</span><span class="p-tech">Frappe</span><span class="p-tech">Python</span><span class="p-tech">Custom DocTypes</span></div>
-          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-lock"></i> Confidential Client Project</a></div>
-        </div>
-      </div>
-      <div class="proj-card r" data-cat="erp">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-money-check-alt"></i></div><span class="pbadge pb-frappe">⚙️ Integration</span></div>
-        <div class="proj-body">
-          <div class="proj-title">Payment &amp; Accounting Integrations</div>
-          <div class="proj-desc">Razorpay payment gateway integration on Quotation and Sales Order (server-script only, no custom app), plus an ERPNext-to-Tally Prime sync tool that pushes submitted Sales Invoices from ERPNext into Tally via XML.</div>
-          <div class="proj-tech"><span class="p-tech">Frappe</span><span class="p-tech">Python</span><span class="p-tech">Razorpay API</span><span class="p-tech">Tally XML</span></div>
-          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-lock"></i> Internal Platform — Brilliant Technologies</a></div>
-        </div>
-      </div>
-      <div class="proj-card r" data-cat="ai">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-robot"></i></div><span class="pbadge pb-ai">🤖 AI</span><span class="pbadge pb-feat">🆕 In Progress</span></div>
-        <div class="proj-body">
-          <div class="proj-title">AI Chatbot for ERPNext</div>
-          <div class="proj-desc">An in-development conversational assistant embedded into Frappe/ERPNext via a Workspace Custom HTML Block and Client Script chat widget, backed by a Python REST endpoint — aimed at answering CRM and HR queries directly inside the workspace instead of navigating between doctypes.</div>
-          <div class="proj-tech"><span class="p-tech">Frappe</span><span class="p-tech">Python</span><span class="p-tech">REST API</span><span class="p-tech">LLM Integration</span></div>
-          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-code-branch"></i> In Development</a></div>
-        </div>
-      </div>
-      <div class="proj-card r" data-cat="erp">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-cogs"></i></div><span class="pbadge pb-frappe">⚙️ Frappe</span></div>
-        <div class="proj-body">
-          <div class="proj-title">Custom Frappe Application</div>
-          <div class="proj-desc">Custom business workflow app built using Frappe Framework with custom DocTypes, server/client scripts, and REST APIs for seamless integration.</div>
-          <div class="proj-tech"><span class="p-tech">Frappe</span><span class="p-tech">Python</span><span class="p-tech">Custom DocTypes</span><span class="p-tech">REST API</span></div>
-          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-lock"></i> Confidential Client Project</a></div>
-        </div>
-      </div>
-      <div class="proj-card r" data-cat="erp">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-chart-line"></i></div><span class="pbadge pb-erp">ERPNext</span></div>
-        <div class="proj-body">
-          <div class="proj-title">ERPNext Business Customization</div>
-          <div class="proj-desc">Custom ERPNext modules for inventory, purchase workflows, custom reports with role-based permissions tailored to business needs.</div>
-          <div class="proj-tech"><span class="p-tech">ERPNext</span><span class="p-tech">Frappe</span><span class="p-tech">Python</span><span class="p-tech">Jinja</span></div>
-          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-lock"></i> Confidential Client Project</a></div>
-        </div>
-      </div>
-      <div class="proj-card r" data-cat="web">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-user-circle"></i></div><span class="pbadge pb-web">Web</span></div>
-        <div class="proj-body">
-          <div class="proj-title">Portfolio Website</div>
-          <div class="proj-desc">Personal portfolio with animations, timeline experience, project showcases and contact form built with HTML, CSS & JS.</div>
-          <div class="proj-tech"><span class="p-tech">HTML</span><span class="p-tech">CSS</span><span class="p-tech">JavaScript</span></div>
-          <div class="proj-links"><a href="https://pinjarimurthujavali.github.io/Portfolio_website/" target="_blank" class="pl pl-demo" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live</a><a href="https://github.com/PinjariMurthujavali/Portfolio_website" target="_blank" class="pl pl-gh" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></div>
-        </div>
-      </div>
-      <div class="proj-card r" data-cat="web">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-female"></i></div><span class="pbadge pb-web">Web</span></div>
-        <div class="proj-body">
-          <div class="proj-title">Tech Women Empowerment</div>
-          <div class="proj-desc">A web platform empowering girls through interactive learning and technology-driven education with mentorship pathways.</div>
-          <div class="proj-tech"><span class="p-tech">HTML</span><span class="p-tech">CSS</span><span class="p-tech">JavaScript</span></div>
-          <div class="proj-links"><a href="https://pinjarimurthujavali.github.io/Tech-For-Girl---Empower-Learn/" target="_blank" class="pl pl-demo" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live</a><a href="https://github.com/PinjariMurthujavali/Tech-For-Girl---Empower-Learn" target="_blank" class="pl pl-gh" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></div>
-        </div>
-      </div>
-      <div class="proj-card r" data-cat="web">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner has-img" style="height:150px"><img src="assets/img/weather-dashboard-Picsart-AiImageEnhancer.png" alt="Weather Dashboard screenshot" loading="lazy"></div><span class="pbadge pb-web">Web</span></div>
-        <div class="proj-body">
-          <div class="proj-title">Weather Dashboard</div>
-          <div class="proj-desc">Dynamic weather dashboard with real-time forecasts, location-based updates, and beautiful data visualizations.</div>
-          <div class="proj-tech"><span class="p-tech">HTML</span><span class="p-tech">CSS</span><span class="p-tech">JavaScript</span><span class="p-tech">Weather API</span></div>
-          <div class="proj-links"><a href="https://pinjarimurthujavali.github.io/Project-23---Weather-Dashboard/" target="_blank" class="pl pl-demo" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live</a><a href="https://github.com/PinjariMurthujavali/Project-23---Weather-Dashboard/" target="_blank" class="pl pl-gh" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></div>
-        </div>
-      </div>
-      <div class="proj-card r" data-cat="web">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner has-img" style="height:150px"><img src="assets/img/quizgame.jpg" alt="Interactive Quiz Game screenshot" loading="lazy"></div><span class="pbadge pb-web">Game</span></div>
-        <div class="proj-body">
-          <div class="proj-title">Interactive Quiz Game</div>
-          <div class="proj-desc">Fun interactive quiz game with instant score calculation, timer, and multiple difficulty levels.</div>
-          <div class="proj-tech"><span class="p-tech">HTML</span><span class="p-tech">CSS</span><span class="p-tech">JavaScript</span></div>
-          <div class="proj-links"><a href="https://pinjarimurthujavali.github.io/Project-1---Quiz-Game/" target="_blank" class="pl pl-demo" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live</a><a href="https://github.com/PinjariMurthujavali/Project-1---Quiz-Game" target="_blank" class="pl pl-gh" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></div>
-        </div>
-      </div>
-      <div class="proj-card r" data-cat="web">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner has-img" style="height:150px"><img src="assets/img/speech-reader.png" alt="Speech-to-Text Reader screenshot" loading="lazy"></div><span class="pbadge pb-ai">AI Web</span></div>
-        <div class="proj-body">
-          <div class="proj-title">Speech-to-Text Reader</div>
-          <div class="proj-desc">Web app converting spoken words to text instantly using Web Speech API with multilingual support.</div>
-          <div class="proj-tech"><span class="p-tech">HTML</span><span class="p-tech">CSS</span><span class="p-tech">JavaScript</span><span class="p-tech">Web Speech API</span></div>
-          <div class="proj-links"><a href="https://pinjarimurthujavali.github.io/Project-24-Speech-text-reader/" target="_blank" class="pl pl-demo" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live</a><a href="https://github.com/PinjariMurthujavali/Project-24-Speech-text-reader" target="_blank" class="pl pl-gh" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></div>
-        </div>
-      </div>
-      <div class="proj-card r" data-cat="web">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner has-img" style="height:150px"><img src="assets/img/qrcode1..jpeg" alt="QR Code Generator screenshot" loading="lazy"></div><span class="pbadge pb-web">Tool</span></div>
-        <div class="proj-body">
-          <div class="proj-title">QR Code Generator</div>
-          <div class="proj-desc">Instantly generate custom QR codes from any text or URL with download options and custom colors.</div>
-          <div class="proj-tech"><span class="p-tech">HTML</span><span class="p-tech">CSS</span><span class="p-tech">JavaScript</span></div>
-          <div class="proj-links"><a href="https://github.com/PinjariMurthujavali/PROJECT-2-QR-CODE-GENERATOR" target="_blank" class="pl pl-gh" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></div>
-        </div>
-      </div>
-      <div class="proj-card r" data-cat="web">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner has-img" style="height:150px"><img src="assets/img/Notes-application.png" alt="Notes Application screenshot" loading="lazy"></div><span class="pbadge pb-web">App</span></div>
-        <div class="proj-body">
-          <div class="proj-title">Notes Application</div>
-          <div class="proj-desc">Responsive notes app with local storage persistence, search, and smooth UX for quick note-taking.</div>
-          <div class="proj-tech"><span class="p-tech">HTML</span><span class="p-tech">CSS</span><span class="p-tech">JavaScript</span><span class="p-tech">localStorage</span></div>
-        </div>
-      </div>
-      <div class="proj-card r" data-cat="python">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-user-graduate"></i></div><span class="pbadge pb-web">Python / Django</span></div>
-        <div class="proj-body">
-          <div class="proj-title">Student Management System</div>
-          <div class="proj-desc">Full-stack Django application to manage student records, attendance, marks and course enrollment with an admin dashboard, role-based login and search/filter reports.</div>
-          <div class="proj-tech"><span class="p-tech">Python</span><span class="p-tech">Django</span><span class="p-tech">SQLite</span><span class="p-tech">Bootstrap</span></div>
-          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-code-branch"></i> Academic Project</a></div>
-        </div>
-      </div>
-      <div class="proj-card r" data-cat="python">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-book-reader"></i></div><span class="pbadge pb-web">Python / Django</span></div>
-        <div class="proj-body">
-          <div class="proj-title">Library Management System</div>
-          <div class="proj-desc">Django-based library system for book cataloguing, issue/return tracking, due-date reminders and member management with a clean staff dashboard.</div>
-          <div class="proj-tech"><span class="p-tech">Python</span><span class="p-tech">Django</span><span class="p-tech">MySQL</span><span class="p-tech">HTML/CSS</span></div>
-          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-code-branch"></i> Academic Project</a></div>
-        </div>
-      </div>
-      <div class="proj-card r" data-cat="python">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-shopping-basket"></i></div><span class="pbadge pb-web">Python / Django</span></div>
-        <div class="proj-body">
-          <div class="proj-title">Online Shopping Cart System</div>
-          <div class="proj-desc">Basic e-commerce app built with Django — product catalog, cart, checkout flow and order history with simple authentication.</div>
-          <div class="proj-tech"><span class="p-tech">Python</span><span class="p-tech">Django</span><span class="p-tech">SQLite</span></div>
-          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-code-branch"></i> Academic Project</a></div>
-        </div>
-      </div>
-      <div class="proj-card r" data-cat="java">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-id-badge"></i></div><span class="pbadge pb-web">Java Full Stack</span></div>
-        <div class="proj-body">
-          <div class="proj-title">Employee Management System</div>
-          <div class="proj-desc">Java full-stack application to manage employee records, departments, attendance and payroll, built with Spring Boot REST APIs and a JDBC/MySQL backend.</div>
-          <div class="proj-tech"><span class="p-tech">Java</span><span class="p-tech">Spring Boot</span><span class="p-tech">JDBC</span><span class="p-tech">MySQL</span><span class="p-tech">HTML/CSS</span></div>
-          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-code-branch"></i> Academic Project</a></div>
-        </div>
-      </div>
-      <div class="proj-card r" data-cat="java">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-university"></i></div><span class="pbadge pb-web">Java Full Stack</span></div>
-        <div class="proj-body">
-          <div class="proj-title">Bank Management System</div>
-          <div class="proj-desc">Core banking simulation in Java — account creation, deposits/withdrawals, balance enquiry and transaction history with a JDBC-connected MySQL database.</div>
-          <div class="proj-tech"><span class="p-tech">Java</span><span class="p-tech">Servlets/JSP</span><span class="p-tech">JDBC</span><span class="p-tech">MySQL</span></div>
-          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-code-branch"></i> Academic Project</a></div>
-        </div>
-      </div>
-      <div class="proj-card r" data-cat="java">
-        <div class="proj-visual" style="height:150px"><div class="proj-visual-inner" style="height:150px"><i class="fas fa-hotel"></i></div><span class="pbadge pb-web">Java Full Stack</span></div>
-        <div class="proj-body">
-          <div class="proj-title">Hotel Reservation System</div>
-          <div class="proj-desc">Java web app for room booking, availability checks, billing and customer management, built with Spring MVC and a relational database.</div>
-          <div class="proj-tech"><span class="p-tech">Java</span><span class="p-tech">Spring MVC</span><span class="p-tech">MySQL</span><span class="p-tech">Bootstrap</span></div>
-          <div class="proj-links"><a class="pl pl-private"><i class="fas fa-code-branch"></i> Academic Project</a></div>
-        </div>
-      </div>
-    </div>
-    <div class="proj-more" id="projMoreWrap"><button id="projMore" type="button" aria-expanded="false" onclick="toggleMoreProjects()">Show more projects</button></div>
-  </div>
-</section>
-<div class="divider"></div>
+          <article class="tl tl--award rv">
+            <div class="tl__meta"><span>2023</span><span class="pill pill--award">🏆 AWARD</span></div>
+            <div class="tile tile--award spot">
+              <h3 class="tl__role">🥈 Smart India Hackathon 2023 — 2nd Prize</h3>
+              <p class="tl__org" style="color:var(--gold)">Government of India Initiative</p>
+              <p>Secured 2nd prize at the national-level Smart India Hackathon 2023 with an innovative software solution, competing at the national round of a Government of India initiative.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">SQL</span><span class="tag">Team Collaboration</span></div>
+            </div>
+          </article>
 
-<!-- ═══════ YOUTUBE ═══════ -->
-<section id="youtube">
-  <div class="sec-inner">
-    <p class="sec-eyebrow r">06 / Content Creator</p>
-    <h2 class="sec-title r">My <em>YouTube Channel</em></h2>
-    <div class="r" style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:32px; display:flex; align-items:center; gap:24px; flex-wrap:wrap; justify-content:space-between">
-      <div style="display:flex; align-items:center; gap:20px; flex:1; min-width:260px">
-        <div style="width:64px; height:64px; border-radius:50%; background:rgba(239,68,68,.12); display:flex; align-items:center; justify-content:center; flex-shrink:0">
-          <i class="fab fa-youtube" style="font-size:1.8rem; color:#f87171"></i>
-        </div>
-        <div>
-          <div style="font-size:1.15rem; font-weight:600; color:var(--text)">Syntax Solver</div>
-          <p style="color:var(--text-sub); font-size:.92rem; margin-top:4px; max-width:480px">Coding tutorials and walkthroughs — making development concepts simple and practical for everyone.</p>
+          <article class="tl rv">
+            <div class="tl__meta"><span>2022 — 2024</span></div>
+            <div class="tile spot">
+              <h3 class="tl__role">Intern Student Coordinator</h3>
+              <p class="tl__org">Eduskills Academy</p>
+              <p>Coordinator for 3 years: technical guidance, internship onboarding, leadership and communication skill development.</p>
+              <div class="tags"><span class="tag">Leadership</span><span class="tag">Mentoring</span><span class="tag">Communication</span></div>
+            </div>
+          </article>
         </div>
       </div>
-      <a href="https://www.youtube.com/@Syntaxsolver-u5m" target="_blank" class="btn-gold" style="white-space:nowrap" rel="noopener noreferrer"><i class="fab fa-youtube"></i> Visit Channel</a>
-    </div>
-    <div class="r yt-video-grid" style="margin-top:24px; display:grid; grid-template-columns:1fr 1fr; gap:16px">
-      <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--border)">
-        <iframe style="width:100%; aspect-ratio:16/9; display:block; border:0" src="https://www.youtube.com/embed/m_9FpQIqDFU" title="Syntax Solver — Video" loading="lazy" allowfullscreen></iframe>
-      </div>
-      <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--border)">
-        <iframe style="width:100%; aspect-ratio:16/9; display:block; border:0" src="https://www.youtube.com/embed/AFlftxdkMTE" title="Syntax Solver — Video" loading="lazy" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="divider"></div>
+    </section>
 
-<!-- ═══════ CERTIFICATIONS ═══════ -->
-<section id="certifications">
-  <div class="sec-inner">
-    <p class="sec-eyebrow r">07 / Credentials</p>
-    <h2 class="sec-title r">My <em>Certifications</em></h2>
-    <div class="cert-grid">
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fas fa-cogs"></i></div><div class="cert-info"><h4>Frappe & ERPNext Developer</h4><p>Brilliant Technologies</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-code"></i></div><div class="cert-info"><h4>Software Developer Certification</h4><p>Institute of Software Excellence</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fab fa-wordpress"></i></div><div class="cert-info"><h4>WordPress Developer</h4><p>Vsplash Techlabs Pvt. Ltd.</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-shopping-cart"></i></div><div class="cert-info"><h4>WooCommerce Developer</h4><p>Vsplash Techlabs Pvt. Ltd.</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-tools"></i></div><div class="cert-info"><h4>Beaver Builder Certification</h4><p>Vsplash Techlabs Pvt. Ltd.</p></div></div><div class="cert-footer"><span class="cert-yr">2025</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fab fa-python"></i></div><div class="cert-info"><h4>Python Full Stack Developer</h4><p>Durga Software Solutions, Hyderabad</p></div></div><div class="cert-footer"><span class="cert-yr">2024</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-gr"><i class="fas fa-globe"></i></div><div class="cert-info"><h4>Web Development Certification</h4><p>American Indian Foundation (S&P GLOBAL)</p></div></div><div class="cert-footer"><span class="cert-yr">2023</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fas fa-briefcase"></i></div><div class="cert-info"><h4>TCS iON Career Edge</h4><p>Communication & Soft Skills</p></div></div><div class="cert-footer"><span class="cert-yr">2023</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-g"><i class="fas fa-database"></i></div><div class="cert-info"><h4>SQL Fundamentals</h4><p>HackerRank</p></div></div><div class="cert-footer"><span class="cert-yr">2022</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-b"><i class="fab fa-java"></i></div><div class="cert-info"><h4>Java Certification</h4><p>SoloLearn</p></div></div><div class="cert-footer"><span class="cert-yr">2022</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-      <div class="cert-card r"><div class="cert-body"><div class="cert-icon ci-gr"><i class="fas fa-leaf"></i></div><div class="cert-info"><h4>Python Data Structures</h4><p>SoloLearn</p></div></div><div class="cert-footer"><span class="cert-yr">2021</span><a href="https://www.linkedin.com/in/murthujavali-pinjari18/details/certifications/" target="_blank" class="cert-link" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> View</a></div></div>
-    </div> 
-  </div>
-</section>
-<div class="divider"></div>
-
-<!-- ═══════ TESTIMONIALS ═══════ -->
-<!-- TODO: Replace the 3 placeholder quotes below with real feedback from your
-     manager / colleagues / mentor. Keep each quote short (1-2 lines). -->
-<section id="testimonials">
-  <div class="sec-inner">
-    <p class="sec-eyebrow r">08 / Social Proof</p>
-    <h2 class="sec-title r">What People <em>Say</em></h2>
-
-    <div class="cert-grid" id="reviews-grid">
-      <div class="cert-card r" data-seed="1">
-        <div class="cert-body" style="flex-direction:column; align-items:flex-start; gap:10px">
-          <div class="rev-stars-row">
-            <div class="rev-stars" aria-label="5 out of 5 stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          </div>
-          <i class="fas fa-quote-left" style="color:var(--gold); opacity:.5; font-size:1.2rem"></i>
-          <p style="color:var(--text-sub); font-size:.92rem; line-height:1.6">"I had a chance to explore this portfolio, and I'm genuinely impressed. It's clean, well-structured, and reflects both creativity and professionalism. Every section is thoughtfully presented, making it easy to understand the skills and work behind it. Wishing you all the best—I'm sure this portfolio will leave a great impression on everyone who visits it. Keep growing and achieving bigger milestones!"</p>
+    <!-- ═════════ WORK / CASE STUDIES ═════════ -->
+    <section id="work" class="section">
+      <div class="container">
+        <div class="section__head rv">
+          <p class="eyebrow">04 · What I deliver</p>
+          <h2 class="section__title">Why teams <span class="grad">hire me</span></h2>
+          <p class="section__lead">I don't just write scripts. I own ERP features end to end, from the business problem to production on Frappe Cloud, and I help the team ship with me.</p>
         </div>
-        <div class="cert-footer" style="border-top:1px solid var(--border); padding-top:12px; flex-wrap:wrap; gap:8px">
+
+        <div class="deliver">
+          <article class="tile dcard spot rv"><div class="ico"><i class="fas fa-cubes" aria-hidden="true"></i></div><h3>Custom ERP systems</h3><p>Custom DocTypes, server and client scripts, workflows and dashboards on Frappe and ERPNext, deployed on Frappe Cloud.</p></article>
+          <article class="tile dcard spot rv" style="--i:1"><div class="ico"><i class="fas fa-plug" aria-hidden="true"></i></div><h3>Integrations &amp; automation</h3><p>Razorpay payments, ERPNext to Tally sync, ZKTeco biometric devices, GPS features and scheduled jobs.</p></article>
+          <article class="tile dcard spot rv" style="--i:2"><div class="ico"><i class="fas fa-people-group" aria-hidden="true"></i></div><h3>Lead &amp; deliver</h3><p>Code reviews, release management and mentoring junior developers, so the whole team ships faster.</p></article>
+        </div>
+
+        <div class="section__head rv">
+          <p class="eyebrow">Case studies</p>
+          <h2 class="section__title">Problem → Build → <span class="grad">Result</span></h2>
+        </div>
+
+        <article class="tile case spot rv">
           <div>
-            <span style="color:var(--text); font-weight:500; display:block">Mabasha — Senior software engineer</span>
-            <span class="cert-yr">LPL Financial GCC</span>
+            <p class="case__tag">Case study 01 · Internal CRM</p>
+            <h3>BCRM: one system from lead to renewal</h3>
+            <dl>
+              <div><dt>Problem</dt><dd>Sales, field visits and renewals lived in separate places, so nobody had one view of a customer.</dd></div>
+              <div><dt>What I built</dt><dd>A Frappe CRM covering Lead → Opportunity → Customer → AMC/renewal, with GPS check-in/out, Customer 360 dashboards, a smart activity timeline across 7+ doctypes and a “Nearby Clients” locator.</dd></div>
+              <div><dt>Result</dt><dd>It is now the team's single system of record from lead to renewal. I designed and built it solo.</dd></div>
+            </dl>
+            <div class="case-stats"><div><b>7+</b><small>doctypes on one timeline</small></div><div><b>1</b><small>system of record</small></div></div>
           </div>
-          <button class="rev-like-btn" data-seed-id="1" onclick="toggleLike(this)"><i class="fas fa-thumbs-up"></i> Helpful<span class="rev-like-count"></span></button>
-        </div>
-      </div>
+          <div class="case__vis" aria-hidden="true">
+            <div class="mock"><div class="mock__bar"><i></i><i></i><i></i></div>
+              <div class="mock__body">
+                <div class="pipe"><div>Lead</div><div>Opportunity</div><div>Customer</div><div>AMC</div></div>
+                <div class="rows"><div>Customer 360 · Quotations<em>LIVE</em></div><div>Nearby Clients · GPS match<em>LIVE</em></div><div>Employee check-in · Road distance<em>LIVE</em></div></div>
+              </div>
+              <p class="mock__cap">Illustrative UI. Real client data is private.</p>
+            </div>
+          </div>
+        </article>
 
-      <div class="cert-card r" data-seed="2">
-        <div class="cert-body" style="flex-direction:column; align-items:flex-start; gap:10px">
-          <div class="rev-stars-row">
-            <div class="rev-stars" aria-label="5 out of 5 stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          </div>
-          <i class="fas fa-quote-left" style="color:var(--gold); opacity:.5; font-size:1.2rem"></i>
-          <p style="color:var(--text-sub); font-size:.92rem; line-height:1.6">"Your portfolio demonstrates a high level of professionalism and thoughtful design. The structure is intuitive, the content is clearly articulated, and your projects effectively showcase both technical competence and creative vision. The clarity with which you present your skills makes it easy for any viewer to grasp your strengths. Excellent work — this is a strong foundation for continued growth and success."</p>
-        </div>
-        <div class="cert-footer" style="border-top:1px solid var(--border); padding-top:12px; flex-wrap:wrap; gap:8px">
+        <article class="tile case case--flip spot rv">
           <div>
-            <span style="color:var(--text); font-weight:500; display:block">Bhanu — Junior Python Developer</span>
-            <span class="cert-yr">Brilliant Technologies</span>
+            <p class="case__tag">Case study 02 · HR automation</p>
+            <h3>Attendance &amp; payroll rules, automated</h3>
+            <dl>
+              <div><dt>Problem</dt><dd>Attendance remarks and payroll deductions depended on manual checking of biometric punches.</dd></div>
+              <div><dt>What I built</dt><dd>A rules engine (grace period, late entry, early exit, missing punch, weekly off, holiday, sandwich rule) on a 5-minute scheduler, plus Python middleware syncing a ZKTeco device to Frappe Cloud with SQLite deduplication.</dd></div>
+              <div><dt>Result</dt><dd>Attendance and payroll rules run automatically company-wide, feeding Salary Slip deductions and bonuses.</dd></div>
+            </dl>
+            <div class="case-stats"><div><b>7</b><small>rule types</small></div><div><b>39,000+</b><small>logs synced</small></div><div><b>75</b><small>employees</small></div><div><b>5 min</b><small>scheduler</small></div></div>
           </div>
-          <button class="rev-like-btn" data-seed-id="2" onclick="toggleLike(this)"><i class="fas fa-thumbs-up"></i> Helpful<span class="rev-like-count"></span></button>
+          <div class="case__vis" aria-hidden="true">
+            <div class="mock"><div class="mock__bar"><i></i><i></i><i></i></div>
+              <div class="mock__body">
+                <div class="rows"><div>Late entry · grace period<em>AUTO</em></div><div>Missing punch · flagged<em>AUTO</em></div><div>Sandwich rule · weekly off<em>AUTO</em></div></div>
+                <div class="bars"><span style="height:45%"></span><span style="height:70%"></span><span style="height:55%"></span><span style="height:90%"></span><span style="height:65%"></span><span style="height:80%"></span></div>
+              </div>
+              <p class="mock__cap">Illustrative UI. Real client data is private.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═════════ PROJECTS ═════════ -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section__head rv">
+          <p class="eyebrow">05 · What I've built</p>
+          <h2 class="section__title">Featured <span class="grad">projects</span></h2>
+        </div>
+        <div class="filters rv" role="group" aria-label="Filter projects by category">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" type="button" data-filter="erp" aria-pressed="false">ERPNext / Frappe</button>
+          <button class="filter" type="button" data-filter="ai" aria-pressed="false">AI</button>
+          <button class="filter" type="button" data-filter="python" aria-pressed="false">Python / Django</button>
+          <button class="filter" type="button" data-filter="java" aria-pressed="false">Java Full Stack</button>
+          <button class="filter" type="button" data-filter="web" aria-pressed="false">Web Apps</button>
+        </div>
+        <div class="projects" id="projGrid" aria-live="polite"><noscript><p class="muted">Enable JavaScript to browse projects, or visit <a href="https://github.com/PinjariMurthujavali" style="text-decoration:underline">github.com/PinjariMurthujavali</a>.</p></noscript></div>
+        <div class="more" id="projMoreWrap"><button class="btn btn--ghost" id="projMore" type="button" aria-expanded="false">Show more projects</button></div>
+      </div>
+    </section>
+
+    <!-- ═════════ VIDEOS ═════════ -->
+    <section id="videos" class="section">
+      <div class="container">
+        <div class="section__head rv">
+          <p class="eyebrow">06 · Content creator</p>
+          <h2 class="section__title">I teach on <span class="grad">YouTube</span> too</h2>
+        </div>
+        <div class="videos">
+          <article class="tile yt-card spot rv">
+            <div class="ico"><i class="fab fa-youtube" aria-hidden="true"></i></div>
+            <h3>Syntax Solver</h3>
+            <p>Coding tutorials and walkthroughs, making development concepts simple and practical for everyone.</p>
+            <a class="btn btn--primary btn--sm" href="https://www.youtube.com/@Syntaxsolver-u5m" target="_blank" rel="noopener noreferrer" style="align-self:flex-start">Visit channel <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </article>
+          <button class="yt rv" type="button" data-yt="m_9FpQIqDFU" data-title="Syntax Solver video 1" aria-label="Play Syntax Solver video 1" style="--i:1">
+            <img src="https://i.ytimg.com/vi/m_9FpQIqDFU/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt__play" aria-hidden="true"></span>
+          </button>
+          <button class="yt rv" type="button" data-yt="AFlftxdkMTE" data-title="Syntax Solver video 2" aria-label="Play Syntax Solver video 2" style="--i:2">
+            <img src="https://i.ytimg.com/vi/AFlftxdkMTE/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt__play" aria-hidden="true"></span>
+          </button>
         </div>
       </div>
-      <!-- dynamic, visitor-submitted reviews get injected here by JS -->
-      <div id="dynamic-reviews-container"></div>
-    </div>
+    </section>
 
-    <!-- ── ADD REVIEW CARD ── -->
-    <div class="add-review-wrap r">
-      <button class="add-review-toggle" id="addReviewToggle" onclick="toggleReviewForm()">
-        <i class="fas fa-pen-nib"></i> Add Your Testimonial
-      </button>
-
-      <div class="add-review-card" id="addReviewCard">
-        <h4><i class="fas fa-star" style="color:var(--gold)"></i> Share Your Experience</h4>
-        <p class="add-review-sub">Worked with Murthu or explored the portfolio? Leave a quick review — it shows up below instantly.</p>
-
-        <div class="form-wrap" style="gap:14px">
-          
-          <div class="form-row">
-            <input type="text" id="rev-name" class="f-input" placeholder="Your Name *">
-            <input type="text" id="rev-role" class="f-input" placeholder="Role / Company (optional)">
-          </div>
-
-          <div class="star-picker-wrap">
-            <div class="star-picker" id="starPicker">
-              <i class="fas fa-star" data-val="1"></i><i class="fas fa-star" data-val="2"></i><i class="fas fa-star" data-val="3"></i><i class="fas fa-star" data-val="4"></i><i class="fas fa-star" data-val="5"></i>
-            </div>
-            <span class="star-label" id="starLabel">Tap a star to rate</span>
-          </div>
-
-          <textarea id="rev-msg" class="f-textarea" placeholder="Write your review... *" style="min-height:90px"></textarea>
-
-          <div style="display:flex; gap:12px; flex-wrap:wrap">
-            <button type="button" class="btn-gold" id="rev-submit-btn" style="border:none; flex:1; justify-content:center; min-width:160px" onclick="submitReview()">
-              <i class="fas fa-paper-plane"></i> Submit Testimonial
-            </button>
-            <button type="button" class="btn-ghost" style="border:none; flex:0 0 auto; cursor:pointer; background:transparent" onclick="toggleReviewForm()">
-              Cancel
-            </button>
-          </div>
-
-          <p id="review-status" style="font-size:.78rem; margin-top:2px; line-height:1.5;"></p>
+    <!-- ═════════ CERTIFICATIONS ═════════ -->
+    <section id="certs" class="section">
+      <div class="container">
+        <div class="section__head rv">
+          <p class="eyebrow">07 · Credentials</p>
+          <h2 class="section__title">My <span class="grad">certifications</span></h2>
+          <p class="section__lead">Tap any card to verify on LinkedIn.</p>
         </div>
+        <div class="certs" id="certGrid"></div>
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
-<div class="divider"></div>
+    <!-- ═════════ REVIEWS / FEEDBACK ═════════ -->
+    <section id="reviews" class="section">
+      <div class="container">
+        <div class="section__head rv">
+          <p class="eyebrow">08 · Social proof</p>
+          <h2 class="section__title" id="reviewsTitle">What people <span class="grad">say</span></h2>
+          <p class="section__lead">Worked with me, hired me, or just explored the portfolio? Your feedback shows up here live.</p>
+        </div>
+        <div class="rev-summary rv" id="revSummary" hidden>
+          <div class="rev-avg"><b id="revAvg">5.0</b><span class="stars" id="revAvgStars" aria-hidden="true"></span><span class="muted" id="revCount"></span></div>
+        </div>
+        <div class="reviews" id="reviewsGrid" aria-live="polite"></div>
 
-<!-- ═══════ LOCATION ═══════ -->
-<section id="location">
-  <div class="sec-inner">
-    <p class="sec-eyebrow r">09 / Where I'm Based</p>
-    <h2 class="sec-title r">My <em>Location</em></h2>
-    <div class="loc-grid">
-      <div class="map-frame r">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243951.5!2d78.4867!3d17.385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb97daaf9e68f0d%3A0x82b47b31eb64fa1!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1711700000001!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Hyderabad, Telangana"></iframe>
-      </div>
-      <div class="loc-cards r">
-        <div class="loc-c"><div class="loc-ic"><i class="fas fa-building"></i></div><div class="loc-text"><h4>Currently Working At</h4><p>Brilliant Technologies, Hyderabad, Telangana</p></div></div>
-        <div class="loc-c"><div class="loc-ic"><i class="fas fa-home"></i></div><div class="loc-text"><h4>Hometown</h4><p>Nandyal District, Andhra Pradesh, India 🇮🇳</p></div></div>
-        <div class="loc-c"><div class="loc-ic"><i class="fas fa-map-marker-alt"></i></div><div class="loc-text"><h4>Open to Work</h4><p>On-site · Remote · Hybrid<br>India & International Roles</p></div></div>
-        <div class="loc-c"><div class="loc-ic"><i class="fas fa-phone-alt"></i></div><div class="loc-text"><h4>Direct Contact</h4><a href="https://wa.me/919100850087" target="_blank" rel="noopener noreferrer">+91 9100850087 (WhatsApp)</a></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="divider"></div>
-<!-- ═══════ CONTACT ═══════ -->
-<div class="hire-band r">
-  <h2>Need an ERPNext / Frappe developer?</h2>
-  <p>I'm open to full-time roles, freelance projects and ERP implementations, on-site, remote or hybrid. Message me on WhatsApp for the fastest reply.</p>
-  <div class="hire-actions">
-    <a class="primary" href="https://wa.me/919100850087?text=Hi%20Murthu!%20I%27d%20like%20to%20hire%20you." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp Me</a>
-    <a href="mailto:luckymurthu@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-    <a href="Murthujavali_Pinjari_ERPNext_Frappe.pdf" download><i class="fas fa-download"></i> Resume</a>
-    <a href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
-  </div>
-</div>
-
-<section id="contact">
-  <div class="sec-inner">
-    <p class="sec-eyebrow r">10 / Let's Build Together</p>
-    <h2 class="sec-title r">Get in <em>Touch</em></h2>
-
-    <div class="contact-layout">
-      
-      <!-- LEFT SIDE -->
-      <div class="r">
-        <div class="contact-intro">
-          <h3>Ready to build something <em>remarkable?</em></h3>
-          <p>
-            Open to full-time roles, freelance projects, ERPNext / Frappe
-            implementations, and exciting tech collaborations. WhatsApp for the
-            fastest response!
-          </p>
+        <div class="rev-cta rv">
+          <button class="btn btn--primary" id="revToggle" type="button" aria-expanded="false" aria-controls="revForm"><i class="fas fa-pen-nib" aria-hidden="true"></i> Leave feedback</button>
         </div>
 
-        <div class="contact-methods">
-          <a href="https://wa.me/919100850087?text=Hi%20Murthu!%20I%20saw%20your%20portfolio%20and%20want%20to%20connect." target="_blank" class="cm wa" rel="noopener noreferrer">
-            <div class="cm-ic ic-gr"><i class="fab fa-whatsapp"></i></div>
-            <div class="cm-info">
-              <strong>WhatsApp (Fastest)</strong>
-              <span>+91 9100850087 · Message now</span>
+        <form class="tile rev-form" id="revForm" novalidate autocomplete="off">
+          <h3 style="margin-bottom:6px"><i class="fas fa-star" style="color:var(--gold)" aria-hidden="true"></i> Share your feedback</h3>
+          <p class="muted" style="font-size:.92rem">Hiring managers, recruiters, teammates, developers: all feedback is welcome, good or constructive.</p>
+          <div class="form">
+            <div class="row2">
+              <div class="field"><label for="rvName">Your name *</label><input class="input" id="rvName" name="name" maxlength="60" required autocomplete="name"></div>
+              <div class="field"><label for="rvRole">Role / company</label><input class="input" id="rvRole" name="role" maxlength="80" list="roleList" placeholder="e.g. Hiring Manager, Acme Corp"><datalist id="roleList"><option value="Hiring Manager"><option value="Recruiter"><option value="Tech Lead"><option value="Developer"><option value="Colleague"><option value="Student"><option value="Visitor"></datalist></div>
             </div>
-          </a>
-
-          <a href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank" class="cm" rel="noopener noreferrer">
-            <div class="cm-ic ic-bl"><i class="fab fa-linkedin"></i></div>
-            <div class="cm-info">
-              <strong>LinkedIn</strong>
-              <span>murthujavali-pinjari18</span>
+            <div class="field">
+              <span class="label" id="starLbl" style="font-size:.82rem;font-weight:600;color:var(--muted)">Rating *</span>
+              <div class="star-pick" role="radiogroup" aria-labelledby="starLbl">
+                <div class="star-pick__row" id="starRow"></div>
+                <span class="star-label" id="starText">Tap a star</span>
+              </div>
             </div>
-          </a>
-
-          <a href="https://github.com/PinjariMurthujavali" target="_blank" class="cm" rel="noopener noreferrer">
-            <div class="cm-ic ic-pr"><i class="fab fa-github"></i></div>
-            <div class="cm-info">
-              <strong>GitHub</strong>
-              <span>PinjariMurthujavali</span>
+            <div class="field"><label for="rvMsg">Your feedback *</label><textarea class="textarea" id="rvMsg" name="review" maxlength="800" required placeholder="What stood out? What could be better?"></textarea></div>
+            <div class="form-actions">
+              <button class="btn btn--primary" id="revSubmit" type="submit"><i class="fas fa-paper-plane" aria-hidden="true"></i> Submit feedback</button>
+              <button class="btn btn--ghost" id="revCancel" type="button">Cancel</button>
             </div>
-          </a>
-
-          <a href="https://www.youtube.com/@Syntaxsolver-u5m" target="_blank" class="cm" rel="noopener noreferrer">
-            <div class="cm-ic ic-rd"><i class="fab fa-youtube"></i></div>
-            <div class="cm-info">
-              <strong>YouTube — Syntax Solver</strong>
-              <span>Coding tutorials & DSA</span>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <!-- RIGHT SIDE -->
-      <div class="r">
-        <form action="https://api.web3forms.com/submit" method="POST">
-          
-          <input type="hidden" name="access_key" value="438c0f65-2c35-47a5-af69-c82f483de4f2">
-
-          <div class="form-wrap">
-            
-            <div class="form-row">
-              <input type="text" name="name" id="f-name" class="f-input" placeholder="Your Name *" required>
-
-              <input type="email" name="email" id="f-email" class="f-input" placeholder="Your Email *" required>
-            </div>
-
-            <input type="text" name="company" id="f-company" class="f-input" placeholder="Company / Organization (optional)">
-
-            <textarea name="message" id="f-msg" class="f-textarea" placeholder="Your Message... *" required></textarea>
-
-            <div style="display:flex; gap:12px;">
-              <button type="submit" class="btn-gold" style="border:none; flex:1; justify-content:center;">
-                <i class="fas fa-paper-plane"></i> Send Message
-              </button>
-
-              <button type="button" onclick="sendWhatsApp()" class="btn-ghost" style="border:none; flex:1; justify-content:center; cursor:pointer; background:transparent;">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-              </button>
-            </div>
-
-            <p id="form-status" style="font-size:.78rem; margin-top:10px; line-height:1.5;"></p>
-
-            <p style="font-size:.69rem; color:var(--text-muted); margin-top:6px; opacity:.6;">
-              📧 Email delivers to
-              <span style="color:var(--gold)">luckymurthu@gmail.com</span>
-              &nbsp;·&nbsp;
-              💬 WhatsApp auto-fills your details
-            </p>
-
+            <p class="status" id="revStatus" role="status" aria-live="polite"></p>
           </div>
         </form>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
+    <!-- ═════════ CONTACT ═════════ -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section__head rv">
+          <p class="eyebrow">09 · Let's build together</p>
+          <h2 class="section__title">Get in <span class="grad">touch</span></h2>
+        </div>
+        <div class="contact">
+          <article class="tile spot rv">
+            <h3>Need an ERPNext / Frappe developer?</h3>
+            <p>Open to full-time roles, freelance projects and ERP implementations: on-site, remote or hybrid. WhatsApp is the fastest way to reach me.</p>
+            <div class="methods">
+              <a class="method" href="https://wa.me/919100850087?text=Hi%20Murthu!%20I%20saw%20your%20portfolio%20and%20want%20to%20connect." target="_blank" rel="noopener noreferrer"><span class="ico ico--wa"><i class="fab fa-whatsapp" aria-hidden="true"></i></span><span><strong>WhatsApp (fastest)</strong><span>+91 91008 50087</span></span></a>
+              <a class="method" href="mailto:luckymurthu@gmail.com"><span class="ico ico--mail"><i class="fas fa-envelope" aria-hidden="true"></i></span><span><strong>Email</strong><span>luckymurthu@gmail.com</span></span></a>
+              <a class="method" href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank" rel="noopener noreferrer"><span class="ico ico--in"><i class="fab fa-linkedin" aria-hidden="true"></i></span><span><strong>LinkedIn</strong><span>murthujavali-pinjari18</span></span></a>
+              <a class="method" href="https://github.com/PinjariMurthujavali" target="_blank" rel="noopener noreferrer"><span class="ico ico--gh"><i class="fab fa-github" aria-hidden="true"></i></span><span><strong>GitHub</strong><span>PinjariMurthujavali</span></span></a>
+              <a class="method" href="Murthujavali_Pinjari_ERPNext_Frappe.pdf" download><span class="ico ico--yt" style="background:var(--btn)"><i class="fas fa-file-arrow-down" aria-hidden="true"></i></span><span><strong>Download resume</strong><span>PDF · Frappe / ERPNext focused</span></span></a>
+            </div>
+            <div class="loc"><i class="fas fa-location-dot" aria-hidden="true"></i><div><strong>Hyderabad, Telangana, India</strong><span>Currently at Brilliant Technologies · <a href="https://www.google.com/maps/search/?api=1&query=Hyderabad%2C+Telangana" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">open in Maps</a></span></div></div>
+          </article>
 
-<div class="mobile-bar"><a href="https://wa.me/919100850087?text=Hi%20Murthu!%20I%27d%20like%20to%20hire%20you." target="_blank" rel="noopener noreferrer">WhatsApp</a><a href="Murthujavali_Pinjari_ERPNext_Frappe.pdf" download>Resume</a><a href="#contact">Contact</a></div>
-<footer>
-  <div class="f-brand">Murthujavali Pinjari</div>
-  <p class="f-copy">© 2026 · Senior Python &amp; Frappe/ERPNext Developer · Team Lead</p>
-  <div class="f-socials">
-    <a href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank" class="f-soc" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/PinjariMurthujavali" target="_blank" class="f-soc" aria-label="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-    <a href="https://www.youtube.com/@Syntaxsolver-u5m" target="_blank" class="f-soc" aria-label="YouTube" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-    <a href="https://wa.me/919100850087" target="_blank" class="f-soc" aria-label="WhatsApp" style="color:#25d366;border-color:rgba(37,211,102,.25)" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
-  </div>
-</footer>
-
-<!-- 🔥 Firebase v12 Modular SDK — initializes Firestore for the reviews system -->
-<script type="module" src="assets/js/firebase.js"></script>
-
-<script>
-// ══════════════════════════════════════════════════════════════
-//  WEB3FORMS SETUP — Free email service, no backend needed
-//  HOW TO ACTIVATE (takes 2 minutes):
-//  1. Open https://web3forms.com in browser
-//  2. Type luckymurthu@gmail.com → Click "Create Access Key"
-//  3. Copy the key from the page
-//  4. Paste it below replacing YOUR_WEB3FORMS_ACCESS_KEY
-// ══════════════════════════════════════════════════════════════
-const WEB3FORMS_KEY = "438c0f65-2c35-47a5-af69-c82f483de4f2";
-
-// ── Guard: avoid duplicate Firestore listeners if this script
-//    ever runs more than once (e.g. hot-reload during dev) ──
-let __reviewsUnsub = null;
-// ══════════════════════════════════════════════════════════════
-
-// ── MOBILE NAV TOGGLE ──
-const navToggle = document.getElementById('navToggle');
-const navLinksEl = document.getElementById('navLinks');
-if (navToggle && navLinksEl) {
-  navToggle.addEventListener('click', () => {
-    const isOpen = navLinksEl.classList.toggle('open');
-    navToggle.classList.toggle('open', isOpen);
-    navToggle.setAttribute('aria-expanded', isOpen);
-  });
-  navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    navLinksEl.classList.remove('open');
-    navToggle.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-  }));
-}
-
-// ── NAV SCROLL STATE (transparent at top, solid surface after scroll) ──
-const navbarEl = document.getElementById('navbar');
-if (navbarEl) {
-  const setNavState = () => navbarEl.classList.toggle('scrolled', window.scrollY > 24);
-  setNavState();
-  window.addEventListener('scroll', setNavState, { passive: true });
-}
-
-// ── REVEAL ──
-const obs = new IntersectionObserver(entries => {
-  entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('v'), i * 55); });
-}, { threshold: .07 });
-document.querySelectorAll('.r').forEach(el => obs.observe(el));
-
-// ── SKILL BARS ──
-const skObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll('.sk-fill').forEach(f => {
-        f.style.width = (parseFloat(f.getAttribute('data-w') || .8) * 100) + '%';
-      });
-    }
-  });
-}, { threshold: .15 });
-document.querySelectorAll('.skill-panel').forEach(g => skObs.observe(g));
-
-// ── FILTER ──
-let currentProjFilter = 'all';
-let showAllProjects = false;
-function applyProjFilter() {
-  let hiddenExtras = 0;
-  document.querySelectorAll('.proj-card').forEach(c => {
-    const cats = (c.getAttribute('data-cat') || '').split(' ');
-    const matches = currentProjFilter === 'all' || cats.includes(currentProjFilter);
-    // "extra" = small web demos + academic projects. On "All" they start collapsed.
-    const isExtra = !cats.includes('erp') && !cats.includes('ai');
-    const collapsed = currentProjFilter === 'all' && isExtra && !showAllProjects;
-    if (matches && collapsed) hiddenExtras++;
-    c.style.display = (matches && !collapsed) ? 'flex' : 'none';
-    c.style.flexDirection = 'column';
-  });
-  const wrap = document.getElementById('projMoreWrap');
-  const btn  = document.getElementById('projMore');
-  if (!wrap || !btn) return;
-  if (currentProjFilter !== 'all') { wrap.style.display = 'none'; return; }
-  wrap.style.display = 'block';
-  btn.textContent = showAllProjects ? 'Show fewer projects' : 'Show ' + hiddenExtras + ' more projects (web demos & academic)';
-  btn.setAttribute('aria-expanded', showAllProjects ? 'true' : 'false');
-}
-function filterProj(cat, btn) {
-  document.querySelectorAll('.pf-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  currentProjFilter = cat;
-  applyProjFilter();
-}
-function toggleMoreProjects() {
-  showAllProjects = !showAllProjects;
-  applyProjFilter();
-}
-// count extras once so the button label is right on first paint
-(function(){
-  const extras = [...document.querySelectorAll('.proj-card')].filter(c => {
-    const cats = (c.getAttribute('data-cat') || '').split(' ');
-    return !cats.includes('erp') && !cats.includes('ai');
-  }).length;
-  const btn = document.getElementById('projMore');
-  if (btn) btn.textContent = 'Show ' + extras + ' more projects (web demos & academic)';
-  applyProjFilter();
-})();
-
-// ── NAV ACTIVE ──
-const secs = document.querySelectorAll('section[id]');
-const nls  = document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll', () => {
-  let curr = '';
-  secs.forEach(s => { if (window.scrollY >= s.offsetTop - 130) curr = s.id; });
-  nls.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + curr));
-}, { passive: true });
-
-// ── STATUS HELPER ──
-function setStatus(msg, color) {
-  const s = document.getElementById('form-status');
-  s.style.color = color;
-  s.innerHTML = msg;
-}
-
-// ── SEND EMAIL via Web3Forms ──
-async function sendMsg() {
-  const name    = document.getElementById('f-name').value.trim();
-  const email   = document.getElementById('f-email').value.trim();
-  const company = document.getElementById('f-company').value.trim();
-  const message = document.getElementById('f-msg').value.trim();
-  const btn     = document.getElementById('send-btn');
-
-  // Validation
-  if (!name || !email || !message) {
-    setStatus('⚠️ Please fill Name, Email and Message.', '#f87171');
-    return;
-  }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    setStatus('⚠️ Please enter a valid email address.', '#f87171');
-    return;
-  }
-
-  // Check key is configured
-  if (WEB3FORMS_KEY === "438c0f65-2c35-47a5-af69-c82f483de4f2") {
-    setStatus('⚙️ Email not configured yet. Please use WhatsApp for now!', '#f87171');
-    return;
-  }
-
-  btn.disabled = true;
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-  setStatus('', '');
-
-  try {
-    const res = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        access_key: WEB3FORMS_KEY,
-        name:    name,
-        email:   email,
-        subject: `Portfolio Contact from ${name}${company ? ' — ' + company : ''}`,
-        message: `Name: ${name}\nEmail: ${email}\nCompany: ${company || 'Not mentioned'}\n\nMessage:\n${message}`,
-        from_name: name,
-        replyto:   email
-      })
-    });
-
-    const data = await res.json();
-
-    if (data.success) {
-      // Show success overlay
-      document.getElementById('successOverlay').classList.add('show');
-      // Clear form
-      ['f-name','f-email','f-company','f-msg'].forEach(id => document.getElementById(id).value = '');
-      setStatus('', '');
-    } else {
-      throw new Error(data.message || 'Submission failed');
-    }
-  } catch (err) {
-    console.error('Send error:', err);
-    setStatus('❌ Failed to send. Please use WhatsApp instead!', '#f87171');
-  } finally {
-    btn.disabled = false;
-    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-  }
-}
-
-// ── WHATSAPP with form autofill ──
-function sendWhatsApp() {
-  const name    = document.getElementById('f-name').value.trim();
-  const email   = document.getElementById('f-email').value.trim();
-  const company = document.getElementById('f-company').value.trim();
-  const message = document.getElementById('f-msg').value.trim();
-
-  let text = `👋 Hi Murthu! I saw your portfolio and want to connect.\n\n`;
-  if (name)    text += `*Name:* ${name}\n`;
-  if (email)   text += `*Email:* ${email}\n`;
-  if (company) text += `*Company:* ${company}\n`;
-  if (message) text += `\n*Message:*\n${message}`;
-  if (!name && !message) text = `👋 Hi Murthu! I saw your portfolio and want to connect.`;
-
-  window.open(`https://wa.me/919100850087?text=${encodeURIComponent(text)}`, '_blank');
-}
-
-// ══════════════════════════════════════════════════════════════
-//  ⭐ REVIEWS / TESTIMONIALS SYSTEM  —  Firebase Cloud Firestore
-//  Project: portfolio-4cde5   |   Collection: reviews
-//  Real-time: uses onSnapshot(), so reviews load automatically,
-//  update instantly for every visitor, and if YOU delete a review
-//  directly from the Firebase Console, it disappears here too —
-//  no redeploy needed.
-//
-//  🔒 ADMIN DELETE (hidden from visitors):
-//    Click the "What People Say" heading 5 times quickly → it asks
-//    for the password below → correct password unlocks a small
-//    delete (🗑) button on every review, for you only. This is a
-//    client-side convenience gate — for real protection, lock down
-//    deletes in your Firestore Security Rules too.
-//    CHANGE THIS PASSWORD before publishing:
-// ══════════════════════════════════════════════════════════════
-// SHA-256 hash of the admin password (the plaintext is no longer stored in the repo).
-// To set a NEW password: open your browser console and run
-//   crypto.subtle.digest('SHA-256', new TextEncoder().encode('YOUR_NEW_PASSWORD')).then(b => console.log([...new Uint8Array(b)].map(x => x.toString(16).padStart(2,'0')).join('')))
-// then paste the printed hash below.
-const ADMIN_PASSWORD_HASH = 'edb72af94b74b663d6f9a1921aebb33ba23b4034ba369ebd379f2e9c3f8fb9ef';
-async function sha256Hex(t) {
-  const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(t));
-  return [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, '0')).join('');
-}
-
-const LIKES_KEY   = 'murthu_portfolio_review_likes';
-const MY_REVIEWS_KEY = 'murthu_portfolio_my_review_ids'; // ids of reviews THIS browser submitted
-let selectedStars = 0;
-let isAdmin = sessionStorage.getItem('murthu_admin') === '1';
-let liveReviews = [];
-let editingReviewId = null;
-
-function toggleReviewForm() {
-  const card = document.getElementById('addReviewCard');
-  const toggle = document.getElementById('addReviewToggle');
-  const showing = card.classList.toggle('show');
-  toggle.innerHTML = showing
-    ? '<i class="fas fa-chevron-up"></i> Close Form'
-    : '<i class="fas fa-pen-nib"></i> Add Your Review';
-  if (showing) {
-    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  } else if (!showing) {
-    // closing/cancelling — reset edit mode so next open starts fresh
-    editingReviewId = null;
-    document.getElementById('rev-submit-btn').innerHTML = '<i class="fas fa-paper-plane"></i> Submit Testimonial';
-  }
-}
-
-// star picker interactivity
-document.addEventListener('DOMContentLoaded', () => {
-  const picker = document.getElementById('starPicker');
-  if (!picker) return;
-  const stars = picker.querySelectorAll('i[data-val]');
-  const label = document.getElementById('starLabel');
-  const labels = { 1: 'Poor', 2: 'Fair', 3: 'Good', 4: 'Very Good', 5: 'Excellent!' };
-
-  function paint(val) {
-    stars.forEach(s => s.classList.toggle('active', parseInt(s.dataset.val) <= val));
-  }
-  stars.forEach(s => {
-    s.addEventListener('mouseenter', () => paint(parseInt(s.dataset.val)));
-    s.addEventListener('mouseleave', () => paint(selectedStars));
-    s.addEventListener('click', () => {
-      selectedStars = parseInt(s.dataset.val);
-      paint(selectedStars);
-      label.textContent = labels[selectedStars] || 'Tap a star to rate';
-    });
-  });
-
-  initReviewsListener();
-  setupAdminTrigger();
-});
-
-function getMyReviewIds() {
-  try { return JSON.parse(localStorage.getItem(MY_REVIEWS_KEY)) || []; }
-  catch { return []; }
-}
-
-function addMyReviewId(id) {
-  const ids = getMyReviewIds();
-  if (!ids.includes(id)) {
-    ids.push(id);
-    localStorage.setItem(MY_REVIEWS_KEY, JSON.stringify(ids));
-  }
-}
-
-// ── Firestore: real-time listener (one listener only, ever) ──
-function initReviewsListener() {
-  if (__reviewsUnsub) return; // already listening — never attach twice
-  if (!window.__fb) { setTimeout(initReviewsListener, 100); return; } // firebase.js still loading
-
-  const { db, collection, query, orderBy, onSnapshot } = window.__fb;
-  const reviewsQuery = query(collection(db, 'reviews'), orderBy('createdAt', 'desc'));
-
-  __reviewsUnsub = onSnapshot(reviewsQuery, (snapshot) => {
-    liveReviews = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
-    renderReviews();
-  }, (error) => {
-    console.error('Reviews listener error:', error);
-    setReviewStatus('⚠️ Could not load reviews right now. Please refresh the page.', '#f87171');
-  });
-}
-
-// Re-draws only the dynamic (Firestore) cards; the two static
-// seed testimonials at the top of the grid are left untouched.
-function renderReviews() {
-  const container = document.getElementById('dynamic-reviews-container');
-  if (!container) return;
-  container.innerHTML = '';
-  liveReviews.forEach(rv => container.appendChild(buildReviewCard(rv)));
-  applyLikeCounts();
-}
-
-function formatReviewDate(createdAt) {
-  if (!createdAt) return 'Just now'; // serverTimestamp() is briefly null right after submit
-  const d = typeof createdAt.toDate === 'function' ? createdAt.toDate() : new Date(createdAt);
-  return d.toLocaleDateString('en-IN', { month: 'short', day: 'numeric', year: 'numeric' });
-}
-
-function setupAdminTrigger() {
-  const heading = document.querySelector('#testimonials .sec-title');
-  if (!heading) return;
-  heading.style.cursor = 'pointer';
-  heading.title = '';
-  let clicks = 0, timer;
-  heading.addEventListener('click', async () => {
-    if (isAdmin) return; // already unlocked
-    clicks++;
-    clearTimeout(timer);
-    timer = setTimeout(() => { clicks = 0; }, 1500);
-    if (clicks >= 5) {
-      clicks = 0;
-      const pass = prompt('Admin password:');
-      if (pass === null) return;
-      if (await sha256Hex(pass) === ADMIN_PASSWORD_HASH) {
-        sessionStorage.setItem('murthu_admin', '1');
-        alert('✅ Admin mode unlocked. Delete buttons are now visible to you only.');
-        location.reload();
-      } else {
-        alert('❌ Wrong password.');
-      }
-    }
-  });
-}
-
-async function deleteReview(id) {
-  if (!isAdmin) return;
-  if (!confirm('Delete this review permanently for everyone?')) return;
-  try {
-    const { db, doc, deleteDoc } = window.__fb;
-    await deleteDoc(doc(db, 'reviews', id));
-    // No manual DOM removal needed — the onSnapshot listener will
-    // re-render automatically the moment Firestore confirms the delete.
-  } catch (err) {
-    console.error('Failed to delete review:', err);
-    alert('❌ Could not delete this review. Please check your connection and try again.');
-  }
-}
-
-function editReview(id) {
-  const rv = liveReviews.find(r => r.id === id);
-  if (!rv) { alert('Could not find this review to edit (try refreshing the page).'); return; }
-
-  editingReviewId = id;
-  document.getElementById('rev-name').value = rv.name;
-  document.getElementById('rev-role').value = rv.role || '';
-  document.getElementById('rev-msg').value = rv.review;
-  selectedStars = rv.rating;
-  document.querySelectorAll('#starPicker i').forEach(s => s.classList.toggle('active', parseInt(s.dataset.val) <= rv.rating));
-  document.getElementById('starLabel').textContent = ['', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent!'][rv.rating] || 'Tap a star to rate';
-
-  document.getElementById('rev-submit-btn').innerHTML = '<i class="fas fa-pen"></i> Update Testimonial';
-
-  const card = document.getElementById('addReviewCard');
-  const toggle = document.getElementById('addReviewToggle');
-  if (!card.classList.contains('show')) {
-    card.classList.add('show');
-    toggle.innerHTML = '<i class="fas fa-chevron-up"></i> Close Form';
-  }
-  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-
-function buildReviewCard(rv) {
-  const card = document.createElement('div');
-  card.className = 'cert-card r v'; // 'v' = already visible, skip the scroll-reveal wait
-  card.dataset.seed = rv.id;
-
-  const starsHTML = Array.from({ length: 5 }, (_, i) =>
-    `<i class="fas fa-star" style="opacity:${i < rv.rating ? 1 : .25}"></i>`
-  ).join('');
-
-  card.innerHTML = `
-    <div class="cert-body" style="flex-direction:column; align-items:flex-start; gap:10px">
-      <div class="rev-stars-row">
-        <div class="rev-stars" aria-label="${rv.rating} out of 5 stars">${starsHTML}</div>
-        <span class="rev-badge-new"><i class="fas fa-sparkles"></i> New</span>
+          <form class="tile spot rv" id="contactForm" style="--i:1" novalidate>
+            <h3 style="margin-bottom:16px">Send a message</h3>
+            <div class="form">
+              <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <div class="row2">
+                <div class="field"><label for="cName">Your name *</label><input class="input" id="cName" name="name" required maxlength="80" autocomplete="name"></div>
+                <div class="field"><label for="cEmail">Your email *</label><input class="input" id="cEmail" name="email" type="email" required maxlength="120" autocomplete="email"></div>
+              </div>
+              <div class="field"><label for="cCompany">Company / organization</label><input class="input" id="cCompany" name="company" maxlength="100" autocomplete="organization"></div>
+              <div class="field"><label for="cMsg">Message *</label><textarea class="textarea" id="cMsg" name="message" required maxlength="2000" placeholder="Tell me about the role or project…"></textarea></div>
+              <div class="form-actions">
+                <button class="btn btn--primary" id="cSend" type="submit"><i class="fas fa-paper-plane" aria-hidden="true"></i> Send message</button>
+                <button class="btn btn--wa" id="cWa" type="button"><i class="fab fa-whatsapp" aria-hidden="true"></i> Send via WhatsApp</button>
+              </div>
+              <p class="status" id="cStatus" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
       </div>
-      <i class="fas fa-quote-left" style="color:var(--gold); opacity:.5; font-size:1.2rem"></i>
-      <p style="color:var(--text-sub); font-size:.92rem; line-height:1.6">"${escapeHTML(rv.review)}"</p>
-    </div>
-    <div class="cert-footer" style="border-top:1px solid var(--border); padding-top:12px; flex-wrap:wrap; gap:8px">
-      <div>
-        <span style="color:var(--text); font-weight:500; display:block">${escapeHTML(rv.name)}${rv.role ? ' — ' + escapeHTML(rv.role) : ''}</span>
-        <span class="cert-yr">${formatReviewDate(rv.createdAt)}</span>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <a class="brand" href="#home"><span class="brand__mark" aria-hidden="true">M</span><span>Murthu<b>.dev</b></span></a>
+      <p>© <span id="year">2026</span> Murthujavali Pinjari · Senior Python &amp; Frappe/ERPNext Developer · Team Lead</p>
+      <div class="socials">
+        <a class="soc" href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a class="soc" href="https://github.com/PinjariMurthujavali" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a class="soc" href="https://www.youtube.com/@Syntaxsolver-u5m" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a class="soc" href="https://wa.me/919100850087" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style="color:#25d366"><i class="fab fa-whatsapp"></i></a>
       </div>
-      <button class="rev-like-btn" data-seed-id="${rv.id}" onclick="toggleLike(this)"><i class="fas fa-thumbs-up"></i> Helpful<span class="rev-like-count"></span></button>
-      ${getMyReviewIds().includes(rv.id) && !isAdmin ? `<button class="rev-edit-btn" onclick="editReview('${rv.id}')" style="background:transparent;border:1px solid var(--gold);color:var(--gold);border-radius:6px;padding:6px 10px;cursor:pointer;font-size:.78rem;margin-left:6px"><i class="fas fa-pen"></i> Edit</button>` : ''}
-      ${isAdmin ? `<button class="rev-del-btn" onclick="deleteReview('${rv.id}')" style="background:transparent;border:1px solid #f87171;color:#f87171;border-radius:6px;padding:6px 10px;cursor:pointer;font-size:.78rem;margin-left:6px"><i class="fas fa-trash"></i></button>` : ''}
     </div>
-  `;
-  return card;
-}
+  </footer>
 
-function escapeHTML(str) {
-  const d = document.createElement('div');
-  d.textContent = str;
-  return d.innerHTML;
-}
+  <nav class="mbar" aria-label="Quick actions">
+    <a href="https://wa.me/919100850087?text=Hi%20Murthu!%20I'd%20like%20to%20hire%20you." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+    <a href="Murthujavali_Pinjari_ERPNext_Frappe.pdf" download><i class="fas fa-download" aria-hidden="true"></i> Resume</a>
+    <a href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a>
+  </nav>
 
-function setReviewStatus(msg, color) {
-  const s = document.getElementById('review-status');
-  if (s) { s.style.color = color; s.innerHTML = msg; }
-}
+  <button class="totop" id="toTop" type="button" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-async function submitReview() {
-  const name = document.getElementById('rev-name').value.trim();
-  const role = document.getElementById('rev-role').value.trim();
-  const msg  = document.getElementById('rev-msg').value.trim();
-  const btn  = document.getElementById('rev-submit-btn');
+  <dialog class="palette" id="palette" aria-label="Quick jump">
+    <input class="palette__input" id="paletteInput" type="text" placeholder="Jump to a section or action…" aria-label="Search sections and actions" autocomplete="off" role="combobox" aria-expanded="true" aria-controls="paletteList">
+    <div class="palette__list" id="paletteList" role="listbox" aria-label="Results"></div>
+    <div class="palette__hint"><span>↑↓ navigate</span><span>↵ select</span><span>Esc close</span></div>
+  </dialog>
 
-  // ── Validation: Name required, Rating required, Review required ──
-  if (!name) {
-    setReviewStatus('⚠️ Please enter your name.', '#f87171');
-    return;
-  }
-  if (selectedStars === 0) {
-    setReviewStatus('⚠️ Please tap a star rating.', '#f87171');
-    return;
-  }
-  if (!msg) {
-    setReviewStatus('⚠️ Please write a review.', '#f87171');
-    return;
-  }
-  if (!window.__fb) {
-    setReviewStatus('⚠️ Still connecting to the database — please try again in a moment.', '#f87171');
-    return;
-  }
-
-  const { db, collection, addDoc, doc, updateDoc, serverTimestamp } = window.__fb;
-  const wasEditing = !!editingReviewId;
-
-  btn.disabled = true;
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
-
-  try {
-    if (editingReviewId) {
-      // Update existing review in place
-      await updateDoc(doc(db, 'reviews', editingReviewId), {
-        name, role, review: msg, rating: selectedStars
-      });
-    } else {
-      // Save into Firestore so it shows up for ALL visitors, permanently
-      const docRef = await addDoc(collection(db, 'reviews'), {
-        name,
-        role,
-        review: msg,
-        rating: selectedStars,
-        createdAt: serverTimestamp()
-      });
-      addMyReviewId(docRef.id); // remember this is MY review so I see an Edit button later
-
-      // Notify Murthu via email (same Web3Forms key as contact form) so he can verify
-      try {
-        await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({
-            access_key: WEB3FORMS_KEY,
-            subject: `⭐ New Portfolio Review from ${name}`,
-            from_name: name,
-            message: `New review submitted on portfolio:\n\nName: ${name}\nRole/Company: ${role || 'Not mentioned'}\nRating: ${selectedStars}/5\n\nReview:\n${msg}`
-          })
-        });
-      } catch (err) {
-        console.error('Review email notify failed:', err);
-      }
-    }
-
-    editingReviewId = null;
-
-    // Reset form
-    document.getElementById('rev-name').value = '';
-    document.getElementById('rev-role').value = '';
-    document.getElementById('rev-msg').value = '';
-    selectedStars = 0;
-    document.querySelectorAll('#starPicker i').forEach(s => s.classList.remove('active'));
-    document.getElementById('starLabel').textContent = 'Tap a star to rate';
-
-    setReviewStatus(wasEditing ? '✅ Your review has been updated!' : '✅ Thank you! Your review is now live below.', '#3dba8c');
-    btn.disabled = false;
-    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Review';
-
-    setTimeout(() => { toggleReviewForm(); setReviewStatus('', ''); }, 1800);
-    // Note: the review card itself appears automatically via the
-    // onSnapshot listener — no manual DOM insertion needed here.
-  } catch (err) {
-    console.error('Failed to save review:', err);
-    setReviewStatus('❌ Could not save your review. Please check your connection and try again.', '#f87171');
-    btn.disabled = false;
-    btn.innerHTML = wasEditing ? '<i class="fas fa-pen"></i> Update Testimonial' : '<i class="fas fa-paper-plane"></i> Submit Testimonial';
-  }
-}
-
-// ── LIKE BUTTON ──
-function getLikes() {
-  try { return JSON.parse(localStorage.getItem(LIKES_KEY)) || {}; }
-  catch { return {}; }
-}
-
-function applyLikeCounts() {
-  const likes = getLikes();
-  document.querySelectorAll('.rev-like-btn').forEach(btn => {
-    const id = btn.dataset.seedId;
-    const entry = likes[id] || { count: 0, liked: false };
-    btn.querySelector('.rev-like-count').textContent = entry.count > 0 ? ' · ' + entry.count : '';
-    btn.classList.toggle('liked', entry.liked);
-  });
-}
-
-function toggleLike(btn) {
-  const id = btn.dataset.seedId;
-  const likes = getLikes();
-  const entry = likes[id] || { count: 0, liked: false };
-
-  if (entry.liked) {
-    entry.count = Math.max(0, entry.count - 1);
-    entry.liked = false;
-  } else {
-    entry.count += 1;
-    entry.liked = true;
-  }
-  likes[id] = entry;
-  localStorage.setItem(LIKES_KEY, JSON.stringify(likes));
-
-  btn.querySelector('.rev-like-count').textContent = entry.count > 0 ? ' · ' + entry.count : '';
-  btn.classList.toggle('liked', entry.liked);
-}
-
-// ── THEME SWITCHER ──
-(function(){
-  var THEME_KEY = 'murthu-theme';
-  var switcher = document.getElementById('themeSwitcher');
-  var fab = document.getElementById('themeFab');
-  var panel = document.getElementById('themePanel');
-  if (!switcher || !fab || !panel) return;
-
-  function setActiveSwatch(theme){
-    document.querySelectorAll('.theme-swatch').forEach(function(sw){
-      sw.classList.toggle('active', sw.dataset.theme === theme);
-    });
-  }
-
-  var current = 'sapphire';
-  try { current = localStorage.getItem(THEME_KEY) || 'sapphire'; } catch(e){}
-  setActiveSwatch(current);
-
-  fab.addEventListener('click', function(e){
-    e.stopPropagation();
-    var isOpen = switcher.classList.toggle('open');
-    fab.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
-
-  document.addEventListener('click', function(e){
-    if (!switcher.contains(e.target)) {
-      switcher.classList.remove('open');
-      fab.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  document.querySelectorAll('.theme-swatch').forEach(function(sw){
-    sw.addEventListener('click', function(){
-      var theme = sw.dataset.theme;
-      if (theme === 'sapphire') {
-        document.documentElement.removeAttribute('data-theme');
-      } else {
-        document.documentElement.setAttribute('data-theme', theme);
-      }
-      try { localStorage.setItem(THEME_KEY, theme); } catch(e){}
-      setActiveSwatch(theme);
-    });
-  });
-})();
-</script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js" defer></script>
+  <script type="module" src="assets/js/reviews.js"></script>
 </body>
 </html>
