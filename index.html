@@ -42,7 +42,7 @@
     "worksFor": { "@type": "Organization", "name": "Brilliant Technologies" },
     "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressRegion": "Telangana", "addressCountry": "IN" },
     "alumniOf": { "@type": "CollegeOrUniversity", "name": "Santhiram Engineering College" },
-    "knowsAbout": ["Python", "Frappe Framework", "ERPNext", "Django", "REST APIs", "Frappe Cloud", "WordPress"],
+    "knowsAbout": ["Python", "Frappe Framework", "ERPNext", "Frappe Healthcare", "Frappe HRMS", "Django", "REST APIs", "Frappe Cloud", "Flutter", "Razorpay integration", "Tally integration", "Biometric attendance integration", "WordPress", "WooCommerce"],
     "sameAs": [
       "https://www.linkedin.com/in/murthujavali-pinjari18/",
       "https://github.com/PinjariMurthujavali",
@@ -71,6 +71,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/fx.css">
+  <script>
+    (function () {
+      var d = document.documentElement, skip = /[?&]nogate\b/.test(location.search);
+      try { if (localStorage.getItem('murthu-gate-v1') || sessionStorage.getItem('murthu-gate-skip')) skip = true; } catch (e) {}
+      d.classList.add('fx-pre');
+      if (!skip) d.classList.add('gate-open');
+    })();
+  </script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J2JYC707ET"></script>
   <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-J2JYC707ET');</script>
@@ -122,7 +131,7 @@
           </h1>
           <p class="hero__role">Senior Python &amp; Frappe/ERPNext Developer · Team Lead</p>
           <p class="hero__type" aria-hidden="true">&gt; I build ERP systems that <span class="type" id="typed">run hospitals</span><span class="caret"></span></p>
-          <p class="hero__lead">Building and delivering <strong>enterprise ERP applications</strong> at Brilliant Technologies. I design custom Frappe/ERPNext systems, integrations and dashboards, deploy on Frappe Cloud, and lead a team through code review and delivery, with Django and WordPress alongside for full-stack needs.</p>
+          <p class="hero__lead">Building and delivering <strong>enterprise ERP applications</strong> at Brilliant Technologies. I design custom Frappe/ERPNext systems, integrations and dashboards, deploy on Frappe Cloud, and lead and mentor a 4-person engineering team through code review and delivery, with Django and WordPress alongside for full-stack needs.</p>
           <div class="cta">
             <a class="btn btn--primary" href="https://wa.me/919100850087?text=Hi%20Murthu!%20I'd%20like%20to%20hire%20you." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp me</a>
             <a class="btn btn--ghost" href="Murthujavali_Pinjari_ERPNext_Frappe.pdf" download><i class="fas fa-download" aria-hidden="true"></i> Resume</a>
@@ -132,6 +141,9 @@
 
         <figure class="tile tile--photo" style="margin:0">
           <div class="photo">
+            <span class="hud hud--tl" aria-hidden="true"></span><span class="hud hud--br" aria-hidden="true"></span>
+            <span class="hud-tag" aria-hidden="true"><i></i>SYSTEM ONLINE</span>
+            <span class="scanline" aria-hidden="true"></span>
             <picture>
               <source type="image/webp" srcset="assets/img/murthu-480.webp 480w, assets/img/murthu-800.webp 800w, assets/img/murthu-1100.webp 1100w" sizes="(min-width: 1024px) 480px, (min-width: 700px) 50vw, 92vw">
               <img src="assets/img/murthu-800.jpg" width="800" height="800" fetchpriority="high" decoding="async" alt="Portrait of Murthujavali Pinjari, Senior Python and Frappe/ERPNext Developer">
@@ -144,7 +156,7 @@
 
         <article class="tile tile--stats spot" aria-label="Highlights in numbers">
           <div class="stats">
-            <div class="stat"><b data-count="21" data-suffix="+">21+</b><span>Projects built</span></div>
+            <div class="stat"><b data-count="30" data-suffix="+">30+</b><span>Projects built</span></div>
             <div class="stat"><b data-count="5" data-suffix="+">5+</b><span>Roles &amp; internships</span></div>
             <div class="stat"><b data-count="11" data-suffix="+">11+</b><span>Certifications</span></div>
             <div class="stat"><b>2nd</b><span>Smart India Hackathon 2023</span></div>
@@ -218,7 +230,7 @@
             <ul class="impact">
               <li><span>Shipping <strong>BCRM</strong> improvements and releases on Frappe Cloud</span></li>
               <li><span>Building an <strong>AI chatbot</strong> for ERPNext (in progress)</span></li>
-              <li><span>Reviewing code and <strong>mentoring</strong> junior developers</span></li>
+              <li><span>Reviewing code and <strong>mentoring a 4-person team</strong></span></li>
             </ul>
             <div class="socials" style="margin-top:auto;padding-top:18px">
               <a class="btn btn--primary btn--sm" href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
@@ -262,12 +274,13 @@
         <div class="section__head rv">
           <p class="eyebrow">02 · Technical expertise</p>
           <h2 class="section__title">Skills, <span class="grad">honestly rated</span></h2>
-          <p class="section__lead">No fake percentage bars. Each skill is marked by how I actually use it.</p>
+          <p class="section__lead">No fake percentage bars. Each skill is marked by how I actually use it, and skills without a rating are listed because I have used them in projects.</p>
         </div>
         <div class="legend rv" aria-label="Legend">
           <span><span class="lvl" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span> Core expertise</span>
           <span><span class="lvl" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span> Production experience</span>
           <span><span class="lvl" aria-hidden="true"><i class="on"></i><i></i><i></i></span> Working knowledge</span>
+          <span><span class="lvl lvl--none" aria-hidden="true">·</span> Used in projects (not rated)</span>
         </div>
         <div class="skills" id="skillsGrid"><noscript><p class="muted">Enable JavaScript to see the skills grid. Core: Python, Frappe Framework, HTML/CSS, WordPress, Git, Team Leadership.</p></noscript></div>
       </div>
@@ -287,9 +300,9 @@
             <div class="tile tile--current spot">
               <h3 class="tl__role">Senior Python &amp; Frappe/ERPNext Developer · Team Lead</h3>
               <p class="tl__org">Brilliant Technologies, Hyderabad</p>
-              <p>Leading development on Brilliant Technologies' internal Frappe/ERPNext platform, including the BCRM CRM system (leads through renewals &amp; AMC support), HR attendance automation with biometric device integration, and a Hospital Management System on Frappe Cloud. Architecting custom DocTypes, server &amp; client scripts, REST integrations and dashboards, while conducting code reviews and mentoring junior developers.</p>
+              <p>Leading development on Brilliant Technologies' internal Frappe/ERPNext platform, including the BCRM CRM system (leads through renewals &amp; AMC support), HR attendance automation with biometric device integration, and a Hospital Management System on Frappe Cloud. Architecting custom DocTypes, server &amp; client scripts, REST integrations and dashboards, while conducting code reviews and mentoring a 4-person engineering team.</p>
               <div class="tags"><span class="tag">Team Leader</span><span class="tag">Python</span><span class="tag">Frappe</span><span class="tag">ERPNext</span><span class="tag">Django</span><span class="tag">Frappe Cloud</span><span class="tag">Hospital ERP</span><span class="tag">CRM</span></div>
-              <div class="tags" style="margin-top:8px"><span class="tag hi">✓ Attendance rules engine: 7 rule types</span><span class="tag hi">✓ Biometric sync: 75 employees, 39,000+ logs</span><span class="tag hi">✓ Scheduler runs every 5 min</span></div>
+              <div class="tags" style="margin-top:8px"><span class="tag hi">✓ Attendance rules engine: 7 rule types</span><span class="tag hi">✓ Biometric sync: 75 employees, 39,000+ logs</span><span class="tag hi">✓ Scheduler runs every 5 min</span><span class="tag hi">✓ Mentoring a 4-person team</span></div>
             </div>
           </article>
 
@@ -364,51 +377,53 @@
         <div class="section__head rv">
           <p class="eyebrow">Case studies</p>
           <h2 class="section__title">Problem → Build → <span class="grad">Result</span></h2>
+          <p class="section__lead">Five real systems, each written up the same way: overview, problem, challenges, architecture, stack, approach, my contribution, implementation, features and results. Only verified facts, no invented numbers.</p>
         </div>
+        <div class="cs" id="caseStudies"><noscript><p class="muted">Enable JavaScript to read the case studies: BCRM, Hospital Management System, HRMS Automation, Biometric Sync and VCRM ↔ BCRM.</p></noscript></div>
+      </div>
+    </section>
 
-        <article class="tile case spot rv">
-          <div>
-            <p class="case__tag">Case study 01 · Internal CRM</p>
-            <h3>BCRM: one system from lead to renewal</h3>
-            <dl>
-              <div><dt>Problem</dt><dd>Sales, field visits and renewals lived in separate places, so nobody had one view of a customer.</dd></div>
-              <div><dt>What I built</dt><dd>A Frappe CRM covering Lead → Opportunity → Customer → AMC/renewal, with GPS check-in/out, Customer 360 dashboards, a smart activity timeline across 7+ doctypes and a “Nearby Clients” locator.</dd></div>
-              <div><dt>Result</dt><dd>It is now the team's single system of record from lead to renewal. I designed and built it solo.</dd></div>
-            </dl>
-            <div class="case-stats"><div><b>7+</b><small>doctypes on one timeline</small></div><div><b>1</b><small>system of record</small></div></div>
-          </div>
-          <div class="case__vis" aria-hidden="true">
-            <div class="mock"><div class="mock__bar"><i></i><i></i><i></i></div>
-              <div class="mock__body">
-                <div class="pipe"><div>Lead</div><div>Opportunity</div><div>Customer</div><div>AMC</div></div>
-                <div class="rows"><div>Customer 360 · Quotations<em>LIVE</em></div><div>Nearby Clients · GPS match<em>LIVE</em></div><div>Employee check-in · Road distance<em>LIVE</em></div></div>
-              </div>
-              <p class="mock__cap">Illustrative UI. Real client data is private.</p>
+    <!-- ═════════ AUTOMATION LAB ═════════ -->
+    <section id="automation" class="section">
+      <div class="container">
+        <div class="section__head rv">
+          <p class="eyebrow">Live demo · Automation lab</p>
+          <h2 class="section__title">Attendance, <span class="grad">on autopilot</span></h2>
+          <p class="section__lead">A simulation of the pipeline I built: biometric punch to payroll deduction, no human in the loop. Press the button and watch a punch travel through.</p>
+        </div>
+        <div class="lab">
+          <div class="tile lab__flow rv">
+            <div class="flow" id="flow" role="img" aria-label="Pipeline: biometric device, middleware, ERPNext, rules engine, salary slip">
+              <div class="node"><span class="node__ico"><i class="fas fa-fingerprint" aria-hidden="true"></i></span><span class="node__txt"><b>Device</b><small>ZKTeco punch</small></span></div>
+              <div class="link"><span class="packet"></span></div>
+              <div class="node"><span class="node__ico"><i class="fas fa-microchip" aria-hidden="true"></i></span><span class="node__txt"><b>Middleware</b><small>Python + SQLite dedupe</small></span></div>
+              <div class="link"><span class="packet"></span></div>
+              <div class="node"><span class="node__ico"><i class="fas fa-cloud" aria-hidden="true"></i></span><span class="node__txt"><b>ERPNext</b><small>Employee Checkin</small></span></div>
+              <div class="link"><span class="packet"></span></div>
+              <div class="node"><span class="node__ico"><i class="fas fa-scale-balanced" aria-hidden="true"></i></span><span class="node__txt"><b>Rules</b><small>Late, early, sandwich</small></span></div>
+              <div class="link"><span class="packet"></span></div>
+              <div class="node"><span class="node__ico"><i class="fas fa-file-invoice-dollar" aria-hidden="true"></i></span><span class="node__txt"><b>Salary Slip</b><small>Auto deductions</small></span></div>
+            </div>
+            <div class="lab__ctrl">
+              <button class="btn btn--primary" id="labPunch" type="button"><i class="fas fa-bolt" aria-hidden="true"></i> Simulate a punch</button>
+              <button class="btn btn--ghost" id="labRun" type="button" aria-pressed="true"><i class="fas fa-pause" aria-hidden="true"></i> <span>Auto-run on</span></button>
+              <div class="tick"><span class="tick__lbl">Next scheduler tick · <em>sped up ×25</em></span><span class="tick__bar"><i id="tickBar"></i></span></div>
             </div>
           </div>
-        </article>
-
-        <article class="tile case case--flip spot rv">
-          <div>
-            <p class="case__tag">Case study 02 · HR automation</p>
-            <h3>Attendance &amp; payroll rules, automated</h3>
-            <dl>
-              <div><dt>Problem</dt><dd>Attendance remarks and payroll deductions depended on manual checking of biometric punches.</dd></div>
-              <div><dt>What I built</dt><dd>A rules engine (grace period, late entry, early exit, missing punch, weekly off, holiday, sandwich rule) on a 5-minute scheduler, plus Python middleware syncing a ZKTeco device to Frappe Cloud with SQLite deduplication.</dd></div>
-              <div><dt>Result</dt><dd>Attendance and payroll rules run automatically company-wide, feeding Salary Slip deductions and bonuses.</dd></div>
-            </dl>
-            <div class="case-stats"><div><b>7</b><small>rule types</small></div><div><b>39,000+</b><small>logs synced</small></div><div><b>75</b><small>employees</small></div><div><b>5 min</b><small>scheduler</small></div></div>
+          <div class="tile lab__term rv">
+            <div class="term__bar"><i></i><i></i><i></i><span>attendance-engine · simulated log</span></div>
+            <div class="term__body" id="termLog" role="log" aria-live="off" aria-label="Simulated pipeline log"></div>
           </div>
-          <div class="case__vis" aria-hidden="true">
-            <div class="mock"><div class="mock__bar"><i></i><i></i><i></i></div>
-              <div class="mock__body">
-                <div class="rows"><div>Late entry · grace period<em>AUTO</em></div><div>Missing punch · flagged<em>AUTO</em></div><div>Sandwich rule · weekly off<em>AUTO</em></div></div>
-                <div class="bars"><span style="height:45%"></span><span style="height:70%"></span><span style="height:55%"></span><span style="height:90%"></span><span style="height:65%"></span><span style="height:80%"></span></div>
-              </div>
-              <p class="mock__cap">Illustrative UI. Real client data is private.</p>
+          <div class="tile lab__metrics rv">
+            <h3>Demo counters</h3>
+            <div class="meters">
+              <div class="meter"><b id="mPunch">0</b><span>Punches synced</span></div>
+              <div class="meter"><b id="mRemark">0</b><span>Rules applied</span></div>
+              <div class="meter"><b id="mDed">0</b><span>Deductions queued</span></div>
             </div>
+            <p>Simulated for illustration. The real system handles roughly 75 employees and replaced manual attendance entry.</p>
           </div>
-        </article>
+        </div>
       </div>
     </section>
 
@@ -422,11 +437,14 @@
         <div class="filters rv" role="group" aria-label="Filter projects by category">
           <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
           <button class="filter" type="button" data-filter="erp" aria-pressed="false">ERPNext / Frappe</button>
+          <button class="filter" type="button" data-filter="integration" aria-pressed="false">Integrations</button>
+          <button class="filter" type="button" data-filter="mobile" aria-pressed="false">Mobile &amp; IoT</button>
           <button class="filter" type="button" data-filter="ai" aria-pressed="false">AI</button>
           <button class="filter" type="button" data-filter="python" aria-pressed="false">Python / Django</button>
           <button class="filter" type="button" data-filter="java" aria-pressed="false">Java Full Stack</button>
           <button class="filter" type="button" data-filter="web" aria-pressed="false">Web Apps</button>
         </div>
+        <p class="status-key rv" aria-label="Project status key"><span class="st st--production">Live · Production</span><span class="st st--completed">Completed</span><span class="st st--ongoing">Ongoing</span><span class="st st--experimental">Experimental</span><span class="st st--academic">Academic</span><span class="st st--demo">Demo / Showcase</span></p>
         <div class="projects" id="projGrid" aria-live="polite"><noscript><p class="muted">Enable JavaScript to browse projects, or visit <a href="https://github.com/PinjariMurthujavali" style="text-decoration:underline">github.com/PinjariMurthujavali</a>.</p></noscript></div>
         <div class="more" id="projMoreWrap"><button class="btn btn--ghost" id="projMore" type="button" aria-expanded="false">Show more projects</button></div>
       </div>
@@ -460,10 +478,11 @@
     <section id="certs" class="section">
       <div class="container">
         <div class="section__head rv">
-          <p class="eyebrow">07 · Credentials</p>
+          <p class="eyebrow">07 · Education, achievements &amp; credentials</p>
           <h2 class="section__title">My <span class="grad">certifications</span></h2>
-          <p class="section__lead">Tap any card to verify on LinkedIn.</p>
+          <p class="section__lead">Tap any certification to verify on LinkedIn.</p>
         </div>
+        <div class="achv" id="achvGrid"></div>
         <div class="certs" id="certGrid"></div>
       </div>
     </section>
@@ -576,14 +595,65 @@
   <button class="totop" id="toTop" type="button" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+  <dialog class="pmodal" id="projDialog" aria-labelledby="pmTitle">
+    <div class="pmodal__in">
+      <button class="pmodal__x" id="pmClose" type="button" aria-label="Close project details"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+      <div id="pmBody"></div>
+    </div>
+  </dialog>
+
   <dialog class="palette" id="palette" aria-label="Quick jump">
     <input class="palette__input" id="paletteInput" type="text" placeholder="Jump to a section or action…" aria-label="Search sections and actions" autocomplete="off" role="combobox" aria-expanded="true" aria-controls="paletteList">
     <div class="palette__list" id="paletteList" role="listbox" aria-label="Results"></div>
     <div class="palette__hint"><span>↑↓ navigate</span><span>↵ select</span><span>Esc close</span></div>
   </dialog>
 
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="fxBody" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c4bcff"/><stop offset="1" stop-color="#8f82f5"/></linearGradient>
+      <radialGradient id="fxBulb"><stop offset="0" stop-color="#fff6c9"/><stop offset="1" stop-color="#ffd27a"/></radialGradient>
+      <linearGradient id="fxFlame" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd27a"/><stop offset="1" stop-color="#ff8fb0" stop-opacity="0"/></linearGradient>
+    </defs>
+  </svg>
+
+  <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle" aria-describedby="gateDesc">
+    <div class="gate__card tile">
+      <div class="gate__bot" id="gateBot" aria-hidden="true"></div>
+      <p class="gate__kicker" id="gKicker">⚡ Boot sequence · step 0 of 2</p>
+      <h2 id="gateTitle">Unlock <span class="grad">Murthu’s portfolio</span></h2>
+      <p id="gateDesc">Two quick taps and you’re in. Support my YouTube channel <strong>Syntax Solver</strong>, then enter.</p>
+      <ol class="steps">
+        <li class="step is-active" id="step1">
+          <span class="step__num">1</span>
+          <span class="step__txt"><strong>Subscribe to Syntax Solver</strong><small id="s1msg"></small></span>
+          <a class="btn btn--yt" id="gSub" href="https://www.youtube.com/@Syntaxsolver-u5m?sub_confirmation=1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2C.5 9.1.5 12 .5 12s0 2.9.5 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.8.5-4.8s0-2.9-.5-4.8zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg> Subscribe</a>
+          <button class="gate__confirm" id="c1" type="button" hidden>I’ve subscribed ✓</button>
+          <span class="step__ok" id="ok1" hidden>✓ Done</span>
+        </li>
+        <li class="step" id="step2">
+          <span class="step__num">2</span>
+          <span class="step__txt"><strong>Ring the <span class="bell">🔔</span> bell</strong><small id="s2msg"></small></span>
+          <a class="btn btn--bell" id="gBell" href="https://www.youtube.com/@Syntaxsolver-u5m" target="_blank" rel="noopener" aria-disabled="true" tabindex="-1"><i class="fas fa-bell" aria-hidden="true"></i> Turn on bell</a>
+          <button class="gate__confirm" id="c2" type="button" hidden>I’ve rung it ✓</button>
+          <span class="step__ok" id="ok2" hidden>✓ Done</span>
+        </li>
+      </ol>
+      <div class="gate__prog" aria-hidden="true"><i id="gProg"></i></div>
+      <button class="btn btn--primary gate__enter" id="gEnter" type="button" disabled>🔒 Locked · 2 steps left</button>
+      <p class="gate__fine">YouTube doesn’t share subscription status with websites, so this runs on trust. Thank you for the support 💜</p>
+      <button class="gate__skip" id="gSkip" type="button">Skip for now</button>
+      <div class="sr-only" id="gLive" role="status" aria-live="polite"></div>
+    </div>
+  </div>
+
   <script src="assets/js/data.js"></script>
   <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/fx.js" defer></script>
+  <script>
+    setTimeout(function () {
+      if (!window.__fxReady) { var d = document.documentElement; d.classList.remove('gate-open', 'fx-pre'); }
+    }, 4500);
+  </script>
   <script type="module" src="assets/js/reviews.js"></script>
 </body>
 </html>
