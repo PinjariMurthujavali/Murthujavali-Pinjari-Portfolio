@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Floating assistant: launcher, nudge, chat panel. Separate file on purpose.
+   ========================================================================== */
+.bot { --bot-r: 22px; position: fixed; right: var(--bot-r); bottom: 22px; z-index: 92; font-family: var(--font); }
+.gate-open .bot { display: none; }
+.bot__fab { position: relative; width: 64px; height: 64px; padding: 0; border: 0; border-radius: 50%; cursor: pointer; display: grid; place-items: center;
+  background: conic-gradient(from 0deg, #a99dff, #ff8fb0, #ffd27a, #5eead4, #a99dff); animation: botSpin 6s linear infinite;
+  box-shadow: 0 14px 34px -8px rgba(169,157,255,.7), 0 0 0 1px rgba(255,255,255,.2) inset; transition: transform .25s cubic-bezier(.2,.9,.3,1.4); }
+.bot__fab:hover { transform: scale(1.1) rotate(-4deg); }
+.bot__fab:active { transform: scale(.94); }
+.bot__fab:focus-visible { outline: 3px solid var(--accent-3); outline-offset: 4px; }
+@keyframes botSpin { to { filter: hue-rotate(360deg); } }
+.bot__face { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; background: #14183a; position: relative; z-index: 1; }
+.bot__face svg { width: 38px; height: 38px; animation: botBob 3s ease-in-out infinite; }
+@keyframes botBob { 50% { transform: translateY(-2px) rotate(3deg); } }
+.bot .be { transform-box: fill-box; transform-origin: center; animation: botBlink 4.5s infinite; }
+@keyframes botBlink { 0%, 92%, 100% { transform: scaleY(1); } 95% { transform: scaleY(.1); } }
+.bot__ring { position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--accent); opacity: 0; animation: botPing 2.8s ease-out infinite; pointer-events: none; }
+.bot__ring--2 { animation-delay: 1.4s; border-color: var(--accent-2); }
+@keyframes botPing { 0% { transform: scale(1); opacity: .7; } 100% { transform: scale(1.9); opacity: 0; } }
+.bot__dot { position: absolute; right: 2px; top: 2px; z-index: 2; width: 14px; height: 14px; border-radius: 50%; background: var(--ok, #4ade80); border: 2px solid var(--bg); animation: pulse 2s infinite; }
+.is-open .bot__ring, .is-open .bot__dot { display: none; }
+
+.bot__nudge { position: absolute; right: 74px; bottom: 14px; white-space: nowrap; padding: 10px 16px; border-radius: 16px 16px 4px 16px; font-weight: 600; font-size: .88rem;
+  color: #fff; background: var(--btn); box-shadow: var(--btn-glow); opacity: 0; transform: translateX(14px) scale(.9); transform-origin: right bottom; pointer-events: none; transition: opacity .35s, transform .45s cubic-bezier(.2,.9,.3,1.3); }
+.bot__nudge.show { opacity: 1; transform: none; }
+
+.bot__panel { position: absolute; right: 0; bottom: 78px; width: min(392px, calc(100vw - 28px)); height: min(590px, calc(100dvh - 130px)); display: flex; flex-direction: column; overflow: hidden;
+  border-radius: 26px; border: 1px solid var(--line-2); background: var(--surface); color: var(--text);
+  -webkit-backdrop-filter: blur(18px) saturate(1.3); backdrop-filter: blur(18px) saturate(1.3);
+  box-shadow: 0 30px 80px -20px rgba(60,40,160,.55), 0 0 0 1px rgba(169,157,255,.18); transform-origin: right bottom; animation: botIn .45s cubic-bezier(.2,.85,.25,1.15) both; }
+.bot__panel[hidden] { display: none; }
+.bot.is-open { z-index: 200; }
+.msg__go button, .bot__x, .bot__form button, .pmodal__x { font-family: var(--font); }
+.bot__panel::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: var(--grad); background-size: 200% 100%; animation: shift 4s linear infinite; z-index: 3; }
+@keyframes botIn { from { opacity: 0; transform: translateY(24px) scale(.88); } }
+@keyframes shift { to { background-position: 200% 0; } }
+
+.bot__head { display: flex; align-items: center; gap: 12px; padding: 16px 16px 12px; border-bottom: 1px solid var(--line);
+  background: radial-gradient(120% 140% at 0 0, rgba(169,157,255,.22), transparent 60%), radial-gradient(90% 120% at 100% 0, rgba(255,143,176,.16), transparent 60%); }
+.bot__av { flex: none; width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; background: #14183a; box-shadow: 0 6px 16px -6px rgba(169,157,255,.8); }
+.bot__av svg { width: 32px; height: 32px; }
+.bot__head strong { display: block; font-family: var(--font-head); font-size: 1.05rem; }
+.bot__head small { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: .76rem; margin-top: 2px; }
+.bot__head small i { width: 7px; height: 7px; border-radius: 50%; background: var(--ok, #4ade80); animation: pulse 2s infinite; }
+.bot__x { margin-left: auto; flex: none; width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--line); background: transparent; color: var(--muted); cursor: pointer; transition: .2s; }
+.bot__x:hover { color: var(--text); background: rgba(169,157,255,.14); transform: rotate(90deg); }
+
+.bot__log { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 16px; display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth; }
+.msg { max-width: 88%; padding: 11px 14px; border-radius: 18px; font-size: .92rem; line-height: 1.5; overflow-wrap: anywhere; animation: msgIn .4s cubic-bezier(.2,.9,.3,1.2) both; }
+@keyframes msgIn { from { opacity: 0; transform: translateY(10px) scale(.96); } }
+.msg--bot { align-self: flex-start; border-bottom-left-radius: 6px; background: rgba(169,157,255,.12); border: 1px solid var(--line); }
+.msg--me { align-self: flex-end; border-bottom-right-radius: 6px; color: #fff; background: var(--btn); box-shadow: var(--btn-glow); }
+.msg a { color: var(--accent-3); text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.msg strong { font-weight: 700; }
+.msg__go { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.msg__go button, .bot__chips button { min-height: 36px; padding: 0 13px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface-2); color: var(--text); font: 600 .8rem var(--font); cursor: pointer; transition: transform .2s, border-color .2s, background .2s; }
+.msg__go button:hover, .bot__chips button:hover { border-color: var(--accent); background: rgba(169,157,255,.18); transform: translateY(-2px); }
+.typing { display: inline-flex; gap: 5px; padding: 4px 2px; }
+.typing i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: typ 1s ease-in-out infinite; }
+.typing i:nth-child(2) { animation-delay: .15s; background: var(--accent-2); } .typing i:nth-child(3) { animation-delay: .3s; background: var(--accent-3); }
+@keyframes typ { 0%, 60%, 100% { transform: translateY(0); opacity: .5; } 30% { transform: translateY(-6px); opacity: 1; } }
+
+.bot__chips { display: flex; gap: 8px; padding: 0 16px 10px; overflow-x: auto; scrollbar-width: none; flex: none; }
+.bot__chips::-webkit-scrollbar { display: none; }
+.bot__chips button { flex: none; }
+.bot__form { display: flex; gap: 8px; padding: 10px 14px 6px; border-top: 1px solid var(--line); flex: none; }
+.bot__form input { flex: 1; min-width: 0; min-height: 46px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface-2); color: var(--text); font: 500 16px var(--font); }
+.bot__form input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.bot__form button { flex: none; width: 46px; height: 46px; border-radius: 50%; border: 0; color: #fff; background: var(--btn); box-shadow: var(--btn-glow); cursor: pointer; transition: transform .2s; }
+.bot__form button:hover { transform: scale(1.1) rotate(-12deg); }
+.bot__foot { margin: 0; padding: 2px 16px 12px; text-align: center; font-size: .7rem; color: var(--faint); flex: none; }
+
+/* make room: the back-to-top button moves above the launcher */
+.totop { right: 30px !important; bottom: 98px !important; }
+@media (max-width: 699px) {
+  .bot { right: 14px; bottom: 92px; }
+  .bot__fab { width: 58px; height: 58px; } .bot__face { width: 48px; height: 48px; } .bot__face svg { width: 34px; height: 34px; }
+  .totop { right: 22px !important; bottom: 164px !important; }
+  .bot__panel { position: fixed; left: 8px; right: 8px; bottom: 8px; width: auto; height: min(78dvh, 640px); border-radius: 24px; }
+  .bot__nudge { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bot__fab, .bot__ring, .bot__face svg, .bot .be, .bot__panel, .bot__panel::before, .msg { animation: none !important; }
+}
+@media print { .bot { display: none !important; } }
