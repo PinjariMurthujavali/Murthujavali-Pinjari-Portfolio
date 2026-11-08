@@ -188,7 +188,7 @@
   /* ---------- Marquee ---------- */
   const marquee = $('#marquee');
   if (marquee) {
-    const words = ['Frappe', 'ERPNext', 'Python', 'Frappe Cloud', 'REST APIs', 'Custom DocTypes', 'Django', 'MariaDB', 'Razorpay', 'Tally', 'Biometric Sync', 'Flutter', 'Smartflo', 'Healthcare ERP', 'Team Leadership'];
+    const words = ['Frappe', 'ERPNext', 'Python', 'Frappe Cloud', 'REST APIs', 'Custom DocTypes', 'Django', 'MariaDB', 'Razorpay', 'Tally', 'Biometric Sync', 'Team Leadership'];
     const set = words.map((w) => '<span>' + w + '</span>').join('');
     marquee.innerHTML = set + set;
   }
@@ -261,7 +261,7 @@
         '<h3><span class="emoji" aria-hidden="true">' + g.emoji + '</span>' + esc(g.title) + '</h3>' +
         '<ul class="skill-list">' + g.items.map((s) => (
           '<li class="skill"><span class="skill__name"><i class="' + s[0] + '" aria-hidden="true"></i>' + esc(s[1]) + '</span>' +
-          (s[2] ? '<span class="lvl" role="img" aria-label="' + LVL[s[2]] + '">' + [1, 2, 3].map((n) => '<i class="' + (n <= s[2] ? 'on' : '') + '"></i>').join('') + '</span>' : '<span class="lvl lvl--none" aria-hidden="true">·</span>') + '</li>'
+          '<span class="lvl" role="img" aria-label="' + LVL[s[2]] + '">' + [1, 2, 3].map((n) => '<i class="' + (n <= s[2] ? 'on' : '') + '"></i>').join('') + '</span></li>'
         )).join('') + '</ul></article>'
     )).join('');
     $$('.rv', skillsGrid).forEach(reveal);
@@ -281,9 +281,9 @@
   /* ---------- Projects ---------- */
   const projGrid = $('#projGrid'), moreWrap = $('#projMoreWrap'), moreBtn = $('#projMore');
   let pFilter = 'all', showAll = false;
-  const isExtra = (p) => ['web', 'python', 'java'].includes(p.cat) && !p.core;
-  const projIndex = (p) => D.projects.indexOf(p);
-  const statusPill = (p) => p.status ? '<span class="st st--' + p.status + '">' + esc((D.statusLabels || {})[p.status] || p.status) + '</span>' : '';
+  const isExtra = (p) => !['erp', 'ai', 'mobile'].includes(p.cat);
+  const STATUS = { completed: ['✅ Completed', 'ok'], ongoing: ['🚧 In progress', 'now'], experimental: ['🧪 Experimental', 'exp'], academic: ['🎓 Academic', 'acad'] };
+  const statusOf = (p) => p.status || (p.cat === 'python' || p.cat === 'java' ? 'academic' : 'completed');
 
   function projCard(p, i) {
     const vis = p.img
@@ -292,6 +292,8 @@
     const badges = '<span class="badge">' + esc(p.badge) + '</span>' +
       (p.feat ? '<span class="badge badge--feat">⭐ Featured</span>' : '') +
       (p.extraBadge ? '<span class="badge badge--feat">' + esc(p.extraBadge) + '</span>' : '');
+    const st = STATUS[statusOf(p)];
+    const stBadge = '<span class="status status--' + st[1] + '">' + st[0] + '</span>';
     const meta = p.role ? '<p class="proj__meta"><b>Role:</b> ' + esc(p.role) + (p.result ? ' &nbsp;·&nbsp; <b>Result:</b> ' + esc(p.result) : '') + '</p>' : '';
     const links = (p.links || []).map((l) => {
       if (l.t === 'private') return '<span class="plink plink--private"><i class="' + (l.icon || 'fas fa-lock') + '" aria-hidden="true"></i> ' + esc(l.l) + '</span>';
@@ -300,9 +302,9 @@
     }).join('');
     return '<article class="tile proj spot' + (p.feat ? ' proj--feat' : '') + ' rv" style="--i:' + (i % 3) + '">' +
       '<div class="proj__vis">' + vis + '<div class="proj__badges">' + badges + '</div></div>' +
-      '<div class="proj__body"><div class="proj__status">' + statusPill(p) + '</div><h3 class="proj__title">' + esc(p.title) + '</h3><p class="proj__desc">' + esc(p.desc) + '</p>' + meta +
+      '<div class="proj__body"><div class="proj__status">' + stBadge + '</div><h3 class="proj__title">' + esc(p.title) + '</h3><p class="proj__desc">' + esc(p.desc) + '</p>' + meta +
       '<div class="tags">' + p.tech.map((t) => '<span class="tag">' + esc(t) + '</span>').join('') + '</div>' +
-      '<div class="proj__links"><button class="plink plink--details" type="button" data-details="' + projIndex(p) + '" aria-haspopup="dialog" aria-label="View details: ' + esc(p.title) + '"><i class="fas fa-expand" aria-hidden="true"></i> View details</button>' + links + '</div></div></article>';
+      '<div class="proj__links"><button class="plink plink--detail" type="button" data-detail="' + D.projects.indexOf(p) + '" aria-label="View details: ' + esc(p.title) + '"><i class="fas fa-expand" aria-hidden="true"></i> Details</button>' + links + '</div></div></article>';
   }
 
   function renderProjects() {
@@ -326,104 +328,6 @@
   }));
   if (moreBtn) moreBtn.addEventListener('click', () => { showAll = !showAll; renderProjects(); });
   renderProjects();
-
-  /* ---------- Project details modal ---------- */
-  const pDlg = $('#projDialog'), pBody = $('#pmBody'), pClose = $('#pmClose');
-  let lastTrigger = null;
-  const list = (arr) => '<ul class="pm__list">' + arr.map((x) => '<li>' + esc(x) + '</li>').join('') + '</ul>';
-  function openProject(i, trigger) {
-    const p = D.projects[i];
-    if (!p || !pDlg || !pBody) return;
-    lastTrigger = trigger || null;
-    const sec = (label, html) => html ? '<section class="pm__sec"><h4>' + label + '</h4>' + html + '</section>' : '';
-    const links = (p.links || []).filter((l) => l.t !== 'private').map((l) => '<a class="plink' + (l.t === 'demo' ? ' plink--demo' : '') + '" href="' + l.href + '" target="_blank" rel="noopener noreferrer"><i class="' + (l.t === 'demo' ? 'fas fa-arrow-up-right-from-square' : 'fab fa-github') + '" aria-hidden="true"></i> ' + esc(l.l) + '</a>').join('');
-    const priv = (p.links || []).filter((l) => l.t === 'private').map((l) => '<span class="plink plink--private"><i class="' + (l.icon || 'fas fa-lock') + '" aria-hidden="true"></i> ' + esc(l.l) + '</span>').join('');
-    pBody.innerHTML =
-      '<div class="pm__head"><div class="pm__ico">' + (p.img ? '<img src="' + p.img + '" alt="' + esc(p.alt || p.title) + '" width="120" height="120">' : '<i class="' + p.icon + '" aria-hidden="true"></i>') + '</div>' +
-      '<div><p class="pm__cat">' + esc(p.badge) + '</p><h3 id="pmTitle">' + esc(p.title) + '</h3><div class="pm__st">' + statusPill(p) + (p.extraBadge ? '<span class="st st--demo">' + esc(p.extraBadge) + '</span>' : '') + '</div></div></div>' +
-      sec('Overview', '<p>' + esc(p.desc) + '</p>') +
-      sec('Business problem', p.problem ? '<p>' + esc(p.problem) + '</p>' : '') +
-      sec('My contribution', p.contribution || p.role ? '<p>' + esc(p.contribution || p.role) + '</p>' : '') +
-      (p.flow ? sec('Workflow', '<ol class="pm__flow">' + p.flow.map((x) => '<li>' + esc(x) + '</li>').join('') + '</ol>') : '') +
-      sec('Key features', p.features ? list(p.features) : '') +
-      sec('Technologies', '<div class="tags">' + p.tech.map((t) => '<span class="tag">' + esc(t) + '</span>').join('') + '</div>') +
-      (p.result ? sec('Outcome', '<p>' + esc(p.result) + '</p>') : '') +
-      (p.note ? '<p class="pm__note"><i class="fas fa-circle-info" aria-hidden="true"></i> ' + esc(p.note) + '</p>' : '') +
-      ((links || priv) ? '<div class="pm__links">' + links + priv + '</div>' : '');
-    if (typeof pDlg.showModal === 'function') pDlg.showModal(); else pDlg.setAttribute('open', '');
-    document.body.style.overflow = 'hidden';
-    if (pClose) pClose.focus();
-  }
-  function closeProject() {
-    if (!pDlg) return;
-    if (typeof pDlg.close === 'function') pDlg.close(); else pDlg.removeAttribute('open');
-  }
-  if (pDlg) {
-    pDlg.addEventListener('close', () => { document.body.style.overflow = ''; if (lastTrigger && lastTrigger.isConnected) lastTrigger.focus(); });
-    pDlg.addEventListener('click', (e) => { if (e.target === pDlg) closeProject(); });
-    if (pClose) pClose.addEventListener('click', closeProject);
-  }
-  if (projGrid) projGrid.addEventListener('click', (e) => {
-    const b = e.target.closest('[data-details]');
-    if (b) openProject(Number(b.dataset.details), b);
-  });
-
-  /* ---------- Case studies (tabs) ---------- */
-  const csRoot = $('#caseStudies');
-  if (csRoot && D.caseStudies && D.caseStudies.length) {
-    const SECTIONS = ['Project overview', 'Business problem', 'Existing challenges', 'Technical architecture', 'Technologies used', 'Development approach', 'My contribution', 'Implementation details', 'Key features', 'Results / business impact'];
-    const archHtml = (arch) => '<div class="arch" role="img" aria-label="Architecture diagram">' + arch.map((l) =>
-      '<div class="arch__layer"><span class="arch__label">' + esc(l.label) + '</span><div class="arch__nodes' + (l.flow ? ' arch__nodes--flow' : '') + '">' +
-      l.nodes.map((n) => '<span class="arch__node">' + esc(n) + '</span>').join('') + '</div></div>').join('') + '</div>';
-    const panel = (c) => {
-      const bodies = [
-        '<p>' + esc(c.overview) + '</p>',
-        '<p>' + esc(c.problem) + '</p>',
-        list(c.challenges),
-        archHtml(c.arch),
-        '<div class="tags">' + c.tech.map((t) => '<span class="tag">' + esc(t) + '</span>').join('') + '</div>',
-        '<p>' + esc(c.approach) + '</p>',
-        '<p>' + esc(c.contribution) + '</p>',
-        list(c.implementation),
-        '<div class="tags">' + c.features.map((t) => '<span class="tag">' + esc(t) + '</span>').join('') + '</div>',
-        '<p>' + esc(c.impact) + '</p>'
-      ];
-      return '<div class="cs__head"><p class="case__tag">' + esc(c.tag) + '</p><h3>' + esc(c.title) + '</h3>' + statusPill(c) + '</div>' +
-        '<div class="case-stats">' + c.stats.map((x) => '<div><b>' + esc(x[0]) + '</b><small>' + esc(x[1]) + '</small></div>').join('') + '</div>' +
-        '<div class="cs__grid">' + bodies.map((b, n) => '<section class="cs__sec' + (n === 3 || n === 7 ? ' cs__sec--wide' : '') + '"><h4><span>' + String(n + 1).padStart(2, '0') + '</span>' + SECTIONS[n] + '</h4>' + b + '</section>').join('') + '</div>';
-    };
-    csRoot.innerHTML =
-      '<div class="cs__tabs rv" role="tablist" aria-label="Case studies">' + D.caseStudies.map((c, i) =>
-        '<button class="cs__tab" role="tab" type="button" id="cst' + i + '" aria-controls="csp' + i + '" aria-selected="' + (i === 0) + '" tabindex="' + (i === 0 ? 0 : -1) + '">' + esc(c.tab) + '</button>').join('') + '</div>' +
-      D.caseStudies.map((c, i) => '<article class="tile cs__panel" role="tabpanel" id="csp' + i + '" aria-labelledby="cst' + i + '"' + (i ? ' hidden' : '') + '>' + panel(c) + '</article>').join('');
-    const tabs = $$('.cs__tab', csRoot), panels = $$('.cs__panel', csRoot);
-    const pick = (n, focus) => {
-      tabs.forEach((t, i) => { t.setAttribute('aria-selected', String(i === n)); t.tabIndex = i === n ? 0 : -1; });
-      panels.forEach((pn, i) => { pn.hidden = i !== n; if (i === n) { pn.classList.remove('cs__in'); void pn.offsetWidth; pn.classList.add('cs__in'); } });
-      if (focus) tabs[n].focus();
-    };
-    tabs.forEach((t, i) => {
-      t.addEventListener('click', () => pick(i));
-      t.addEventListener('keydown', (e) => {
-        const k = e.key;
-        if (k === 'ArrowRight') { e.preventDefault(); pick((i + 1) % tabs.length, true); }
-        else if (k === 'ArrowLeft') { e.preventDefault(); pick((i - 1 + tabs.length) % tabs.length, true); }
-        else if (k === 'Home') { e.preventDefault(); pick(0, true); }
-        else if (k === 'End') { e.preventDefault(); pick(tabs.length - 1, true); }
-      });
-    });
-    $$('.rv', csRoot).forEach(reveal);
-  }
-
-  /* ---------- Education & achievements ---------- */
-  const achv = $('#achvGrid');
-  if (achv && D.achievements) {
-    achv.innerHTML = D.achievements.map((a, i) => (
-      '<article class="tile achv__card spot rv" style="--i:' + i + '"><span class="ico"><i class="' + a.icon + '" aria-hidden="true"></i></span>' +
-      '<div><span class="tile__label">' + esc(a.label) + '</span><h3>' + esc(a.title) + '</h3><p>' + esc(a.text) + '</p></div></article>'
-    )).join('');
-    $$('.rv', achv).forEach(reveal);
-  }
 
   /* ---------- Lite YouTube embeds ---------- */
   $$('.yt[data-yt]').forEach((btn) => btn.addEventListener('click', () => {
