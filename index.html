@@ -42,7 +42,7 @@
     "worksFor": { "@type": "Organization", "name": "Brilliant Technologies" },
     "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressRegion": "Telangana", "addressCountry": "IN" },
     "alumniOf": { "@type": "CollegeOrUniversity", "name": "Santhiram Engineering College" },
-    "knowsAbout": ["Python", "Frappe Framework", "ERPNext", "Frappe Healthcare", "Frappe HRMS", "Django", "REST APIs", "Frappe Cloud", "Flutter", "Razorpay integration", "Tally integration", "Biometric attendance integration", "WordPress", "WooCommerce"],
+    "knowsAbout": ["Python", "Frappe Framework", "ERPNext", "Django", "REST APIs", "Frappe Cloud", "WordPress"],
     "sameAs": [
       "https://www.linkedin.com/in/murthujavali-pinjari18/",
       "https://github.com/PinjariMurthujavali",
@@ -66,12 +66,14 @@
     })();
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/outfit-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/fx.css">
+  <link rel="stylesheet" href="assets/css/chatbot.css">
   <script>
     (function () {
       var d = document.documentElement, skip = /[?&]nogate\b/.test(location.search);
@@ -86,6 +88,7 @@
 </head>
 
 <body>
+  <div class="boot" aria-hidden="true"><div class="boot__mark">M</div><div class="boot__bar"><i></i></div><div class="boot__txt">Loading portfolio…</div></div>
   <a class="skip" href="#main">Skip to main content</a>
   <div class="aurora" aria-hidden="true"></div>
   <div class="progress" id="progress" aria-hidden="true"></div>
@@ -131,7 +134,7 @@
           </h1>
           <p class="hero__role">Senior Python &amp; Frappe/ERPNext Developer · Team Lead</p>
           <p class="hero__type" aria-hidden="true">&gt; I build ERP systems that <span class="type" id="typed">run hospitals</span><span class="caret"></span></p>
-          <p class="hero__lead">Building and delivering <strong>enterprise ERP applications</strong> at Brilliant Technologies. I design custom Frappe/ERPNext systems, integrations and dashboards, deploy on Frappe Cloud, and lead and mentor a 4-person engineering team through code review and delivery, with Django and WordPress alongside for full-stack needs.</p>
+          <p class="hero__lead">Building and delivering <strong>enterprise ERP applications</strong> at Brilliant Technologies. I design custom Frappe/ERPNext systems, integrations and dashboards, deploy on Frappe Cloud, and lead a team through code review and delivery, with Django and WordPress alongside for full-stack needs.</p>
           <div class="cta">
             <a class="btn btn--primary" href="https://wa.me/919100850087?text=Hi%20Murthu!%20I'd%20like%20to%20hire%20you." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp me</a>
             <a class="btn btn--ghost" href="Murthujavali_Pinjari_ERPNext_Frappe.pdf" download><i class="fas fa-download" aria-hidden="true"></i> Resume</a>
@@ -156,7 +159,7 @@
 
         <article class="tile tile--stats spot" aria-label="Highlights in numbers">
           <div class="stats">
-            <div class="stat"><b data-count="30" data-suffix="+">30+</b><span>Projects built</span></div>
+            <div class="stat"><b data-count="21" data-suffix="+">21+</b><span>Projects built</span></div>
             <div class="stat"><b data-count="5" data-suffix="+">5+</b><span>Roles &amp; internships</span></div>
             <div class="stat"><b data-count="11" data-suffix="+">11+</b><span>Certifications</span></div>
             <div class="stat"><b>2nd</b><span>Smart India Hackathon 2023</span></div>
@@ -230,7 +233,7 @@
             <ul class="impact">
               <li><span>Shipping <strong>BCRM</strong> improvements and releases on Frappe Cloud</span></li>
               <li><span>Building an <strong>AI chatbot</strong> for ERPNext (in progress)</span></li>
-              <li><span>Reviewing code and <strong>mentoring a 4-person team</strong></span></li>
+              <li><span>Reviewing code and <strong>mentoring</strong> junior developers</span></li>
             </ul>
             <div class="socials" style="margin-top:auto;padding-top:18px">
               <a class="btn btn--primary btn--sm" href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
@@ -274,13 +277,12 @@
         <div class="section__head rv">
           <p class="eyebrow">02 · Technical expertise</p>
           <h2 class="section__title">Skills, <span class="grad">honestly rated</span></h2>
-          <p class="section__lead">No fake percentage bars. Each skill is marked by how I actually use it, and skills without a rating are listed because I have used them in projects.</p>
+          <p class="section__lead">No fake percentage bars. Each skill is marked by how I actually use it.</p>
         </div>
         <div class="legend rv" aria-label="Legend">
           <span><span class="lvl" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span> Core expertise</span>
           <span><span class="lvl" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span> Production experience</span>
           <span><span class="lvl" aria-hidden="true"><i class="on"></i><i></i><i></i></span> Working knowledge</span>
-          <span><span class="lvl lvl--none" aria-hidden="true">·</span> Used in projects (not rated)</span>
         </div>
         <div class="skills" id="skillsGrid"><noscript><p class="muted">Enable JavaScript to see the skills grid. Core: Python, Frappe Framework, HTML/CSS, WordPress, Git, Team Leadership.</p></noscript></div>
       </div>
@@ -300,9 +302,9 @@
             <div class="tile tile--current spot">
               <h3 class="tl__role">Senior Python &amp; Frappe/ERPNext Developer · Team Lead</h3>
               <p class="tl__org">Brilliant Technologies, Hyderabad</p>
-              <p>Leading development on Brilliant Technologies' internal Frappe/ERPNext platform, including the BCRM CRM system (leads through renewals &amp; AMC support), HR attendance automation with biometric device integration, and a Hospital Management System on Frappe Cloud. Architecting custom DocTypes, server &amp; client scripts, REST integrations and dashboards, while conducting code reviews and mentoring a 4-person engineering team.</p>
+              <p>Leading development on Brilliant Technologies' internal Frappe/ERPNext platform, including the BCRM CRM system (leads through renewals &amp; AMC support), HR attendance automation with biometric device integration, and a Hospital Management System on Frappe Cloud. Architecting custom DocTypes, server &amp; client scripts, REST integrations and dashboards, while conducting code reviews and mentoring junior developers.</p>
               <div class="tags"><span class="tag">Team Leader</span><span class="tag">Python</span><span class="tag">Frappe</span><span class="tag">ERPNext</span><span class="tag">Django</span><span class="tag">Frappe Cloud</span><span class="tag">Hospital ERP</span><span class="tag">CRM</span></div>
-              <div class="tags" style="margin-top:8px"><span class="tag hi">✓ Attendance rules engine: 7 rule types</span><span class="tag hi">✓ Biometric sync: 75 employees, 39,000+ logs</span><span class="tag hi">✓ Scheduler runs every 5 min</span><span class="tag hi">✓ Mentoring a 4-person team</span></div>
+              <div class="tags" style="margin-top:8px"><span class="tag hi">✓ Attendance rules engine: 7 rule types</span><span class="tag hi">✓ Biometric sync: 75 employees, 39,000+ logs</span><span class="tag hi">✓ Scheduler runs every 5 min</span></div>
             </div>
           </article>
 
@@ -377,9 +379,58 @@
         <div class="section__head rv">
           <p class="eyebrow">Case studies</p>
           <h2 class="section__title">Problem → Build → <span class="grad">Result</span></h2>
-          <p class="section__lead">Five real systems, each written up the same way: overview, problem, challenges, architecture, stack, approach, my contribution, implementation, features and results. Only verified facts, no invented numbers.</p>
         </div>
-        <div class="cs" id="caseStudies"><noscript><p class="muted">Enable JavaScript to read the case studies: BCRM, Hospital Management System, HRMS Automation, Biometric Sync and VCRM ↔ BCRM.</p></noscript></div>
+
+        <article class="tile case spot rv">
+          <div>
+            <p class="case__tag">Case study 01 · Internal CRM</p>
+            <h3>BCRM: one system from lead to renewal</h3>
+            <dl>
+              <div><dt>Problem</dt><dd>Sales, field visits and renewals lived in separate places, so nobody had one view of a customer.</dd></div>
+              <div><dt>What I built</dt><dd>A Frappe CRM covering Lead → Opportunity → Customer → AMC/renewal, with GPS check-in/out, Customer 360 dashboards, a smart activity timeline across 7+ doctypes and a “Nearby Clients” locator.</dd></div>
+              <div><dt>Result</dt><dd>It is now the team's single system of record from lead to renewal. I designed and built it solo.</dd></div>
+            </dl>
+            <div class="case-stats"><div><b>7+</b><small>doctypes on one timeline</small></div><div><b>1</b><small>system of record</small></div></div>
+          </div>
+          <div class="case__vis" aria-hidden="true">
+            <div class="mock"><div class="mock__bar"><i></i><i></i><i></i></div>
+              <div class="mock__body">
+                <div class="pipe"><div>Lead</div><div>Opportunity</div><div>Customer</div><div>AMC</div></div>
+                <div class="rows"><div>Customer 360 · Quotations<em>LIVE</em></div><div>Nearby Clients · GPS match<em>LIVE</em></div><div>Employee check-in · Road distance<em>LIVE</em></div></div>
+              </div>
+              <p class="mock__cap">Illustrative UI. Real client data is private.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile case case--flip spot rv">
+          <div>
+            <p class="case__tag">Case study 02 · HR automation</p>
+            <h3>Attendance &amp; payroll rules, automated</h3>
+            <dl>
+              <div><dt>Problem</dt><dd>Attendance remarks and payroll deductions depended on manual checking of biometric punches.</dd></div>
+              <div><dt>What I built</dt><dd>A rules engine (grace period, late entry, early exit, missing punch, weekly off, holiday, sandwich rule) on a 5-minute scheduler, plus Python middleware syncing a ZKTeco device to Frappe Cloud with SQLite deduplication.</dd></div>
+              <div><dt>Result</dt><dd>Attendance and payroll rules run automatically company-wide, feeding Salary Slip deductions and bonuses.</dd></div>
+            </dl>
+            <div class="case-stats"><div><b>7</b><small>rule types</small></div><div><b>39,000+</b><small>logs synced</small></div><div><b>75</b><small>employees</small></div><div><b>5 min</b><small>scheduler</small></div></div>
+          </div>
+          <div class="case__vis" aria-hidden="true">
+            <div class="mock"><div class="mock__bar"><i></i><i></i><i></i></div>
+              <div class="mock__body">
+                <div class="rows"><div>Late entry · grace period<em>AUTO</em></div><div>Missing punch · flagged<em>AUTO</em></div><div>Sandwich rule · weekly off<em>AUTO</em></div></div>
+                <div class="bars"><span style="height:45%"></span><span style="height:70%"></span><span style="height:55%"></span><span style="height:90%"></span><span style="height:65%"></span><span style="height:80%"></span></div>
+              </div>
+              <p class="mock__cap">Illustrative UI. Real client data is private.</p>
+            </div>
+          </div>
+        </article>
+
+        <div class="section__head rv" style="margin-top:44px">
+          <p class="eyebrow">Deep dives</p>
+          <h2 class="section__title">Five systems, <span class="grad">ten points each</span></h2>
+          <p class="section__lead">Overview, problem, architecture, approach, my contribution and impact. Only verified facts, no invented business numbers. <a href="case-studies.html">Open as a full page →</a></p>
+        </div>
+        <div id="caseList"><noscript><p class="muted">Enable JavaScript to read the detailed case studies, or open the <a href="case-studies.html">case studies page</a>.</p></noscript></div>
       </div>
     </section>
 
@@ -437,14 +488,12 @@
         <div class="filters rv" role="group" aria-label="Filter projects by category">
           <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
           <button class="filter" type="button" data-filter="erp" aria-pressed="false">ERPNext / Frappe</button>
-          <button class="filter" type="button" data-filter="integration" aria-pressed="false">Integrations</button>
-          <button class="filter" type="button" data-filter="mobile" aria-pressed="false">Mobile &amp; IoT</button>
           <button class="filter" type="button" data-filter="ai" aria-pressed="false">AI</button>
+          <button class="filter" type="button" data-filter="mobile" aria-pressed="false">Mobile &amp; IoT</button>
           <button class="filter" type="button" data-filter="python" aria-pressed="false">Python / Django</button>
           <button class="filter" type="button" data-filter="java" aria-pressed="false">Java Full Stack</button>
           <button class="filter" type="button" data-filter="web" aria-pressed="false">Web Apps</button>
         </div>
-        <p class="status-key rv" aria-label="Project status key"><span class="st st--production">Live · Production</span><span class="st st--completed">Completed</span><span class="st st--ongoing">Ongoing</span><span class="st st--experimental">Experimental</span><span class="st st--academic">Academic</span><span class="st st--demo">Demo / Showcase</span></p>
         <div class="projects" id="projGrid" aria-live="polite"><noscript><p class="muted">Enable JavaScript to browse projects, or visit <a href="https://github.com/PinjariMurthujavali" style="text-decoration:underline">github.com/PinjariMurthujavali</a>.</p></noscript></div>
         <div class="more" id="projMoreWrap"><button class="btn btn--ghost" id="projMore" type="button" aria-expanded="false">Show more projects</button></div>
       </div>
@@ -478,11 +527,10 @@
     <section id="certs" class="section">
       <div class="container">
         <div class="section__head rv">
-          <p class="eyebrow">07 · Education, achievements &amp; credentials</p>
+          <p class="eyebrow">07 · Credentials</p>
           <h2 class="section__title">My <span class="grad">certifications</span></h2>
-          <p class="section__lead">Tap any certification to verify on LinkedIn.</p>
+          <p class="section__lead">Tap any card to verify on LinkedIn.</p>
         </div>
-        <div class="achv" id="achvGrid"></div>
         <div class="certs" id="certGrid"></div>
       </div>
     </section>
@@ -577,6 +625,7 @@
     <div class="container">
       <a class="brand" href="#home"><span class="brand__mark" aria-hidden="true">M</span><span>Murthu<b>.dev</b></span></a>
       <p>© <span id="year">2026</span> Murthujavali Pinjari · Senior Python &amp; Frappe/ERPNext Developer · Team Lead</p>
+      <nav class="footer__links" aria-label="More pages"><a href="case-studies.html">Case studies</a><a href="journey.html">Journey &amp; education</a><a href="#contact">Contact</a></nav>
       <div class="socials">
         <a class="soc" href="https://www.linkedin.com/in/murthujavali-pinjari18/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         <a class="soc" href="https://github.com/PinjariMurthujavali" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -594,13 +643,6 @@
 
   <button class="totop" id="toTop" type="button" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <dialog class="pmodal" id="projDialog" aria-labelledby="pmTitle">
-    <div class="pmodal__in">
-      <button class="pmodal__x" id="pmClose" type="button" aria-label="Close project details"><i class="fas fa-xmark" aria-hidden="true"></i></button>
-      <div id="pmBody"></div>
-    </div>
-  </dialog>
 
   <dialog class="palette" id="palette" aria-label="Quick jump">
     <input class="palette__input" id="paletteInput" type="text" placeholder="Jump to a section or action…" aria-label="Search sections and actions" autocomplete="off" role="combobox" aria-expanded="true" aria-controls="paletteList">
@@ -648,7 +690,10 @@
 
   <script src="assets/js/data.js"></script>
   <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/cases.js" defer></script>
+  <script src="assets/js/modal.js" defer></script>
   <script src="assets/js/fx.js" defer></script>
+  <script src="assets/js/chatbot.js" defer></script>
   <script>
     setTimeout(function () {
       if (!window.__fxReady) { var d = document.documentElement; d.classList.remove('gate-open', 'fx-pre'); }
